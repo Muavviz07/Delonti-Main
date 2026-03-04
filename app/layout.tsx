@@ -23,7 +23,8 @@ export default function RootLayout({
       <body
         className={`${publicSans.variable} font-sans antialiased bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        {/* CHANGED: Forced defaultTheme to "light" and removed enableSystem */}
+        <ThemeProvider attribute="class" defaultTheme="light">
           {children}
         </ThemeProvider>
       </body>

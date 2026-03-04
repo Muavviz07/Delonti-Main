@@ -36,25 +36,44 @@ export default function Hero() {
 
   const extendedSlides = [...SLIDES, SLIDES[0]];
 
+  // 1. AUTO-PLAY TIMER
   useEffect(() => {
     const timer = setInterval(() => {
       if (isTransitioning) {
         setCurrentIndex((prev) => prev + 1);
       }
     }, 6000);
+    
+    // FIX: Adding currentIndex here ensures that when a user manually 
+    // clicks a dot, the 6-second timer completely resets!
     return () => clearInterval(timer);
-  }, [isTransitioning]);
+  }, [isTransitioning, currentIndex]);
 
-  const handleTransitionEnd = () => {
+  // 2. SEAMLESS LOOP & BACKGROUND TAB FIX
+  useEffect(() => {
+    // When we reach the cloned slide at the very end...
     if (currentIndex === SLIDES.length) {
-      setIsTransitioning(false);
-      setCurrentIndex(0);
+      // FIX: Use a JS timeout matching our CSS duration-700 instead of onTransitionEnd.
+      // This guarantees the loop works even if the user switches browser tabs!
+      const resetTimer = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(0);
 
-      setTimeout(() => {
-        setIsTransitioning(true);
-      }, 50);
+        setTimeout(() => {
+          setIsTransitioning(true);
+        }, 50);
+      }, 700);
+
+      return () => clearTimeout(resetTimer);
     }
-  };
+    
+    // Extreme edge-case safety net: If index somehow goes out of bounds, force it home
+    if (currentIndex > SLIDES.length) {
+        setIsTransitioning(false);
+        setCurrentIndex(0);
+        setTimeout(() => setIsTransitioning(true), 50);
+    }
+  }, [currentIndex]);
 
   const handleDotClick = (idx: number) => {
     setIsTransitioning(true);
@@ -68,7 +87,7 @@ export default function Hero() {
       <div 
         className={`flex w-full h-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        onTransitionEnd={handleTransitionEnd}
+        // Removed the unreliable onTransitionEnd from here
       >
         {extendedSlides.map((slide, index) => (
           <div key={`${slide.id}-${index}`} className="w-full h-full flex-shrink-0 relative">
@@ -80,15 +99,10 @@ export default function Hero() {
               }}
             />
             
-            {/* TEXT CONTAINER - Added responsive padding and max-widths */}
             <div className="relative w-full h-full flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 text-center text-white pb-32 md:pb-24">
-              
-              {/* INCREASED TITLE SIZE - text-4xl (Mobile), text-5xl (Tablet), text-6xl (Desktop) */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 tracking-wide uppercase w-full max-w-[95%] md:max-w-4xl lg:max-w-5xl drop-shadow-md leading-tight md:leading-tight">
                 {slide.title}
               </h1>
-              
-              {/* RESPONSIVE DESCRIPTION - Scales nicely with the new title size */}
               <p className="text-sm sm:text-base md:text-lg font-light mb-8 md:mb-10 w-full max-w-[95%] sm:max-w-[85%] md:max-w-3xl text-slate-200 leading-relaxed">
                 {slide.description}
               </p>
@@ -97,7 +111,7 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* STATIC BUTTONS - Wrapped in a slightly tighter gap for mobile screens */}
+      {/* STATIC BUTTONS */}
       <div className="absolute bottom-20 md:bottom-24 left-0 w-full flex flex-wrap justify-center gap-4 md:gap-6 px-4 z-10">
         <Link 
           href="/government" 
@@ -120,6 +134,7 @@ export default function Hero() {
           
           return (
             <button
+              suppressHydrationWarning
               key={idx}
               onClick={() => handleDotClick(idx)}
               className={`transition-all duration-300 rounded-full cursor-pointer ${
