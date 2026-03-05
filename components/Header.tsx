@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, Landmark, Shield } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 // Reusable Mega Menu Link Component
@@ -74,72 +74,79 @@ export default function Header() {
                             </div>
                         </div>
 
-                        {/* STATE & LOCAL */}
+                        {/* GOVERNMENT (Merged State & Federal) */}
                         <div className="relative group h-full flex items-center px-2">
-                            <Link href="/state" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                State & Local <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
+                            <Link href="/government" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
+                                Government <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
-                            <div className="absolute top-[70px] left-1/2 -translate-x-1/4 w-[600px] pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
-                                <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-xl shadow-xl p-8">
-                                    <div className="grid grid-cols-2 gap-8">
-                                        <div>
-                                            <MenuHeader>Core Services</MenuHeader>
-                                            <MenuLink href="/state">State Overview</MenuLink>
-                                            <MenuLink href="/state/programs">Programs & Initiatives</MenuLink>
-                                            <MenuLink href="/state/public-safety">Public Safety Solutions</MenuLink>
-                                            <MenuLink href="/state/transportation">Transportation & Mobility</MenuLink>
-                                            <MenuLink href="/state/hhs">Health & Human Services (HHS)</MenuLink>
-                                            <MenuLink href="/state/education">Education & Campus Solutions</MenuLink>
-                                        </div>
-                                        <div>
-                                            <MenuHeader>Infrastructure & Tech</MenuHeader>
-                                            <MenuLink href="/state/smart-city">Smart City & Infrastructure</MenuLink>
-                                            <MenuLink href="/state/social-impact">Homeless & Social Impact Solutions</MenuLink>
-                                            <MenuLink href="/state/data">Data, Analytics & Reporting</MenuLink>
-                                            <MenuLink href="/state/cybersecurity">Cybersecurity & Compliance</MenuLink>
-                                            <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
-                                                <MenuLink href="/solutions">Learn More: State Use Cases →</MenuLink>
+                            <div className="absolute top-[70px] left-1/2 -translate-x-1/2 w-[950px] pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
+                                {/* Changed to flex to allow the vertical divider */}
+                                <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-xl shadow-xl p-8 flex">
+                                    
+                                    {/* State & Local Half - Added padding right and vertical border */}
+                                    <div className="w-1/2 pr-8 border-r border-gray-200 dark:border-white/10">
+                                        <h3 className="flex items-center gap-2 text-base font-black text-slate-900 dark:text-white mb-5 border-b border-gray-100 dark:border-white/10 pb-3">
+                                            <Landmark className="w-5 h-5 text-primary dark:text-slate-300" />
+                                            State & Local
+                                        </h3>
+                                        <div className="grid grid-cols-2 gap-6">
+                                            <div>
+                                                <MenuHeader>Core Services</MenuHeader>
+                                                <MenuLink href="/state">State Overview</MenuLink>
+                                                <MenuLink href="/state/programs">Programs & Initiatives</MenuLink>
+                                                <MenuLink href="/state/public-safety">Public Safety Solutions</MenuLink>
+                                                <MenuLink href="/state/transportation">Transportation & Mobility</MenuLink>
+                                                <MenuLink href="/state/hhs">Health & Human Services (HHS)</MenuLink>
+                                                <MenuLink href="/state/education">Education & Campus Solutions</MenuLink>
+                                            </div>
+                                            <div>
+                                                <MenuHeader>Infrastructure & Tech</MenuHeader>
+                                                <MenuLink href="/state/smart-city">Smart City & Infrastructure</MenuLink>
+                                                <MenuLink href="/state/social-impact">Homeless & Social Impact Solutions</MenuLink>
+                                                <MenuLink href="/state/data">Data, Analytics & Reporting</MenuLink>
+                                                <MenuLink href="/state/cybersecurity">Cybersecurity & Compliance</MenuLink>
+                                                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
+                                                    <MenuLink href="/solutions">Learn More: State Use Cases →</MenuLink>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    {/* Federal & Defense Half - Added padding left */}
+                                    <div className="w-1/2 pl-8">
+                                        <h3 className="flex items-center gap-2 text-base font-black text-slate-900 dark:text-white mb-5 border-b border-gray-100 dark:border-white/10 pb-3">
+                                            <Shield className="w-5 h-5 text-primary dark:text-slate-300" />
+                                            Federal & Defense
+                                        </h3>
+                                        <div className="grid grid-cols-2 gap-6">
+                                            <div>
+                                                <MenuHeader>Defense & Logistics</MenuHeader>
+                                                <MenuLink href="/federal">Federal Overview</MenuLink>
+                                                <MenuLink href="/federal/rfid">Secure RFID & Logistics</MenuLink>
+                                                <MenuLink href="/federal/acquisition">Acquisition & Contracting</MenuLink>
+                                                <MenuLink href="/federal/workforce">Workforce & Staffing Solutions</MenuLink>
+                                                <MenuLink href="/federal/ato">ATO, Risk & Compliance</MenuLink>
+                                            </div>
+                                            <div>
+                                                <MenuHeader>Tech & Modernization</MenuHeader>
+                                                <MenuLink href="/federal/cybersecurity">Cybersecurity & Zero Trust</MenuLink>
+                                                <MenuLink href="/federal/cloud">Cloud & IT Modernization</MenuLink>
+                                                <MenuLink href="/federal/data">Data, AI & Automation</MenuLink>
+                                                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
+                                                    <MenuLink href="/federal/use-cases">Federal Use Cases →</MenuLink>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
 
-                        {/* FEDERAL & DEFENSE */}
+                        {/* PRIVATE (Renamed from Enterprise) */}
                         <div className="relative group h-full flex items-center px-2">
-                            <Link href="/federal" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                Federal <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
-                            </Link>
-                            <div className="absolute top-[70px] left-1/2 -translate-x-1/2 w-[550px] pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
-                                <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-xl shadow-xl p-8">
-                                    <div className="grid grid-cols-2 gap-8">
-                                        <div>
-                                            <MenuHeader>Defense & Logistics</MenuHeader>
-                                            <MenuLink href="/federal">Federal Overview</MenuLink>
-                                            <MenuLink href="/federal/rfid">Secure RFID & Logistics</MenuLink>
-                                            <MenuLink href="/federal/acquisition">Acquisition & Contracting</MenuLink>
-                                            <MenuLink href="/federal/workforce">Workforce & Staffing Solutions</MenuLink>
-                                            <MenuLink href="/federal/ato">ATO, Risk & Compliance</MenuLink>
-                                        </div>
-                                        <div>
-                                            <MenuHeader>Tech & Modernization</MenuHeader>
-                                            <MenuLink href="/federal/cybersecurity">Cybersecurity & Zero Trust</MenuLink>
-                                            <MenuLink href="/federal/cloud">Cloud & IT Modernization</MenuLink>
-                                            <MenuLink href="/federal/data">Data, AI & Automation</MenuLink>
-                                            <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
-                                                <MenuLink href="/federal/use-cases">Federal Use Cases →</MenuLink>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* ENTERPRISE & COMMERCIAL */}
-                        <div className="relative group h-full flex items-center px-2">
-                            <Link href="/enterprise" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                Enterprise <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
+                            <Link href="/private" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
+                                Private <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
                             <div className="absolute top-[70px] left-1/2 -translate-x-1/2 w-[650px] pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
                                 <div className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-xl shadow-xl p-8">
@@ -277,15 +284,16 @@ export default function Header() {
                             links: [{name: "Company Overview", url: "/about/overview"}, {name: "Partners & Alliances", url: "/about/partners"}, {name: "Careers", url: "/about/careers"}, {name: "Talk to an Expert", url: "/contact"}] 
                         },
                         { 
-                            title: "State & Local", url: "/state",
-                            links: [{name: "State Overview", url: "/state"}, {name: "Programs & Initiatives", url: "/state/programs"}, {name: "Public Safety Solutions", url: "/state/public-safety"}, {name: "Transportation & Mobility", url: "/state/transportation"}, {name: "Health & Human Services", url: "/state/hhs"}, {name: "Education & Campus", url: "/state/education"}, {name: "Smart City & Infrastructure", url: "/state/smart-city"}, {name: "Homeless & Social Impact", url: "/state/social-impact"}, {name: "Data, Analytics & Reporting", url: "/state/data"}, {name: "Cybersecurity & Compliance", url: "/state/cybersecurity"}, {name: "State Use Cases", url: "/solutions"}] 
+                            title: "Government", url: "/government",
+                            links: [
+                                // State & Local Links
+                                {name: "State Overview", url: "/state"}, {name: "Programs & Initiatives", url: "/state/programs"}, {name: "Public Safety Solutions", url: "/state/public-safety"}, {name: "Transportation & Mobility", url: "/state/transportation"}, {name: "Health & Human Services", url: "/state/hhs"}, {name: "Education & Campus", url: "/state/education"}, {name: "Smart City & Infrastructure", url: "/state/smart-city"}, {name: "Homeless & Social Impact", url: "/state/social-impact"}, {name: "Data, Analytics & Reporting", url: "/state/data"}, {name: "Cybersecurity & Compliance", url: "/state/cybersecurity"}, {name: "State Use Cases", url: "/solutions"},
+                                // Federal & Defense Links
+                                {name: "Federal Overview", url: "/federal"}, {name: "Secure RFID & Logistics", url: "/federal/rfid"}, {name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity"}, {name: "Cloud & IT Modernization", url: "/federal/cloud"}, {name: "Data, AI & Automation", url: "/federal/data"}, {name: "ATO, Risk & Compliance", url: "/federal/ato"}, {name: "Acquisition & Contracting", url: "/federal/acquisition"}, {name: "Workforce & Staffing", url: "/federal/workforce"}, {name: "Federal Use Cases", url: "/federal/use-cases"}
+                            ] 
                         },
                         { 
-                            title: "Federal & Defense", url: "/federal",
-                            links: [{name: "Federal Overview", url: "/federal"}, {name: "Secure RFID & Logistics", url: "/federal/rfid"}, {name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity"}, {name: "Cloud & IT Modernization", url: "/federal/cloud"}, {name: "Data, AI & Automation", url: "/federal/data"}, {name: "ATO, Risk & Compliance", url: "/federal/ato"}, {name: "Acquisition & Contracting", url: "/federal/acquisition"}, {name: "Workforce & Staffing", url: "/federal/workforce"}, {name: "Federal Use Cases", url: "/federal/use-cases"}] 
-                        },
-                        { 
-                            title: "Enterprise & Commercial", url: "/enterprise",
+                            title: "Private", url: "/private",
                             links: [{name: "Enterprise Overview", url: "/enterprise"}, {name: "Logistics & Transportation", url: "/industries/logistics"}, {name: "Manufacturing", url: "/industries/manufacturing"}, {name: "Retail & Warehousing", url: "/industries/retail"}, {name: "Energy & Utilities", url: "/industries/energy"}, {name: "Technology & SaaS", url: "/industries/tech"}, {name: "Digital Transformation", url: "/enterprise/digital-transformation"}, {name: "Supply Chain Visibility", url: "/enterprise/supply-chain"}, {name: "Cybersecurity & Risk", url: "/enterprise/cybersecurity"}, {name: "Cloud & DevOps", url: "/enterprise/cloud"}, {name: "Managed Services", url: "/enterprise/managed-services"}, {name: "Workforce & Staffing", url: "/enterprise/workforce"}, {name: "Case Studies", url: "/enterprise/case-studies"}] 
                         },
                         { 
@@ -299,16 +307,14 @@ export default function Header() {
                     ].map((section) => (
                         <div key={section.title} className="border-b border-gray-100 dark:border-white/10 pb-4">
                             <div className="flex items-center justify-between w-full">
-                                {/* Clicking the text redirects to the main category page */}
                                 <Link href={section.url} onClick={() => setIsMobileMenuOpen(false)} className="font-semibold text-lg text-slate-900 dark:text-white flex-1">
                                     {section.title}
                                 </Link>
-                                {/* Clicking the arrow expands the accordion */}
                                 <button onClick={() => toggleMobileMenu(section.title)} className="p-2 -mr-2 text-slate-500">
                                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${activeMobileMenu === section.title ? '-rotate-180 text-primary dark:text-white' : ''}`} />
                                 </button>
                             </div>
-                            <div className={`flex flex-col gap-3 overflow-hidden transition-all duration-300 ${activeMobileMenu === section.title ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                            <div className={`flex flex-col gap-3 overflow-hidden transition-all duration-300 ${activeMobileMenu === section.title ? 'max-h-[1200px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                                 {section.links.map(link => (
                                     <MenuLink key={link.name} href={link.url} onClick={() => setIsMobileMenuOpen(false)}>
                                         {link.name}
