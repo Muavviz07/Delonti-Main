@@ -332,13 +332,20 @@ export default function Header() {
                             </div>
                         </div>
 
+                        {/* CAREERS - ADDED NEXT TO RESOURCES */}
+                        <div className="h-full flex items-center px-2">
+                            <Link href="/about/careers" className="text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors">
+                                Careers
+                            </Link>
+                        </div>
+
                     </nav>
 
                     {/* Actions */}
                     <div className="hidden lg:flex items-center gap-4 shrink-0 z-50">
                         <ThemeToggle />
                         <Link href="/contact" className="bg-primary text-white px-5 xl:px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide hover:bg-primary/90 transition-all shadow-md hover:-translate-y-0.5">
-                            Get Started
+                            Contact
                         </Link>
                     </div>
 
@@ -406,7 +413,7 @@ export default function Header() {
                     ))}
                     
                     <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="bg-primary text-white text-center px-6 py-4 rounded-xl text-base font-bold tracking-wide mt-4 shadow-lg">
-                        Get Started Today
+                        Contact
                     </Link>
                 </div>
             </div>

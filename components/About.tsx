@@ -18,22 +18,7 @@ export default function About() {
                     </p>
                 </div>
 
-                <div className="mt-12 flex justify-center gap-8 items-center border-t border-slate-100 dark:border-slate-800 pt-12">
-                    <div className="text-center">
-                        <p className="text-4xl font-black text-primary">150+</p>
-                        <p className="text-xs font-bold uppercase text-slate-500 mt-1">Global Partners</p>
-                    </div>
-                    <div className="w-px h-12 bg-slate-200 dark:bg-slate-700" />
-                    <div className="text-center">
-                        <p className="text-4xl font-black text-primary">24/7</p>
-                        <p className="text-xs font-bold uppercase text-slate-500 mt-1">Active Monitoring</p>
-                    </div>
-                    <div className="w-px h-12 bg-slate-200 dark:bg-slate-700" />
-                    <div className="text-center">
-                        <p className="text-4xl font-black text-primary">NIST</p>
-                        <p className="text-xs font-bold uppercase text-slate-500 mt-1">Fully Compliant</p>
-                    </div>
-                </div>
+                
             </div>
         </section>
     );

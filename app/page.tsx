@@ -21,7 +21,7 @@ export default function Home() {
         <Services />
         <Solutions />
         <About />
-        <FAQ />
+        {/* <FAQ /> */}
         <ClientsSection />
         <Contact />
       </main>

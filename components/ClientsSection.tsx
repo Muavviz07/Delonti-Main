@@ -28,8 +28,9 @@ const HARDCODED_CLIENTS: Client[] = [
 ];
 
 const LogoCard = ({ name, logo }: { name: string; logo: string }) => (
-  <div className="flex-none w-64 h-32 bg-white border border-gray-100 rounded-lg flex items-center justify-center px-4 py-3 relative overflow-hidden transition-all duration-500 hover:border-purple-500/50 group shadow-sm hover:shadow-xl hover:-translate-y-1">
-    <div className="absolute top-0 left-0 w-full h-0 bg-[#6366f1] transition-all duration-500 group-hover:h-1"></div>
+  <div className="flex-none w-64 h-32 bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-lg flex items-center justify-center px-4 py-3 relative overflow-hidden transition-all duration-500 hover:border-primary/40 dark:hover:border-primary/50 group shadow-sm hover:shadow-xl hover:-translate-y-1">
+    {/* Replaced hardcoded #6366f1 with bg-primary */}
+    <div className="absolute top-0 left-0 w-full h-0 bg-primary transition-all duration-500 group-hover:h-1"></div>
     <div className="relative w-full h-full flex items-center justify-center">
       <Image
         src={logo}
@@ -48,10 +49,11 @@ export default function ClientsSection({ title }: { title?: string }) {
   const bottomRow = HARDCODED_CLIENTS.slice(midpoint);
 
   return (
-    <section className="bg-gray-50 py-16 px-6 border-t border-gray-100 overflow-hidden">
+    <section className="bg-gray-50 dark:bg-[#16161c] py-16 px-6 border-t border-gray-100 dark:border-white/10 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
-        <h2 className="text-2xl md:text-3xl font-normal text-center text-[#1F2A44] mb-12 tracking-[0.25em]">
-          {title || "SOME OF OUR VALUABLE CLIENTS"}
+        {/* Replaced hardcoded #1F2A44 with theme-aware text colors */}
+        <h2 className="text-2xl md:text-3xl font-normal text-center text-slate-900 dark:text-white mb-12 tracking-[0.25em]">
+          {title || "SOME OF OUR VALUABLE CLIENTS AND PARTNERS"}
         </h2>
 
         {/* mask-horizontal adds the fade-out effect */}
