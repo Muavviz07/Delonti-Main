@@ -2,30 +2,35 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react"; 
 
 const SLIDES = [
   {
     id: 1,
-    title: "Advanced RFID Tracking For Enterprise Operations",
-    description: "Achieve complete visibility over your physical assets, inventory, and personnel with sub-second accuracy. Our enterprise-grade technology ensures seamless tracking, significantly reducing loss while optimizing workflow efficiency across your entire organization.",
+    title: "Secure Intelligent Infrastructure",
+    tags: "RFID • IoT • Cybersecurity • Data Platforms",
+    description: "Achieve complete visibility over physical assets and personnel with sub-second accuracy. Optimize workflows and drastically reduce operational losses.",
     bgImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
   },
   {
     id: 2,
-    title: "Intelligent IoT Infrastructure For Connected Systems",
-    description: "Connect, monitor, and manage your entire operational ecosystem in real-time. Transform raw sensor data into actionable, high-level insights that drive predictive maintenance, automate routine tasks, and drastically lower operational costs.",
+    title: "Connected IoT Ecosystems",
+    tags: "Smart Sensors • Edge Computing • Real-Time Monitoring",
+    description: "Connect and manage your entire operational environment. Transform raw sensor data into predictive insights that automate tasks and lower costs.",
     bgImage: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2144&auto=format&fit=crop",
   },
   {
     id: 3,
-    title: "Enterprise Cybersecurity Defenses For Critical Infrastructure",
-    description: "Protect your digital boundaries with next-generation threat detection and automated response protocols. We ensure your critical data, user privacy, and operational integrity remain uncompromised against rapidly evolving global cyber threats.",
+    title: "Zero-Trust Cybersecurity",
+    tags: "Threat Detection • Risk Management • Incident Response",
+    description: "Protect your digital boundaries with next-generation threat detection. Ensure data security and operational integrity against evolving cyber threats.",
     bgImage: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop",
   },
   {
     id: 4,
-    title: "Next-Generation Management For Modern Industry Leaders",
-    description: "Scale your enterprise with cutting-edge management solutions engineered specifically for the rigorous demands of modern industry. Streamline complex processes, empower your workforce, and secure a decisive competitive advantage in your sector.",
+    title: "Enterprise Digital Transformation",
+    tags: "Process Automation • Cloud Integration • Scalable Architecture",
+    description: "Scale your enterprise with cutting-edge management solutions. Streamline complex processes, empower your workforce, and secure your competitive edge.",
     bgImage: "https://images.unsplash.com/photo-1506501139174-099022df5260?q=80&w=2071&auto=format&fit=crop",
   },
 ];
@@ -44,17 +49,12 @@ export default function Hero() {
       }
     }, 6000);
     
-    // FIX: Adding currentIndex here ensures that when a user manually 
-    // clicks a dot, the 6-second timer completely resets!
     return () => clearInterval(timer);
   }, [isTransitioning, currentIndex]);
 
   // 2. SEAMLESS LOOP & BACKGROUND TAB FIX
   useEffect(() => {
-    // When we reach the cloned slide at the very end...
     if (currentIndex === SLIDES.length) {
-      // FIX: Use a JS timeout matching our CSS duration-700 instead of onTransitionEnd.
-      // This guarantees the loop works even if the user switches browser tabs!
       const resetTimer = setTimeout(() => {
         setIsTransitioning(false);
         setCurrentIndex(0);
@@ -67,7 +67,6 @@ export default function Hero() {
       return () => clearTimeout(resetTimer);
     }
     
-    // Extreme edge-case safety net: If index somehow goes out of bounds, force it home
     if (currentIndex > SLIDES.length) {
         setIsTransitioning(false);
         setCurrentIndex(0);
@@ -87,7 +86,6 @@ export default function Hero() {
       <div 
         className={`flex w-full h-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        // Removed the unreliable onTransitionEnd from here
       >
         {extendedSlides.map((slide, index) => (
           <div key={`${slide.id}-${index}`} className="w-full h-full flex-shrink-0 relative">
@@ -100,10 +98,19 @@ export default function Hero() {
             />
             
             <div className="relative w-full h-full flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 text-center text-white pb-32 md:pb-24">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 tracking-wide uppercase w-full max-w-[95%] md:max-w-4xl lg:max-w-5xl drop-shadow-md leading-tight md:leading-tight">
+              
+              {/* SHORTER TITLE */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-wide uppercase w-full max-w-[95%] md:max-w-4xl lg:max-w-5xl drop-shadow-md leading-tight md:leading-tight">
                 {slide.title}
               </h1>
-              <p className="text-sm sm:text-base md:text-lg font-light mb-8 md:mb-10 w-full max-w-[95%] sm:max-w-[85%] md:max-w-3xl text-slate-200 leading-relaxed">
+              
+              {/* NEW TAGS SECTION (Styled to match your reference image) */}
+              <div className="text-sm md:text-lg lg:text-xl font-medium tracking-wide text-slate-300 mb-6 drop-shadow-sm">
+                {slide.tags}
+              </div>
+
+              {/* DESCRIPTION */}
+              <p className="text-sm md:text-base lg:text-lg font-light mb-8 md:mb-10 w-full max-w-[95%] sm:max-w-[85%] md:max-w-3xl text-slate-200 leading-relaxed">
                 {slide.description}
               </p>
             </div>
@@ -115,15 +122,15 @@ export default function Hero() {
       <div className="absolute bottom-20 md:bottom-24 left-0 w-full flex flex-wrap justify-center gap-4 md:gap-6 px-4 z-10">
         <Link 
           href="/government" 
-          className="bg-primary hover:bg-primary/90 text-white px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center tracking-wide"
+          className="group bg-primary/90 hover:bg-primary/80 text-white px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center tracking-wide border border-white/10"
         >
-          Government Sector
+          Explore Public Sector <ChevronRight className="text-white w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
         </Link>
         <Link 
           href="/private" 
-          className="bg-federal-green hover:bg-federal-green/90 text-white px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center tracking-wide"
+          className="group bg-federal-green hover:bg-federal-green/90 text-white px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center tracking-wide border border-white/10"
         >
-          Private Sector
+          Explore Private Sector <ChevronRight className="text-white w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
         </Link>
       </div>
 
