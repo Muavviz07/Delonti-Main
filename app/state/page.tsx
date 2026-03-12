@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HomelessKiosk from "@/components/HomelessKiosk";
-import { Nfc, Cpu, ShieldAlert, Code, ArrowRight, Play } from "lucide-react"; // Updated Imports
+import { Nfc, Cpu, ShieldAlert, Code, ArrowRight, Play, X } from "lucide-react";
 import Link from "next/link";
 import {
   Accordion,
@@ -13,6 +14,8 @@ import {
 } from "@/components/ui/accordion";
 
 export default function StateSolutions() {
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
     const offerings = [
         {
             title: "RFID Solutions",
@@ -44,18 +47,72 @@ export default function StateSolutions() {
         {
             title: "Smart Traffic & Mobility",
             description: "AI-driven IoT sensors optimizing city-wide traffic flow, managing public transit routing, and reducing congestion in real-time.",
-            // High-quality open-source placeholder videos
-            videoUrl: "https://cdn.coverr.co/videos/coverr-driving-through-a-city-at-night-2631/1080p.mp4",
+            videoId: "1153765212",
+            linkUrl: "/state/transportation",
+            linkText: "Explore Mobility Solutions"
         },
         {
             title: "Automated Fleet Tracking",
             description: "Sub-second RFID integration for municipal vehicles, waste management fleets, and emergency responder dispatch.",
-            videoUrl: "https://cdn.coverr.co/videos/coverr-traffic-on-a-highway-4482/1080p.mp4",
+            videoId: "1153764948",
+            linkUrl: "/tech/rfid/fleet",
+            linkText: "View Fleet Tracking"
         },
         {
             title: "Secure Cloud Infrastructure",
             description: "CJIS and NIST compliant cloud environments designed specifically to protect sensitive state and citizen data architectures.",
-            videoUrl: "https://cdn.coverr.co/videos/coverr-server-room-2560/1080p.mp4",
+            videoId: "1153764659",
+            linkUrl: "/federal/cloud",
+            linkText: "Discover Cloud Architecture"
+        },
+        {
+            title: "Public Safety Command",
+            description: "Unified communication portals and emergency response dashboards for police, fire, and medical teams.",
+            videoId: "1153764350",
+            linkUrl: "/state/public-safety",
+            linkText: "See Public Safety"
+        },
+        {
+            title: "Environmental Monitoring",
+            description: "Distributed IoT sensor networks tracking air quality, water levels, and agricultural data across state lines.",
+            videoId: "1153764043",
+            linkUrl: "/tech/iot/sensors",
+            linkText: "Explore IoT Sensors"
+        },
+        {
+            title: "Citizen Health Portals",
+            description: "Secure, scalable web applications streamlining access to Medicare, Medicaid, and family services.",
+            videoId: "1153763709",
+            linkUrl: "/state/hhs",
+            linkText: "View HHS Solutions"
+        },
+        {
+            title: "Smart Campus Environments",
+            description: "Integrated access control, Wi-Fi analytics, and digital asset tracking for state universities and school districts.",
+            videoId: "1153763472",
+            linkUrl: "/state/education",
+            linkText: "Discover Campus Tech"
+        },
+        {
+            title: "Social Impact Initiatives",
+            description: "Data-driven platforms and secure kiosks designed to aid vulnerable populations and track grant effectiveness.",
+            videoId: "1153763159",
+            linkUrl: "/state/social-impact",
+            linkText: "Learn About Social Impact"
+        },
+        {
+            title: "State-Wide Data Analytics",
+            description: "Centralized AI dashboards that aggregate agency data, providing actionable insights for legislative decision-making.",
+            videoId: "1153762836",
+            linkUrl: "/state/data",
+            linkText: "Explore Analytics"
+        },
+        {
+            title: "Zero-Trust Cyber Audits",
+            description: "Continuous vulnerability scanning and penetration testing to preemptively neutralize threats to government networks.",
+            videoId: "1153762480",
+            linkUrl: "/state/cybersecurity",
+            linkText: "View Cyber Compliance"
         }
     ];
 
@@ -82,7 +139,7 @@ export default function StateSolutions() {
         <>
             <Header />
             <main>
-                {/* HERO SECTION - Dark */}
+                {/* HERO SECTION */}
                 <section className="bg-primary text-white py-24">
                     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                         <h1 className="text-4xl md:text-5xl font-black mb-6 uppercase tracking-wide">State Solutions</h1>
@@ -92,7 +149,7 @@ export default function StateSolutions() {
                     </div>
                 </section>
 
-                {/* OFFERINGS SECTION - Light Gray Background */}
+                {/* OFFERINGS SECTION */}
                 <section className="py-24 bg-gray-50 dark:bg-[#16161c]">
                     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                         
@@ -133,8 +190,8 @@ export default function StateSolutions() {
                     </div>
                 </section>
 
-                {/* VIDEO SHOWCASE SECTION - White Background - UPDATED WITH PLAY BUTTONS */}
-                <section className="py-24 bg-white dark:bg-slate-900">
+                {/* VIDEO SHOWCASE SECTION */}
+                <section className="py-24 bg-white dark:bg-slate-900 relative">
                     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="mb-16 text-center">
                             <h2 className="text-sm font-bold uppercase tracking-[0.25em] text-primary dark:text-slate-300 mb-3">
@@ -145,37 +202,44 @@ export default function StateSolutions() {
                             </h3>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {videoShowcase.map((vid, index) => (
-                                <div key={index} className="group bg-gray-50 dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-lg transition-all duration-300">
-                                    {/* Video Container - Added relative and overflow-hidden */}
-                                    <div className="relative w-full h-56 bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                                        <video 
-                                            autoPlay 
-                                            loop 
-                                            muted 
-                                            playsInline
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                        >
-                                            <source src={vid.videoUrl} type="video/mp4" />
-                                        </video>
+                                <div key={index} className="flex flex-col group bg-gray-50 dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-lg transition-all duration-300">
+                                    
+                                    <div 
+                                        className="relative w-full h-56 bg-slate-200 dark:bg-slate-700 overflow-hidden flex items-center justify-center cursor-pointer"
+                                        onClick={() => setActiveVideo(vid.videoId)}
+                                    >
+                                        {/* Added loading="lazy" and dnt=1 to dramatically speed up page performance */}
+                                        <iframe 
+                                            src={`https://player.vimeo.com/video/${vid.videoId}?background=1&autoplay=1&loop=1&byline=0&title=0&dnt=1`}
+                                            className="absolute w-[150%] h-[150%] pointer-events-none group-hover:scale-[1.05] transition-transform duration-700"
+                                            style={{ border: "none" }}
+                                            allow="autoplay; fullscreen; picture-in-picture"
+                                            loading="lazy" 
+                                        />
 
-                                        {/* Play Button Overlay */}
                                         <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors duration-300">
                                             <div className="w-16 h-16 rounded-full bg-white/30 border border-white/50 backdrop-blur-sm flex items-center justify-center text-white shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-white/50">
-                                                <Play className="w-8 h-8 fill-white ml-1" /> {/* ml-1 to visually center play arrow */}
+                                                <Play className="w-8 h-8 fill-white ml-1" />
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    {/* Text Content */}
-                                    <div className="p-8 relative">
+                                    <div className="p-8 flex flex-col flex-grow">
                                         <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors group-hover:text-primary">
                                             {vid.title}
                                         </h4>
-                                        <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                        <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6 flex-grow">
                                             {vid.description}
                                         </p>
+                                        
+                                        <Link 
+                                            href={vid.linkUrl}
+                                            className="mt-auto flex items-center text-sm font-bold text-primary dark:text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-colors"
+                                        >
+                                            {vid.linkText} <ArrowRight className="w-4 h-4 ml-1" />
+                                        </Link>
                                     </div>
                                 </div>
                             ))}
@@ -183,12 +247,46 @@ export default function StateSolutions() {
                     </div>
                 </section>
 
-                {/* HOMELESS KIOSK SECTION - Handled by its own component, visually sits here */}
+                {/* LIGHTNING FAST VIDEO LIGHTBOX MODAL */}
+                {activeVideo && (
+                    <div 
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 sm:p-8 backdrop-blur-md transition-opacity"
+                        onClick={() => setActiveVideo(null)}
+                    >
+                        <div 
+                            className="relative w-full max-w-6xl aspect-video bg-black rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10"
+                            onClick={(e) => e.stopPropagation()} 
+                        >
+                            {/* Close Button */}
+                            <button 
+                                onClick={() => setActiveVideo(null)}
+                                className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-primary text-white p-2.5 rounded-full transition-colors backdrop-blur-md"
+                            >
+                                <X className="w-6 h-6" />
+                            </button>
+
+                            {/* Loading Spinner - shows instantly while iframe connects */}
+                            <div className="absolute inset-0 flex items-center justify-center z-0">
+                                <div className="w-12 h-12 border-4 border-white/10 border-t-primary rounded-full animate-spin"></div>
+                            </div>
+                            
+                            {/* Added dnt=1 and transparent=0 to speed up connection time */}
+                            <iframe 
+                                src={`https://player.vimeo.com/video/${activeVideo}?autoplay=1&controls=1&title=0&byline=0&dnt=1&transparent=0`}
+                                className="absolute inset-0 w-full h-full z-10"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                style={{ border: "none", backgroundColor: "transparent" }}
+                            />
+                        </div>
+                    </div>
+                )}
+
+                {/* HOMELESS KIOSK SECTION */}
                 <div className="bg-gray-50 dark:bg-[#16161c]">
                     <HomelessKiosk />
                 </div>
 
-                {/* STATE FAQS SECTION - White Background */}
+                {/* STATE FAQS SECTION */}
                 <section className="py-24 bg-white dark:bg-slate-900">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="mb-16 text-center">

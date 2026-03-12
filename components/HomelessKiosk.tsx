@@ -128,7 +128,7 @@ export default function HomelessKiosk() {
                     </div>
                 </div>
 
-                <div className="mb-20">
+                {/* <div className="mb-20">
                     <h4 className="text-center text-2xl font-black mb-12 text-slate-900 dark:text-white uppercase tracking-wider">Kiosk FAQ</h4>
                     <div className="max-w-3xl mx-auto space-y-6">
                         {[
@@ -142,7 +142,7 @@ export default function HomelessKiosk() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> */}
 
                 <div className="text-center bg-slate-900 dark:bg-white rounded-3xl p-16">
                     <h4 className="text-3xl md:text-4xl font-black text-white dark:text-slate-900 mb-6 uppercase">Ready to Empower Your City or State?</h4>

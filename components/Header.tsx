@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Menu, X, Landmark, Shield, ChevronRight } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-// Reusable Mega Menu Link Component
 const MenuLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
     <Link 
         href={href} 
@@ -16,7 +16,6 @@ const MenuLink = ({ href, children, onClick }: { href: string; children: React.R
     </Link>
 );
 
-// Reusable Mega Menu Header Component
 const MenuHeader = ({ children, icon: Icon }: { children: React.ReactNode; icon?: React.ElementType }) => (
     <h4 className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-5 border-b border-gray-100 dark:border-white/10 pb-3">
         {Icon && <Icon className="w-5 h-5 text-primary dark:text-slate-300" />}
@@ -24,7 +23,6 @@ const MenuHeader = ({ children, icon: Icon }: { children: React.ReactNode; icon?
     </h4>
 );
 
-// Reusable Featured Image Card - Height locked for uniformity across all menus
 const FeaturedCard = ({ title, description, image, href }: { title: string, description: string, image: string, href: string }) => (
     <Link href={href} className="group relative block w-full h-full min-h-[320px] rounded-2xl overflow-hidden bg-slate-900 shadow-lg border border-gray-200 dark:border-white/10">
         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-40" style={{ backgroundImage: `url('${image}')` }} />
@@ -50,37 +48,37 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 bg-white dark:bg-[#16161c] border-b border-gray-100 dark:border-white/10 shadow-sm">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+                
+                <div className="flex justify-between items-center h-[60px] lg:h-[72px]">
                     
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 group z-50 shrink-0 mr-4">
-                        <div className="text-primary dark:text-slate-100 transition-transform group-hover:scale-105">
-                            <svg className="w-8 h-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor" />
-                            </svg>
+                    {/* REDUCED LOGO further (28px mobile, 32px desktop) AND REMOVED dark:invert */}
+                    <Link href="/" className="flex items-center z-50 shrink-0 mr-6">
+                        <div className="relative flex items-center">
+                            <Image 
+                                src="/logo.png" 
+                                alt="Delonti Logo" 
+                                width={160} 
+                                height={40} 
+                                className="h-7 lg:h-8 w-auto object-contain" 
+                                priority
+                            />
                         </div>
-                        <span className="text-2xl font-extrabold tracking-tight text-primary dark:text-white hidden sm:block">
-                            DELONTI
-                        </span>
                     </Link>
 
-                    {/* Main Nav (Desktop) */}
                     <nav className="hidden lg:flex items-center space-x-1 xl:space-x-4 h-full">
                         
-                        {/* HOME */}
                         <div className="h-full flex items-center px-2">
                             <Link href="/" className="text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors">
                                 Home
                             </Link>
                         </div>
 
-                        {/* ABOUT - FULL WIDTH */}
                         <div className="relative group h-full flex items-center px-2">
                             <Link href="/about" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 About <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
-                            <div className="fixed top-[80px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
-                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                            <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
+                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-12">
                                         <div className="col-span-3">
                                             <MenuHeader>Corporate</MenuHeader>
@@ -101,7 +99,7 @@ export default function Header() {
                                             <FeaturedCard 
                                                 title="Join the Delonti Team" 
                                                 description="Explore global career opportunities and help us build the future of secure infrastructure."
-                                                image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069" // Premium Corporate Office Image
+                                                image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069" 
                                                 href="/about/careers"
                                             />
                                         </div>
@@ -110,16 +108,13 @@ export default function Header() {
                             </div>
                         </div>
 
-                        {/* PUBLIC SECTOR - FULL WIDTH WITH CARD SEPARATION */}
                         <div className="relative group h-full flex items-center px-2">
                             <Link href="/government" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 Public Sector <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
-                            <div className="fixed top-[80px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
-                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                            <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
+                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-8">
-                                        
-                                        {/* State & Local Card */}
                                         <div className="col-span-4 bg-gray-50 dark:bg-slate-800/50 p-8 rounded-2xl border border-gray-100 dark:border-white/5">
                                             <MenuHeader icon={Landmark}>State & Local</MenuHeader>
                                             <div className="grid grid-cols-2 gap-x-4">
@@ -138,8 +133,6 @@ export default function Header() {
                                                 </div>
                                             </div>
                                         </div>
-
-                                        {/* Federal & Defense Card */}
                                         <div className="col-span-4 bg-gray-50 dark:bg-slate-800/50 p-8 rounded-2xl border border-gray-100 dark:border-white/5">
                                             <MenuHeader icon={Shield}>Federal & Defense</MenuHeader>
                                             <div className="grid grid-cols-2 gap-x-4">
@@ -157,31 +150,26 @@ export default function Header() {
                                                 </div>
                                             </div>
                                         </div>
-
-                                        {/* Featured Image */}
                                         <div className="col-span-4 h-full">
                                             <FeaturedCard 
                                                 title="Securing National Infrastructure" 
                                                 description="Discover how our advanced IoT ecosystems protect critical defense logistics and civic operations."
-                                                image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" // Premium Global/Tech Data Image
+                                                image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" 
                                                 href="/federal/use-cases"
                                             />
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* PRIVATE SECTOR - FULL WIDTH */}
                         <div className="relative group h-full flex items-center px-2">
                             <Link href="/private" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 Private Sector <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
-                            <div className="fixed top-[80px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
-                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                            <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
+                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-12">
-                                        
                                         <div className="col-span-7 grid grid-cols-2 gap-8 pr-8 border-r border-gray-100 dark:border-white/10">
                                             <div>
                                                 <MenuHeader>Core Capabilities</MenuHeader>
@@ -205,30 +193,26 @@ export default function Header() {
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div className="col-span-5 h-full">
                                             <FeaturedCard 
                                                 title="Transforming Global Supply Chains" 
                                                 description="Leverage sub-second RFID tracking and real-time analytics to scale operations efficiently."
-                                                image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070" // Premium Modern Warehouse/Logistics Image
+                                                image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070" 
                                                 href="/enterprise/digital-transformation"
                                             />
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* TECHNOLOGY SOLUTIONS - FULL WIDTH */}
                         <div className="relative group h-full flex items-center px-2">
                             <Link href="/technology" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 Technology <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
-                            <div className="fixed top-[80px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
-                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                            <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
+                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-4 gap-8">
-                                        
                                         <div className="flex flex-col gap-8">
                                             <div>
                                                 <MenuHeader>RFID Integration</MenuHeader>
@@ -244,7 +228,6 @@ export default function Header() {
                                                 <MenuLink href="/tech/iot/edge">Edge Computing</MenuLink>
                                             </div>
                                         </div>
-
                                         <div className="flex flex-col gap-8">
                                             <div>
                                                 <MenuHeader>Cybersecurity</MenuHeader>
@@ -260,7 +243,6 @@ export default function Header() {
                                                 <MenuLink href="/tech/data/ai">AI Automation</MenuLink>
                                             </div>
                                         </div>
-
                                         <div className="flex flex-col gap-8 pr-8 border-r border-gray-100 dark:border-white/10">
                                             <div>
                                                 <MenuHeader>Software Services</MenuHeader>
@@ -274,31 +256,26 @@ export default function Header() {
                                                 <MenuLink href="/tech/workforce/managed">Managed Support</MenuLink>
                                             </div>
                                         </div>
-
                                         <div className="h-full">
                                             <FeaturedCard 
                                                 title="Zero-Trust Architecture" 
                                                 description="Explore how edge computing and IoT frameworks unify legacy systems securely."
-                                                image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070" // Premium Server/Cyber Image
+                                                image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070" 
                                                 href="/technology"
                                             />
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* INSIGHTS & RESOURCES - CLEANED UP LAYOUT WITH 1 IMAGE */}
                         <div className="relative group h-full flex items-center px-2">
                             <Link href="/resources" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 Resources <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
-                            <div className="fixed top-[80px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
-                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                            <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
+                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-12">
-                                        
-                                        {/* Two clean columns for links */}
                                         <div className="col-span-7 grid grid-cols-2 gap-8 pr-8 border-r border-gray-100 dark:border-white/10">
                                             <div>
                                                 <MenuHeader>Research & Reports</MenuHeader>
@@ -306,7 +283,7 @@ export default function Header() {
                                                 <MenuLink href="/resources/whitepapers">Industry Whitepapers</MenuLink>
                                                 <MenuLink href="/resources/insights">Technology Insights</MenuLink>
                                                 <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
-                                                    <MenuLink href="/resources/whitepapers">Download 2026 Report →</MenuLink>
+                                                    <MenuLink href="/resources/whitepapers">Download 2026 Report</MenuLink>
                                                 </div>
                                             </div>
                                             <div>
@@ -316,23 +293,19 @@ export default function Header() {
                                                 <MenuLink href="/resources/grants">Government Grant Info</MenuLink>
                                             </div>
                                         </div>
-
-                                        {/* Single, large featured image */}
                                         <div className="col-span-5 h-full">
                                             <FeaturedCard 
                                                 title="2026 Industry Technology Report" 
                                                 description="Download our latest whitepaper on optimizing asset tracking systems across multi-state regions and global supply chains."
-                                                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015" // Premium Analytics/Data Image
+                                                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015" 
                                                 href="/resources/whitepapers"
                                             />
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* CAREERS - ADDED NEXT TO RESOURCES */}
                         <div className="h-full flex items-center px-2">
                             <Link href="/about/careers" className="text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors">
                                 Careers
@@ -341,7 +314,6 @@ export default function Header() {
 
                     </nav>
 
-                    {/* Actions */}
                     <div className="hidden lg:flex items-center gap-4 shrink-0 z-50">
                         <ThemeToggle />
                         <Link href="/contact" className="bg-primary text-white px-5 xl:px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide hover:bg-primary/90 transition-all shadow-md hover:-translate-y-0.5">
@@ -349,7 +321,6 @@ export default function Header() {
                         </Link>
                     </div>
 
-                    {/* Mobile Menu Toggle Button */}
                     <div className="lg:hidden flex items-center gap-4 z-50">
                         <ThemeToggle />
                         <button suppressHydrationWarning onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">
@@ -359,15 +330,13 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* Mobile Navigation Overlay */}
-            <div className={`lg:hidden fixed inset-0 top-20 bg-white dark:bg-[#16161c] z-40 overflow-y-auto transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`lg:hidden fixed inset-0 top-[60px] bg-white dark:bg-[#16161c] z-40 overflow-y-auto transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="px-6 py-8 flex flex-col gap-6">
                     
                     <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="font-semibold text-lg text-slate-900 dark:text-white border-b border-gray-100 dark:border-white/10 pb-4">
                         Home
                     </Link>
 
-                    {/* Mobile Nav Accordion Items */}
                     {[
                         { 
                             title: "About", url: "/about",

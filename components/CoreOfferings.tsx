@@ -9,25 +9,29 @@ export default function CoreOfferings() {
             title: "RFID Integration",
             description: "Asset tracking and inventory lifecycle management with sub-second accuracy.",
             icon: <Nfc className="w-8 h-8" />,
-            href: "/tech/rfid/asset"
+            href: "/tech/rfid/asset",
+            buttonText: "Explore RFID"
         },
         {
             title: "Internet of Things",
             description: "Connected ecosystems, sensor networks, and real-time data architecture.",
             icon: <Cpu className="w-8 h-8" />,
-            href: "/tech/iot/smart-infra"
+            href: "/tech/iot/smart-infra",
+            buttonText: "Explore IoT"
         },
         {
             title: "Cybersecurity",
             description: "Advanced zero-trust threat protection, risk management, and NIST compliance.",
             icon: <ShieldAlert className="w-8 h-8" />,
-            href: "/tech/cyber/zero-trust"
+            href: "/tech/cyber/zero-trust",
+            buttonText: "Explore Cybersecurity"
         },
         {
             title: "Resource Augmentation",
             description: "Specialized technical staffing and managed support for mission-critical roles.",
             icon: <Users className="w-8 h-8" />,
-            href: "/tech/workforce/technical"
+            href: "/tech/workforce/technical",
+            buttonText: "Explore Staffing"
         }
     ];
 
@@ -70,7 +74,8 @@ export default function CoreOfferings() {
                                 href={offering.href}
                                 className="mt-auto flex items-center justify-center w-full py-3.5 px-4 rounded-xl bg-gray-50 dark:bg-slate-800 text-sm font-bold text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-white transition-all duration-300 border border-transparent group-hover:border-primary"
                             >
-                                Explore {offering.title.split(' ')[0]} 
+                                {/* Now using the exact string defined in the array above */}
+                                {offering.buttonText}
                                 <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
                             </Link>
                         </div>

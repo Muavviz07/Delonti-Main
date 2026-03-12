@@ -104,7 +104,7 @@ export default function Hero() {
                 {slide.title}
               </h1>
               
-              {/* NEW TAGS SECTION (Styled to match your reference image) */}
+              {/* TAGS SECTION */}
               <div className="text-sm md:text-lg lg:text-xl font-medium tracking-wide text-slate-300 mb-6 drop-shadow-sm">
                 {slide.tags}
               </div>
@@ -120,12 +120,15 @@ export default function Hero() {
 
       {/* STATIC BUTTONS */}
       <div className="absolute bottom-20 md:bottom-24 left-0 w-full flex flex-wrap justify-center gap-4 md:gap-6 px-4 z-10">
+        
+        {/* CHANGED TO font-medium to match the second button */}
         <Link 
           href="/government" 
-          className="group bg-primary/90 hover:bg-primary/80 text-white px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center tracking-wide border border-white/10"
+          className="group bg-white hover:bg-slate-100 text-slate-900 px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 flex items-center justify-center tracking-wide"
         >
-          Explore Public Sector <ChevronRight className="text-white w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
+          Explore Public Sector <ChevronRight className="text-slate-900 w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
         </Link>
+        
         <Link 
           href="/private" 
           className="group bg-federal-green hover:bg-federal-green/90 text-white px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center tracking-wide border border-white/10"

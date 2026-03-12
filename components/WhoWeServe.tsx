@@ -6,7 +6,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 const SECTORS = {
   government: {
-    title: "Government Sector",
+    title: "Public Sector",
     description: "Secure, compliant infrastructure for public safety and national defense.",
     image: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?q=80&w=2070&auto=format&fit=crop",
     subSectors: [

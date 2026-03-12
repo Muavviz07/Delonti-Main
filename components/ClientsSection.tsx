@@ -53,7 +53,7 @@ export default function ClientsSection({ title }: { title?: string }) {
       <div className="max-w-[1400px] mx-auto">
         {/* Replaced hardcoded #1F2A44 with theme-aware text colors */}
         <h2 className="text-2xl md:text-3xl font-normal text-center text-slate-900 dark:text-white mb-12 tracking-[0.25em]">
-          {title || "SOME OF OUR VALUABLE CLIENTS AND PARTNERS"}
+          {title || "SOME OF OUR VALUABLE CLIENTS & PARTNERS"}
         </h2>
 
         {/* mask-horizontal adds the fade-out effect */}
