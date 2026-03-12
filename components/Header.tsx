@@ -51,7 +51,6 @@ export default function Header() {
                 
                 <div className="flex justify-between items-center h-[60px] lg:h-[72px]">
                     
-                    {/* REDUCED LOGO further (28px mobile, 32px desktop) AND REMOVED dark:invert */}
                     <Link href="/" className="flex items-center z-50 shrink-0 mr-6">
                         <div className="relative flex items-center">
                             <Image 
@@ -121,15 +120,19 @@ export default function Header() {
                                                 <div>
                                                     <MenuLink href="/state">State Overview</MenuLink>
                                                     <MenuLink href="/state/programs">Programs & Initiatives</MenuLink>
-                                                    <MenuLink href="/state/public-safety">Public Safety</MenuLink>
-                                                    <MenuLink href="/state/transportation">Transportation</MenuLink>
-                                                    <MenuLink href="/state/hhs">HHS Solutions</MenuLink>
+                                                    <MenuLink href="/state/public-safety">Public Safety Solutions</MenuLink>
+                                                    <MenuLink href="/state/transportation">Transportation & Mobility</MenuLink>
+                                                    <MenuLink href="/state/hhs">Health & Human Services</MenuLink>
+                                                    <MenuLink href="/state/education">Education & Campus Solutions</MenuLink>
                                                 </div>
                                                 <div>
-                                                    <MenuLink href="/state/education">Campus Tech</MenuLink>
-                                                    <MenuLink href="/state/smart-city">Smart City Infra</MenuLink>
-                                                    <MenuLink href="/state/social-impact">Social Impact</MenuLink>
-                                                    <MenuLink href="/state/cybersecurity">Cyber Compliance</MenuLink>
+                                                    <MenuLink href="/state/smart-city">Smart City & Infrastructure</MenuLink>
+                                                    <MenuLink href="/state/social-impact">Homeless & Social Impact</MenuLink>
+                                                    <MenuLink href="/state/data">Data, Analytics & Reporting</MenuLink>
+                                                    <MenuLink href="/state/cybersecurity">Cybersecurity & Compliance</MenuLink>
+                                                    <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
+                                                        <MenuLink href="/state/use-cases">State Use Cases →</MenuLink>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -138,15 +141,18 @@ export default function Header() {
                                             <div className="grid grid-cols-2 gap-x-4">
                                                 <div>
                                                     <MenuLink href="/federal">Federal Overview</MenuLink>
-                                                    <MenuLink href="/federal/rfid">Defense Logistics</MenuLink>
-                                                    <MenuLink href="/federal/acquisition">Acquisition</MenuLink>
-                                                    <MenuLink href="/federal/workforce">Staffing Solutions</MenuLink>
+                                                    <MenuLink href="/federal/rfid">Secure RFID & Logistics</MenuLink>
+                                                    <MenuLink href="/federal/cybersecurity">Cybersecurity & Zero Trust</MenuLink>
+                                                    <MenuLink href="/federal/cloud">Cloud & IT Modernization</MenuLink>
+                                                    <MenuLink href="/federal/data">Data, AI & Automation</MenuLink>
                                                 </div>
                                                 <div>
-                                                    <MenuLink href="/federal/ato">ATO & Risk</MenuLink>
-                                                    <MenuLink href="/federal/cybersecurity">Zero Trust Cyber</MenuLink>
-                                                    <MenuLink href="/federal/cloud">Cloud Migration</MenuLink>
-                                                    <MenuLink href="/federal/data">AI & Automation</MenuLink>
+                                                    <MenuLink href="/federal/ato">ATO, Risk & Compliance</MenuLink>
+                                                    <MenuLink href="/federal/acquisition">Acquisition & Contracting</MenuLink>
+                                                    <MenuLink href="/federal/workforce">Workforce & Staffing</MenuLink>
+                                                    <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
+                                                        <MenuLink href="/federal/use-cases">Federal Use Cases →</MenuLink>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -174,17 +180,17 @@ export default function Header() {
                                             <div>
                                                 <MenuHeader>Core Capabilities</MenuHeader>
                                                 <MenuLink href="/enterprise">Enterprise Overview</MenuLink>
-                                                <MenuLink href="/enterprise/digital-transformation">Digital Transformation</MenuLink>
+                                                <MenuLink href="/enterprise/digital-transformation">Digital Trans. & Automation</MenuLink>
                                                 <MenuLink href="/enterprise/supply-chain">Supply Chain Visibility</MenuLink>
-                                                <MenuLink href="/enterprise/cybersecurity">Cyber & Risk Management</MenuLink>
+                                                <MenuLink href="/enterprise/cybersecurity">Cybersecurity & Risk Mgmt</MenuLink>
                                                 <MenuLink href="/enterprise/cloud">Cloud & DevOps</MenuLink>
-                                                <MenuLink href="/enterprise/managed-services">Managed IT Services</MenuLink>
-                                                <MenuLink href="/enterprise/workforce">Enterprise Staffing</MenuLink>
+                                                <MenuLink href="/enterprise/managed-services">Managed Services</MenuLink>
+                                                <MenuLink href="/enterprise/workforce">Workforce & Staffing Solutions</MenuLink>
                                             </div>
                                             <div>
-                                                <MenuHeader>Key Industries</MenuHeader>
+                                                <MenuHeader>Industries</MenuHeader>
                                                 <MenuLink href="/industries/logistics">Logistics & Transportation</MenuLink>
-                                                <MenuLink href="/industries/manufacturing">Smart Manufacturing</MenuLink>
+                                                <MenuLink href="/industries/manufacturing">Manufacturing</MenuLink>
                                                 <MenuLink href="/industries/retail">Retail & Warehousing</MenuLink>
                                                 <MenuLink href="/industries/energy">Energy & Utilities</MenuLink>
                                                 <MenuLink href="/industries/tech">Technology & SaaS</MenuLink>
@@ -208,7 +214,7 @@ export default function Header() {
 
                         <div className="relative group h-full flex items-center px-2">
                             <Link href="/technology" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                Technology <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
+                                Technology Solutions <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -218,14 +224,15 @@ export default function Header() {
                                                 <MenuHeader>RFID Integration</MenuHeader>
                                                 <MenuLink href="/tech/rfid/asset">Asset Tracking</MenuLink>
                                                 <MenuLink href="/tech/rfid/personnel">Personnel Tracking</MenuLink>
-                                                <MenuLink href="/tech/rfid/fleet">Fleet Management</MenuLink>
+                                                <MenuLink href="/tech/rfid/fleet">Fleet & Vehicle Tracking</MenuLink>
                                                 <MenuLink href="/tech/rfid/secure">Secure RFID Systems</MenuLink>
                                             </div>
                                             <div>
                                                 <MenuHeader>Internet of Things (IoT)</MenuHeader>
                                                 <MenuLink href="/tech/iot/smart-infra">Smart Infrastructure</MenuLink>
-                                                <MenuLink href="/tech/iot/sensors">Industrial Sensors</MenuLink>
-                                                <MenuLink href="/tech/iot/edge">Edge Computing</MenuLink>
+                                                <MenuLink href="/tech/iot/sensors">Sensors & Devices</MenuLink>
+                                                <MenuLink href="/tech/iot/edge">Edge & Cloud Integration</MenuLink>
+                                                <MenuLink href="/tech/iot/real-time">Real-Time Monitoring</MenuLink>
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-8">
@@ -234,25 +241,29 @@ export default function Header() {
                                                 <MenuLink href="/tech/cyber/assessments">Security Assessments</MenuLink>
                                                 <MenuLink href="/tech/cyber/zero-trust">Zero Trust Architecture</MenuLink>
                                                 <MenuLink href="/tech/cyber/compliance">Compliance & Governance</MenuLink>
+                                                <MenuLink href="/tech/cyber/risk">Risk Management</MenuLink>
                                                 <MenuLink href="/tech/cyber/response">Incident Response</MenuLink>
                                             </div>
                                             <div>
-                                                <MenuHeader>Data & AI</MenuHeader>
+                                                <MenuHeader>Data, AI & Analytics</MenuHeader>
                                                 <MenuLink href="/tech/data/integration">Data Integration</MenuLink>
-                                                <MenuLink href="/tech/data/dashboards">Analytics Dashboards</MenuLink>
+                                                <MenuLink href="/tech/data/dashboards">Dashboards & Reporting</MenuLink>
                                                 <MenuLink href="/tech/data/ai">AI Automation</MenuLink>
+                                                <MenuLink href="/tech/data/predictive">Predictive Insights</MenuLink>
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-8 pr-8 border-r border-gray-100 dark:border-white/10">
                                             <div>
-                                                <MenuHeader>Software Services</MenuHeader>
-                                                <MenuLink href="/tech/software/custom">Custom Software Dev</MenuLink>
-                                                <MenuLink href="/tech/software/cloud">Cloud Architecture</MenuLink>
+                                                <MenuHeader>Software & IT Services</MenuHeader>
+                                                <MenuLink href="/tech/software/custom">Custom Software Development</MenuLink>
+                                                <MenuLink href="/tech/software/cloud">Cloud & DevOps</MenuLink>
                                                 <MenuLink href="/tech/software/integration">System Integration</MenuLink>
+                                                <MenuLink href="/tech/software/modernization">IT Modernization</MenuLink>
                                             </div>
                                             <div>
-                                                <MenuHeader>Workforce Solutions</MenuHeader>
+                                                <MenuHeader>Workforce & Staffing</MenuHeader>
                                                 <MenuLink href="/tech/workforce/technical">Technical Staffing</MenuLink>
+                                                <MenuLink href="/tech/workforce/projects">Project-Based Teams</MenuLink>
                                                 <MenuLink href="/tech/workforce/managed">Managed Support</MenuLink>
                                             </div>
                                         </div>
@@ -261,7 +272,7 @@ export default function Header() {
                                                 title="Zero-Trust Architecture" 
                                                 description="Explore how edge computing and IoT frameworks unify legacy systems securely."
                                                 image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070" 
-                                                href="/technology"
+                                                href="/tech/cyber/zero-trust"
                                             />
                                         </div>
                                     </div>
@@ -271,7 +282,7 @@ export default function Header() {
 
                         <div className="relative group h-full flex items-center px-2">
                             <Link href="/resources" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                Resources <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
+                                Insights & Resources <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -279,18 +290,15 @@ export default function Header() {
                                         <div className="col-span-7 grid grid-cols-2 gap-8 pr-8 border-r border-gray-100 dark:border-white/10">
                                             <div>
                                                 <MenuHeader>Research & Reports</MenuHeader>
-                                                <MenuLink href="/resources/case-studies">Client Case Studies</MenuLink>
-                                                <MenuLink href="/resources/whitepapers">Industry Whitepapers</MenuLink>
+                                                <MenuLink href="/resources/case-studies">Case Studies</MenuLink>
+                                                <MenuLink href="/resources/whitepapers">Whitepapers</MenuLink>
                                                 <MenuLink href="/resources/insights">Technology Insights</MenuLink>
-                                                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
-                                                    <MenuLink href="/resources/whitepapers">Download 2026 Report</MenuLink>
-                                                </div>
                                             </div>
                                             <div>
                                                 <MenuHeader>News & Updates</MenuHeader>
-                                                <MenuLink href="/resources/blogs">Engineering Blog</MenuLink>
-                                                <MenuLink href="/resources/news">Corporate Announcements</MenuLink>
-                                                <MenuLink href="/resources/grants">Government Grant Info</MenuLink>
+                                                <MenuLink href="/resources/blogs">Blogs & Articles</MenuLink>
+                                                <MenuLink href="/resources/news">News & Announcements</MenuLink>
+                                                <MenuLink href="/resources/grants">Government Programs & Grants</MenuLink>
                                             </div>
                                         </div>
                                         <div className="col-span-5 h-full">
@@ -304,12 +312,6 @@ export default function Header() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="h-full flex items-center px-2">
-                            <Link href="/about/careers" className="text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors">
-                                Careers
-                            </Link>
                         </div>
 
                     </nav>
@@ -343,23 +345,37 @@ export default function Header() {
                             links: [{name: "Company Overview", url: "/about/overview"}, {name: "Partners & Alliances", url: "/about/partners"}, {name: "Careers", url: "/about/careers"}, {name: "Talk to an Expert", url: "/contact"}] 
                         },
                         { 
-                            title: "Public Sector", url: "/government",
+                            title: "State & Local Government", url: "/state",
                             links: [
-                                {name: "State Overview", url: "/state"}, {name: "Programs & Initiatives", url: "/state/programs"}, {name: "Public Safety Solutions", url: "/state/public-safety"}, {name: "Transportation & Mobility", url: "/state/transportation"}, {name: "Health & Human Services", url: "/state/hhs"}, {name: "Education & Campus", url: "/state/education"}, {name: "Smart City & Infrastructure", url: "/state/smart-city"}, {name: "Homeless & Social Impact", url: "/state/social-impact"}, {name: "Data, Analytics & Reporting", url: "/state/data"}, {name: "Cybersecurity & Compliance", url: "/state/cybersecurity"}, {name: "State Use Cases", url: "/solutions"},
-                                {name: "Federal Overview", url: "/federal"}, {name: "Secure RFID & Logistics", url: "/federal/rfid"}, {name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity"}, {name: "Cloud & IT Modernization", url: "/federal/cloud"}, {name: "Data, AI & Automation", url: "/federal/data"}, {name: "ATO, Risk & Compliance", url: "/federal/ato"}, {name: "Acquisition & Contracting", url: "/federal/acquisition"}, {name: "Workforce & Staffing", url: "/federal/workforce"}, {name: "Federal Use Cases", url: "/federal/use-cases"}
+                                {name: "State Overview", url: "/state"}, {name: "Programs & Initiatives", url: "/state/programs"}, {name: "Public Safety Solutions", url: "/state/public-safety"}, {name: "Transportation & Mobility", url: "/state/transportation"}, {name: "Health & Human Services (HHS)", url: "/state/hhs"}, {name: "Education & Campus Solutions", url: "/state/education"}, {name: "Smart City & Infrastructure", url: "/state/smart-city"}, {name: "Homeless & Social Impact Solutions", url: "/state/social-impact"}, {name: "Data, Analytics & Reporting", url: "/state/data"}, {name: "Cybersecurity & Compliance", url: "/state/cybersecurity"}, {name: "State Use Cases", url: "/state/use-cases"}
                             ] 
                         },
                         { 
-                            title: "Private Sector", url: "/private",
-                            links: [{name: "Enterprise Overview", url: "/enterprise"}, {name: "Logistics & Transportation", url: "/industries/logistics"}, {name: "Manufacturing", url: "/industries/manufacturing"}, {name: "Retail & Warehousing", url: "/industries/retail"}, {name: "Energy & Utilities", url: "/industries/energy"}, {name: "Technology & SaaS", url: "/industries/tech"}, {name: "Digital Transformation", url: "/enterprise/digital-transformation"}, {name: "Supply Chain Visibility", url: "/enterprise/supply-chain"}, {name: "Cybersecurity & Risk", url: "/enterprise/cybersecurity"}, {name: "Cloud & DevOps", url: "/enterprise/cloud"}, {name: "Managed Services", url: "/enterprise/managed-services"}, {name: "Workforce & Staffing", url: "/enterprise/workforce"}, {name: "Case Studies", url: "/enterprise/case-studies"}] 
+                            title: "Federal & Defense", url: "/federal",
+                            links: [
+                                {name: "Federal Overview", url: "/federal"}, {name: "Secure RFID & Logistics", url: "/federal/rfid"}, {name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity"}, {name: "Cloud & IT Modernization", url: "/federal/cloud"}, {name: "Data, AI & Automation", url: "/federal/data"}, {name: "ATO, Risk & Compliance", url: "/federal/ato"}, {name: "Acquisition & Contracting", url: "/federal/acquisition"}, {name: "Workforce & Staffing Solutions", url: "/federal/workforce"}, {name: "Federal Use Cases", url: "/federal/use-cases"}
+                            ] 
+                        },
+                        { 
+                            title: "Private Sector", url: "/enterprise",
+                            links: [
+                                {name: "Enterprise Overview", url: "/enterprise"}, {name: "Logistics & Transportation", url: "/industries/logistics"}, {name: "Manufacturing", url: "/industries/manufacturing"}, {name: "Retail & Warehousing", url: "/industries/retail"}, {name: "Energy & Utilities", url: "/industries/energy"}, {name: "Technology & SaaS", url: "/industries/tech"}, {name: "Digital Transformation & Automation", url: "/enterprise/digital-transformation"}, {name: "Supply Chain Visibility", url: "/enterprise/supply-chain"}, {name: "Cybersecurity & Risk Management", url: "/enterprise/cybersecurity"}, {name: "Cloud & DevOps", url: "/enterprise/cloud"}, {name: "Managed Services", url: "/enterprise/managed-services"}, {name: "Workforce & Staffing Solutions", url: "/enterprise/workforce"}, {name: "Case Studies", url: "/enterprise/case-studies"}
+                            ] 
                         },
                         { 
                             title: "Technology Solutions", url: "/technology",
-                            links: [{name: "RFID Integration", url: "/tech/rfid/asset"}, {name: "Internet of Things (IoT)", url: "/tech/iot/smart-infra"}, {name: "Cybersecurity", url: "/tech/cyber/zero-trust"}, {name: "Data, AI & Analytics", url: "/tech/data/integration"}, {name: "Software & IT Services", url: "/tech/software/custom"}, {name: "Workforce & Staffing", url: "/tech/workforce/technical"}] 
+                            links: [
+                                {name: "RFID Integration", url: "/tech/rfid/asset"}, {name: "Asset Tracking", url: "/tech/rfid/asset"}, {name: "Personnel Tracking", url: "/tech/rfid/personnel"}, {name: "Fleet & Vehicle Tracking", url: "/tech/rfid/fleet"}, {name: "Secure RFID Systems", url: "/tech/rfid/secure"},
+                                {name: "Internet of Things (IoT)", url: "/tech/iot/smart-infra"}, {name: "Smart Infrastructure", url: "/tech/iot/smart-infra"}, {name: "Sensors & Devices", url: "/tech/iot/sensors"}, {name: "Edge & Cloud Integration", url: "/tech/iot/edge"}, {name: "Real-Time Monitoring", url: "/tech/iot/real-time"},
+                                {name: "Cybersecurity", url: "/tech/cyber/zero-trust"}, {name: "Security Assessments", url: "/tech/cyber/assessments"}, {name: "Zero Trust Architecture", url: "/tech/cyber/zero-trust"}, {name: "Compliance & Governance", url: "/tech/cyber/compliance"}, {name: "Risk Management", url: "/tech/cyber/risk"}, {name: "Incident Response", url: "/tech/cyber/response"},
+                                {name: "Data, AI & Analytics", url: "/tech/data/integration"}, {name: "Data Integration", url: "/tech/data/integration"}, {name: "Dashboards & Reporting", url: "/tech/data/dashboards"}, {name: "AI Automation", url: "/tech/data/ai"}, {name: "Predictive Insights", url: "/tech/data/predictive"},
+                                {name: "Software & IT Services", url: "/tech/software/custom"}, {name: "Custom Software Development", url: "/tech/software/custom"}, {name: "Cloud & DevOps", url: "/tech/software/cloud"}, {name: "System Integration", url: "/tech/software/integration"}, {name: "IT Modernization", url: "/tech/software/modernization"},
+                                {name: "Workforce & Staffing Solutions", url: "/tech/workforce/technical"}, {name: "Technical Staffing", url: "/tech/workforce/technical"}, {name: "Project-Based Teams", url: "/tech/workforce/projects"}, {name: "Managed Support", url: "/tech/workforce/managed"}
+                            ] 
                         },
                         { 
                             title: "Insights & Resources", url: "/resources",
-                            links: [{name: "Case Studies", url: "/resources/case-studies"}, {name: "Whitepapers", url: "/resources/whitepapers"}, {name: "Government Programs", url: "/resources/grants"}, {name: "Technology Insights", url: "/resources/insights"}, {name: "Blogs & Articles", url: "/resources/blogs"}, {name: "News & Announcements", url: "/resources/news"}] 
+                            links: [{name: "Case Studies", url: "/resources/case-studies"}, {name: "Whitepapers", url: "/resources/whitepapers"}, {name: "Government Programs & Grants", url: "/resources/grants"}, {name: "Technology Insights", url: "/resources/insights"}, {name: "Blogs & Articles", url: "/resources/blogs"}, {name: "News & Announcements", url: "/resources/news"}] 
                         },
                     ].map((section) => (
                         <div key={section.title} className="border-b border-gray-100 dark:border-white/10 pb-4">

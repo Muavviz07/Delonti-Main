@@ -5,20 +5,21 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        // Added dark:bg-black and a subtle top border to clearly separate it from the main dark mode background
         <footer className="bg-primary text-white py-16 dark:bg-black dark:border-t dark:border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     <div>
-                        {/* Reduced logo size: h-8 on mobile, h-10 on desktop */}
+                        {/* WRAPPED LOGO IN LINK TO HOME & REDUCED SIZE */}
                         <div className="flex items-center gap-2 mb-6">
-                            <Image
-                                src="/logo.png" 
-                                alt="Delonti Logo"
-                                width={160} 
-                                height={40}
-                                className="h-8 lg:h-10 w-auto object-contain" 
-                            />
+                            <Link href="/">
+                                <Image
+                                    src="/logo.png" 
+                                    alt="Delonti Logo"
+                                    width={140} 
+                                    height={35}
+                                    className="h-6 lg:h-8 w-auto object-contain hover:opacity-80 transition-opacity" 
+                                />
+                            </Link>
                         </div>
                         <p className="text-slate-300 text-sm leading-relaxed max-w-xs dark:text-slate-200">
                             Delivering innovative RFID, IoT, and Cybersecurity solutions for
@@ -40,7 +41,7 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/private" className="hover:text-white transition-colors">
+                                <Link href="/enterprise" className="hover:text-white transition-colors">
                                     Private Sector
                                 </Link>
                             </li>
