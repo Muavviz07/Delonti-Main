@@ -7,10 +7,10 @@ import HomelessKiosk from "@/components/HomelessKiosk";
 import { Nfc, Cpu, ShieldAlert, Code, ArrowRight, Play, X } from "lucide-react";
 import Link from "next/link";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from "@/components/ui/accordion";
 
 export default function StateSolutions() {
@@ -152,7 +152,7 @@ export default function StateSolutions() {
                 {/* OFFERINGS SECTION */}
                 <section className="py-24 bg-gray-50 dark:bg-[#16161c]">
                     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                        
+
                         <div className="mb-16 text-center">
                             <h2 className="text-sm font-bold uppercase tracking-[0.25em] text-primary dark:text-slate-300 mb-3">
                                 Core Competencies
@@ -164,8 +164,8 @@ export default function StateSolutions() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                             {offerings.map((offering, index) => (
-                                <div 
-                                    key={index} 
+                                <div
+                                    key={index}
                                     className="group flex flex-col items-center text-center p-8 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full"
                                 >
                                     <div className="flex items-center justify-center w-20 h-20 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-slate-800/50 text-primary dark:text-slate-300 mb-6 group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
@@ -177,11 +177,11 @@ export default function StateSolutions() {
                                     <p className="text-sm text-slate-500 dark:text-slate-400 max-w-[240px] mb-8 flex-grow leading-relaxed">
                                         {offering.description}
                                     </p>
-                                    <Link 
+                                    <Link
                                         href={offering.href}
                                         className="mt-auto flex items-center justify-center w-full py-3.5 px-4 rounded-xl bg-gray-50 dark:bg-slate-800 text-sm font-bold text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-white transition-all duration-300 border border-transparent group-hover:border-primary"
                                     >
-                                        Explore {offering.title.split(' ')[0]} 
+                                        Explore {offering.title.split(' ')[0]}
                                         <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
                                     </Link>
                                 </div>
@@ -205,18 +205,18 @@ export default function StateSolutions() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {videoShowcase.map((vid, index) => (
                                 <div key={index} className="flex flex-col group bg-gray-50 dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-lg transition-all duration-300">
-                                    
-                                    <div 
+
+                                    <div
                                         className="relative w-full h-56 bg-slate-200 dark:bg-slate-700 overflow-hidden flex items-center justify-center cursor-pointer"
                                         onClick={() => setActiveVideo(vid.videoId)}
                                     >
                                         {/* Added loading="lazy" and dnt=1 to dramatically speed up page performance */}
-                                        <iframe 
+                                        <iframe
                                             src={`https://player.vimeo.com/video/${vid.videoId}?background=1&autoplay=1&loop=1&byline=0&title=0&dnt=1`}
                                             className="absolute w-[150%] h-[150%] pointer-events-none group-hover:scale-[1.05] transition-transform duration-700"
                                             style={{ border: "none" }}
                                             allow="autoplay; fullscreen; picture-in-picture"
-                                            loading="lazy" 
+                                            loading="lazy"
                                         />
 
                                         <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors duration-300">
@@ -225,7 +225,7 @@ export default function StateSolutions() {
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="p-8 flex flex-col flex-grow">
                                         <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors group-hover:text-primary">
                                             {vid.title}
@@ -233,8 +233,8 @@ export default function StateSolutions() {
                                         <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6 flex-grow">
                                             {vid.description}
                                         </p>
-                                        
-                                        <Link 
+
+                                        <Link
                                             href={vid.linkUrl}
                                             className="mt-auto flex items-center text-sm font-bold text-primary dark:text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-colors"
                                         >
@@ -249,16 +249,16 @@ export default function StateSolutions() {
 
                 {/* LIGHTNING FAST VIDEO LIGHTBOX MODAL */}
                 {activeVideo && (
-                    <div 
+                    <div
                         className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 sm:p-8 backdrop-blur-md transition-opacity"
                         onClick={() => setActiveVideo(null)}
                     >
-                        <div 
+                        <div
                             className="relative w-full max-w-6xl aspect-video bg-black rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10"
-                            onClick={(e) => e.stopPropagation()} 
+                            onClick={(e) => e.stopPropagation()}
                         >
                             {/* Close Button */}
-                            <button 
+                            <button
                                 onClick={() => setActiveVideo(null)}
                                 className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-primary text-white p-2.5 rounded-full transition-colors backdrop-blur-md"
                             >
@@ -269,9 +269,9 @@ export default function StateSolutions() {
                             <div className="absolute inset-0 flex items-center justify-center z-0">
                                 <div className="w-12 h-12 border-4 border-white/10 border-t-primary rounded-full animate-spin"></div>
                             </div>
-                            
+
                             {/* Added dnt=1 and transparent=0 to speed up connection time */}
-                            <iframe 
+                            <iframe
                                 src={`https://player.vimeo.com/video/${activeVideo}?autoplay=1&controls=1&title=0&byline=0&dnt=1&transparent=0`}
                                 className="absolute inset-0 w-full h-full z-10"
                                 allow="autoplay; fullscreen; picture-in-picture"
@@ -300,8 +300,8 @@ export default function StateSolutions() {
 
                         <Accordion type="single" collapsible className="w-full space-y-4">
                             {stateFaqs.map((faq, index) => (
-                                <AccordionItem 
-                                    key={index} 
+                                <AccordionItem
+                                    key={index}
                                     value={`item-${index}`}
                                     className="bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-white/10 rounded-xl px-6"
                                 >

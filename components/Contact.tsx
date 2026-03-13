@@ -25,7 +25,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Phone</p>
-                                    <p className="font-medium text-slate-900 dark:text-white tracking-wide">[Your Phone Number]</p>
+                                    <p className="font-medium text-slate-900 dark:text-white tracking-wide">Contact Data 1</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-5 group">
@@ -35,7 +35,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Email</p>
-                                    <p className="font-medium text-slate-900 dark:text-white tracking-wide">[Your Email Address]</p>
+                                    <p className="font-medium text-slate-900 dark:text-white tracking-wide">Contact Data 2</p>
                                 </div>
                             </div>
                         </div>

@@ -7,8 +7,8 @@ import { ChevronDown, Menu, X, Landmark, Shield, ChevronRight } from "lucide-rea
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const MenuLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
-    <Link 
-        href={href} 
+    <Link
+        href={href}
         onClick={onClick}
         className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-2"
     >
@@ -48,24 +48,24 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 bg-white dark:bg-[#16161c] border-b border-gray-100 dark:border-white/10 shadow-sm">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div className="flex justify-between items-center h-[60px] lg:h-[72px]">
-                    
+
                     <Link href="/" className="flex items-center z-50 shrink-0 mr-6">
                         <div className="relative flex items-center">
-                            <Image 
-                                src="/logo.png" 
-                                alt="Delonti Logo" 
-                                width={160} 
-                                height={40} 
-                                className="h-7 lg:h-8 w-auto object-contain" 
+                            <Image
+                                src="/logo.png"
+                                alt="Delonti Logo"
+                                width={160}
+                                height={40}
+                                className="h-7 lg:h-8 w-auto object-contain"
                                 priority
                             />
                         </div>
                     </Link>
 
                     <nav className="hidden lg:flex items-center space-x-1 xl:space-x-4 h-full">
-                        
+
                         <div className="h-full flex items-center px-2">
                             <Link href="/" className="text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors">
                                 Home
@@ -95,10 +95,10 @@ export default function Header() {
                                             </p>
                                         </div>
                                         <div className="col-span-5 h-full">
-                                            <FeaturedCard 
-                                                title="Join the Delonti Team" 
+                                            <FeaturedCard
+                                                title="Join the Delonti Team"
                                                 description="Explore global career opportunities and help us build the future of secure infrastructure."
-                                                image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069" 
+                                                image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069"
                                                 href="/about/careers"
                                             />
                                         </div>
@@ -108,7 +108,7 @@ export default function Header() {
                         </div>
 
                         <div className="relative group h-full flex items-center px-2">
-                            <Link href="/government" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
+                            <Link href="/public-sector" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 Public Sector <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
@@ -157,10 +157,10 @@ export default function Header() {
                                             </div>
                                         </div>
                                         <div className="col-span-4 h-full">
-                                            <FeaturedCard 
-                                                title="Securing National Infrastructure" 
+                                            <FeaturedCard
+                                                title="Securing National Infrastructure"
                                                 description="Discover how our advanced IoT ecosystems protect critical defense logistics and civic operations."
-                                                image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" 
+                                                image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072"
                                                 href="/federal/use-cases"
                                             />
                                         </div>
@@ -200,10 +200,10 @@ export default function Header() {
                                             </div>
                                         </div>
                                         <div className="col-span-5 h-full">
-                                            <FeaturedCard 
-                                                title="Transforming Global Supply Chains" 
+                                            <FeaturedCard
+                                                title="Transforming Global Supply Chains"
                                                 description="Leverage sub-second RFID tracking and real-time analytics to scale operations efficiently."
-                                                image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070" 
+                                                image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
                                                 href="/enterprise/digital-transformation"
                                             />
                                         </div>
@@ -268,10 +268,10 @@ export default function Header() {
                                             </div>
                                         </div>
                                         <div className="h-full">
-                                            <FeaturedCard 
-                                                title="Zero-Trust Architecture" 
+                                            <FeaturedCard
+                                                title="Zero-Trust Architecture"
                                                 description="Explore how edge computing and IoT frameworks unify legacy systems securely."
-                                                image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070" 
+                                                image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070"
                                                 href="/tech/cyber/zero-trust"
                                             />
                                         </div>
@@ -302,10 +302,10 @@ export default function Header() {
                                             </div>
                                         </div>
                                         <div className="col-span-5 h-full">
-                                            <FeaturedCard 
-                                                title="2026 Industry Technology Report" 
+                                            <FeaturedCard
+                                                title="2026 Industry Technology Report"
                                                 description="Download our latest whitepaper on optimizing asset tracking systems across multi-state regions and global supply chains."
-                                                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015" 
+                                                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015"
                                                 href="/resources/whitepapers"
                                             />
                                         </div>
@@ -334,48 +334,43 @@ export default function Header() {
 
             <div className={`lg:hidden fixed inset-0 top-[60px] bg-white dark:bg-[#16161c] z-40 overflow-y-auto transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="px-6 py-8 flex flex-col gap-6">
-                    
+
                     <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="font-semibold text-lg text-slate-900 dark:text-white border-b border-gray-100 dark:border-white/10 pb-4">
                         Home
                     </Link>
 
                     {[
-                        { 
+                        {
                             title: "About", url: "/about",
-                            links: [{name: "Company Overview", url: "/about/overview"}, {name: "Partners & Alliances", url: "/about/partners"}, {name: "Careers", url: "/about/careers"}, {name: "Talk to an Expert", url: "/contact"}] 
+                            links: [{ name: "Company Overview", url: "/about/overview" }, { name: "Partners & Alliances", url: "/about/partners" }, { name: "Careers", url: "/about/careers" }, { name: "Talk to an Expert", url: "/contact" }]
                         },
-                        { 
-                            title: "State & Local Government", url: "/state",
+                        {
+                            title: "Public Sector", url: "/public-sector",
                             links: [
-                                {name: "State Overview", url: "/state"}, {name: "Programs & Initiatives", url: "/state/programs"}, {name: "Public Safety Solutions", url: "/state/public-safety"}, {name: "Transportation & Mobility", url: "/state/transportation"}, {name: "Health & Human Services (HHS)", url: "/state/hhs"}, {name: "Education & Campus Solutions", url: "/state/education"}, {name: "Smart City & Infrastructure", url: "/state/smart-city"}, {name: "Homeless & Social Impact Solutions", url: "/state/social-impact"}, {name: "Data, Analytics & Reporting", url: "/state/data"}, {name: "Cybersecurity & Compliance", url: "/state/cybersecurity"}, {name: "State Use Cases", url: "/state/use-cases"}
-                            ] 
+                                { name: "State Overview", url: "/state" }, { name: "Programs & Initiatives", url: "/state/programs" }, { name: "Public Safety Solutions", url: "/state/public-safety" }, { name: "Transportation & Mobility", url: "/state/transportation" }, { name: "Health & Human Services (HHS)", url: "/state/hhs" }, { name: "Education & Campus Solutions", url: "/state/education" }, { name: "Smart City & Infrastructure", url: "/state/smart-city" }, { name: "Homeless & Social Impact Solutions", url: "/state/social-impact" }, { name: "Data, Analytics & Reporting", url: "/state/data" }, { name: "Cybersecurity & Compliance", url: "/state/cybersecurity" }, { name: "State Use Cases", url: "/state/use-cases" },
+                                { name: "Federal Overview", url: "/federal" }, { name: "Secure RFID & Logistics", url: "/federal/rfid" }, { name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity" }, { name: "Cloud & IT Modernization", url: "/federal/cloud" }, { name: "Data, AI & Automation", url: "/federal/data" }, { name: "ATO, Risk & Compliance", url: "/federal/ato" }, { name: "Acquisition & Contracting", url: "/federal/acquisition" }, { name: "Workforce & Staffing Solutions", url: "/federal/workforce" }, { name: "Federal Use Cases", url: "/federal/use-cases" }
+                            ]
                         },
-                        { 
-                            title: "Federal & Defense", url: "/federal",
+                        {
+                            title: "Private Sector", url: "/private",
                             links: [
-                                {name: "Federal Overview", url: "/federal"}, {name: "Secure RFID & Logistics", url: "/federal/rfid"}, {name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity"}, {name: "Cloud & IT Modernization", url: "/federal/cloud"}, {name: "Data, AI & Automation", url: "/federal/data"}, {name: "ATO, Risk & Compliance", url: "/federal/ato"}, {name: "Acquisition & Contracting", url: "/federal/acquisition"}, {name: "Workforce & Staffing Solutions", url: "/federal/workforce"}, {name: "Federal Use Cases", url: "/federal/use-cases"}
-                            ] 
+                                { name: "Enterprise Overview", url: "/private" }, { name: "Logistics & Transportation", url: "/industries/logistics" }, { name: "Manufacturing", url: "/industries/manufacturing" }, { name: "Retail & Warehousing", url: "/industries/retail" }, { name: "Energy & Utilities", url: "/industries/energy" }, { name: "Technology & SaaS", url: "/industries/tech" }, { name: "Digital Transformation & Automation", url: "/private/digital-transformation" }, { name: "Supply Chain Visibility", url: "/private/supply-chain" }, { name: "Cybersecurity & Risk Management", url: "/private/cybersecurity" }, { name: "Cloud & DevOps", url: "/private/cloud" }, { name: "Managed Services", url: "/private/managed-services" }, { name: "Workforce & Staffing Solutions", url: "/private/workforce" }, { name: "Case Studies", url: "/private/case-studies" }
+                            ]
                         },
-                        { 
-                            title: "Private Sector", url: "/enterprise",
-                            links: [
-                                {name: "Enterprise Overview", url: "/enterprise"}, {name: "Logistics & Transportation", url: "/industries/logistics"}, {name: "Manufacturing", url: "/industries/manufacturing"}, {name: "Retail & Warehousing", url: "/industries/retail"}, {name: "Energy & Utilities", url: "/industries/energy"}, {name: "Technology & SaaS", url: "/industries/tech"}, {name: "Digital Transformation & Automation", url: "/enterprise/digital-transformation"}, {name: "Supply Chain Visibility", url: "/enterprise/supply-chain"}, {name: "Cybersecurity & Risk Management", url: "/enterprise/cybersecurity"}, {name: "Cloud & DevOps", url: "/enterprise/cloud"}, {name: "Managed Services", url: "/enterprise/managed-services"}, {name: "Workforce & Staffing Solutions", url: "/enterprise/workforce"}, {name: "Case Studies", url: "/enterprise/case-studies"}
-                            ] 
-                        },
-                        { 
+                        {
                             title: "Technology Solutions", url: "/technology",
                             links: [
-                                {name: "RFID Integration", url: "/tech/rfid/asset"}, {name: "Asset Tracking", url: "/tech/rfid/asset"}, {name: "Personnel Tracking", url: "/tech/rfid/personnel"}, {name: "Fleet & Vehicle Tracking", url: "/tech/rfid/fleet"}, {name: "Secure RFID Systems", url: "/tech/rfid/secure"},
-                                {name: "Internet of Things (IoT)", url: "/tech/iot/smart-infra"}, {name: "Smart Infrastructure", url: "/tech/iot/smart-infra"}, {name: "Sensors & Devices", url: "/tech/iot/sensors"}, {name: "Edge & Cloud Integration", url: "/tech/iot/edge"}, {name: "Real-Time Monitoring", url: "/tech/iot/real-time"},
-                                {name: "Cybersecurity", url: "/tech/cyber/zero-trust"}, {name: "Security Assessments", url: "/tech/cyber/assessments"}, {name: "Zero Trust Architecture", url: "/tech/cyber/zero-trust"}, {name: "Compliance & Governance", url: "/tech/cyber/compliance"}, {name: "Risk Management", url: "/tech/cyber/risk"}, {name: "Incident Response", url: "/tech/cyber/response"},
-                                {name: "Data, AI & Analytics", url: "/tech/data/integration"}, {name: "Data Integration", url: "/tech/data/integration"}, {name: "Dashboards & Reporting", url: "/tech/data/dashboards"}, {name: "AI Automation", url: "/tech/data/ai"}, {name: "Predictive Insights", url: "/tech/data/predictive"},
-                                {name: "Software & IT Services", url: "/tech/software/custom"}, {name: "Custom Software Development", url: "/tech/software/custom"}, {name: "Cloud & DevOps", url: "/tech/software/cloud"}, {name: "System Integration", url: "/tech/software/integration"}, {name: "IT Modernization", url: "/tech/software/modernization"},
-                                {name: "Workforce & Staffing Solutions", url: "/tech/workforce/technical"}, {name: "Technical Staffing", url: "/tech/workforce/technical"}, {name: "Project-Based Teams", url: "/tech/workforce/projects"}, {name: "Managed Support", url: "/tech/workforce/managed"}
-                            ] 
+                                { name: "RFID Integration", url: "/tech/rfid/asset" }, { name: "Asset Tracking", url: "/tech/rfid/asset" }, { name: "Personnel Tracking", url: "/tech/rfid/personnel" }, { name: "Fleet & Vehicle Tracking", url: "/tech/rfid/fleet" }, { name: "Secure RFID Systems", url: "/tech/rfid/secure" },
+                                { name: "Internet of Things (IoT)", url: "/tech/iot/smart-infra" }, { name: "Smart Infrastructure", url: "/tech/iot/smart-infra" }, { name: "Sensors & Devices", url: "/tech/iot/sensors" }, { name: "Edge & Cloud Integration", url: "/tech/iot/edge" }, { name: "Real-Time Monitoring", url: "/tech/iot/real-time" },
+                                { name: "Cybersecurity", url: "/tech/cyber/zero-trust" }, { name: "Security Assessments", url: "/tech/cyber/assessments" }, { name: "Zero Trust Architecture", url: "/tech/cyber/zero-trust" }, { name: "Compliance & Governance", url: "/tech/cyber/compliance" }, { name: "Risk Management", url: "/tech/cyber/risk" }, { name: "Incident Response", url: "/tech/cyber/response" },
+                                { name: "Data, AI & Analytics", url: "/tech/data/integration" }, { name: "Data Integration", url: "/tech/data/integration" }, { name: "Dashboards & Reporting", url: "/tech/data/dashboards" }, { name: "AI Automation", url: "/tech/data/ai" }, { name: "Predictive Insights", url: "/tech/data/predictive" },
+                                { name: "Software & IT Services", url: "/tech/software/custom" }, { name: "Custom Software Development", url: "/tech/software/custom" }, { name: "Cloud & DevOps", url: "/tech/software/cloud" }, { name: "System Integration", url: "/tech/software/integration" }, { name: "IT Modernization", url: "/tech/software/modernization" },
+                                { name: "Workforce & Staffing Solutions", url: "/tech/workforce/technical" }, { name: "Technical Staffing", url: "/tech/workforce/technical" }, { name: "Project-Based Teams", url: "/tech/workforce/projects" }, { name: "Managed Support", url: "/tech/workforce/managed" }
+                            ]
                         },
-                        { 
+                        {
                             title: "Insights & Resources", url: "/resources",
-                            links: [{name: "Case Studies", url: "/resources/case-studies"}, {name: "Whitepapers", url: "/resources/whitepapers"}, {name: "Government Programs & Grants", url: "/resources/grants"}, {name: "Technology Insights", url: "/resources/insights"}, {name: "Blogs & Articles", url: "/resources/blogs"}, {name: "News & Announcements", url: "/resources/news"}] 
+                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Government Programs & Grants", url: "/resources/grants" }, { name: "Technology Insights", url: "/resources/insights" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "News & Announcements", url: "/resources/news" }]
                         },
                     ].map((section) => (
                         <div key={section.title} className="border-b border-gray-100 dark:border-white/10 pb-4">
@@ -396,7 +391,7 @@ export default function Header() {
                             </div>
                         </div>
                     ))}
-                    
+
                     <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="bg-primary text-white text-center px-6 py-4 rounded-xl text-base font-bold tracking-wide mt-4 shadow-lg">
                         Contact
                     </Link>

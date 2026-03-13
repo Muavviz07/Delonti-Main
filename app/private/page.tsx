@@ -1,127 +1,95 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Nfc, Cpu, ShieldAlert, Code, Briefcase, Zap, Droplets, Thermometer, Factory } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import OverviewSection from "@/components/OverviewSection";
+import FeatureGrid from "@/components/FeatureGrid";
+import SplitContentSection from "@/components/SplitContentSection";
+import IndustryUseCases from "@/components/IndustryUseCases";
+import BenefitsSection from "@/components/BenefitsSection";
+import CTASection from "@/components/CTASection";
+import { PackageSearch, CloudCog, ShieldCheck, DatabaseZap } from "lucide-react";
+import { Metadata } from "next";
 
-export default function PrivateSectorSolutions() {
-    const offerings = [
-        {
-            title: "RFID Solutions",
-            description: "Inventory/supply chain management, retail, warehouse, and industrial integration.",
-            icon: <Nfc className="w-8 h-8" />
-        },
-        {
-            title: "IoT Solutions",
-            description: "Smart manufacturing, environmental monitoring, and operational sensors.",
-            icon: <Cpu className="w-8 h-8" />
-        },
-        {
-            title: "Cybersecurity",
-            description: "Risk audits, SOC-as-a-Service, endpoint detection, and incident response.",
-            icon: <ShieldAlert className="w-8 h-8" />
-        },
-        {
-            title: "IT Development",
-            description: "End-to-end software development, QA automation, and cloud modernization.",
-            icon: <Code className="w-8 h-8" />
-        },
-        {
-            title: "Resource Augmentation",
-            description: "Onshore/offshore staffing for devs, testers, PMs, and architects.",
-            icon: <Briefcase className="w-8 h-8" />
-        }
-    ];
+export const metadata: Metadata = {
+    title: "Private Sector Transformation | Delonti Enterprise",
+};
 
-    const sustainability = [
-        {
-            title: "Energy Efficiency",
-            icon: <Zap className="w-10 h-10 text-yellow-500" />,
-            items: ["Comprehensive energy audits", "Solar/Wind renewable integration", "Advanced energy storage"]
-        },
-        {
-            title: "Water Management",
-            icon: <Droplets className="w-10 h-10 text-blue-500" />,
-            items: ["Smart water monitoring systems", "Sustainable wastewater treatment", "Rainwater harvesting"]
-        },
-        {
-            title: "HVAC & Refrigeration",
-            icon: <Thermometer className="w-10 h-10 text-red-500" />,
-            items: ["High-efficiency refrigeration", "Eco-friendly refrigerants", "Smart climate controls"]
-        },
-        {
-            title: "Supply Chain",
-            icon: <Factory className="w-10 h-10 text-green-500" />,
-            items: ["Green logistics practices", "Carbon footprint reduction", "Sustainable sourcing"]
-        }
-    ];
-
+export default function PrivatePage() {
     return (
         <>
             <Header />
             <main>
-                <section className="bg-enterprise-gray text-white py-24">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-5xl font-black mb-6 uppercase">Private Sector Solutions</h1>
-                        <p className="text-xl opacity-90 max-w-2xl">
-                            Driving digital transformation and operational excellence for global enterprises, logistics, and manufacturing.
-                        </p>
-                    </div>
-                </section>
+                <PageHero
+                    title="Enterprise Transformation"
+                    subtitle="Accelerating commercial growth through strategic digital modernization."
+                    breadcrumbs={[{ label: "Private Sector" }]}
+                    backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                />
 
-                <section className="py-20 bg-slate-50 dark:bg-slate-900/50">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {offerings.map((offering, index) => (
-                                <div key={index} className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
-                                    <div className="text-enterprise-gray mb-6">{offering.icon}</div>
-                                    <h3 className="text-xl font-bold mb-4 dark:text-white">{offering.title}</h3>
-                                    <p className="text-slate-500 text-sm leading-relaxed">{offering.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <OverviewSection
+                    title="Commercial Edge"
+                    heading="Modernizing the Enterprise"
+                    description="In today's highly competitive commercial landscape, technological debt is a liability. Delonti partners with Fortune 500 companies in manufacturing, retail, and logistics to architect scalable infrastructures that drive bottom-line efficiency. We transition legacy mindsets into agile, data-first ecosystems."
+                    background="white"
+                />
 
-                <section className="py-24 bg-white dark:bg-background-dark">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-16">
-                            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-green-600 mb-4">
-                                Sustainability
-                            </h2>
-                            <h3 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-6">
-                                Innovative Sustainability Solutions
-                            </h3>
-                            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-                                Driving sustainable change through energy, water management, and supply chain optimization.
-                            </p>
-                        </div>
+                <FeatureGrid
+                    title="Practices"
+                    heading="Enterprise Capabilities"
+                    features={[
+                        { title: "Supply Chain Visibilty", description: "RFID and IoT tracking for global logistics networks.", icon: <PackageSearch className="w-6 h-6" /> },
+                        { title: "Cloud Architecture", description: "Cost-optimized AWS and Azure deployments.", icon: <CloudCog className="w-6 h-6" /> },
+                        { title: "Commercial Cyber", description: "Protecting proprietary IP and customer data.", icon: <ShieldCheck className="w-6 h-6" /> },
+                        { title: "Data Analytics", description: "Converting raw telemetry into board-level BI dashboards.", icon: <DatabaseZap className="w-6 h-6" /> }
+                    ]}
+                    columns={4}
+                    background="slate"
+                />
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {sustainability.map((item, index) => (
-                                <div key={index} className="flex gap-6 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border border-slate-100 dark:border-slate-800">
-                                    <div className="shrink-0">{item.icon}</div>
-                                    <div>
-                                        <h4 className="text-xl font-bold mb-4 dark:text-white">{item.title}</h4>
-                                        <ul className="space-y-2">
-                                            {item.items.map((li, iIndex) => (
-                                                <li key={iIndex} className="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2">
-                                                    <div className="w-1 h-1 bg-green-500 rounded-full" />
-                                                    {li}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                <IndustryUseCases
+                    title="Verticals"
+                    heading="Industry Focus"
+                    useCases={[
+                        { title: "Logistics & Supply Chain", description: "End-to-end warehouse automation and fleet tracing.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070", href: "/private/supply-chain" },
+                        { title: "Retail", description: "Omnichannel inventory accuracy and loss prevention.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070" },
+                        { title: "Manufacturing", description: "Predictive maintenance on factory floors using IoT acoustics.", image: "https://images.unsplash.com/photo-1537884944318-390069bb8665?q=80&w=2070" },
+                        { title: "Financial Services", description: "High-frequency trading network security and compliance.", image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070", href: "/private/cybersecurity" }
+                    ]}
+                    background="white"
+                />
 
-                        <div className="mt-16 bg-green-600 rounded-3xl p-12 text-white text-center">
-                            <h4 className="text-2xl font-black mb-4 uppercase">Why Choose Delonti for Sustainability?</h4>
-                            <p className="max-w-3xl mx-auto opacity-90 leading-relaxed">
-                                We integrate sustainability across energy, water, refrigeration, HVAC, and supply chains for comprehensive impact. Our clients have achieved up to 30% reductions in energy use and costs while meeting global benchmarks.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <SplitContentSection
+                    title="Roadmap"
+                    heading="The Transformation Journey"
+                    description="Digital transformation is not simply purchasing new software; it is a fundamental rewiring of how a business operates. Our methodical approach ensures ROI is captured at every milestone, minimizing cultural friction and maximizing adoption."
+                    listItems={[
+                        "Infrastructure Discovery & Audit",
+                        "Proof-of-Concept Pilot Deployments",
+                        "Global Roll-out & Scaling",
+                        "Managed Services & Continuous Optimization"
+                    ]}
+                    imageSrc="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop"
+                    imageAlt="Business Strategy Session"
+                    imagePosition="right"
+                    background="slate"
+                />
+
+                <BenefitsSection
+                    title="ROI"
+                    heading="The Bottom Line"
+                    benefits={[
+                        "Increase inventory accuracy from 65% to 99.9%",
+                        "Reduce cloud computing expenditure by 30% through containerization",
+                        "Eliminate unscheduled manufacturing downtime via predictive maintenance",
+                        "Ensure GDPR and CCPA compliance through automated data governance"
+                    ]}
+                    background="white"
+                />
+
+                <CTASection
+                    heading="Modernize Your Enterprise"
+                    description="Schedule a technical strategy workshop with our commercial architects."
+                />
             </main>
             <Footer />
         </>
