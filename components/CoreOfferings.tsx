@@ -36,15 +36,15 @@ export default function CoreOfferings() {
     ];
 
     return (
-        <section className="py-24 border-y border-slate-200 dark:border-slate-800 bg-gray-50 dark:bg-[#16161c]">
+        <section className="py-24 border-y border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 {/* Section Header */}
                 <div className="mb-16 text-center">
-                    <h2 className="text-sm font-bold uppercase tracking-[0.25em] text-primary dark:text-slate-300 mb-3">
+                    <h2 className="text-sm font-bold uppercase tracking-[0.25em] text-primary dark:text-slate-300 mb-3 font-display">
                         Core Offerings
                     </h2>
-                    <h3 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white tracking-wide">
+                    <h3 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white tracking-wide font-display">
                         Enterprise Technology Solutions
                     </h3>
                 </div>
@@ -52,15 +52,15 @@ export default function CoreOfferings() {
                 {/* Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                     {offerings.map((offering, index) => (
-                        <div 
-                            key={index} 
+                        <div
+                            key={index}
                             className="group flex flex-col items-center text-center p-8 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full"
                         >
                             {/* Icon Container */}
                             <div className="flex items-center justify-center w-20 h-20 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-slate-800/50 text-primary dark:text-slate-300 mb-6 group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
                                 {offering.icon}
                             </div>
-                            
+
                             {/* Text Content */}
                             <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors">
                                 {offering.title}
@@ -68,9 +68,9 @@ export default function CoreOfferings() {
                             <p className="text-sm text-slate-500 dark:text-slate-400 max-w-[240px] mb-8 flex-grow leading-relaxed">
                                 {offering.description}
                             </p>
-                            
+
                             {/* CTA Button */}
-                            <Link 
+                            <Link
                                 href={offering.href}
                                 className="mt-auto flex items-center justify-center w-full py-3.5 px-4 rounded-xl bg-gray-50 dark:bg-slate-800 text-sm font-bold text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-white transition-all duration-300 border border-transparent group-hover:border-primary"
                             >

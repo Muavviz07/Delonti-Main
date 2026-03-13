@@ -62,24 +62,23 @@ const services = [
 
 export default function Services() {
     return (
-        <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
+        <section className="py-24 bg-slate-100 dark:bg-slate-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-20">
-                    <h2 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-4">
+                    <h2 className="text-xs font-black uppercase tracking-[0.2em] text-primary mb-4 font-display">
                         Our Solutions
                     </h2>
-                    <h3 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white">
+                    <h3 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white font-display">
                         Specialized Management Systems
                     </h3>
                 </div>
 
                 <div className="grid grid-cols-1 gap-16">
                     {services.map((service, index) => (
-                        <div 
-                            key={index} 
-                            className={`flex flex-col lg:flex-row gap-12 items-center ${
-                                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                            }`}
+                        <div
+                            key={index}
+                            className={`flex flex-col lg:flex-row gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                                }`}
                         >
                             <div className="flex-1 space-y-6">
                                 <div className="inline-block p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
@@ -94,7 +93,7 @@ export default function Services() {
                                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                                     {service.description}
                                 </p>
-                                
+
                                 <div className="space-y-4 pt-4">
                                     <h5 className="font-bold text-slate-900 dark:text-white uppercase text-sm tracking-wider">
                                         Key Features:
@@ -115,7 +114,7 @@ export default function Services() {
                                     </button>
                                 </div>
                             </div>
-                            
+
                             <div className="flex-1 w-full h-[400px] bg-white dark:bg-slate-800 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center justify-center p-12">
                                 <div className="space-y-6 w-full">
                                     <h5 className="text-center font-black text-xl mb-8 uppercase tracking-widest text-slate-400">Benefits</h5>

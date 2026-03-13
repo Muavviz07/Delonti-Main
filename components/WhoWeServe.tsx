@@ -49,24 +49,24 @@ export default function WhoWeServe() {
   const [hoveredMain, setHoveredMain] = useState<"government" | "private" | null>(null);
 
   return (
-    <section className="py-24 bg-gray-50 dark:bg-[#16161c] overflow-hidden">
+    <section className="py-24 bg-white dark:bg-slate-950 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-primary mb-3">
+        <div className="mb-12 text-center">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-primary mb-3 font-display">
             Who We Serve
           </h2>
-          <h3 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white tracking-wide">
+          <h3 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white tracking-wide font-display">
             Driving Innovation Across Sectors
           </h3>
         </div>
 
         {/* The Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
+
           {/* GOVERNMENT SECTOR CARD */}
-          <div 
+          <div
             onMouseEnter={() => setHoveredMain("government")}
             onMouseLeave={() => setHoveredMain(null)}
             className="group relative rounded-2xl overflow-hidden bg-slate-900 transition-all duration-500 min-h-[400px]"
@@ -75,10 +75,10 @@ export default function WhoWeServe() {
             <div className={`absolute inset-0 transition-all duration-700 ease-in-out p-8 md:p-10 flex flex-col justify-end z-10 ${hoveredMain === 'government' ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100'}`}>
               <div className="absolute inset-0 bg-cover bg-center opacity-70 transition-transform duration-1000 group-hover:scale-110" style={{ backgroundImage: `url('${SECTORS.government.image}')` }} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/40 to-transparent" />
-              
+
               {/* Main Card Arrow: Fades out when sub-cards appear */}
               <div className={`absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-sm transition-opacity duration-300 ${hoveredMain === 'government' ? 'opacity-0' : 'opacity-100'}`}>
-                  <ArrowUpRight className="text-white w-5 h-5" />
+                <ArrowUpRight className="text-white w-5 h-5" />
               </div>
 
               <h4 className="relative text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-tight">{SECTORS.government.title}</h4>
@@ -91,17 +91,17 @@ export default function WhoWeServe() {
                 <Link key={sub.title} href={sub.href} className="group/sub relative flex flex-col justify-end p-6 md:p-8 border-r border-white/10 last:border-0 overflow-hidden">
                   <div className="absolute inset-0 bg-cover bg-center grayscale group-hover/sub:grayscale-0 transition-all duration-700 group-hover/sub:scale-110" style={{ backgroundImage: `url('${sub.image}')` }} />
                   <div className="absolute inset-0 bg-[#0f172a]/85 group-hover/sub:bg-[#0f172a]/60 transition-colors duration-500" />
-                  
+
                   {/* Sub-Card Top Right Arrow */}
                   <div className="absolute top-4 right-4 md:top-6 md:right-6 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 group-hover/sub:opacity-100 transition-all duration-500 transform translate-x-2 -translate-y-2 group-hover/sub:translate-x-0 group-hover/sub:translate-y-0 z-30 shadow-sm">
-                      <ArrowUpRight className="text-white w-4 h-4" />
+                    <ArrowUpRight className="text-white w-4 h-4" />
                   </div>
 
                   {/* Fixed Layout: Removed conflicting flex classes so everything rests firmly at the bottom */}
                   <div className="relative z-20">
                     <h5 className="text-lg md:text-xl font-bold text-white mb-2">{sub.title}</h5>
                     <p className="text-xs md:text-sm text-slate-400 group-hover/sub:text-slate-100 transition-colors duration-300 mb-3 line-clamp-3 md:line-clamp-none">{sub.description}</p>
-                    
+
                     <div className="flex items-center gap-1.5 text-xs uppercase font-bold tracking-widest text-white opacity-0 group-hover/sub:opacity-100 transition-all duration-500 transform translate-y-2 group-hover/sub:translate-y-0">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </div>
@@ -112,7 +112,7 @@ export default function WhoWeServe() {
           </div>
 
           {/* PRIVATE SECTOR CARD */}
-          <div 
+          <div
             onMouseEnter={() => setHoveredMain("private")}
             onMouseLeave={() => setHoveredMain(null)}
             className="group relative rounded-2xl overflow-hidden bg-slate-900 transition-all duration-500 min-h-[400px]"
@@ -121,10 +121,10 @@ export default function WhoWeServe() {
             <div className={`absolute inset-0 transition-all duration-700 ease-in-out p-8 md:p-10 flex flex-col justify-end z-10 ${hoveredMain === 'private' ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100'}`}>
               <div className="absolute inset-0 bg-cover bg-center opacity-70 transition-transform duration-1000 group-hover:scale-110" style={{ backgroundImage: `url('${SECTORS.private.image}')` }} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/40 to-transparent" />
-              
+
               {/* Main Card Arrow: Fades out when sub-cards appear */}
               <div className={`absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-sm transition-opacity duration-300 ${hoveredMain === 'private' ? 'opacity-0' : 'opacity-100'}`}>
-                  <ArrowUpRight className="text-white w-5 h-5" />
+                <ArrowUpRight className="text-white w-5 h-5" />
               </div>
 
               <h4 className="relative text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-tight">{SECTORS.private.title}</h4>
@@ -137,17 +137,17 @@ export default function WhoWeServe() {
                 <Link key={sub.title} href={sub.href} className="group/sub relative flex flex-col justify-end p-6 md:p-8 border-r border-white/10 last:border-0 overflow-hidden">
                   <div className="absolute inset-0 bg-cover bg-center grayscale group-hover/sub:grayscale-0 transition-all duration-700 group-hover/sub:scale-110" style={{ backgroundImage: `url('${sub.image}')` }} />
                   <div className="absolute inset-0 bg-[#0f172a]/85 group-hover/sub:bg-[#0f172a]/60 transition-colors duration-500" />
-                  
+
                   {/* Sub-Card Top Right Arrow */}
                   <div className="absolute top-4 right-4 md:top-6 md:right-6 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 group-hover/sub:opacity-100 transition-all duration-500 transform translate-x-2 -translate-y-2 group-hover/sub:translate-x-0 group-hover/sub:translate-y-0 z-30 shadow-sm">
-                      <ArrowUpRight className="text-white w-4 h-4" />
+                    <ArrowUpRight className="text-white w-4 h-4" />
                   </div>
 
                   {/* Fixed Layout: Removed conflicting flex classes so everything rests firmly at the bottom */}
                   <div className="relative z-20">
                     <h5 className="text-lg md:text-xl font-bold text-white mb-2">{sub.title}</h5>
                     <p className="text-xs md:text-sm text-slate-400 group-hover/sub:text-slate-100 transition-colors duration-300 mb-3 line-clamp-3 md:line-clamp-none">{sub.description}</p>
-                    
+
                     <div className="flex items-center gap-1.5 text-xs uppercase font-bold tracking-widest text-white opacity-0 group-hover/sub:opacity-100 transition-all duration-500 transform translate-y-2 group-hover/sub:translate-y-0">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </div>

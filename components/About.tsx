@@ -1,8 +1,8 @@
 export default function About() {
     return (
-        <section className="py-24 bg-white dark:bg-background-dark">
+        <section className="py-24 bg-white dark:bg-slate-950">
             <div className="max-w-4xl mx-auto px-4 text-center">
-                <h2 className="text-3xl font-black text-primary mb-8">
+                <h2 className="text-3xl font-black text-primary mb-8 font-display">
                     About Delonti
                 </h2>
 
@@ -18,7 +18,7 @@ export default function About() {
                     </p>
                 </div>
 
-                
+
             </div>
         </section>
     );

@@ -1,22 +1,22 @@
 export default function Contact() {
     return (
-        <section id="contact" className="py-24 bg-gray-50 dark:bg-[#16161c]">
+        <section id="contact" className="py-24 bg-white dark:bg-slate-950">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    
+
                     {/* Left Side: Contact Info */}
                     <div>
                         {/* Changed text-[#6366f1] to text-primary */}
-                        <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-primary dark:text-slate-300 mb-4">
+                        <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-primary dark:text-slate-300 mb-4 font-display">
                             Contact Us
                         </h2>
-                        <h3 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white mb-6 tracking-wide">
+                        <h3 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white mb-6 tracking-wide font-display">
                             Ready to Innovate?
                         </h3>
                         <p className="text-base md:text-lg text-slate-500 dark:text-slate-400 font-light mb-10 leading-relaxed max-w-lg">
                             Whether you're a city official, federal agency, or private enterprise, we're here to help you deploy next-generation RFID, IoT, and Cybersecurity solutions.
                         </p>
-                        
+
                         <div className="space-y-6">
                             <div className="flex items-center gap-5 group">
                                 <div className="w-14 h-14 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center shadow-sm border border-gray-100 dark:border-white/5 transition-transform duration-500 group-hover:scale-110">
@@ -45,7 +45,7 @@ export default function Contact() {
                     <div className="bg-white dark:bg-slate-800/50 p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 dark:border-white/5 relative overflow-hidden">
                         {/* Changed the hardcoded hex to use your primary color variable for the glow */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-                        
+
                         <form className="space-y-6 relative z-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
@@ -81,7 +81,7 @@ export default function Contact() {
                             </button>
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
         </section>

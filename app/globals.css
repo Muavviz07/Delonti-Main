@@ -5,14 +5,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-display: var(--font-public-sans), sans-serif;
+  --font-display: var(--font-playfair), serif;
   --font-sans: var(--font-public-sans), sans-serif;
 
   --color-primary: #2b2b4f;
   --color-federal-green: #4A7C59;
   --color-enterprise-gray: #7A7A7A;
-  --color-background-light: #f6f6f7;
-  --color-background-dark: #16161c;
+  --color-background-light: #ffffff;
+  --color-background-alt: #f8fafc;
+  --color-background-dark: #121216;
+  --color-background-dark-alt: #1a1a24;
 }
 
 @layer base {
@@ -20,24 +22,25 @@
     @apply bg-background-light text-slate-900 font-sans;
     @apply bg-background text-foreground;
   }
+
   .dark body {
     @apply bg-background-dark text-slate-100;
   }
+
   * {
     @apply border-border outline-ring/50;
   }
 }
 
 @layer utilities {
+
   /* This creates the smooth fade-out on the left and right edges */
   .mask-horizontal {
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 15%,
-      black 85%,
-      transparent
-    );
+    mask-image: linear-gradient(to right,
+        transparent,
+        black 15%,
+        black 85%,
+        transparent);
   }
 
   .animate-scroll-left {
@@ -58,13 +61,23 @@
 
 /* Keyframes defined in standard CSS for guaranteed compatibility */
 @keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-33.33% - 1.35rem)); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-33.33% - 1.35rem));
+  }
 }
 
 @keyframes scroll-right {
-  0% { transform: translateX(calc(-33.33% - 1.35rem)); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(calc(-33.33% - 1.35rem));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .mega-menu {
@@ -157,13 +170,13 @@
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
+  --foreground: oklch(0.95 0.01 247.858);
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.7 0.1 255.508);
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
