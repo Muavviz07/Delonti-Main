@@ -40,9 +40,24 @@ const FeaturedCard = ({ title, description, image, href }: { title: string, desc
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
+    const [forceClose, setForceClose] = useState(false);
 
     const toggleMobileMenu = (menu: string) => {
         setActiveMobileMenu(activeMobileMenu === menu ? null : menu);
+    };
+
+    const handleNavClick = (e: React.MouseEvent<HTMLElement>) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('a')) {
+            setForceClose(true);
+            setIsMobileMenuOpen(false);
+        }
+    };
+
+    const handleNavMouseLeave = () => {
+        if (forceClose) {
+            setForceClose(false);
+        }
     };
 
     return (
@@ -64,7 +79,11 @@ export default function Header() {
                         </div>
                     </Link>
 
-                    <nav className="hidden lg:flex items-center space-x-1 xl:space-x-4 h-full">
+                    <nav
+                        className="hidden lg:flex items-center space-x-1 xl:space-x-4 h-full"
+                        onClick={handleNavClick}
+                        onMouseLeave={handleNavMouseLeave}
+                    >
 
                         <div className="h-full flex items-center px-2">
                             <Link href="/" className="text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors">
@@ -72,7 +91,7 @@ export default function Header() {
                             </Link>
                         </div>
 
-                        <div className="relative group h-full flex items-center px-2">
+                        <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
                             <Link href="/about" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 About <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
@@ -107,7 +126,7 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <div className="relative group h-full flex items-center px-2">
+                        <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
                             <Link href="/public-sector" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 Public Sector <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
@@ -169,7 +188,7 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <div className="relative group h-full flex items-center px-2">
+                        <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
                             <Link href="/private" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 Private Sector <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
@@ -212,7 +231,7 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <div className="relative group h-full flex items-center px-2">
+                        <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
                             <Link href="/technology" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
                                 Technology Solutions <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
