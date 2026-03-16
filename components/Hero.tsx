@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react"; 
+import { ChevronRight } from "lucide-react";
 
 const SLIDES = [
   {
@@ -41,18 +41,16 @@ export default function Hero() {
 
   const extendedSlides = [...SLIDES, SLIDES[0]];
 
-  // 1. AUTO-PLAY TIMER
   useEffect(() => {
     const timer = setInterval(() => {
       if (isTransitioning) {
         setCurrentIndex((prev) => prev + 1);
       }
     }, 6000);
-    
+
     return () => clearInterval(timer);
   }, [isTransitioning, currentIndex]);
 
-  // 2. SEAMLESS LOOP & BACKGROUND TAB FIX
   useEffect(() => {
     if (currentIndex === SLIDES.length) {
       const resetTimer = setTimeout(() => {
@@ -66,11 +64,11 @@ export default function Hero() {
 
       return () => clearTimeout(resetTimer);
     }
-    
+
     if (currentIndex > SLIDES.length) {
-        setIsTransitioning(false);
-        setCurrentIndex(0);
-        setTimeout(() => setIsTransitioning(true), 50);
+      setIsTransitioning(false);
+      setCurrentIndex(0);
+      setTimeout(() => setIsTransitioning(true), 50);
     }
   }, [currentIndex]);
 
@@ -81,35 +79,31 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[600px] md:h-[700px] overflow-hidden bg-[#16161c]">
-      
-      {/* SLIDER TRACK */}
-      <div 
+
+      <div
         className={`flex w-full h-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {extendedSlides.map((slide, index) => (
           <div key={`${slide.id}-${index}`} className="w-full h-full flex-shrink-0 relative">
-            
+
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('${slide.bgImage}')`,
               }}
             />
-            
+
             <div className="relative w-full h-full flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 text-center text-white pb-32 md:pb-24">
-              
-              {/* SHORTER TITLE */}
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-wide uppercase w-full max-w-[95%] md:max-w-4xl lg:max-w-5xl drop-shadow-md leading-tight md:leading-tight">
                 {slide.title}
               </h1>
-              
-              {/* TAGS SECTION */}
+
               <div className="text-sm md:text-lg lg:text-xl font-medium tracking-wide text-slate-300 mb-6 drop-shadow-sm">
                 {slide.tags}
               </div>
 
-              {/* DESCRIPTION */}
               <p className="text-sm md:text-base lg:text-lg font-light mb-8 md:mb-10 w-full max-w-[95%] sm:max-w-[85%] md:max-w-3xl text-slate-200 leading-relaxed">
                 {slide.description}
               </p>
@@ -118,46 +112,44 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* STATIC BUTTONS */}
       <div className="absolute bottom-20 md:bottom-24 left-0 w-full flex flex-wrap justify-center gap-4 md:gap-6 px-4 z-10">
-        
-        {/* CHANGED TO font-medium to match the second button */}
-        <Link 
-          href="/government" 
-          className="group bg-white hover:bg-slate-100 text-slate-900 px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 flex items-center justify-center tracking-wide"
+
+        <Link
+          href="/government"
+          className="group bg-blue-400 hover:bg-blue-500 text-white px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:-translate-y-0.5 flex items-center justify-center tracking-wide"
         >
-          Explore Public Sector <ChevronRight className="text-slate-900 w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
+          Explore Public Sector
+          <ChevronRight className="text-white w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
         </Link>
-        
-        <Link 
-          href="/private" 
+
+        <Link
+          href="/private"
           className="group bg-federal-green hover:bg-federal-green/90 text-white px-6 md:px-8 py-3.5 rounded-md font-medium transition-all w-full sm:w-auto min-w-[200px] shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center tracking-wide border border-white/10"
         >
-          Explore Private Sector <ChevronRight className="text-white w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
+          Explore Private Sector
+          <ChevronRight className="text-white w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
         </Link>
       </div>
 
-      {/* CLICKABLE INDICATOR DOTS */}
       <div className="absolute bottom-6 md:bottom-8 left-0 w-full flex justify-center gap-3 z-10">
         {SLIDES.map((_, idx) => {
           const isActive = currentIndex === idx || (currentIndex === SLIDES.length && idx === 0);
-          
+
           return (
             <button
               suppressHydrationWarning
               key={idx}
               onClick={() => handleDotClick(idx)}
-              className={`transition-all duration-300 rounded-full cursor-pointer ${
-                isActive 
-                  ? "w-8 h-2 bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]" 
-                  : "w-2 h-2 bg-white/40 hover:bg-white/70"
-              }`}
+              className={`transition-all duration-300 rounded-full cursor-pointer ${isActive
+                ? "w-8 h-2 bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+                : "w-2 h-2 bg-white/40 hover:bg-white/70"
+                }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           );
         })}
       </div>
-      
+
     </section>
   );
 }

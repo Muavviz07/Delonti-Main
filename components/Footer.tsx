@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -13,11 +14,11 @@ export default function Footer() {
                         <div className="flex items-center gap-2 mb-6">
                             <Link href="/">
                                 <Image
-                                    src="/logo.png" 
+                                    src="/logo.png"
                                     alt="Delonti Logo"
-                                    width={140} 
+                                    width={140}
                                     height={35}
-                                    className="h-6 lg:h-8 w-auto object-contain hover:opacity-80 transition-opacity" 
+                                    className="h-6 lg:h-8 w-auto object-contain hover:opacity-80 transition-opacity"
                                 />
                             </Link>
                         </div>
@@ -25,6 +26,22 @@ export default function Footer() {
                             Delivering innovative RFID, IoT, and Cybersecurity solutions for
                             critical infrastructure and enterprise growth.
                         </p>
+
+                        {/* Social Media Icons */}
+                        <div className="flex items-center gap-5 mt-8">
+                            <Link href="https://facebook.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Facebook size={20} />
+                            </Link>
+                            <Link href="https://instagram.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Instagram size={20} />
+                            </Link>
+                            <Link href="https://linkedin.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Linkedin size={20} />
+                            </Link>
+                            <Link href="https://youtube.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Youtube size={20} />
+                            </Link>
+                        </div>
                     </div>
 
                     <div>
