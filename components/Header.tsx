@@ -95,7 +95,7 @@ export default function Header() {
       alt="Delonti Logo"
       width={160}
       height={40}
-      className="hidden dark:block h-7 lg:h-8 w-auto object-contain"
+      className="hidden dark:block h-8 lg:h-9 w-auto object-contain"
       priority
     />
 

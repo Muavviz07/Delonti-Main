@@ -31,7 +31,7 @@ export default function Footer() {
       alt="Delonti Logo"
       width={140}
       height={35}
-      className="hidden dark:block h-6 lg:h-8 w-auto object-contain"
+      className="hidden dark:block h-7 lg:h-9 w-auto object-contain"
     />
 
   </Link>

@@ -94,7 +94,7 @@ export default function Hero() {
               }}
             />
 
-            <div className="relative w-full h-full flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 text-center text-white pb-32 md:pb-24">
+            <div className="relative w-full h-full flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 text-center text-white pb-20 md:pb-24">
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-wide uppercase w-full max-w-[95%] md:max-w-4xl lg:max-w-5xl drop-shadow-md leading-tight md:leading-tight">
                 {slide.title}
@@ -112,7 +112,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="absolute bottom-20 md:bottom-24 left-0 w-full flex flex-wrap justify-center gap-4 md:gap-6 px-4 z-10">
+      <div className="absolute bottom-12 md:bottom-20 lg:bottom-24 left-0 w-full flex flex-wrap justify-center gap-4 md:gap-6 px-4 z-10">
 
         <Link
           href="/government"
