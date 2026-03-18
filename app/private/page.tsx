@@ -1,17 +1,15 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import OverviewSection from "@/components/OverviewSection";
-import FeatureGrid from "@/components/FeatureGrid";
-import SplitContentSection from "@/components/SplitContentSection";
-import IndustryUseCases from "@/components/IndustryUseCases";
-import BenefitsSection from "@/components/BenefitsSection";
+import StatsSection from "@/components/StatsSection";
+import ClientsSection from "@/components/ClientsSection";
 import CTASection from "@/components/CTASection";
-import { PackageSearch, CloudCog, ShieldCheck, DatabaseZap } from "lucide-react";
+import Link from "next/link";
+import { Building2, Briefcase, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Private Sector Transformation | Delonti Enterprise",
+    title: "Private Sector Solutions | Delonti",
 };
 
 export default function PrivatePage() {
@@ -20,75 +18,132 @@ export default function PrivatePage() {
             <Header />
             <main>
                 <PageHero
-                    title="Enterprise Transformation"
-                    subtitle="Accelerating commercial growth through strategic digital modernization."
+                    title="Private Sector Solutions"
+                    subtitle="Whether you're a growing business or a global enterprise, Delonti delivers the technology infrastructure you need to compete."
                     breadcrumbs={[{ label: "Private Sector" }]}
-                    backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                    backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
                 />
 
-                <OverviewSection
-                    title="Commercial Edge"
-                    heading="Modernizing the Enterprise"
-                    description="In today's highly competitive commercial landscape, technological debt is a liability. Delonti partners with Fortune 500 companies in manufacturing, retail, and logistics to architect scalable infrastructures that drive bottom-line efficiency. We transition legacy mindsets into agile, data-first ecosystems."
-                    background="white"
-                />
+                {/* Two-Path Chooser */}
+                <section className="bg-slate-50 dark:bg-[#16161c] py-24">
+                    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center">
+                            <p className="text-xs font-bold uppercase tracking-[0.25em] text-primary dark:text-slate-400 mb-3">
+                                Who We Serve
+                            </p>
+                            <h2 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white font-display tracking-wide">
+                                Find Your Solution Path
+                            </h2>
+                            <p className="mt-4 text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                                Delonti serves organizations of all sizes — from agile SMBs to complex global enterprises — with tailored technology solutions.
+                            </p>
+                        </div>
 
-                <FeatureGrid
-                    title="Practices"
-                    heading="Enterprise Capabilities"
-                    features={[
-                        { title: "Supply Chain Visibilty", description: "RFID and IoT tracking for global logistics networks.", icon: <PackageSearch className="w-6 h-6" /> },
-                        { title: "Cloud Architecture", description: "Cost-optimized AWS and Azure deployments.", icon: <CloudCog className="w-6 h-6" /> },
-                        { title: "Commercial Cyber", description: "Protecting proprietary IP and customer data.", icon: <ShieldCheck className="w-6 h-6" /> },
-                        { title: "Data Analytics", description: "Converting raw telemetry into board-level BI dashboards.", icon: <DatabaseZap className="w-6 h-6" /> }
-                    ]}
-                    columns={4}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+                            <Link
+                                href="/private/smb"
+                                className="group relative overflow-hidden rounded-2xl min-h-[480px] bg-slate-900 shadow-lg"
+                            >
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070')` }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20 transition-opacity duration-500" />
+                                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                                    <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/20">
+                                        SMB
+                                    </span>
+                                    <div className="mt-6">
+                                        <Building2 className="w-10 h-10 text-white/60 mb-4" />
+                                        <h3 className="text-3xl font-bold text-white font-display">Small & Medium Business</h3>
+                                        <p className="mt-2 text-base font-light text-slate-300 max-w-md">
+                                            Affordable Smart Technology for Growing Businesses
+                                        </p>
+
+                                        <div className="mt-6 flex flex-wrap gap-2">
+                                            {[
+                                                "Cost Efficient",
+                                                "Fast Deploy",
+                                                "Immediate ROI",
+                                            ].map((pill) => (
+                                                <span
+                                                    key={pill}
+                                                    className="text-xs font-semibold uppercase tracking-widest text-white bg-white/10 border border-white/20 px-3 py-1 rounded-full"
+                                                >
+                                                    {pill}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-6 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white">
+                                            <span className="transition-all duration-300 group-hover:ml-2">Explore SMB Solutions</span>
+                                            <ArrowRight className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+
+                            <Link
+                                href="/private/enterprise"
+                                className="group relative overflow-hidden rounded-2xl min-h-[480px] bg-slate-900 shadow-lg"
+                            >
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                    style={{ backgroundImage: `url('https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070')` }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20 transition-opacity duration-500" />
+                                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                                    <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/20">
+                                        Enterprise
+                                    </span>
+                                    <div className="mt-6">
+                                        <Briefcase className="w-10 h-10 text-white/60 mb-4" />
+                                        <h3 className="text-3xl font-bold text-white font-display">Enterprise Solutions</h3>
+                                        <p className="mt-2 text-base font-light text-slate-300 max-w-md">
+                                            Enterprise Platforms for Visibility, Security, and Operational Intelligence
+                                        </p>
+
+                                        <div className="mt-6 flex flex-wrap gap-2">
+                                            {[
+                                                "Scalable",
+                                                "Secure",
+                                                "Integrated",
+                                            ].map((pill) => (
+                                                <span
+                                                    key={pill}
+                                                    className="text-xs font-semibold uppercase tracking-widest text-white bg-white/10 border border-white/20 px-3 py-1 rounded-full"
+                                                >
+                                                    {pill}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-6 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white">
+                                            <span className="transition-all duration-300 group-hover:ml-2">Explore Enterprise Solutions</span>
+                                            <ArrowRight className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
+                <StatsSection
                     background="slate"
+                    stats={[
+                        { value: "500", suffix: "+", label: "Deployments Delivered" },
+                        { value: "99.9", suffix: "%", label: "Uptime Guaranteed" },
+                        { value: "50", suffix: "M+", label: "Assets Tracked" },
+                        { value: "10", suffix: "+", label: "Years of Experience" }
+                    ]}
                 />
 
-                <IndustryUseCases
-                    title="Verticals"
-                    heading="Industry Focus"
-                    useCases={[
-                        { title: "Logistics & Supply Chain", description: "End-to-end warehouse automation and fleet tracing.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070", href: "/private/supply-chain" },
-                        { title: "Retail", description: "Omnichannel inventory accuracy and loss prevention.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070" },
-                        { title: "Manufacturing", description: "Predictive maintenance on factory floors using IoT acoustics.", image: "https://images.unsplash.com/photo-1537884944318-390069bb8665?q=80&w=2070" },
-                        { title: "Financial Services", description: "High-frequency trading network security and compliance.", image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070", href: "/private/cybersecurity" }
-                    ]}
-                    background="white"
-                />
-
-                <SplitContentSection
-                    title="Roadmap"
-                    heading="The Transformation Journey"
-                    description="Digital transformation is not simply purchasing new software; it is a fundamental rewiring of how a business operates. Our methodical approach ensures ROI is captured at every milestone, minimizing cultural friction and maximizing adoption."
-                    listItems={[
-                        "Infrastructure Discovery & Audit",
-                        "Proof-of-Concept Pilot Deployments",
-                        "Global Roll-out & Scaling",
-                        "Managed Services & Continuous Optimization"
-                    ]}
-                    imageSrc="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop"
-                    imageAlt="Business Strategy Session"
-                    imagePosition="right"
-                    background="slate"
-                />
-
-                <BenefitsSection
-                    title="ROI"
-                    heading="The Bottom Line"
-                    benefits={[
-                        "Increase inventory accuracy from 65% to 99.9%",
-                        "Reduce cloud computing expenditure by 30% through containerization",
-                        "Eliminate unscheduled manufacturing downtime via predictive maintenance",
-                        "Ensure GDPR and CCPA compliance through automated data governance"
-                    ]}
-                    background="white"
-                />
+                <ClientsSection />
 
                 <CTASection
-                    heading="Modernize Your Enterprise"
-                    description="Schedule a technical strategy workshop with our commercial architects."
+                    heading="Ready to Get Started?"
+                    description="Tell us about your business and we'll match you with the right solution."
                 />
             </main>
             <Footer />

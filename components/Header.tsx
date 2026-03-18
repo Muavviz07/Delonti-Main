@@ -3,18 +3,28 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Menu, X, Landmark, Shield, ChevronRight } from "lucide-react";
+import { ChevronDown, Menu, X, Landmark, Shield, ChevronRight, Building2, Briefcase } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-const MenuLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
-    <Link
-        href={href}
-        onClick={onClick}
-        className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-2"
-    >
-        {children}
-    </Link>
-);
+const MenuLink = ({ href, children, onClick, isGroupLabel }: { href?: string; children: React.ReactNode; onClick?: () => void; isGroupLabel?: boolean }) => {
+    if (isGroupLabel) {
+        return (
+            <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary dark:text-slate-400 mt-4 mb-1 px-0 pointer-events-none">
+                {children}
+            </div>
+        );
+    }
+
+    return (
+        <Link
+            href={href ?? "#"}
+            onClick={onClick}
+            className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-2"
+        >
+            {children}
+        </Link>
+    );
+};
 
 const MenuHeader = ({ children, icon: Icon }: { children: React.ReactNode; icon?: React.ElementType }) => (
     <h4 className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-5 border-b border-gray-100 dark:border-white/10 pb-3">
@@ -23,8 +33,8 @@ const MenuHeader = ({ children, icon: Icon }: { children: React.ReactNode; icon?
     </h4>
 );
 
-const FeaturedCard = ({ title, description, image, href }: { title: string, description: string, image: string, href: string }) => (
-    <Link href={href} className="group relative block w-full h-full min-h-[320px] rounded-2xl overflow-hidden bg-slate-900 shadow-lg border border-gray-200 dark:border-white/10">
+const FeaturedCard = ({ title, description, image, href, className }: { title: string; description: string; image: string; href: string; className?: string }) => (
+    <Link href={href} className={`group relative block w-full h-full min-h-[320px] rounded-2xl overflow-hidden bg-slate-900 shadow-lg border border-gray-200 dark:border-white/10 ${className ?? ""}`}>
         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-40" style={{ backgroundImage: `url('${image}')` }} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent" />
         <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -208,36 +218,36 @@ export default function Header() {
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-12">
-                                        <div className="col-span-7 grid grid-cols-2 gap-8 pr-8 border-r border-gray-100 dark:border-white/10">
-                                            <div>
-                                                <MenuHeader>Core Capabilities</MenuHeader>
-                                                <MenuLink href="/enterprise">Enterprise Overview</MenuLink>
-                                                <MenuLink href="/enterprise/digital-transformation">Digital Trans. & Automation</MenuLink>
-                                                <MenuLink href="/enterprise/supply-chain">Supply Chain Visibility</MenuLink>
-                                                <MenuLink href="/enterprise/cybersecurity">Cybersecurity & Risk Mgmt</MenuLink>
-                                                <MenuLink href="/enterprise/cloud">Cloud & DevOps</MenuLink>
-                                                <MenuLink href="/enterprise/managed-services">Managed Services</MenuLink>
-                                                <MenuLink href="/enterprise/workforce">Workforce & Staffing Solutions</MenuLink>
-                                            </div>
-                                            <div>
-                                                <MenuHeader>Industries</MenuHeader>
-                                                <MenuLink href="/industries/logistics">Logistics & Transportation</MenuLink>
-                                                <MenuLink href="/industries/manufacturing">Manufacturing</MenuLink>
-                                                <MenuLink href="/industries/retail">Retail & Warehousing</MenuLink>
-                                                <MenuLink href="/industries/energy">Energy & Utilities</MenuLink>
-                                                <MenuLink href="/industries/tech">Technology & SaaS</MenuLink>
-                                                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
-                                                    <MenuLink href="/enterprise/case-studies">View Case Studies →</MenuLink>
-                                                </div>
-                                            </div>
+                                        <div className="col-span-4 bg-gray-50 dark:bg-slate-800/50 rounded-2xl p-8 border border-gray-100 dark:border-white/5">
+                                            <MenuHeader icon={Building2}>SMB</MenuHeader>
+                                            <MenuLink href="/private/smb">SMB Overview</MenuLink>
+                                            <MenuLink href="/private/smb/asset-tracking">Asset Tracking & Inventory</MenuLink>
+                                            <MenuLink href="/private/smb/fleet-tracking">Fleet & Vehicle Tracking</MenuLink>
+                                            <MenuLink href="/private/smb/cybersecurity">Cybersecurity Essentials</MenuLink>
+                                            <MenuLink href="/private/smb/cloud-it">Cloud & IT Services</MenuLink>
+                                            <MenuLink href="/private/smb/data-analytics">Data & Analytics</MenuLink>
+                                            <MenuLink href="/private/smb/technical-staffing">Technical Staffing</MenuLink>
                                         </div>
-                                        <div className="col-span-5 h-full">
+                                        <div className="col-span-4 bg-gray-50 dark:bg-slate-800/50 rounded-2xl p-8 border border-gray-100 dark:border-white/5">
+                                            <MenuHeader icon={Briefcase}>Enterprise</MenuHeader>
+                                            <MenuLink href="/private/enterprise">Enterprise Overview</MenuLink>
+                                            <MenuLink href="/private/enterprise/asset-visibility">Asset Visibility Platforms</MenuLink>
+                                            <MenuLink href="/private/enterprise/industrial-iot">Industrial IoT & Smart Infrastructure</MenuLink>
+                                            <MenuLink href="/private/enterprise/cybersecurity">Enterprise Cybersecurity</MenuLink>
+                                            <MenuLink href="/private/enterprise/data-platforms">Data Platforms & AI</MenuLink>
+                                            <MenuLink href="/private/enterprise/cloud-devops">Cloud & DevOps Transformation</MenuLink>
+                                            <MenuLink href="/private/enterprise/systems-integration">Systems Integration</MenuLink>
+                                            <MenuLink href="/private/enterprise/workforce">Workforce Solutions</MenuLink>
+                                        </div>
+                                        <div className="col-span-4 flex flex-col gap-4">
                                             <FeaturedCard
-                                                title="Transforming Global Supply Chains"
-                                                description="Leverage sub-second RFID tracking and real-time analytics to scale operations efficiently."
-                                                image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
-                                                href="/enterprise/digital-transformation"
+                                                className="min-h-[190px]"
+                                                title="Smart Tech for Growing Businesses"
+                                                description="Affordable, fast-deploying solutions built for SMBs."
+                                                image="https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070"
+                                                href="/private/smb"
                                             />
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -386,7 +396,25 @@ export default function Header() {
                         {
                             title: "Private Sector", url: "/private",
                             links: [
-                                { name: "Enterprise Overview", url: "/private" }, { name: "Logistics & Transportation", url: "/industries/logistics" }, { name: "Manufacturing", url: "/industries/manufacturing" }, { name: "Retail & Warehousing", url: "/industries/retail" }, { name: "Energy & Utilities", url: "/industries/energy" }, { name: "Technology & SaaS", url: "/industries/tech" }, { name: "Digital Transformation & Automation", url: "/private/digital-transformation" }, { name: "Supply Chain Visibility", url: "/private/supply-chain" }, { name: "Cybersecurity & Risk Management", url: "/private/cybersecurity" }, { name: "Cloud & DevOps", url: "/private/cloud" }, { name: "Managed Services", url: "/private/managed-services" }, { name: "Workforce & Staffing Solutions", url: "/private/workforce" }, { name: "Case Studies", url: "/private/case-studies" }
+                                // SMB GROUP
+                                { name: "— SMB —", url: "/private/smb", isGroupLabel: true },
+                                { name: "SMB Overview", url: "/private/smb" },
+                                { name: "Asset Tracking & Inventory", url: "/private/smb/asset-tracking" },
+                                { name: "Fleet & Vehicle Tracking", url: "/private/smb/fleet-tracking" },
+                                { name: "Cybersecurity Essentials", url: "/private/smb/cybersecurity" },
+                                { name: "Cloud & IT Services", url: "/private/smb/cloud-it" },
+                                { name: "Data & Analytics", url: "/private/smb/data-analytics" },
+                                { name: "Technical Staffing", url: "/private/smb/technical-staffing" },
+                                // ENTERPRISE GROUP
+                                { name: "— Enterprise —", url: "/private/enterprise", isGroupLabel: true },
+                                { name: "Enterprise Overview", url: "/private/enterprise" },
+                                { name: "Asset Visibility Platforms", url: "/private/enterprise/asset-visibility" },
+                                { name: "Industrial IoT & Smart Infrastructure", url: "/private/enterprise/industrial-iot" },
+                                { name: "Enterprise Cybersecurity", url: "/private/enterprise/cybersecurity" },
+                                { name: "Data Platforms & AI", url: "/private/enterprise/data-platforms" },
+                                { name: "Cloud & DevOps Transformation", url: "/private/enterprise/cloud-devops" },
+                                { name: "Systems Integration", url: "/private/enterprise/systems-integration" },
+                                { name: "Workforce Solutions", url: "/private/enterprise/workforce" },
                             ]
                         },
                         {
@@ -416,7 +444,12 @@ export default function Header() {
                             </div>
                             <div className={`flex flex-col gap-3 overflow-hidden transition-all duration-300 ${activeMobileMenu === section.title ? 'max-h-[1200px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                                 {section.links.map(link => (
-                                    <MenuLink key={link.name} href={link.url} onClick={() => setIsMobileMenuOpen(false)}>
+                                    <MenuLink
+                                        key={link.name}
+                                        href={link.url}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        isGroupLabel={Boolean((link as any).isGroupLabel)}
+                                    >
                                         {link.name}
                                     </MenuLink>
                                 ))}

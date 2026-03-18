@@ -111,7 +111,7 @@ export default function AboutPage() {
                     heading="Industries We Serve"
                     useCases={[
                         { title: "Government Agencies", description: "Mission-critical infrastructure for civilian and defense departments.", image: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?q=80&w=2070", href: "/federal" },
-                        { title: "Enterprise Supply Chain", description: "End-to-end visibility for global logistics operations.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070", href: "/private/supply-chain" },
+                        { title: "Enterprise Supply Chain", description: "End-to-end visibility for global logistics operations.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070", href: "/private/enterprise/asset-visibility" },
                         { title: "Manufacturing", description: "Smart factory automation and asset utilization tracking.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070", href: "/private" }
                     ]}
                     background="slate"
