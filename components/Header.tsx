@@ -67,17 +67,30 @@ export default function Header() {
                 <div className="flex justify-between items-center h-[60px] lg:h-[72px]">
 
                     <Link href="/" className="flex items-center z-50 shrink-0 mr-6">
-                        <div className="relative flex items-center">
-                            <Image
-                                src="/logo.png"
-                                alt="Delonti Logo"
-                                width={160}
-                                height={40}
-                                className="h-7 lg:h-8 w-auto object-contain"
-                                priority
-                            />
-                        </div>
-                    </Link>
+  <div className="relative flex items-center">
+    
+    {/* Light theme → show dark logo */}
+    <Image
+      src="/logo-dark.png"
+      alt="Delonti Logo"
+      width={160}
+      height={40}
+      className="h-7 lg:h-8 w-auto object-contain dark:hidden"
+      priority
+    />
+
+    {/* Dark theme → show light logo */}
+    <Image
+      src="/logo-light.png"
+      alt="Delonti Logo"
+      width={160}
+      height={40}
+      className="hidden dark:block h-7 lg:h-8 w-auto object-contain"
+      priority
+    />
+
+  </div>
+</Link>
 
                     <nav
                         className="hidden lg:flex items-center space-x-1 xl:space-x-4 h-full"
