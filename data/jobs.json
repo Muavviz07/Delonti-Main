@@ -1,0 +1,117 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "title": "Senior IoT Architects",
+    "category": "Software Development",
+    "jobType": "Full Time",
+    "location": "Remote - US",
+    "postedAt": "2024-01-10T00:00:00.000Z",
+    "jobCode": "JD-IOT-ARCH-01",
+    "qualification": "BE/B.Tech or ME/M.Tech in Computer Science, Electrical, or Electronics Engineering",
+    "experience": "7+ years",
+    "requiredSkills": [
+      "AWS IoT Core / Azure IoT Hub",
+      "MQTT, CoAP, and AMQP protocols",
+      "Edge computing and fog computing architectures",
+      "Distributed systems design and microservices",
+      "Rust or Go for high-performance services",
+      "Kubernetes and container orchestration",
+      "Time-series databases (InfluxDB, TimescaleDB)",
+      "Security best practices for IoT deployments"
+    ],
+    "rolesAndResponsibilities": [
+      "Design and architect end-to-end IoT solutions for smart city and logistics deployments",
+      "Define cloud ingestion pipelines capable of handling millions of device messages per second",
+      "Collaborate with firmware and hardware teams to establish communication protocols and data schemas",
+      "Lead architecture reviews, ensuring scalability, reliability, and security across all IoT systems",
+      "Mentor senior engineers and drive technical direction for the IoT platform team",
+      "Produce detailed technical specifications and architecture decision records (ADRs)"
+    ],
+    "isActive": true
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "title": "Firmware Engineer",
+    "category": "Hardware",
+    "jobType": "Full Time",
+    "location": "Bengaluru",
+    "postedAt": "2024-02-20T00:00:00.000Z",
+    "jobCode": "JD-EMB-SW-04",
+    "qualification": "BE in Electronics / Telecommunication / Electrical / Computer Science",
+    "experience": "2-4 years",
+    "requiredSkills": [
+      "C / C++ for embedded systems",
+      "RTOS (FreeRTOS, Zephyr) experience",
+      "RFID / NFC protocol stacks (ISO 14443, ISO 15693)",
+      "Low-power embedded design and optimization",
+      "JTAG and serial debugging techniques",
+      "Communication interfaces: SPI, I2C, UART, USB"
+    ],
+    "rolesAndResponsibilities": [
+      "Develop and maintain firmware for high-throughput RFID scanning endpoints",
+      "Implement and optimize communication stacks for BLE, Wi-Fi, and LoRaWAN modules",
+      "Write unit and integration tests for embedded software components",
+      "Collaborate closely with hardware engineers during bring-up and validation phases",
+      "Debug and resolve field issues through log analysis and remote diagnostics"
+    ],
+    "isActive": true
+  },
+  {
+    "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "title": "Cybersecurity Analyst",
+    "category": "Security",
+    "jobType": "Full Time",
+    "location": "Washington D.C.",
+    "postedAt": "2024-03-05T00:00:00.000Z",
+    "jobCode": "JD-SEC-ANLT-02",
+    "qualification": "BS/MS in Cybersecurity, Information Security, or Computer Science",
+    "experience": "3-6 years",
+    "requiredSkills": [
+      "Zero-trust network architecture and implementation",
+      "SIEM platforms (Splunk, Microsoft Sentinel)",
+      "Penetration testing and vulnerability assessments",
+      "Federal compliance frameworks: NIST 800-53, FedRAMP, CMMC",
+      "Incident response and digital forensics",
+      "Cloud security (AWS GovCloud, Azure Government)",
+      "Experience with classified environments (clearance preferred)"
+    ],
+    "rolesAndResponsibilities": [
+      "Implement and monitor zero-trust security protocols across federal agency client deployments",
+      "Conduct regular vulnerability scans, penetration tests, and security audits",
+      "Respond to and lead incident response for security events across client environments",
+      "Produce detailed compliance reports aligned to NIST 800-53 and FedRAMP control families",
+      "Brief federal agency stakeholders on threat landscape and remediation posture",
+      "Collaborate with DevSecOps teams to embed security into CI/CD pipelines"
+    ],
+    "isActive": true
+  },
+  {
+    "id": "d4e5f6a7-b8c9-0123-def0-234567890123",
+    "title": "Enterprise Account Executive",
+    "category": "Sales",
+    "jobType": "Full Time",
+    "location": "Remote - Global",
+    "postedAt": "2024-04-01T00:00:00.000Z",
+    "jobCode": "JD-SALES-AE-03",
+    "qualification": "BS in Business, Marketing, or related field (MBA preferred)",
+    "experience": "5+ years",
+    "requiredSkills": [
+      "Enterprise SaaS or technology sales (B2B)",
+      "Salesforce CRM and sales analytics platforms",
+      "Strategic account planning and multi-threaded relationship management",
+      "Complex deal negotiation and contract structuring",
+      "Logistics, supply chain, or federal sector vertical knowledge",
+      "Executive-level communication and presentation skills",
+      "Experience closing 7-figure enterprise deals"
+    ],
+    "rolesAndResponsibilities": [
+      "Drive new logo acquisition and strategic partnership development in the logistics and public sector verticals",
+      "Own the full sales cycle from prospecting through contract execution for enterprise accounts",
+      "Collaborate with solutions engineers to craft tailored demonstrations and proof-of-concept deployments",
+      "Develop and maintain C-suite and VP-level relationships across target accounts",
+      "Forecast pipeline accurately in Salesforce and report weekly to VP of Sales",
+      "Represent Delonti at industry conferences, trade shows, and executive briefings"
+    ],
+    "isActive": true
+  }
+]
