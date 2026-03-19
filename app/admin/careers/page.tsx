@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 
 interface Job {
     id: string;
+    slug?: string;
     title: string;
     category: string;
     jobType: string;

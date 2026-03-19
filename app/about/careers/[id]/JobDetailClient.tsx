@@ -8,6 +8,7 @@ import { CheckCircle, ChevronRight, Upload, Loader2, X, AlertCircle } from "luci
 
 interface Job {
     id: string;
+    slug?: string;
     title: string;
     category: string;
     jobType: string;

@@ -7,6 +7,7 @@ const CATEGORIES_FILE = path.join(DATA_DIR, "categories.json");
 
 export interface Job {
     id: string;
+    slug?: string;
     title: string;
     category: string;
     jobType: string;

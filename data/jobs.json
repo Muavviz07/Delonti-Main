@@ -27,7 +27,8 @@
       "Mentor senior engineers and drive technical direction for the IoT platform team",
       "Produce detailed technical specifications and architecture decision records (ADRs)"
     ],
-    "isActive": true
+    "isActive": true,
+    "slug": "senior-iot-architects"
   },
   {
     "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
@@ -54,7 +55,8 @@
       "Collaborate closely with hardware engineers during bring-up and validation phases",
       "Debug and resolve field issues through log analysis and remote diagnostics"
     ],
-    "isActive": true
+    "isActive": true,
+    "slug": "firmware-engineer"
   },
   {
     "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
@@ -83,7 +85,8 @@
       "Brief federal agency stakeholders on threat landscape and remediation posture",
       "Collaborate with DevSecOps teams to embed security into CI/CD pipelines"
     ],
-    "isActive": true
+    "isActive": true,
+    "slug": "cybersecurity-analyst"
   },
   {
     "id": "d4e5f6a7-b8c9-0123-def0-234567890123",
@@ -112,6 +115,7 @@
       "Forecast pipeline accurately in Salesforce and report weekly to VP of Sales",
       "Represent Delonti at industry conferences, trade shows, and executive briefings"
     ],
-    "isActive": true
+    "isActive": true,
+    "slug": "enterprise-account-executive"
   }
 ]

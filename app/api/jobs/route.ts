@@ -1,6 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readJobs, writeJobs, generateId } from "@/lib/jobs";
 
+function generateSlug(title: string): string {
+    return title
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-");
+}
+
 export async function GET(request: NextRequest) {
     try {
         const { searchParams } = new URL(request.url);
@@ -28,6 +37,7 @@ export async function POST(request: NextRequest) {
 
         const newJob = {
             id: generateId(),
+            slug: generateSlug(body.title ?? ""),
             title: body.title ?? "",
             category: body.category ?? "",
             jobType: body.jobType ?? "",

@@ -33,7 +33,17 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
             return NextResponse.json({ error: "Job not found" }, { status: 404 });
         }
 
-        jobs[index] = { ...jobs[index], ...body, id };
+        const updatedSlug =
+            body.title && body.title !== jobs[index].title
+                ? body.title
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^a-z0-9\s-]/g, "")
+                    .replace(/\s+/g, "-")
+                    .replace(/-+/g, "-")
+                : jobs[index].slug ?? jobs[index].id;
+
+        jobs[index] = { ...jobs[index], ...body, id, slug: updatedSlug };
         writeJobs(jobs);
 
         return NextResponse.json(jobs[index]);

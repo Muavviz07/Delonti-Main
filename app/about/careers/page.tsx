@@ -12,6 +12,7 @@ import { timeAgo } from "@/lib/utils-client";
 
 interface Job {
     id: string;
+    slug?: string;
     title: string;
     category: string;
     jobType: string;
@@ -54,7 +55,7 @@ function JobCard({ job }: { job: Job }) {
         <div
             className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 p-6
         hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group"
-            onClick={() => router.push(`/about/careers/${job.id}`)}
+            onClick={() => router.push(`/about/careers/${job.slug || job.id}`)}
         >
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1 min-w-0">
@@ -84,7 +85,7 @@ function JobCard({ job }: { job: Job }) {
                     <button
                         onClick={(e) => {
                             e.stopPropagation();
-                            router.push(`/about/careers/${job.id}`);
+                            router.push(`/about/careers/${job.slug || job.id}`);
                         }}
                         className="inline-flex items-center gap-2 bg-[#2b2b4f] hover:bg-[#2b2b4f]/90 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all duration-200 group/btn whitespace-nowrap"
                     >
