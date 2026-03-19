@@ -77,30 +77,30 @@ export default function Header() {
                 <div className="flex justify-between items-center h-[60px] lg:h-[72px]">
 
                     <Link href="/" className="flex items-center z-50 shrink-0 mr-6">
-  <div className="relative flex items-center">
-    
-    {/* Light theme → show dark logo */}
-    <Image
-      src="/logo-dark.png"
-      alt="Delonti Logo"
-      width={160}
-      height={40}
-      className="h-7 lg:h-8 w-auto object-contain dark:hidden"
-      priority
-    />
+                        <div className="relative flex items-center">
 
-    {/* Dark theme → show light logo */}
-    <Image
-      src="/logo-light.png"
-      alt="Delonti Logo"
-      width={160}
-      height={40}
-      className="hidden dark:block h-8 lg:h-9 w-auto object-contain"
-      priority
-    />
+                            {/* Light theme → show dark logo */}
+                            <Image
+                                src="/logo-dark.png"
+                                alt="Delonti Logo"
+                                width={160}
+                                height={40}
+                                className="h-7 lg:h-8 w-auto object-contain dark:hidden"
+                                priority
+                            />
 
-  </div>
-</Link>
+                            {/* Dark theme → show light logo */}
+                            <Image
+                                src="/logo-light.png"
+                                alt="Delonti Logo"
+                                width={160}
+                                height={40}
+                                className="hidden dark:block h-8 lg:h-9 w-auto object-contain"
+                                priority
+                            />
+
+                        </div>
+                    </Link>
 
                     <nav
                         className="hidden lg:flex items-center space-x-1 xl:space-x-4 h-full"
@@ -247,7 +247,7 @@ export default function Header() {
                                                 image="https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070"
                                                 href="/private/smb"
                                             />
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -334,7 +334,7 @@ export default function Header() {
                                                 <MenuHeader>Research & Reports</MenuHeader>
                                                 <MenuLink href="/resources/case-studies">Case Studies</MenuLink>
                                                 <MenuLink href="/resources/whitepapers">Whitepapers</MenuLink>
-                                                <MenuLink href="/resources/insights">Technology Insights</MenuLink>
+                                                <MenuLink href="/resources/business-cases">Business Cases</MenuLink>
                                             </div>
                                             <div>
                                                 <MenuHeader>News & Updates</MenuHeader>
@@ -430,7 +430,7 @@ export default function Header() {
                         },
                         {
                             title: "Insights & Resources", url: "/resources",
-                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Government Programs & Grants", url: "/resources/grants" }, { name: "Technology Insights", url: "/resources/insights" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "News & Announcements", url: "/resources/news" }]
+                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Government Programs & Grants", url: "/resources/grants" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "News & Announcements", url: "/resources/news" }]
                         },
                     ].map((section) => (
                         <div key={section.title} className="border-b border-gray-100 dark:border-white/10 pb-4">

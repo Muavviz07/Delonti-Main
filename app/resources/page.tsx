@@ -26,11 +26,11 @@ const RESOURCES = [
         bgImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070"
     },
     {
-        title: "Technology Blog",
-        desc: "Engineering updates, release notes, and industry opinions from our architects.",
-        href: "/resources/blogs",
+        title: "Business Cases",
+        desc: "ROI analysis, procurement toolkits, and business case documentation for technology investment decisions.",
+        href: "/resources/business-cases",
         colSpan: "md:col-span-1",
-        bgImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070"
+        bgImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070"
     },
     {
         title: "News & Events",
