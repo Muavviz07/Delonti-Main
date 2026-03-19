@@ -16,12 +16,19 @@ export async function GET(request: NextRequest) {
         const category = searchParams.get("category");
         const jobType = searchParams.get("jobType");
         const location = searchParams.get("location");
+        const all = searchParams.get("all");
 
-        let jobs = readJobs().filter((j) => j.isActive);
+        // If all=true, return all jobs including inactive (for admin)
+        let jobs = all === "true" ? readJobs() : readJobs().filter((j) => j.isActive);
 
         if (category) jobs = jobs.filter((j) => j.category === category);
         if (jobType) jobs = jobs.filter((j) => j.jobType === jobType);
         if (location) jobs = jobs.filter((j) => j.location === location);
+
+        // Sort by postedAt descending (newest first)
+        jobs = jobs.sort((a, b) =>
+            new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()
+        );
 
         return NextResponse.json(jobs);
     } catch (error) {

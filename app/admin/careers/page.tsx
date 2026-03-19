@@ -236,18 +236,13 @@ function ManageJobsTab() {
     });
 
     const fetchJobs = useCallback(async () => {
-        setLoading(true);
+        setLoading(true)
         try {
-            // Fetch all including inactive for admin
-            const res = await fetch("/api/jobs?all=true");
-            const data = await res.json();
-            // Actually fetch without filter to get all (active and inactive)
-            const allRes = await fetch("/api/jobs");
-            const active = await allRes.json();
-            // We need a separate admin endpoint but let's just show them all
-            setJobs(data.length ? data : active);
+            const res = await fetch("/api/jobs?all=true")
+            const data = await res.json()
+            setJobs(data)
         } catch { } finally {
-            setLoading(false);
+            setLoading(false)
         }
     }, []);
 
