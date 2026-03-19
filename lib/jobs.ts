@@ -1,3 +1,4 @@
+import "server-only";
 import fs from "fs";
 import path from "path";
 
@@ -81,3 +82,77 @@ export function timeAgo(dateString: string): string {
     if (diffMinutes > 0) return diffMinutes === 1 ? "1 minute ago" : `${diffMinutes} minutes ago`;
     return "just now";
 }
+
+// ─── BLOG HELPERS ────────────────────────────────────────────
+
+export interface BlogPost {
+    id: string
+    slug: string
+    title: string
+    category: string
+    date: string
+    description: string
+    image: string
+    content: string[]
+    isPublished: boolean
+    createdAt: string
+}
+
+const blogsPath = path.join(process.cwd(), 'data', 'blogs.json')
+
+export function readBlogs(): BlogPost[] {
+    try {
+        return JSON.parse(fs.readFileSync(blogsPath, 'utf-8'))
+    } catch {
+        return []
+    }
+}
+
+export function writeBlogs(blogs: BlogPost[]): void {
+    const dir = path.dirname(blogsPath)
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
+    fs.writeFileSync(blogsPath, JSON.stringify(blogs, null, 2))
+}
+
+// ─── ARTICLE HELPERS ─────────────────────────────────────────
+
+export interface Article {
+    id: string
+    slug: string
+    title: string
+    category: string
+    date: string
+    description: string
+    image: string
+    content: string[]
+    isPublished: boolean
+    createdAt: string
+}
+
+const articlesPath = path.join(process.cwd(), 'data', 'articles.json')
+
+export function readArticles(): Article[] {
+    try {
+        return JSON.parse(fs.readFileSync(articlesPath, 'utf-8'))
+    } catch {
+        return []
+    }
+}
+
+export function writeArticles(articles: Article[]): void {
+    const dir = path.dirname(articlesPath)
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
+    fs.writeFileSync(articlesPath, JSON.stringify(articles, null, 2))
+}
+
+// ─── SHARED SLUG GENERATOR ───────────────────────────────────
+
+export function generateContentSlug(title: string): string {
+    return title
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+}
+

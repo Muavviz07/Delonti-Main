@@ -2,16 +2,14 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
-import { Tag, Cpu, Lock, BarChart3, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import PageHero from "@/components/PageHero"
 import OverviewSection from "@/components/OverviewSection"
-import FeatureGrid from "@/components/FeatureGrid"
 import CTASection from "@/components/CTASection"
 
-export interface BlogPost {
+export interface Article {
     id: string
     slug: string
     title: string
@@ -44,79 +42,82 @@ export function timeAgo(dateString: string): string {
 }
 
 const CATEGORIES = [
-    {
-        icon: <Tag className="w-8 h-8" />,
-        title: "RFID & Asset Tracking",
-        description: "Real-world asset visibility and inventory management insights."
-    },
-    {
-        icon: <Cpu className="w-8 h-8" />,
-        title: "IoT & Smart Infrastructure",
-        description: "How connected sensors are transforming infrastructure monitoring."
-    },
-    {
-        icon: <Lock className="w-8 h-8" />,
-        title: "Cybersecurity & Risk Management",
-        description: "Zero Trust strategies and security frameworks."
-    },
-    {
-        icon: <BarChart3 className="w-8 h-8" />,
-        title: "Data & Analytics",
-        description: "Turning raw operational data into business intelligence."
-    }
+    "All",
+    "Government Infrastructure",
+    "Smart Cities",
+    "Asset Management",
+    "Cybersecurity for Government",
+    "Infrastructure Data & Analytics"
 ]
 
-export default function BlogsPage() {
-    const [blogs, setBlogs] = useState<BlogPost[]>([])
+export default function InsightsPage() {
+    const [articles, setArticles] = useState<Article[]>([])
     const [loading, setLoading] = useState(true)
+    const [selectedCategory, setSelectedCategory] = useState("All")
 
     useEffect(() => {
-        async function fetchBlogs() {
+        async function fetchArticles() {
             try {
-                const res = await fetch("/api/blogs?published=true")
+                setLoading(true)
+                const url = selectedCategory === "All"
+                    ? "/api/articles?published=true"
+                    : `/api/articles?published=true&category=${encodeURIComponent(selectedCategory)}`
+
+                const res = await fetch(url)
                 if (res.ok) {
                     const data = await res.json()
-                    setBlogs(data)
+                    setArticles(data)
                 }
             } catch (error) {
-                console.error("Failed to fetch blogs:", error)
+                console.error("Failed to fetch articles:", error)
             } finally {
                 setLoading(false)
             }
         }
-        fetchBlogs()
-    }, [])
+        fetchArticles()
+    }, [selectedCategory])
 
     return (
         <div className="min-h-screen bg-white dark:bg-slate-950">
             <Header />
 
             <PageHero
-                title="Engineering Insights"
-                subtitle="Technical deep-dives, architectural blueprints, and industry analysis from Delonti's core team."
+                title="Public Sector Insights"
+                subtitle="Research, analysis, and technology perspectives for government agencies and public infrastructure leaders."
                 breadcrumbs={[
                     { label: "Resources", href: "/resources" },
-                    { label: "Blogs" }
+                    { label: "Public Sector Insights" }
                 ]}
-                backgroundImage="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070"
+                backgroundImage="https://images.unsplash.com/photo-1555899434-94d1368aa7af?q=80&w=2070"
             />
 
             <OverviewSection
                 title="Knowledge Base"
-                heading="Exploring the Edge of Infrastructure"
-                description="Read our latest publications on distributed systems, Zero-Trust architectures, and the physics of massive-scale IoT deployments."
+                heading="Intelligence for the Public Sector"
+                description="Practical insights on how government agencies are modernizing infrastructure, improving asset management, strengthening cybersecurity, and building data-driven operations."
                 background="white"
             />
 
-            <FeatureGrid
-                title="Categories"
-                heading="Topics We Cover"
-                features={CATEGORIES}
-                columns={4}
-                background="slate"
-            />
+            <div className="bg-slate-50 dark:bg-slate-900 py-6 border-b border-gray-100 dark:border-white/10">
+                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-wrap gap-3">
+                        {CATEGORIES.map((cat) => (
+                            <button
+                                key={cat}
+                                onClick={() => setSelectedCategory(cat)}
+                                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${selectedCategory === cat
+                                    ? "bg-primary text-white"
+                                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-gray-200 dark:border-white/10 hover:border-primary cursor-pointer"
+                                    }`}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
 
-            <section className="py-24 bg-white dark:bg-slate-950">
+            <section className="bg-slate-50 dark:bg-slate-900 py-12 pb-24 border-t border-gray-100 dark:border-white/10">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                     {loading ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -130,37 +131,37 @@ export default function BlogsPage() {
                                 </div>
                             ))}
                         </div>
-                    ) : blogs.length > 0 ? (
+                    ) : articles.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {blogs.map((blog) => (
+                            {articles.map((article) => (
                                 <Link
-                                    key={blog.id}
-                                    href={`/resources/blogs/${blog.slug}`}
-                                    className="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1"
+                                    key={article.id}
+                                    href={`/resources/insights/${article.slug}`}
+                                    className="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-white/10 overflow-hidden hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-xl hover:-translate-y-1"
                                 >
                                     <div className="relative h-56 w-full overflow-hidden">
                                         <img
-                                            src={blog.image || "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070"}
-                                            alt={blog.title}
+                                            src={article.image || "https://images.unsplash.com/photo-1555899434-94d1368aa7af?q=80&w=2070"}
+                                            alt={article.title}
                                             className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                                         />
                                         <div className="absolute top-4 left-4">
                                             <span className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-primary text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
-                                                {blog.category}
+                                                {article.category}
                                             </span>
                                         </div>
                                     </div>
 
                                     <div className="p-8 flex flex-col flex-grow">
                                         <p className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-3 flex items-center justify-between">
-                                            {blog.date}
-                                            <span className="text-xs">{timeAgo(blog.createdAt)}</span>
+                                            {article.date}
+                                            <span className="text-xs">{timeAgo(article.createdAt)}</span>
                                         </p>
                                         <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors line-clamp-2">
-                                            {blog.title}
+                                            {article.title}
                                         </h3>
                                         <p className="text-slate-600 dark:text-slate-300 line-clamp-3 mb-6 flex-grow">
-                                            {blog.description}
+                                            {article.description}
                                         </p>
                                         <div className="flex items-center text-primary font-bold text-sm uppercase tracking-wider group-hover:gap-3 gap-2 transition-all mt-auto pt-6 border-t border-gray-100 dark:border-white/10">
                                             Read Article <ArrowRight className="w-4 h-4" />
@@ -170,18 +171,18 @@ export default function BlogsPage() {
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-24 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-white/10">
-                            <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-4">No insights published yet</h3>
-                            <p className="text-slate-600 dark:text-slate-400">Check back soon for new articles and deep-dives.</p>
+                        <div className="text-center py-24 bg-white dark:bg-slate-800 rounded-3xl border border-gray-100 dark:border-white/10">
+                            <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-4">No articles found</h3>
+                            <p className="text-slate-600 dark:text-slate-400">Try selecting a different category or check back soon.</p>
                         </div>
                     )}
                 </div>
             </section>
 
             <CTASection
-                heading="Subscribe to our Engineering Newsletter"
-                description="Receive monthly architectural deep-dives directly in your inbox."
-                buttonText="Join the Mailing List"
+                heading="Stay Ahead of the Curve"
+                description="Subscribe to receive the latest public sector technology insights directly in your inbox."
+                buttonText="Subscribe to Insights"
                 buttonHref="#subscribe"
             />
 

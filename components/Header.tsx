@@ -339,6 +339,7 @@ export default function Header() {
                                             <div>
                                                 <MenuHeader>News & Updates</MenuHeader>
                                                 <MenuLink href="/resources/blogs">Blogs & Articles</MenuLink>
+                                                <MenuLink href="/resources/insights">Public Sector Insights</MenuLink>
                                                 <MenuLink href="/resources/news">News & Announcements</MenuLink>
                                                 <MenuLink href="/resources/grants">Government Programs & Grants</MenuLink>
                                             </div>
@@ -430,7 +431,7 @@ export default function Header() {
                         },
                         {
                             title: "Insights & Resources", url: "/resources",
-                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Government Programs & Grants", url: "/resources/grants" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "News & Announcements", url: "/resources/news" }]
+                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Government Programs & Grants", url: "/resources/grants" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "Public Sector Insights", url: "/resources/insights" }, { name: "News & Announcements", url: "/resources/news" }]
                         },
                     ].map((section) => (
                         <div key={section.title} className="border-b border-gray-100 dark:border-white/10 pb-4">
