@@ -1,20 +1,20 @@
 {
-    "categories": [
-        "Software Development",
-        "Hardware",
-        "Security",
-        "Sales"
-    ],
-    "jobTypes": [
-        "Full Time",
-        "Part Time",
-        "Contract",
-        "Remote"
-    ],
-    "locations": [
-        "Bengaluru",
-        "Washington D.C.",
-        "Remote - US",
-        "Remote - Global"
-    ]
+  "categories": [
+    "Software Development",
+    "Security",
+    "Sales",
+    "Hardware"
+  ],
+  "jobTypes": [
+    "Full Time",
+    "Part Time",
+    "Contract",
+    "Remote"
+  ],
+  "locations": [
+    "Bengaluru",
+    "Washington D.C.",
+    "Remote - US",
+    "Remote - Global"
+  ]
 }

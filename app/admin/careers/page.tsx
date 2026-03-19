@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Plus, Edit2, Trash2, X, Check, Loader2, ChevronDown, ChevronUp } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface Job {
     id: string;
@@ -223,13 +224,16 @@ function JobModal({
     );
 }
 
-function ManageJobsTab({ categories }: { categories: CategoriesData }) {
+function ManageJobsTab() {
     const [jobs, setJobs] = useState<Job[]>([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
     const [editingJob, setEditingJob] = useState<Job | null>(null);
     const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
     const [expandedId, setExpandedId] = useState<string | null>(null);
+    const [categories, setCategories] = useState<CategoriesData>({
+        categories: [], jobTypes: [], locations: []
+    });
 
     const fetchJobs = useCallback(async () => {
         setLoading(true);
@@ -247,7 +251,18 @@ function ManageJobsTab({ categories }: { categories: CategoriesData }) {
         }
     }, []);
 
-    useEffect(() => { fetchJobs(); }, [fetchJobs]);
+    const fetchCategories = useCallback(async () => {
+        try {
+            const res = await fetch("/api/categories");
+            const data = await res.json();
+            setCategories(data);
+        } catch { }
+    }, []);
+
+    useEffect(() => {
+        fetchJobs();
+        fetchCategories();
+    }, [fetchJobs, fetchCategories]);
 
     const handleDelete = async (id: string) => {
         try {
@@ -262,7 +277,7 @@ function ManageJobsTab({ categories }: { categories: CategoriesData }) {
             <div className="flex items-center justify-between mb-6">
                 <p className="text-sm text-slate-500 dark:text-slate-400">{jobs.length} job{jobs.length !== 1 ? "s" : ""} total</p>
                 <button
-                    onClick={() => { setEditingJob(null); setShowModal(true); }}
+                    onClick={() => { fetchCategories(); setEditingJob(null); setShowModal(true); }}
                     className="inline-flex items-center gap-2 bg-[#2b2b4f] hover:bg-[#2b2b4f]/90 text-white font-bold px-5 py-2.5 rounded-xl transition-all text-sm"
                 >
                     <Plus className="w-4 h-4" /> Add New Job
@@ -314,7 +329,7 @@ function ManageJobsTab({ categories }: { categories: CategoriesData }) {
                                         <td className="px-5 py-4">
                                             <div className="flex items-center gap-2 justify-end">
                                                 <button
-                                                    onClick={() => { setEditingJob(job); setShowModal(true); }}
+                                                    onClick={() => { fetchCategories(); setEditingJob(job); setShowModal(true); }}
                                                     className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500 hover:text-[#2b2b4f] dark:hover:text-indigo-400 transition-all"
                                                     title="Edit"
                                                 >
@@ -459,13 +474,32 @@ function ManageFiltersTab() {
     useEffect(() => { fetchCats(); }, [fetchCats]);
 
     const handleAdd = async (type: string, value: string) => {
-        await fetch("/api/categories", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type, value }) });
-        fetchCats();
+        if (!value.trim()) return;
+        try {
+            const res = await fetch("/api/categories", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ type, value: value.trim() })
+            });
+            if (!res.ok) throw new Error("Failed to add");
+            await fetchCats();
+        } catch (err) {
+            console.error("Failed to add category:", err);
+        }
     };
 
     const handleDelete = async (type: string, value: string) => {
-        await fetch("/api/categories", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type, value }) });
-        fetchCats();
+        try {
+            const res = await fetch("/api/categories", {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ type, value })
+            });
+            if (!res.ok) throw new Error("Failed to delete");
+            await fetchCats();
+        } catch (err) {
+            console.error("Failed to delete category:", err);
+        }
     };
 
     if (loading) return <div className="text-center py-12 text-slate-400">Loading...</div>;
@@ -481,12 +515,7 @@ function ManageFiltersTab() {
 
 export default function AdminCareersPage() {
     const [tab, setTab] = useState<"jobs" | "filters">("jobs");
-    const [categories, setCategories] = useState<CategoriesData>({ categories: [], jobTypes: [], locations: [] });
     const router = useRouter();
-
-    useEffect(() => {
-        fetch("/api/categories").then((r) => r.json()).then(setCategories).catch(console.error);
-    }, []);
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-[#0f172a]">
@@ -494,9 +523,24 @@ export default function AdminCareersPage() {
             <div className="bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 sticky top-0 z-40">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-[#2b2b4f] flex items-center justify-center">
-                            <span className="text-white text-xs font-black">D</span>
-                        </div>
+                        <>
+                            {/* Light mode logo */}
+                            <Image
+                                src="/logo-dark.png"
+                                alt="Delonti"
+                                width={120}
+                                height={30}
+                                className="h-7 w-auto object-contain dark:hidden"
+                            />
+                            {/* Dark mode logo */}
+                            <Image
+                                src="/logo-light.png"
+                                alt="Delonti"
+                                width={120}
+                                height={30}
+                                className="h-7 w-auto object-contain hidden dark:block"
+                            />
+                        </>
                         <div>
                             <h1 className="text-base font-bold text-slate-900 dark:text-white">Delonti Admin</h1>
                             <p className="text-xs text-slate-400">Careers Management</p>
@@ -548,7 +592,7 @@ export default function AdminCareersPage() {
                     ))}
                 </div>
 
-                {tab === "jobs" ? <ManageJobsTab categories={categories} /> : <ManageFiltersTab />}
+                {tab === "jobs" ? <ManageJobsTab /> : <ManageFiltersTab />}
             </div>
         </div>
     );
