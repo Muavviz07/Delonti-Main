@@ -31,6 +31,28 @@ export interface Article {
     createdAt: string;
 }
 
+export interface BlogForm {
+    title: string;
+    category: string;
+    date: string;
+    image: string;
+    description: string;
+    content: string;
+    status: 'published' | 'draft';
+    [key: string]: any;
+}
+
+export interface ArticleForm {
+    title: string;
+    category: string;
+    date: string;
+    image: string;
+    description: string;
+    content: string;
+    status: 'published' | 'draft';
+    [key: string]: any;
+}
+
 export function generateContentSlug(title: string): string {
     return title
         .toLowerCase()
@@ -76,7 +98,7 @@ function ContentModal({
     onClose: () => void;
     onSave: () => void;
 }) {
-    const [form, setForm] = useState<any>(
+    const [form, setForm] = useState<BlogForm | ArticleForm>(
         post
             ? { ...post, status: post.isPublished ? 'published' : 'draft', content: Array.isArray(post.content) ? post.content.join('\n\n') : post.content }
             : type === "blog" ? { ...emptyBlogForm, status: 'draft' } : { ...emptyArticleForm, status: 'draft' }
@@ -211,14 +233,14 @@ function ContentModal({
                         <div className="flex gap-2">
                             <button
                                 type="button"
-                                onClick={() => setForm((prev: any) => ({ ...prev, status: 'published' }))}
+                                onClick={() => setForm(prev => ({ ...prev, status: 'published' }))}
                                 className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all ${form.status === 'published' ? 'bg-[#2b2b4f] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}`}
                             >
                                 Published
                             </button>
                             <button
                                 type="button"
-                                onClick={() => setForm((prev: any) => ({ ...prev, status: 'draft' }))}
+                                onClick={() => setForm(prev => ({ ...prev, status: 'draft' }))}
                                 className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all ${form.status === 'draft' ? 'bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}`}
                             >
                                 Draft
