@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Plus, Edit2, Trash2, X, Check, Loader2, ChevronDown, ChevronUp } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Job {
     id: string;
@@ -113,10 +114,10 @@ function JobModal({
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-start justify-end" onClick={onClose}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
             <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
             <div
-                className="relative w-full max-w-2xl h-full bg-white dark:bg-slate-900 shadow-2xl overflow-y-auto"
+                className="relative w-full max-w-2xl max-h-[90vh] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="sticky top-0 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 px-6 py-4 flex items-center justify-between z-10">
@@ -480,6 +481,7 @@ function ManageFiltersTab() {
 export default function AdminCareersPage() {
     const [tab, setTab] = useState<"jobs" | "filters">("jobs");
     const [categories, setCategories] = useState<CategoriesData>({ categories: [], jobTypes: [], locations: [] });
+    const router = useRouter();
 
     useEffect(() => {
         fetch("/api/categories").then((r) => r.json()).then(setCategories).catch(console.error);
@@ -499,13 +501,24 @@ export default function AdminCareersPage() {
                             <p className="text-xs text-slate-400">Careers Management</p>
                         </div>
                     </div>
-                    <a
-                        href="/about/careers"
-                        target="_blank"
-                        className="text-sm font-semibold text-[#2b2b4f] dark:text-indigo-400 hover:underline"
-                    >
-                        View Public Page →
-                    </a>
+                    <div className="flex items-center gap-6">
+                        <a
+                            href="/about/careers"
+                            target="_blank"
+                            className="text-sm font-semibold text-[#2b2b4f] dark:text-indigo-400 hover:underline"
+                        >
+                            View Public Page →
+                        </a>
+                        <button
+                            onClick={async () => {
+                                await fetch('/api/admin/logout', { method: 'POST' })
+                                router.push('/admin/login')
+                            }}
+                            className="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-red-500 transition-colors"
+                        >
+                            Sign Out
+                        </button>
+                    </div>
                 </div>
             </div>
 
