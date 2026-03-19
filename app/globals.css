@@ -33,6 +33,24 @@
 }
 
 @layer utilities {
+  .section-dark {
+    background-color: #1a1a2e;
+  }
+
+  .dark .section-dark {
+    background-color: #0f0f14;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 
   /* This creates the smooth fade-out on the left and right edges */
   .mask-horizontal {
