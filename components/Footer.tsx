@@ -18,11 +18,11 @@ export default function Footer() {
 
     {/* Light theme → dark logo */}
     <Image
-      src="/logo-dark.png"
+      src="/logo-dark(blue-text).png"
       alt="Delonti Logo"
-      width={140}
-      height={35}
-      className="h-6 lg:h-8 w-auto object-contain dark:hidden"
+      width={150}
+      height={38}
+      className="h-7 lg:h-8 w-auto object-contain dark:hidden"
     />
 
     {/* Dark theme → light logo */}

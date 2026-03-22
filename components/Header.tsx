@@ -81,11 +81,11 @@ export default function Header() {
 
                             {/* Light theme → show dark logo */}
                             <Image
-                                src="/logo-dark.png"
+                                src="/logo-dark(blue-text).png"
                                 alt="Delonti Logo"
-                                width={160}
-                                height={40}
-                                className="h-7 lg:h-8 w-auto object-contain dark:hidden"
+                                width={150}
+                                height={38}
+                                className="h-8 lg:h-9 w-auto object-contain dark:hidden"
                                 priority
                             />
 

@@ -35,7 +35,7 @@ export default function AdminDashboardPage() {
             <div className="bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 sticky top-0 z-40">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <Image src="/logo-dark.png" alt="Delonti" width={120} height={30} className="h-7 w-auto object-contain dark:hidden" />
+                        <Image src="/logo-dark(blue-text).png" alt="Delonti" width={150} height={38} className="h-8 w-auto object-contain" />
                         <Image src="/logo-light.png" alt="Delonti" width={120} height={30} className="h-7 w-auto object-contain hidden dark:block" />
                         <div>
                             <h1 className="text-base font-bold text-slate-900 dark:text-white">Delonti Admin</h1>

@@ -43,11 +43,11 @@ export default function AdminLoginPage() {
         <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-[#0f0f14]">
             <div className="w-full max-w-sm bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-8">
                 <Image
-                    src="/logo-dark.png"
+                    src="/logo-dark(blue-text).png"
                     alt="Delonti"
-                    width={140}
-                    height={35}
-                    className="h-7 w-auto object-contain mx-auto mb-8 dark:hidden"
+                    width={150}
+                    height={38}
+                    className="h-8 w-auto object-contain"
                 />
                 <Image
                     src="/logo-light.png"

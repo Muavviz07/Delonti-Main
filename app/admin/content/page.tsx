@@ -542,11 +542,11 @@ export default function AdminContentPage() {
                         <>
                             {/* Light mode logo */}
                             <Image
-                                src="/logo-dark.png"
+                                src="/logo-dark(blue-text).png"
                                 alt="Delonti"
-                                width={120}
-                                height={30}
-                                className="h-7 w-auto object-contain dark:hidden"
+                                width={150}
+                                height={38}
+                                className="h-8 w-auto object-contain"
                             />
                             {/* Dark mode logo */}
                             <Image
