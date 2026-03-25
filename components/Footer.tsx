@@ -12,30 +12,21 @@ export default function Footer() {
                     <div>
                         {/* WRAPPED LOGO IN LINK TO HOME & REDUCED SIZE */}
                         <div className="flex items-center gap-2 mb-6">
-                            <Link href="/">
-                                <div className="flex items-center gap-2 mb-6">
-  <Link href="/" className="hover:opacity-80 transition-opacity">
-
-    {/* Light theme → dark logo */}
-    <Image
-      src="/logo-dark(blue-text).png"
-      alt="Delonti Logo"
-      width={150}
-      height={38}
-      className="h-7 lg:h-8 w-auto object-contain dark:hidden"
-    />
-
-    {/* Dark theme → light logo */}
-    <Image
-      src="/logo-light.png"
-      alt="Delonti Logo"
-      width={140}
-      height={35}
-      className="hidden dark:block h-7 lg:h-9 w-auto object-contain"
-    />
-
-  </Link>
-</div>
+                            <Link href="/" className="hover:opacity-80 transition-opacity">
+                                <Image
+                                    src="/logo-dark(blue-text).png"
+                                    alt="Delonti Logo"
+                                    width={150}
+                                    height={38}
+                                    className="h-7 lg:h-8 w-auto object-contain dark:hidden"
+                                />
+                                <Image
+                                    src="/logo-light.png"
+                                    alt="Delonti Logo"
+                                    width={140}
+                                    height={35}
+                                    className="hidden dark:block h-7 lg:h-9 w-auto object-contain"
+                                />
                             </Link>
                         </div>
                         <p className="text-slate-300 text-sm leading-relaxed max-w-xs dark:text-slate-200">

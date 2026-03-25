@@ -36,6 +36,7 @@ const LogoCard = ({ name, logo }: { name: string; logo: string }) => (
         src={logo}
         alt={name}
         fill
+        sizes="256px"
         className="object-contain transition-all duration-500 group-hover:scale-105"
         priority
       />
