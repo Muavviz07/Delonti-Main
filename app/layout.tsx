@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Public_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Chatbot from "@/components/Chatbot";
 
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
@@ -31,6 +32,8 @@ export default function RootLayout({
         {/* CHANGED: Forced defaultTheme to "light" and removed enableSystem */}
         <ThemeProvider attribute="class" defaultTheme="light">
           {children}
+
+          <Chatbot />
         </ThemeProvider>
       </body>
     </html>
