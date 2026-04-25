@@ -50,7 +50,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-slate-300 text-sm md:text-lg font-medium"
+              className="text-slate-300 text-xs md:text-sm font-bold uppercase tracking-widest"
             >
               • Government Assets Are Hard to Track
             </motion.div>
@@ -58,7 +58,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-slate-300 text-sm md:text-lg font-medium"
+              className="text-slate-300 text-xs md:text-sm font-bold uppercase tracking-widest"
             >
               • Limited Visibility Across Equipment and Operations
             </motion.div>
@@ -81,7 +81,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-base md:text-2xl text-white mb-4 leading-relaxed max-w-2xl font-semibold"
+            className="text-sm md:text-xl text-white/90 mb-4 leading-relaxed max-w-2xl font-bold uppercase tracking-wide"
           >
             Powering Asset Tracking and Smart Homeless Service Kiosks
           </motion.p>
