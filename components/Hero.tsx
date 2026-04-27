@@ -45,6 +45,44 @@ const SLIDES = [
     link: "/solutions"
   },
   {
+    video: "/videos/healthcare-animation.webm",
+    badge: "Healthcare Solutions",
+    points: [
+      "Patient Safety and Asset Optimization",
+      "Real-Time Tracking for Critical Equipment"
+    ],
+    title: (
+      <>
+        HEALTHCARE <br />
+        & ASSET <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Intelligence</span>
+      </>
+    ),
+    subtext: "Transforming Healthcare Operations with Advanced RFID Tracking",
+    description: "Delonti - Smart Healthcare Infrastructure",
+    cta: "Learn More",
+    link: "/solutions"
+  },
+  {
+    video: "/videos/manufacturing-animation.webm",
+    badge: "Manufacturing Solutions",
+    points: [
+      "Inventory Accuracy and Supply Chain Visibility",
+      "Optimizing Production Line Operations"
+    ],
+    title: (
+      <>
+        SMART <br />
+        MANUFACTURING <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Systems</span>
+      </>
+    ),
+    subtext: "Empowering Industry 4.0 with Real-Time RFID Intelligence",
+    description: "Delonti - Industry-Leading Asset Management",
+    cta: "View Systems",
+    link: "/solutions"
+  },
+  {
     video: "/videos/hero-video.webm",
     badge: "Intelligence Platform",
     points: [
@@ -218,38 +256,38 @@ export default function Hero() {
       </div>
 
       {/* Progress Indicators (Circles) */}
-      <div className="absolute bottom-12 left-0 w-full z-20 flex justify-center gap-6">
+      <div className="absolute right-6 sm:right-10 md:right-16 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-5 md:gap-8">
         {SLIDES.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className="group relative flex items-center justify-center w-12 h-12 transition-all"
+            className="group relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 transition-all"
           >
             {/* Background Circle */}
             <div className={`absolute inset-0 rounded-full border-2 transition-all duration-300 ${
-              currentSlide === index ? 'border-blue-500/50' : 'border-white/20 group-hover:border-white/40'
+              currentSlide === index ? 'border-blue-500/50' : 'border-white/10 group-hover:border-white/30'
             }`} />
             
             {/* Progress Circle (SVG) */}
             {currentSlide === index && (
-              <svg className="absolute inset-0 w-full h-full -rotate-90">
+              <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
                 <circle
-                  cx="24"
-                  cy="24"
-                  r="22"
+                  cx="50"
+                  cy="50"
+                  r="45"
                   fill="transparent"
                   stroke="currentColor"
-                  strokeWidth="2"
-                  strokeDasharray="138.23"
-                  strokeDashoffset={138.23 - (138.23 * progress) / 100}
+                  strokeWidth="4"
+                  strokeDasharray="282.7"
+                  strokeDashoffset={282.7 - (282.7 * progress) / 100}
                   className="text-blue-500 transition-all duration-100 ease-linear"
                 />
               </svg>
             )}
             
             {/* Slide Number or Dot */}
-            <span className={`relative z-10 text-xs font-bold transition-all duration-300 ${
-              currentSlide === index ? 'text-white scale-110' : 'text-white/40'
+            <span className={`relative z-10 text-[10px] md:text-xs font-bold transition-all duration-300 ${
+              currentSlide === index ? 'text-white scale-110' : 'text-white/30'
             }`}>
               {String(index + 1).padStart(2, '0')}
             </span>
