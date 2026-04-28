@@ -119,25 +119,6 @@ const SLIDES = [
     description: "Delonti - Next-Gen Retail Infrastructure",
     cta: "View Solutions",
     link: "/solutions"
-  },
-  {
-    video: "/videos/hero-video.webm",
-    badge: "Intelligence Platform",
-    points: [
-      "Seamless Integration Across Industries",
-      "Advanced Data Analytics and Insights"
-    ],
-    title: (
-      <>
-        NEXT-GEN <br />
-        RFID & AI <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Intelligence</span>
-      </>
-    ),
-    subtext: "Delonti - RFID + AI Intelligence Platform for Global Enterprise",
-    description: "Empowering Tomorrow's Infrastructure",
-    cta: "Get Started",
-    link: "/contact"
   }
 ];
 
