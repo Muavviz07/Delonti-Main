@@ -15,8 +15,8 @@ const SLIDES = [
     ],
     title: (
       <>
-        RFID + <br />
-        AI PLATFORM FOR <br />
+        RFID + AI <br />
+        PLATFORM FOR <br />
         <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Real-Time Tracking</span>
       </>
     ),
@@ -27,97 +27,97 @@ const SLIDES = [
   },
   {
     video: "/videos/education-animation.webm",
-    badge: "Education Solutions",
+    badge: "Smart Campus Solutions",
     points: [
-      "Student Safety and Resource Efficiency",
-      "Real-Time Visibility in Educational Facilities"
+      "Managing Campus Assets Is Complex",
+      "Limited Visibility Across Labs, Classrooms, and Facilities"
     ],
     title: (
       <>
-        SMART CAMPUS <br />
-        & ASSET <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Management</span>
+        RFID + AI <br />
+        PLATFORM FOR <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Campus Operations</span>
       </>
     ),
-    subtext: "Enhancing Campus Safety and Efficiency with RFID Technology",
-    description: "Delonti - Intelligent Campus Solutions",
+    subtext: "Real-Time Visibility for Equipment, Students, and Safety",
+    description: "Delonti - Smart Campus Infrastructure Platform",
     cta: "View Solutions",
     link: "/solutions"
   },
   {
     video: "/videos/healthcare-animation.webm",
-    badge: "Healthcare Solutions",
+    badge: "Smart Healthcare Solutions",
     points: [
-      "Patient Safety and Asset Optimization",
-      "Real-Time Tracking for Critical Equipment"
+      "Managing Critical Medical Equipment Is Complex",
+      "Limited Visibility Across Hospitals and Facilities"
     ],
     title: (
       <>
-        HEALTHCARE <br />
-        & ASSET <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Intelligence</span>
+        RFID + AI <br />
+        PLATFORM FOR <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Healthcare Operations</span>
       </>
     ),
-    subtext: "Transforming Healthcare Operations with Advanced RFID Tracking",
-    description: "Delonti - Smart Healthcare Infrastructure",
+    subtext: "Real-Time Visibility for Equipment and Patient Flow",
+    description: "Delonti - Smart Healthcare Infrastructure Platform",
     cta: "Learn More",
     link: "/solutions"
   },
   {
     video: "/videos/manufacturing-animation.webm",
-    badge: "Manufacturing Solutions",
+    badge: "Smart Manufacturing Solutions",
     points: [
-      "Inventory Accuracy and Supply Chain Visibility",
-      "Optimizing Production Line Operations"
+      "Manufacturing Assets and Production Are Hard to Track",
+      "Limited Visibility Across Equipment and Production Lines"
     ],
     title: (
       <>
-        SMART <br />
-        MANUFACTURING <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Systems</span>
+        RFID + AI <br />
+        PLATFORM FOR <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Manufacturing Operations</span>
       </>
     ),
-    subtext: "Empowering Industry 4.0 with Real-Time RFID Intelligence",
-    description: "Delonti - Industry-Leading Asset Management",
+    subtext: "Track Assets, Production, and Workflow in Real Time",
+    description: "Delonti - RFID + AI for Smart Manufacturing Infrastructure",
     cta: "View Systems",
     link: "/solutions"
   },
   {
-    video: "/videos/law-enforcement-animation.webm",
-    badge: "Law Enforcement Solutions",
+    video: "/videos/retail-animation.webm",
+    badge: "Intelligent Supply Chain Solutions",
     points: [
-      "Critical Asset Accountability and Tracking",
-      "Real-Time Visibility for Public Safety Operations"
+      "Inventory and Supply Chains Are Hard to Track",
+      "Limited Visibility Across Warehouses and Distribution"
     ],
     title: (
       <>
-        LAW <br />
-        ENFORCEMENT <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">& PUBLIC SAFETY</span>
+        RFID + AI <br />
+        PLATFORM FOR <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Inventory Tracking</span>
       </>
     ),
-    subtext: "Enhancing Accountability and Operational Efficiency with RFID",
-    description: "Delonti - Intelligent Public Safety Solutions",
-    cta: "Explore Solutions",
+    subtext: "Track Inventory, Movement, and Fulfillment in Real Time",
+    description: "Delonti - RFID + AI for Intelligent Supply Chains",
+    cta: "View Solutions",
     link: "/solutions"
   },
   {
-    video: "/videos/retail-animation.webm",
-    badge: "Retail Solutions",
+    video: "/videos/law-enforcement-animation.webm",
+    badge: "Public Safety Solutions",
     points: [
-      "Omnichannel Inventory Accuracy",
-      "Streamlined Operations and Customer Insights"
+      "Public Safety Assets and Operations Are Hard to Track",
+      "Limited Visibility Can Delay Response and Coordination"
     ],
     title: (
       <>
-        SMART RETAIL <br />
-        & INVENTORY <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">MANAGEMENT</span>
+        RFID + AI <br />
+        PLATFORM FOR <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Public Safety Operations</span>
       </>
     ),
-    subtext: "Revolutionizing Retail Efficiency with Real-Time Data Intelligence",
-    description: "Delonti - Next-Gen Retail Infrastructure",
-    cta: "View Solutions",
+    subtext: "Track Assets, Personnel, and Response in Real Time",
+    description: "Delonti - RFID + AI for Public Safety Infrastructure",
+    cta: "Explore Solutions",
     link: "/solutions"
   }
 ];
