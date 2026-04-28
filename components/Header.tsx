@@ -150,104 +150,70 @@ export default function Header() {
                         </div>
 
                         <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
-                            <Link href="/public-sector" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                Public Sector <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
+                            <Link href="/industries" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
+                                Industries <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                                    <div className="grid grid-cols-12 gap-8">
-                                        <div className="col-span-4 bg-gray-50 dark:bg-slate-800/50 p-8 rounded-2xl border border-gray-100 dark:border-white/5">
+                                    <div className="grid grid-cols-4 gap-6">
+                                        <div className="bg-gray-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-white/5">
                                             <MenuHeader icon={Landmark}>State & Local</MenuHeader>
-                                            <div className="grid grid-cols-2 gap-x-4">
-                                                <div>
-                                                    <MenuLink href="/state">State Overview</MenuLink>
-                                                    <MenuLink href="/state/programs">Programs & Initiatives</MenuLink>
-                                                    <MenuLink href="/state/public-safety">Public Safety Solutions</MenuLink>
-                                                    <MenuLink href="/state/transportation">Transportation & Mobility</MenuLink>
-                                                    <MenuLink href="/state/hhs">Health & Human Services</MenuLink>
-                                                    <MenuLink href="/state/education">Education & Campus Solutions</MenuLink>
-                                                </div>
-                                                <div>
-                                                    <MenuLink href="/state/smart-city">Smart City & Infrastructure</MenuLink>
-                                                    <MenuLink href="/state/social-impact">Homeless & Social Impact</MenuLink>
-                                                    <MenuLink href="/state/data">Data, Analytics & Reporting</MenuLink>
-                                                    <MenuLink href="/state/cybersecurity">Cybersecurity & Compliance</MenuLink>
-                                                    <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
-                                                        <MenuLink href="/state/use-cases">State Use Cases →</MenuLink>
-                                                    </div>
+                                            <div className="flex flex-col">
+                                                <MenuLink href="/state">State Overview</MenuLink>
+                                                <MenuLink href="/state/programs">Programs & Initiatives</MenuLink>
+                                                <MenuLink href="/state/public-safety">Public Safety Solutions</MenuLink>
+                                                <MenuLink href="/state/transportation">Transportation & Mobility</MenuLink>
+                                                <MenuLink href="/state/hhs">Health & Human Services</MenuLink>
+                                                <MenuLink href="/state/education">Education & Campus Solutions</MenuLink>
+                                                <MenuLink href="/state/smart-city">Smart City & Infrastructure</MenuLink>
+                                                <MenuLink href="/state/social-impact">Homeless & Social Impact</MenuLink>
+                                                <MenuLink href="/state/data">Data, Analytics & Reporting</MenuLink>
+                                                <MenuLink href="/state/cybersecurity">Cybersecurity & Compliance</MenuLink>
+                                                <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
+                                                    <MenuLink href="/state/use-cases">State Use Cases →</MenuLink>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-span-4 bg-gray-50 dark:bg-slate-800/50 p-8 rounded-2xl border border-gray-100 dark:border-white/5">
+                                        <div className="bg-gray-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-white/5">
                                             <MenuHeader icon={Shield}>Federal & Defense</MenuHeader>
-                                            <div className="grid grid-cols-2 gap-x-4">
-                                                <div>
-                                                    <MenuLink href="/federal">Federal Overview</MenuLink>
-                                                    <MenuLink href="/federal/rfid">Secure RFID & Logistics</MenuLink>
-                                                    <MenuLink href="/federal/cybersecurity">Cybersecurity & Zero Trust</MenuLink>
-                                                    <MenuLink href="/federal/cloud">Cloud & IT Modernization</MenuLink>
-                                                    <MenuLink href="/federal/data">Data, AI & Automation</MenuLink>
-                                                </div>
-                                                <div>
-                                                    <MenuLink href="/federal/ato">ATO, Risk & Compliance</MenuLink>
-                                                    <MenuLink href="/federal/acquisition">Acquisition & Contracting</MenuLink>
-                                                    <MenuLink href="/federal/workforce">Workforce & Staffing</MenuLink>
-                                                    <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
-                                                        <MenuLink href="/federal/use-cases">Federal Use Cases →</MenuLink>
-                                                    </div>
+                                            <div className="flex flex-col">
+                                                <MenuLink href="/federal">Federal Overview</MenuLink>
+                                                <MenuLink href="/federal/rfid">Secure RFID & Logistics</MenuLink>
+                                                <MenuLink href="/federal/cybersecurity">Cybersecurity & Zero Trust</MenuLink>
+                                                <MenuLink href="/federal/cloud">Cloud & IT Modernization</MenuLink>
+                                                <MenuLink href="/federal/data">Data, AI & Automation</MenuLink>
+                                                <MenuLink href="/federal/ato">ATO, Risk & Compliance</MenuLink>
+                                                <MenuLink href="/federal/acquisition">Acquisition & Contracting</MenuLink>
+                                                <MenuLink href="/federal/workforce">Workforce & Staffing</MenuLink>
+                                                <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
+                                                    <MenuLink href="/federal/use-cases">Federal Use Cases →</MenuLink>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-span-4 h-full">
-                                            <FeaturedCard
-                                                title="Securing National Infrastructure"
-                                                description="Discover how our advanced IoT ecosystems protect critical defense logistics and civic operations."
-                                                image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072"
-                                                href="/federal/use-cases"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
-                            <Link href="/private" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                Private Sector <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
-                            </Link>
-                            <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
-                                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                                    <div className="grid grid-cols-12 gap-12">
-                                        <div className="col-span-4 bg-gray-50 dark:bg-slate-800/50 rounded-2xl p-8 border border-gray-100 dark:border-white/5">
+                                        <div className="bg-gray-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-white/5">
                                             <MenuHeader icon={Building2}>SMB</MenuHeader>
-                                            <MenuLink href="/private/smb">SMB Overview</MenuLink>
-                                            <MenuLink href="/private/smb/asset-tracking">Asset Tracking & Inventory</MenuLink>
-                                            <MenuLink href="/private/smb/fleet-tracking">Fleet & Vehicle Tracking</MenuLink>
-                                            <MenuLink href="/private/smb/cybersecurity">Cybersecurity Essentials</MenuLink>
-                                            <MenuLink href="/private/smb/cloud-it">Cloud & IT Services</MenuLink>
-                                            <MenuLink href="/private/smb/data-analytics">Data & Analytics</MenuLink>
-                                            <MenuLink href="/private/smb/technical-staffing">Technical Staffing</MenuLink>
+                                            <div className="flex flex-col">
+                                                <MenuLink href="/private/smb">SMB Overview</MenuLink>
+                                                <MenuLink href="/private/smb/asset-tracking">Asset Tracking & Inventory</MenuLink>
+                                                <MenuLink href="/private/smb/fleet-tracking">Fleet & Vehicle Tracking</MenuLink>
+                                                <MenuLink href="/private/smb/cybersecurity">Cybersecurity Essentials</MenuLink>
+                                                <MenuLink href="/private/smb/cloud-it">Cloud & IT Services</MenuLink>
+                                                <MenuLink href="/private/smb/data-analytics">Data & Analytics</MenuLink>
+                                                <MenuLink href="/private/smb/technical-staffing">Technical Staffing</MenuLink>
+                                            </div>
                                         </div>
-                                        <div className="col-span-4 bg-gray-50 dark:bg-slate-800/50 rounded-2xl p-8 border border-gray-100 dark:border-white/5">
+                                        <div className="bg-gray-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-white/5">
                                             <MenuHeader icon={Briefcase}>Enterprise</MenuHeader>
-                                            <MenuLink href="/private/enterprise">Enterprise Overview</MenuLink>
-                                            <MenuLink href="/private/enterprise/asset-visibility">Asset Visibility Platforms</MenuLink>
-                                            <MenuLink href="/private/enterprise/industrial-iot">Industrial IoT & Smart Infrastructure</MenuLink>
-                                            <MenuLink href="/private/enterprise/cybersecurity">Enterprise Cybersecurity</MenuLink>
-                                            <MenuLink href="/private/enterprise/data-platforms">Data Platforms & AI</MenuLink>
-                                            <MenuLink href="/private/enterprise/cloud-devops">Cloud & DevOps Transformation</MenuLink>
-                                            <MenuLink href="/private/enterprise/systems-integration">Systems Integration</MenuLink>
-                                            <MenuLink href="/private/enterprise/workforce">Workforce Solutions</MenuLink>
-                                        </div>
-                                        <div className="col-span-4 flex flex-col gap-4">
-                                            <FeaturedCard
-                                                className="min-h-[190px]"
-                                                title="Smart Tech for Growing Businesses"
-                                                description="Affordable, fast-deploying solutions built for SMBs."
-                                                image="https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070"
-                                                href="/private/smb"
-                                            />
-
+                                            <div className="flex flex-col">
+                                                <MenuLink href="/private/enterprise">Enterprise Overview</MenuLink>
+                                                <MenuLink href="/private/enterprise/asset-visibility">Asset Visibility Platforms</MenuLink>
+                                                <MenuLink href="/private/enterprise/industrial-iot">Industrial IoT & Smart Infrastructure</MenuLink>
+                                                <MenuLink href="/private/enterprise/cybersecurity">Enterprise Cybersecurity</MenuLink>
+                                                <MenuLink href="/private/enterprise/data-platforms">Data Platforms & AI</MenuLink>
+                                                <MenuLink href="/private/enterprise/cloud-devops">Cloud & DevOps Transformation</MenuLink>
+                                                <MenuLink href="/private/enterprise/systems-integration">Systems Integration</MenuLink>
+                                                <MenuLink href="/private/enterprise/workforce">Workforce Solutions</MenuLink>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -256,7 +222,7 @@ export default function Header() {
 
                         <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
                             <Link href="/technology" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                Technology Solutions <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
+                                Solutions <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -324,7 +290,7 @@ export default function Header() {
 
                         <div className="relative group h-full flex items-center px-2">
                             <Link href="/resources" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
-                                Insights & Resources <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
+                                Resources <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
                             </Link>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -388,38 +354,20 @@ export default function Header() {
                             links: [{ name: "Company Overview", url: "/about/overview" }, { name: "Partners & Alliances", url: "/about/partners" }, { name: "Careers", url: "/about/careers" }, { name: "Talk to an Expert", url: "/contact" }]
                         },
                         {
-                            title: "Public Sector", url: "/public-sector",
+                            title: "Industries", url: "/industries",
                             links: [
+                                { name: "— State & Local —", url: "/state", isGroupLabel: true },
                                 { name: "State Overview", url: "/state" }, { name: "Programs & Initiatives", url: "/state/programs" }, { name: "Public Safety Solutions", url: "/state/public-safety" }, { name: "Transportation & Mobility", url: "/state/transportation" }, { name: "Health & Human Services (HHS)", url: "/state/hhs" }, { name: "Education & Campus Solutions", url: "/state/education" }, { name: "Smart City & Infrastructure", url: "/state/smart-city" }, { name: "Homeless & Social Impact Solutions", url: "/state/social-impact" }, { name: "Data, Analytics & Reporting", url: "/state/data" }, { name: "Cybersecurity & Compliance", url: "/state/cybersecurity" }, { name: "State Use Cases", url: "/state/use-cases" },
-                                { name: "Federal Overview", url: "/federal" }, { name: "Secure RFID & Logistics", url: "/federal/rfid" }, { name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity" }, { name: "Cloud & IT Modernization", url: "/federal/cloud" }, { name: "Data, AI & Automation", url: "/federal/data" }, { name: "ATO, Risk & Compliance", url: "/federal/ato" }, { name: "Acquisition & Contracting", url: "/federal/acquisition" }, { name: "Workforce & Staffing Solutions", url: "/federal/workforce" }, { name: "Federal Use Cases", url: "/federal/use-cases" }
-                            ]
-                        },
-                        {
-                            title: "Private Sector", url: "/private",
-                            links: [
-                                // SMB GROUP
+                                { name: "— Federal & Defense —", url: "/federal", isGroupLabel: true },
+                                { name: "Federal Overview", url: "/federal" }, { name: "Secure RFID & Logistics", url: "/federal/rfid" }, { name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity" }, { name: "Cloud & IT Modernization", url: "/federal/cloud" }, { name: "Data, AI & Automation", url: "/federal/data" }, { name: "ATO, Risk & Compliance", url: "/federal/ato" }, { name: "Acquisition & Contracting", url: "/federal/acquisition" }, { name: "Workforce & Staffing Solutions", url: "/federal/workforce" }, { name: "Federal Use Cases", url: "/federal/use-cases" },
                                 { name: "— SMB —", url: "/private/smb", isGroupLabel: true },
-                                { name: "SMB Overview", url: "/private/smb" },
-                                { name: "Asset Tracking & Inventory", url: "/private/smb/asset-tracking" },
-                                { name: "Fleet & Vehicle Tracking", url: "/private/smb/fleet-tracking" },
-                                { name: "Cybersecurity Essentials", url: "/private/smb/cybersecurity" },
-                                { name: "Cloud & IT Services", url: "/private/smb/cloud-it" },
-                                { name: "Data & Analytics", url: "/private/smb/data-analytics" },
-                                { name: "Technical Staffing", url: "/private/smb/technical-staffing" },
-                                // ENTERPRISE GROUP
+                                { name: "SMB Overview", url: "/private/smb" }, { name: "Asset Tracking & Inventory", url: "/private/smb/asset-tracking" }, { name: "Fleet & Vehicle Tracking", url: "/private/smb/fleet-tracking" }, { name: "Cybersecurity Essentials", url: "/private/smb/cybersecurity" }, { name: "Cloud & IT Services", url: "/private/smb/cloud-it" }, { name: "Data & Analytics", url: "/private/smb/data-analytics" }, { name: "Technical Staffing", url: "/private/smb/technical-staffing" },
                                 { name: "— Enterprise —", url: "/private/enterprise", isGroupLabel: true },
-                                { name: "Enterprise Overview", url: "/private/enterprise" },
-                                { name: "Asset Visibility Platforms", url: "/private/enterprise/asset-visibility" },
-                                { name: "Industrial IoT & Smart Infrastructure", url: "/private/enterprise/industrial-iot" },
-                                { name: "Enterprise Cybersecurity", url: "/private/enterprise/cybersecurity" },
-                                { name: "Data Platforms & AI", url: "/private/enterprise/data-platforms" },
-                                { name: "Cloud & DevOps Transformation", url: "/private/enterprise/cloud-devops" },
-                                { name: "Systems Integration", url: "/private/enterprise/systems-integration" },
-                                { name: "Workforce Solutions", url: "/private/enterprise/workforce" },
+                                { name: "Enterprise Overview", url: "/private/enterprise" }, { name: "Asset Visibility Platforms", url: "/private/enterprise/asset-visibility" }, { name: "Industrial IoT & Smart Infrastructure", url: "/private/enterprise/industrial-iot" }, { name: "Enterprise Cybersecurity", url: "/private/enterprise/cybersecurity" }, { name: "Data Platforms & AI", url: "/private/enterprise/data-platforms" }, { name: "Cloud & DevOps Transformation", url: "/private/enterprise/cloud-devops" }, { name: "Systems Integration", url: "/private/enterprise/systems-integration" }, { name: "Workforce Solutions", url: "/private/enterprise/workforce" }
                             ]
                         },
                         {
-                            title: "Technology Solutions", url: "/technology",
+                            title: "Solutions", url: "/technology",
                             links: [
                                 { name: "RFID Integration", url: "/tech/rfid/asset" }, { name: "Asset Tracking", url: "/tech/rfid/asset" }, { name: "Personnel Tracking", url: "/tech/rfid/personnel" }, { name: "Fleet & Vehicle Tracking", url: "/tech/rfid/fleet" }, { name: "Secure RFID Systems", url: "/tech/rfid/secure" },
                                 { name: "Internet of Things (IoT)", url: "/tech/iot/smart-infra" }, { name: "Smart Infrastructure", url: "/tech/iot/smart-infra" }, { name: "Sensors & Devices", url: "/tech/iot/sensors" }, { name: "Edge & Cloud Integration", url: "/tech/iot/edge" }, { name: "Real-Time Monitoring", url: "/tech/iot/real-time" },
@@ -430,7 +378,7 @@ export default function Header() {
                             ]
                         },
                         {
-                            title: "Insights & Resources", url: "/resources",
+                            title: "Resources", url: "/resources",
                             links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Government Programs & Grants", url: "/resources/grants" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "Public Sector Insights", url: "/resources/insights" }, { name: "News & Announcements", url: "/resources/news" }]
                         },
                     ].map((section) => (
