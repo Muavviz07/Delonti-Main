@@ -10,6 +10,8 @@ import ClientsSection from "@/components/ClientsSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import CTASection from "@/components/CTASection";
+import Industries from "@/components/Industries";
 
 export default function Home() {
   return (
@@ -18,10 +20,12 @@ export default function Home() {
       <main className="relative">
         <Hero />
         <WhoWeServe />
-        <CoreOfferings />
-        <Solutions />
+        <CTASection />
+        {/* <CoreOfferings /> */}
+        {/* <Solutions /> */}
         {/* <Services /> */}
         <About />
+        <Industries />
         {/* <FAQ /> */}
         <ClientsSection />
         <Contact />

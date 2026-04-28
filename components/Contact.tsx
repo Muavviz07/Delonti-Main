@@ -1,20 +1,19 @@
 export default function Contact() {
     return (
         <section id="contact" className="py-24 bg-white dark:bg-slate-950">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                     {/* Left Side: Contact Info */}
                     <div>
-                        {/* Changed text-[#6366f1] to text-primary */}
-                        <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-primary dark:text-slate-300 mb-4 font-display">
+                        <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#38bdf8] mb-4">
                             Contact Us
                         </h2>
-                        <h3 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white mb-6 tracking-wide font-display">
+                        <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]">
                             Ready to Innovate?
                         </h3>
-                        <p className="text-base md:text-lg text-slate-500 dark:text-slate-400 font-light mb-10 leading-relaxed max-w-lg">
-                            Whether you're a city official, federal agency, or private enterprise, we're here to help you deploy next-generation RFID, IoT, and Cybersecurity solutions.
+                        <p className="text-lg text-slate-500 dark:text-slate-400 font-medium mb-10 leading-relaxed max-w-lg">
+                            Whether you&apos;re a city official, federal agency, or private enterprise, we&apos;re here to help you deploy next-generation RFID, IoT, and Cybersecurity solutions.
                         </p>
 
                         <div className="space-y-6">

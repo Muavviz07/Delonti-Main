@@ -37,14 +37,14 @@ export default function CoreOfferings() {
 
     return (
         <section className="py-24 border-y border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
 
                 {/* Section Header */}
-                <div className="mb-16 text-center">
-                    <h2 className="text-sm font-bold uppercase tracking-[0.25em] text-primary dark:text-slate-300 mb-3 font-display">
+                <div className="mb-16">
+                    <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#38bdf8] mb-4">
                         Core Offerings
                     </h2>
-                    <h3 className="text-3xl md:text-4xl font-normal text-slate-900 dark:text-white tracking-wide font-display">
+                    <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
                         Enterprise Technology Solutions
                     </h3>
                 </div>

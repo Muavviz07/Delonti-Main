@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { Truck, Construction, HeartPulse, Warehouse, Landmark, ChevronRight } from "lucide-react";
 
 const industries = [
@@ -32,7 +32,19 @@ const industries = [
     }
 ];
 
-const IndustryCard = ({ industry, index, progress, range, targetScale }: any) => {
+interface IndustryCardProps {
+  industry: {
+    title: string;
+    desc: string;
+    icon: React.ReactNode;
+  };
+  index: number;
+  progress: MotionValue<number>;
+  range: [number, number];
+  targetScale: number;
+}
+
+const IndustryCard = ({ industry, index, progress, range, targetScale }: IndustryCardProps) => {
     // Scroll-Linked Animation: Shrink as the user scrolls further
     const scale = useTransform(progress, range, [1, targetScale]);
 
@@ -101,15 +113,15 @@ export default function Solutions() {
 
     return (
         <section ref={containerRef} className="relative py-24 bg-slate-50 dark:bg-[#050507]">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
 
                 {/* Header Section */}
-                <div className="text-center mb-20 max-w-3xl mx-auto">
+                <div className="mb-20">
                     <motion.h2
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-3 font-display"
+                        className="text-sm font-bold uppercase tracking-[0.3em] text-[#38bdf8] mb-4"
                     >
                         Tailored Solutions
                     </motion.h2>
@@ -118,7 +130,7 @@ export default function Solutions() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-6 font-display"
+                        className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white tracking-tight mb-6 leading-[1.1]"
                     >
                         Solutions for Every Industry
                     </motion.h3>
@@ -127,7 +139,7 @@ export default function Solutions() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-base md:text-lg text-slate-600 dark:text-slate-200 font-light leading-relaxed"
+                        className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-3xl"
                     >
                         Our GPS and RFID integration is designed to meet the unique needs of diverse sectors, enhancing operations with real-time visibility and automation.
                     </motion.p>
