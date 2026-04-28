@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Truck, Construction, HeartPulse, Warehouse, Landmark, ChevronRight } from "lucide-react";
+import { Truck, Construction, HeartPulse, Warehouse, Landmark, ChevronRight, Shield, Factory, GraduationCap } from "lucide-react";
 
 const industries = [
     {
@@ -29,6 +29,21 @@ const industries = [
         title: "Government & Public Services",
         desc: "Use GPS and RFID to track assets, personnel, and vehicles for improved accountability and service delivery.",
         icon: <Landmark className="w-10 h-10" />,
+    },
+    {
+        title: "Law Enforcement & Public Safety",
+        desc: "Ensure accountability and real-time visibility for critical assets and personnel in public safety operations.",
+        icon: <Shield className="w-10 h-10" />,
+    },
+    {
+        title: "Manufacturing & Industry 4.0",
+        desc: "Optimize production lines and inventory accuracy with real-time RFID intelligence and automated tracking.",
+        icon: <Factory className="w-10 h-10" />,
+    },
+    {
+        title: "Education & Campus Safety",
+        desc: "Enhance campus security and asset management with intelligent RFID solutions for educational facilities.",
+        icon: <GraduationCap className="w-10 h-10" />,
     }
 ];
 

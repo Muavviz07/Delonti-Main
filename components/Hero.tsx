@@ -83,6 +83,44 @@ const SLIDES = [
     link: "/solutions"
   },
   {
+    video: "/videos/law-enforcement-animation.webm",
+    badge: "Law Enforcement Solutions",
+    points: [
+      "Critical Asset Accountability and Tracking",
+      "Real-Time Visibility for Public Safety Operations"
+    ],
+    title: (
+      <>
+        LAW <br />
+        ENFORCEMENT <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">& PUBLIC SAFETY</span>
+      </>
+    ),
+    subtext: "Enhancing Accountability and Operational Efficiency with RFID",
+    description: "Delonti - Intelligent Public Safety Solutions",
+    cta: "Explore Solutions",
+    link: "/solutions"
+  },
+  {
+    video: "/videos/retail-animation.webm",
+    badge: "Retail Solutions",
+    points: [
+      "Omnichannel Inventory Accuracy",
+      "Streamlined Operations and Customer Insights"
+    ],
+    title: (
+      <>
+        SMART RETAIL <br />
+        & INVENTORY <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">MANAGEMENT</span>
+      </>
+    ),
+    subtext: "Revolutionizing Retail Efficiency with Real-Time Data Intelligence",
+    description: "Delonti - Next-Gen Retail Infrastructure",
+    cta: "View Solutions",
+    link: "/solutions"
+  },
+  {
     video: "/videos/hero-video.webm",
     badge: "Intelligence Platform",
     points: [
