@@ -1,14 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-<<<<<<< HEAD
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
-import { Truck, Construction, HeartPulse, Warehouse, Landmark, ChevronRight } from "lucide-react";
-=======
-import { motion, useScroll, useTransform } from "framer-motion";
 import { Truck, Construction, HeartPulse, Warehouse, Landmark, ChevronRight, Shield, Factory, GraduationCap } from "lucide-react";
->>>>>>> main
-
 const industries = [
     {
         title: "Logistics & Transportation",
@@ -53,15 +47,15 @@ const industries = [
 ];
 
 interface IndustryCardProps {
-  industry: {
-    title: string;
-    desc: string;
-    icon: React.ReactNode;
-  };
-  index: number;
-  progress: MotionValue<number>;
-  range: [number, number];
-  targetScale: number;
+    industry: {
+        title: string;
+        desc: string;
+        icon: React.ReactNode;
+    };
+    index: number;
+    progress: MotionValue<number>;
+    range: [number, number];
+    targetScale: number;
 }
 
 const IndustryCard = ({ industry, index, progress, range, targetScale }: IndustryCardProps) => {
