@@ -295,25 +295,25 @@ export default function Hero() {
                     className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center"
                   >
                     {/* Background Circle */}
-                    <div className="absolute inset-0 rounded-full border border-white/20" />
+                    <div className="absolute inset-0 rounded-full border-2 border-white/30 bg-black/20 backdrop-blur-sm" />
                     
                     {/* Progress Circle (SVG) */}
-                    <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+                    <svg className="absolute inset-0 w-full h-full -rotate-90 drop-shadow-[0_0_6px_rgba(255,255,255,0.6)]" viewBox="0 0 100 100">
                       <circle
                         cx="50"
                         cy="50"
                         r="48"
                         fill="transparent"
                         stroke="currentColor"
-                        strokeWidth="3"
+                        strokeWidth="4"
                         strokeDasharray="301.6"
                         strokeDashoffset={301.6 - (301.6 * progress) / 100}
-                        className="text-blue-500 transition-all duration-100 ease-linear"
+                        className="text-white transition-all duration-100 ease-linear"
                       />
                     </svg>
                     
                     {/* Slide Number */}
-                    <span className="relative z-10 text-xs md:text-sm font-medium text-white">
+                    <span className="relative z-10 text-sm md:text-base font-bold text-white drop-shadow-md">
                       {index + 1}
                     </span>
                   </motion.div>
@@ -321,7 +321,7 @@ export default function Hero() {
                   <motion.div 
                     key="dot"
                     layout
-                    className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white/20 group-hover:bg-white/50 transition-all duration-300"
+                    className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/60 group-hover:bg-white shadow-[0_0_8px_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_12px_rgba(255,255,255,0.8)] transition-all duration-300"
                   />
                 )}
               </AnimatePresence>
