@@ -298,7 +298,7 @@ export default function Hero() {
                     <div className="absolute inset-0 rounded-full border-2 border-white/30 bg-black/20 backdrop-blur-sm" />
                     
                     {/* Progress Circle (SVG) */}
-                    <svg className="absolute inset-0 w-full h-full -rotate-90 drop-shadow-[0_0_6px_rgba(255,255,255,0.6)]" viewBox="0 0 100 100">
+                    <svg className="absolute inset-0 w-full h-full -rotate-90 drop-shadow-[0_0_8px_rgba(37,99,235,0.4)]" viewBox="0 0 100 100">
                       <circle
                         cx="50"
                         cy="50"
@@ -308,7 +308,7 @@ export default function Hero() {
                         strokeWidth="4"
                         strokeDasharray="301.6"
                         strokeDashoffset={301.6 - (301.6 * progress) / 100}
-                        className="text-white transition-all duration-100 ease-linear"
+                        className="text-blue-500 transition-all duration-100 ease-linear"
                       />
                     </svg>
                     
