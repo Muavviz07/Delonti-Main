@@ -6,18 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const INDUSTRIES = [
   {
-    title: "Retail & Commerce",
-    description: "Loss Prevention & Customer Analytics",
-    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070",
+    title: "Government",
+    description: "Secure, Compliant Infrastructure & Accountability",
+    image: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?q=80&w=2070",
   },
   {
-    title: "Manufacturing",
-    description: "Process Optimization & Operational Safety",
-    image: "https://images.unsplash.com/photo-1717386255773-1e3037c81788?q=80&w=1170&auto=format&fit=crop",
-  },
-  {
-    title: "K-12 Education",
-    description: "Unified Campus Security & Access Control",
+    title: "Education",
+    description: "Unified Campus Security & Asset Management",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070",
   },
   {
@@ -26,9 +21,19 @@ const INDUSTRIES = [
     image: "https://plus.unsplash.com/premium_photo-1698421947098-d68176a8f5b2?q=80&w=752&auto=format&fit=crop",
   },
   {
-    title: "Logistics",
-    description: "End-to-End Supply Chain Visibility",
-    image: "https://plus.unsplash.com/premium_photo-1661932036915-4fd90bec6e8a?q=80&w=1170&auto=format&fit=crop",
+    title: "Manufacturing",
+    description: "Process Optimization & Operational Safety",
+    image: "https://images.unsplash.com/photo-1717386255773-1e3037c81788?q=80&w=1170&auto=format&fit=crop",
+  },
+  {
+    title: "Supply Chain (Retail/Logistics)",
+    description: "End-to-End Visibility & Inventory Control",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070",
+  },
+  {
+    title: "Public Safety",
+    description: "Real-time Visibility for Emergency Response",
+    image: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070",
   }
 ];
 
@@ -63,8 +68,8 @@ export default function Industries() {
   };
 
   return (
-    <section className="py-24 bg-white dark:bg-slate-950 overflow-hidden" ref={containerRef}>
-      <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
+    <section className="py-24 bg-white dark:bg-slate-950 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24" ref={containerRef}>
         
         {/* Header with Navigation */}
         <div className="flex items-end justify-between mb-16">

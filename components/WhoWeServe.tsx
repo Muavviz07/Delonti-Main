@@ -7,24 +7,29 @@ import Link from "next/link";
 
 const SOLUTIONS = [
   {
-    title: "Find footage in seconds with any search criteria",
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2070",
+    title: "Asset Tracking",
+    subtitle: "Real-time visibility and management of critical infrastructure assets across multiple locations.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070",
   },
   {
-    title: "Deter unwanted activity with AI-generated talk-down messages",
-    image: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?q=80&w=2070",
+    title: "Inventory Intelligence",
+    subtitle: "Automated stock monitoring and predictive analytics to optimize supply chain operations.",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070",
   },
   {
-    title: "Instantly search calls using natural language",
-    image: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?q=80&w=2070",
+    title: "Workforce Safety",
+    subtitle: "Advanced monitoring and instant alerting systems to ensure personnel safety in hazardous environments.",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070",
   },
   {
-    title: "Automate access control with facial recognition",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070",
+    title: "Facility Intelligence",
+    subtitle: "Smart sensors and automated controls that enhance operational efficiency and security.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070",
   },
   {
-    title: "Real-time threat detection and instant alerts",
-    image: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070",
+    title: "Fleet & Route Optimization",
+    subtitle: "AI-driven logistics tracking to reduce downtime, cut costs, and improve delivery reliability.",
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070",
   }
 ];
 
@@ -100,9 +105,16 @@ export default function WhoWeServe() {
                         <span className="text-[#38bdf8] font-black text-2xl tracking-tighter leading-none">0{idx + 1}</span>
                         <div className="w-px h-16 bg-gradient-to-b from-[#38bdf8] to-transparent" />
                       </div>
-                      <h4 className="text-2xl lg:text-4xl font-bold text-white leading-[1.15] max-w-3xl">
-                        {item.title}
-                      </h4>
+                      <div className="flex flex-col gap-4">
+                        <h4 className="text-2xl lg:text-4xl font-bold text-white leading-[1.15] max-w-3xl">
+                          {item.title}
+                        </h4>
+                        {item.subtitle && (
+                          <p className="text-base lg:text-lg text-slate-300 max-w-2xl leading-relaxed">
+                            {item.subtitle}
+                          </p>
+                        )}
+                      </div>
                     </div>
                     
                     {/* Content Section */}
