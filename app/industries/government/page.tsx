@@ -296,7 +296,6 @@ function HeroImageContainer({ image }: { image: string }) {
   return (
     <div ref={ref} className="w-full max-w-6xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-slate-100 aspect-[16/9] lg:aspect-[21/9] relative flex items-center justify-center">
        <motion.div 
-         style={{ y }} 
          className="absolute inset-0 -top-[15%] -bottom-[15%] bg-cover bg-center" 
          style={{ backgroundImage: `url('${image}')`, y }} 
        />
