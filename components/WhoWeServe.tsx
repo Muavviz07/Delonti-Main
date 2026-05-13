@@ -19,17 +19,17 @@ const SOLUTIONS = [
   {
     title: "Workforce Safety",
     subtitle: "Advanced monitoring and instant alerting systems to ensure personnel safety in hazardous environments.",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070",
   },
   {
     title: "Facility Intelligence",
     subtitle: "Smart sensors and automated controls that enhance operational efficiency and security.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070",
   },
   {
     title: "Fleet & Route Optimization",
     subtitle: "AI-driven logistics tracking to reduce downtime, cut costs, and improve delivery reliability.",
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=2070",
   }
 ];
 

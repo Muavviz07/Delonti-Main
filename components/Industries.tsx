@@ -3,12 +3,14 @@
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const INDUSTRIES = [
   {
     title: "Government",
     description: "Secure, Compliant Infrastructure & Accountability",
     image: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?q=80&w=2070",
+    href: "/industries/government",
   },
   {
     title: "Education",
@@ -122,6 +124,7 @@ interface Industry {
   title: string;
   description: string;
   image: string;
+  href?: string;
 }
 
 function IndustryCard({ industry, cardWidth }: { industry: Industry, cardWidth: number }) {
@@ -134,7 +137,22 @@ function IndustryCard({ industry, cardWidth }: { industry: Industry, cardWidth: 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative">
+      {industry.href ? (
+        <Link href={industry.href} className="relative block">
+          <CardContent industry={industry} isHovered={isHovered} />
+        </Link>
+      ) : (
+        <div className="relative cursor-pointer">
+          <CardContent industry={industry} isHovered={isHovered} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function CardContent({ industry, isHovered }: { industry: Industry, isHovered: boolean }) {
+  return (
+    <>
         {/* The Image Card - Expands on Hover */}
         <motion.div 
           className="relative h-[480px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-900 z-10"
@@ -194,7 +212,6 @@ function IndustryCard({ industry, cardWidth }: { industry: Industry, cardWidth: 
             <ArrowRight className="w-5 h-5 text-slate-900 dark:text-white" />
           </div>
         </motion.div>
-      </div>
-    </div>
+    </>
   );
 }
