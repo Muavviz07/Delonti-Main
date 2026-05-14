@@ -40,14 +40,14 @@ export default function PlatformFlowDiagram() {
         {/* Animated Background Line for Desktop */}
         <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-white/10 -translate-y-1/2 z-0 rounded-full" />
         <motion.div 
-          className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[#38bdf8] -translate-y-1/2 z-0 origin-left rounded-full shadow-[0_0_15px_#38bdf8]"
+          className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-logo -translate-y-1/2 z-0 origin-left rounded-full shadow-[0_0_15px_var(--color-logo)]"
           style={{ scaleX: pathProgress }}
         />
 
         {/* Animated Background Line for Mobile */}
         <div className="md:hidden absolute top-0 bottom-0 left-1/2 w-1 bg-white/10 -translate-x-1/2 z-0 rounded-full" />
         <motion.div 
-          className="md:hidden absolute top-0 bottom-0 left-1/2 w-1 bg-[#38bdf8] -translate-x-1/2 z-0 origin-top rounded-full shadow-[0_0_15px_#38bdf8]"
+          className="md:hidden absolute top-0 bottom-0 left-1/2 w-1 bg-logo -translate-x-1/2 z-0 origin-top rounded-full shadow-[0_0_15px_var(--color-logo)]"
           style={{ scaleY: pathProgress }}
         />
 
@@ -63,7 +63,7 @@ export default function PlatformFlowDiagram() {
             {/* Glassmorphism Node */}
             <motion.div 
               whileHover={{ scale: 1.05, y: -5 }}
-              className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/20 flex items-center justify-center mb-4 shadow-xl transition-colors group-hover:border-[#38bdf8]/50 group-hover:bg-[#38bdf8]/10"
+              className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/20 flex items-center justify-center mb-4 shadow-xl transition-colors group-hover:border-logo/50 group-hover:bg-logo/10"
             >
               <node.icon className="w-10 h-10 md:w-12 md:h-12 text-white/80 group-hover:text-white transition-colors" />
             </motion.div>
@@ -87,7 +87,7 @@ export default function PlatformFlowDiagram() {
                   ease: "easeInOut",
                   delay: index * 0.2
                 }}
-                className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-[#38bdf8]/20 absolute top-0 left-0"
+                className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-logo/20 absolute top-0 left-0"
               />
             </div>
           </motion.div>

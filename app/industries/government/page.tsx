@@ -3,8 +3,8 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { 
-  EyeOff, FileText, Network, ShieldCheck, 
+import {
+  EyeOff, FileText, Network, ShieldCheck,
   Box, Truck, HardHat, Activity, LayoutDashboard,
   Radio, Database, TrendingUp, Monitor, ShieldAlert, FileCheck,
   Globe, ArrowRight, Zap, CornerDownRight, ChevronRight
@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 export default function GovernmentIndustryPage() {
-  
+
   const IMAGES = {
     hero: "/images/government/gov_hero_control_1778635972305.png",
     kiosk: "/images/government/gov_smart_kiosk_1778635998533.png",
@@ -34,12 +34,12 @@ export default function GovernmentIndustryPage() {
   return (
     <main className="w-full bg-[#FAFAFA] font-sans selection:bg-[#2b2b4f] selection:text-white relative">
       <Header />
-      
+
       {/* 1. HERO SECTION - Clean Professional Split Layout */}
       <section className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-white border-b border-slate-100 pt-20 lg:pt-0">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-            
+
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -98,18 +98,20 @@ export default function GovernmentIndustryPage() {
               >
                 <Link
                   href="/contact"
-                  className="group relative bg-[#111111] hover:bg-slate-900 text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl flex items-center justify-center gap-3 overflow-hidden"
+                  className="group relative bg-logo hover:bg-logo/90 text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden"
                 >
+                  <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Request Demo</span>
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+                  <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
                 </Link>
 
                 <Link
                   href="#solutions"
-                  className="group bg-white hover:bg-slate-50 text-[#111111] px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 flex items-center justify-center gap-3 shadow-sm"
+                  className="group relative bg-white hover:bg-slate-50 text-[#111111] px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 flex items-center justify-center gap-3 shadow-sm overflow-hidden"
                 >
-                  <span className="uppercase tracking-wider text-xs md:text-sm">Explore Solutions</span>
-                  <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+                  <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Explore Solutions</span>
+                  <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
                 </Link>
               </motion.div>
             </motion.div>
@@ -121,9 +123,9 @@ export default function GovernmentIndustryPage() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 bg-slate-50"
             >
-              <img 
-                src={IMAGES.hero} 
-                alt="Government Infrastructure" 
+              <img
+                src={IMAGES.hero}
+                alt="Government Infrastructure"
                 className="w-full h-full object-cover"
               />
               {/* Subtle accent gradient */}
@@ -170,13 +172,13 @@ export default function GovernmentIndustryPage() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 text-[#111111] uppercase">A Platform Approach to Government Infrastructure</h2>
             <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium">Delonti delivers a unified RFID and AI-powered platform that connects physical infrastructure to digital intelligence.</p>
           </div>
-          
+
           <PlatformFlowDiagram />
-          
+
           <div className="mt-16 text-center max-w-3xl mx-auto">
-             <p className="text-lg text-slate-500 font-medium leading-relaxed">
-               From tracking equipment and vehicles to enabling public service access, Delonti provides a scalable platform that supports modern government operations.
-             </p>
+            <p className="text-lg text-slate-500 font-medium leading-relaxed">
+              From tracking equipment and vehicles to enabling public service access, Delonti provides a scalable platform that supports modern government operations.
+            </p>
           </div>
         </div>
       </section>
@@ -188,7 +190,7 @@ export default function GovernmentIndustryPage() {
       <section className="relative py-32 lg:py-48 bg-[#F1F5F9] border-y border-slate-200 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-            
+
             {/* Left Content - Improved Positioning (Vertically centered, constrained width) */}
             <div className="lg:w-1/2 relative z-20 flex flex-col justify-center max-w-2xl mx-auto lg:mx-0">
               <div className="inline-flex items-center gap-2 mb-8">
@@ -201,24 +203,26 @@ export default function GovernmentIndustryPage() {
               <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium mb-12">
                 Delonti’s Smart Kiosk solution enables governments to connect communities to critical services in real time.
               </p>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-6 border-t border-slate-300 pt-8 mb-12">
-                 {[
+                {[
                   { icon: Globe, title: "Real-time service availability" },
                   { icon: Network, title: "Multi-agency integration" },
                   { icon: ShieldCheck, title: "Secure and accessible interface" },
                   { icon: Database, title: "Data-driven insights for planning" }
-                 ].map((item, i) => (
-                   <div key={i} className="flex items-center gap-3">
-                     <item.icon className="w-5 h-5 text-primary shrink-0" />
-                     <span className="text-[#111111] font-bold tracking-tight">{item.title}</span>
-                   </div>
-                 ))}
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <item.icon className="w-5 h-5 text-primary shrink-0" />
+                    <span className="text-[#111111] font-bold tracking-tight">{item.title}</span>
+                  </div>
+                ))}
               </div>
 
               <div className="flex justify-start">
-                <Link href="/contact" className="inline-flex px-8 py-4 bg-[#111111] text-white hover:bg-[#2b2b4f] font-bold rounded-xl transition-all shadow-xl active:scale-95 items-center gap-3">
-                  Explore Smart Kiosk Solution <ArrowRight className="w-5 h-5" />
+                <Link href="/contact" className="group relative bg-logo hover:bg-logo/90 text-white px-8 py-3.5 font-bold rounded-xl transition-all shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden">
+                  <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <span className="relative z-10 uppercase tracking-wider text-xs md:text-base">Explore Smart Kiosk Solution</span>
+                  <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
                 </Link>
               </div>
             </div>
@@ -288,7 +292,7 @@ export default function GovernmentIndustryPage() {
             ].map((study, i) => (
               <Link href="#" key={i} className="group cursor-pointer flex flex-col h-full bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 mb-8 relative">
-                   <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: `url('${study.img}')` }} />
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: `url('${study.img}')` }} />
                 </div>
                 <h4 className="text-xl md:text-2xl font-bold tracking-tight mb-6 flex-grow group-hover:text-primary transition-colors text-[#111111] uppercase">{study.title}</h4>
                 <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#111111]">
@@ -308,11 +312,15 @@ export default function GovernmentIndustryPage() {
             Modernize Government Infrastructure with Delonti
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="/contact" className="px-10 py-4 bg-primary hover:bg-[#3d664a] text-white font-bold text-lg rounded-xl transition-all flex items-center gap-3 shadow-lg">
-              Request Demo <ArrowRight className="w-5 h-5" />
+            <Link href="/contact" className="group relative bg-logo hover:bg-logo/90 text-white px-10 py-4 font-bold text-lg rounded-xl transition-all shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden">
+              <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Request Demo</span>
+              <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
             </Link>
-            <Link href="/contact" className="px-10 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-lg rounded-xl transition-all">
-              Contact Sales
+            <Link href="/contact" className="group relative bg-white/10 hover:bg-white/20 text-white px-10 py-4 font-bold text-lg rounded-xl transition-all backdrop-blur-sm border border-white/10 flex items-center justify-center gap-3 overflow-hidden">
+              <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Contact Sales</span>
+              <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
             </Link>
           </div>
         </div>
@@ -342,19 +350,19 @@ function InteractiveTabsSection({ images }: { images: any }) {
     <section id="solutions" className="py-32 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          
+
           {/* Left: Fixed List & Decoupled Description */}
           <div className="lg:w-1/2 flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-16 text-[#111111] uppercase">
               What Government Agencies Can Do with Delonti
             </h2>
-            
+
             {/* The Tab Titles with Numbers (Fixed height list, no layout shift) */}
             <div className="flex flex-col gap-6 mb-12 border-l border-slate-200 pl-6">
               {tabs.map((tab) => {
                 const isActive = activeTab.id === tab.id;
                 return (
-                  <div 
+                  <div
                     key={tab.id}
                     onClick={() => setActiveTab(tab)}
                     className="cursor-pointer group flex items-center gap-4"
@@ -372,22 +380,22 @@ function InteractiveTabsSection({ images }: { images: any }) {
 
             {/* The Decoupled Description Container (Fixed minimum height, instant text switch) */}
             <div className="min-h-[120px] relative">
-               <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium transition-opacity duration-200">
-                  {activeTab.desc}
-               </p>
+              <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium transition-opacity duration-200">
+                {activeTab.desc}
+              </p>
             </div>
           </div>
 
           {/* Right: Instant Morphing Image (No crossfade delay) */}
           <div className="lg:w-1/2 aspect-[4/5] lg:aspect-auto lg:h-[700px] relative">
             <div className="w-full h-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl relative bg-slate-100">
-               {/* Use standard img tag with key to force instant render update without framer-motion delay */}
-               <img 
-                 key={activeTab.id}
-                 src={activeTab.img} 
-                 alt={activeTab.title} 
-                 className="w-full h-full object-cover"
-               />
+              {/* Use standard img tag with key to force instant render update without framer-motion delay */}
+              <img
+                key={activeTab.id}
+                src={activeTab.img}
+                alt={activeTab.title}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -409,7 +417,7 @@ function StickyStackingSection({ images }: { images: any }) {
   return (
     <section className="bg-white py-32 border-y border-slate-200">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="text-center max-w-3xl mx-auto mb-24">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#111111] mb-6 uppercase">
             Outcomes for Government Agencies
@@ -419,21 +427,21 @@ function StickyStackingSection({ images }: { images: any }) {
         {/* The Stacking Container */}
         <div className="relative w-full flex flex-col items-center pb-24">
           {cards.map((card, i) => (
-            <div 
-              key={card.id} 
+            <div
+              key={card.id}
               // The sticky offset increases slightly per card so they stack perfectly
               className={`sticky w-full max-w-5xl h-[400px] md:h-[500px] rounded-2xl overflow-hidden border border-slate-200/20 shadow-2xl flex flex-col md:flex-row ${card.color} ${card.textCol}`}
               style={{ top: `calc(15vh + ${i * 40}px)`, marginBottom: '100px' }}
             >
-               {/* Left Content */}
-               <div className="md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
-                 <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-6 uppercase">{card.title}</h3>
-                 <p className="text-sm md:text-base opacity-80 leading-relaxed font-medium">{card.text}</p>
-               </div>
-               {/* Right Image */}
-               <div className="hidden md:block md:w-1/2 relative">
-                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${card.img}')` }} />
-               </div>
+              {/* Left Content */}
+              <div className="md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-6 uppercase">{card.title}</h3>
+                <p className="text-sm md:text-base opacity-80 leading-relaxed font-medium">{card.text}</p>
+              </div>
+              {/* Right Image */}
+              <div className="hidden md:block md:w-1/2 relative">
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${card.img}')` }} />
+              </div>
             </div>
           ))}
         </div>

@@ -172,15 +172,15 @@ export default function Hero() {
             </video>
           </motion.div>
         </AnimatePresence>
-        
+
         {/* Advanced Overlay for premium look */}
         <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0f]/80 via-[#0a0a0f]/40 to-transparent" />
         <div className="absolute inset-0 bg-[#0a0a0f]/10" />
       </div>
 
-      <div className="relative z-10 container mx-auto h-full flex flex-col justify-center px-4 sm:px-10 md:px-16 lg:px-24">
+      <div className="relative z-30 container mx-auto h-full flex flex-col justify-center px-4 sm:px-10 md:px-16 lg:px-24">
         <AnimatePresence mode="wait">
-          <motion.div 
+          <motion.div
             key={currentSlide}
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -189,7 +189,7 @@ export default function Hero() {
             className="max-w-4xl text-left text-white"
           >
             {/* Top Badge */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
@@ -205,7 +205,7 @@ export default function Hero() {
             {/* Problem Points */}
             <div className="space-y-2 mb-8">
               {SLIDES[currentSlide].points.map((point, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -216,9 +216,9 @@ export default function Hero() {
                 </motion.div>
               ))}
             </div>
-            
+
             {/* Main Heading */}
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
@@ -228,7 +228,7 @@ export default function Hero() {
             </motion.h1>
 
             {/* Subtext */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
@@ -237,7 +237,7 @@ export default function Hero() {
               {SLIDES[currentSlide].subtext}
             </motion.p>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
@@ -247,7 +247,7 @@ export default function Hero() {
             </motion.p>
 
             {/* Action Buttons */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
@@ -257,17 +257,17 @@ export default function Hero() {
                 href={SLIDES[currentSlide].link}
                 className="group relative bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-bold transition-all shadow-[0_0_30px_-5px_rgba(37,99,235,0.5)] hover:shadow-[0_0_40px_-5px_rgba(37,99,235,0.6)] flex items-center justify-center sm:justify-start gap-3 overflow-hidden"
               >
-                <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">{SLIDES[currentSlide].cta}</span>
-                <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+                <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
+                <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm pointer-events-none">{SLIDES[currentSlide].cta}</span>
+                <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5 pointer-events-none" />
               </Link>
 
               <Link
                 href="/contact"
                 className="group bg-white/5 hover:bg-white/10 text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-bold transition-all backdrop-blur-xl border border-white/10 flex items-center justify-center sm:justify-start gap-3 hover:border-white/20"
               >
-                <span className="uppercase tracking-wider text-xs md:text-sm">Request Demo</span>
-                <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+                <span className="uppercase tracking-wider text-xs md:text-sm pointer-events-none">Request Demo</span>
+                <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5 pointer-events-none" />
               </Link>
             </motion.div>
           </motion.div>
@@ -286,7 +286,7 @@ export default function Hero() {
             >
               <AnimatePresence mode="popLayout">
                 {isActive ? (
-                  <motion.div 
+                  <motion.div
                     layoutId="activeIndicator"
                     key="active"
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -296,7 +296,7 @@ export default function Hero() {
                   >
                     {/* Background Circle */}
                     <div className="absolute inset-0 rounded-full border-2 border-white/30 bg-black/20 backdrop-blur-sm" />
-                    
+
                     {/* Progress Circle (SVG) */}
                     <svg className="absolute inset-0 w-full h-full -rotate-90 drop-shadow-[0_0_8px_rgba(37,99,235,0.4)]" viewBox="0 0 100 100">
                       <circle
@@ -311,14 +311,14 @@ export default function Hero() {
                         className="text-blue-500 transition-all duration-100 ease-linear"
                       />
                     </svg>
-                    
+
                     {/* Slide Number */}
                     <span className="relative z-10 text-sm md:text-base font-bold text-white drop-shadow-md">
                       {index + 1}
                     </span>
                   </motion.div>
                 ) : (
-                  <motion.div 
+                  <motion.div
                     key="dot"
                     layout
                     className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/60 group-hover:bg-white shadow-[0_0_8px_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_12px_rgba(255,255,255,0.8)] transition-all duration-300"
@@ -331,10 +331,10 @@ export default function Hero() {
       </div>
 
       {/* Decorative side accent */}
-      <div className="absolute left-0 top-0 w-1 h-full bg-linear-to-b from-transparent via-blue-500/50 to-transparent z-10" />
+      <div className="absolute left-0 top-0 w-1 h-full bg-linear-to-b from-transparent via-blue-500/50 to-transparent z-0" />
 
       {/* Bottom fade for smooth transition to next section */}
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-linear-to-t from-[#0a0a0f] to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 w-full h-48 bg-linear-to-t from-[#0a0a0f] to-transparent z-0" />
     </section>
   );
-}
+}

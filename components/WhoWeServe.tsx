@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, ArrowRight, ArrowLeft, ArrowUpRight } from "lucide-react";
+import { Sparkles, ChevronRight, ChevronLeft, ArrowUpRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -102,15 +102,15 @@ export default function WhoWeServe() {
                   <div className="w-full h-[550px] lg:h-[620px] bg-[#0A1A2A] rounded-2xl p-12 lg:p-16 flex flex-col relative overflow-hidden border border-slate-800 shadow-2xl group cursor-pointer transition-colors duration-500 hover:bg-[#0E2338]">
                     <div className="flex gap-8 relative z-10 mb-12 items-start">
                       <div className="flex flex-col items-center gap-3 shrink-0">
-                        <span className="text-[#38bdf8] font-black text-2xl tracking-tighter leading-none">0{idx + 1}</span>
-                        <div className="w-px h-16 bg-gradient-to-b from-[#38bdf8] to-transparent" />
+                        <span className="text-logo font-black text-2xl tracking-tighter leading-none">0{idx + 1}</span>
+                        <div className="w-px h-16 bg-gradient-to-b from-logo to-transparent" />
                       </div>
                       <div className="flex flex-col gap-4">
                         <h4 className="text-2xl lg:text-4xl font-bold text-white leading-[1.15] max-w-3xl">
                           {item.title}
                         </h4>
                         {item.subtitle && (
-                          <p className="text-base lg:text-lg text-slate-300 max-w-2xl leading-relaxed">
+                          <p className="text-base lg:text-lg text-logo max-w-2xl leading-relaxed font-medium">
                             {item.subtitle}
                           </p>
                         )}
@@ -118,7 +118,7 @@ export default function WhoWeServe() {
                     </div>
                     
                     {/* Content Section */}
-                    <div className="relative flex-1 w-full rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-900 group-hover:border-[#38bdf8]/30 transition-all duration-700 shadow-inner">
+                    <div className="relative flex-1 w-full rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-900 group-hover:border-logo/30 transition-all duration-700 shadow-inner">
                       <div 
                         className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105" 
                         style={{ backgroundImage: `url(${item.image})` }} 
@@ -143,16 +143,16 @@ export default function WhoWeServe() {
                 <button 
                   onClick={handlePrev}
                   disabled={currentIndex === 0}
-                  className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-2xl border border-gray-100 text-slate-800 transition-all pointer-events-auto ${currentIndex === 0 ? 'opacity-0 scale-90' : 'opacity-100 hover:bg-slate-50 hover:scale-110 active:scale-95'}`}
+                  className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-14 h-14 bg-white dark:bg-slate-900 rounded-full flex items-center justify-center shadow-2xl border border-gray-100 dark:border-white/10 text-slate-800 dark:text-white transition-all pointer-events-auto ${currentIndex === 0 ? 'opacity-0 scale-90' : 'opacity-100 hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 active:scale-95'}`}
                 >
-                  <ArrowLeft className="w-7 h-7" />
+                  <ChevronLeft className="w-7 h-7" />
                 </button>
                 <button 
                   onClick={handleNext}
                   disabled={currentIndex === SOLUTIONS.length - 1}
-                  className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-2xl border border-gray-100 text-slate-800 transition-all pointer-events-auto ${currentIndex === SOLUTIONS.length - 1 ? 'opacity-0 scale-90' : 'opacity-100 hover:bg-slate-50 hover:scale-110 active:scale-95'}`}
+                  className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-14 h-14 bg-white dark:bg-slate-900 rounded-full flex items-center justify-center shadow-2xl border border-gray-100 dark:border-white/10 text-slate-800 dark:text-white transition-all pointer-events-auto ${currentIndex === SOLUTIONS.length - 1 ? 'opacity-0 scale-90' : 'opacity-100 hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-110 active:scale-95'}`}
                 >
-                  <ArrowRight className="w-7 h-7" />
+                  <ChevronRight className="w-7 h-7" />
                 </button>
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function WhoWeServe() {
           <button
             key={i}
             onClick={() => setCurrentIndex(i)}
-            className={`h-2.5 rounded-full transition-all duration-500 ${currentIndex === i ? 'w-14 bg-[#38bdf8]' : 'w-2.5 bg-slate-300 dark:bg-slate-800'}`}
+            className={`h-2.5 rounded-full transition-all duration-500 ${currentIndex === i ? 'w-14 bg-logo' : 'w-2.5 bg-slate-300 dark:bg-slate-800'}`}
           />
         ))}
       </div>

@@ -13,6 +13,7 @@
   --color-secondary: #0E2338;
   --color-federal-green: #4A7C59;
   --color-enterprise-gray: #7A7A7A;
+  --color-logo: #0059ab;
   --color-background-light: #ffffff;
   --color-background-alt: #f8fafc;
   --color-background-dark: #121216;
@@ -80,7 +81,7 @@
 
   /* Typography Standardization */
   .section-subheading {
-    @apply text-sm font-bold uppercase tracking-[0.3em] text-primary dark:text-[#38bdf8] mb-4 block;
+    @apply text-sm font-bold uppercase tracking-[0.3em] text-logo mb-4 block;
   }
 
   .section-heading {

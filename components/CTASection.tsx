@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 interface CTASectionProps {
@@ -38,18 +38,20 @@ export default function CTASection({
           <div className="shrink-0 flex flex-col sm:flex-row items-center gap-8">
             <Link 
               href={finalHref}
-              className="px-10 py-4 bg-[#0A1A2A] dark:bg-primary hover:bg-black dark:hover:bg-primary/90 text-white rounded-xl font-bold text-lg transition-all shadow-xl active:scale-95 flex items-center gap-3 group"
+              className="group relative px-8 py-3.5 bg-logo hover:bg-logo/90 text-white rounded-xl font-bold text-base transition-all shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden"
             >
-              {buttonText}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <span className="relative z-10 uppercase tracking-wider">{buttonText}</span>
+              <ChevronRight className="relative z-10 w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
             </Link>
             
             <Link 
               href="/portfolio"
-              className="text-base font-bold text-slate-500 hover:text-primary transition-colors flex items-center gap-2 rounded-xl group"
+              className="group relative px-8 py-3.5 bg-white/5 hover:bg-white/10 text-slate-500 hover:text-primary transition-all backdrop-blur-xl border border-slate-200 dark:border-white/10 flex items-center justify-center gap-3 rounded-xl overflow-hidden text-base"
             >
-              View Our Work
-              <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+              <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <span className="relative z-10 uppercase tracking-wider font-bold">View Our Work</span>
+              <ChevronRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1.5" />
             </Link>
           </div>
           

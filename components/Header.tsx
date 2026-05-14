@@ -327,8 +327,8 @@ export default function Header() {
 
                     <div className="hidden lg:flex items-center gap-4 shrink-0 z-50">
                         <ThemeToggle />
-                        <Link href="/contact" className="bg-primary text-white px-5 xl:px-6 py-2.5 rounded-xl text-sm font-bold tracking-wide hover:bg-primary/90 transition-all shadow-md hover:-translate-y-0.5">
-                            Contact
+                        <Link href="/contact" className="bg-primary text-white px-5 xl:px-6 py-2.5 rounded-xl text-sm font-bold tracking-wide hover:bg-primary/90 transition-all shadow-md hover:-translate-y-0.5 uppercase">
+                            CONTACT
                         </Link>
                     </div>
 

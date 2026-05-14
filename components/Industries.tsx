@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -88,16 +88,16 @@ export default function Industries() {
             <button 
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className={`w-14 h-14 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-center transition-all ${currentIndex === 0 ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
+              className={`w-14 h-14 rounded-full border border-slate-900 dark:border-white flex items-center justify-center transition-all ${currentIndex === 0 ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
             >
-              <ArrowLeft className="w-6 h-6" />
+              <ChevronLeft className="w-6 h-6" />
             </button>
             <button 
               onClick={handleNext}
               disabled={currentIndex >= maxScroll}
-              className={`w-14 h-14 rounded-xl border border-slate-900 dark:border-white flex items-center justify-center transition-all ${currentIndex >= maxScroll ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
+              className={`w-14 h-14 rounded-full border border-slate-900 dark:border-white flex items-center justify-center transition-all ${currentIndex >= maxScroll ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
             >
-              <ArrowRight className="w-6 h-6" />
+              <ChevronRight className="w-6 h-6" />
             </button>
           </div>
         </div>
@@ -190,10 +190,11 @@ function CardContent({ industry, isHovered }: { industry: Industry, isHovered: b
             animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 40 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
           >
-             <button className="w-full py-4 px-8 rounded-xl bg-black text-white flex items-center justify-between border border-white/10 hover:bg-slate-900 transition-colors">
-                <span className="text-sm font-bold">Learn more</span>
-                <ArrowRight className="w-5 h-5" />
-             </button>
+              <button className="group relative w-full py-3.5 px-8 rounded-xl bg-logo hover:bg-logo/90 text-white flex items-center justify-between border border-white/10 transition-all overflow-hidden shadow-lg">
+                <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                <span className="relative z-10 text-sm font-bold uppercase tracking-wider">Learn more</span>
+                <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+              </button>
           </motion.div>
         </motion.div>
 
@@ -207,9 +208,10 @@ function CardContent({ industry, isHovered }: { industry: Industry, isHovered: b
           }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <div className="w-full py-4 px-8 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
-            <span className="text-sm font-bold text-slate-900 dark:text-white">Learn more</span>
-            <ArrowRight className="w-5 h-5 text-slate-900 dark:text-white" />
+          <div className="group relative w-full py-4 px-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between overflow-hidden shadow-sm hover:shadow-md transition-all">
+            <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <span className="relative z-10 text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Learn more</span>
+            <ChevronRight className="relative z-10 w-5 h-5 text-slate-900 dark:text-white transition-transform group-hover:translate-x-1.5" />
           </div>
         </motion.div>
     </>

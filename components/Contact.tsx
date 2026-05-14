@@ -75,8 +75,9 @@ export default function Contact() {
                                 <textarea suppressHydrationWarning className="w-full bg-gray-50 dark:bg-slate-900/50 border border-gray-100 dark:border-white/10 rounded-xl p-4 text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none dark:text-white h-32 resize-none transition-all" placeholder="How can we help?"></textarea>
                             </div>
                             {/* Changed button colors to use your primary brand variable */}
-                            <button suppressHydrationWarning className="w-full bg-primary hover:bg-primary/90 text-white font-semibold uppercase tracking-widest py-4 rounded-xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                                Send Message
+                            <button suppressHydrationWarning className="group relative w-full bg-logo hover:bg-logo/90 text-white font-bold uppercase tracking-wider py-4 rounded-xl transition-all shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] overflow-hidden">
+                                <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                                <span className="relative z-10">Send Message</span>
                             </button>
                         </form>
                     </div>

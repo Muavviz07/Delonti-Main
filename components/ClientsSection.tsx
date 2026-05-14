@@ -52,7 +52,7 @@ export default function ClientsSection({ title }: { title?: string }) {
   return (
     <section className="bg-slate-100 dark:bg-slate-900 py-16 px-6 border-t border-gray-100 dark:border-white/10 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
-        <h2 className="section-subheading text-center mb-12">
+        <h2 className="section-subheading text-center mb-20 !text-black dark:!text-white">
           {title || "SOME OF OUR VALUABLE CLIENTS & PARTNERS"}
         </h2>
 

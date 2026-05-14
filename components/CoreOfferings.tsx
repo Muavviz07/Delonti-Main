@@ -1,6 +1,6 @@
 "use client";
 
-import { Nfc, Cpu, ShieldAlert, Users, ArrowRight } from "lucide-react";
+import { Nfc, Cpu, ShieldAlert, Users, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function CoreOfferings() {
@@ -41,7 +41,7 @@ export default function CoreOfferings() {
 
                 {/* Section Header */}
                 <div className="mb-16">
-                    <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#38bdf8] mb-4">
+                    <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-logo mb-4">
                         Core Offerings
                     </h2>
                     <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
@@ -72,11 +72,11 @@ export default function CoreOfferings() {
                             {/* CTA Button */}
                             <Link
                                 href={offering.href}
-                                className="mt-auto flex items-center justify-center w-full py-3.5 px-4 rounded-xl bg-gray-50 dark:bg-slate-800 text-sm font-bold text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-white transition-all duration-300 border border-transparent group-hover:border-primary"
+                                className="group relative px-8 py-3.5 bg-logo hover:bg-logo/90 text-white rounded-xl font-bold text-base transition-all shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden"
                             >
-                                {/* Now using the exact string defined in the array above */}
-                                {offering.buttonText}
-                                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1.5" />
+                                <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                                <span className="relative z-10 text-sm font-bold uppercase tracking-wider">{offering.buttonText}</span>
+                                <ChevronRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5" />
                             </Link>
                         </div>
                     ))}

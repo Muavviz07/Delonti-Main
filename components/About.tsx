@@ -17,7 +17,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-            <h2 className="section-subheading !text-white">
+            <h2 className="section-subheading !text-logo">
                 Our Identity
               </h2>
               <h3 className="section-heading mb-10 !text-white">

@@ -135,7 +135,7 @@ export default function Solutions() {
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-sm font-bold uppercase tracking-[0.3em] text-[#38bdf8] mb-4"
+                        className="text-sm font-bold uppercase tracking-[0.3em] text-logo mb-4"
                     >
                         Tailored Solutions
                     </motion.h2>
