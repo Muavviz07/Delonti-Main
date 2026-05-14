@@ -17,7 +17,7 @@ const SLIDES = [
       <>
         RFID + AI <br />
         PLATFORM FOR <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Real-Time Tracking</span>
+        <span className="text-[#0A1A2A] drop-shadow-[0_0_12px_rgba(255,255,255,0.7)]">Real-Time Tracking</span>
       </>
     ),
     subtext: "Powering Asset Tracking and Smart Homeless Service Kiosks",
@@ -36,7 +36,7 @@ const SLIDES = [
       <>
         RFID + AI <br />
         PLATFORM FOR <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Campus Operations</span>
+        <span className="text-[#0A1A2A] drop-shadow-[0_0_12px_rgba(255,255,255,0.7)]">Campus Operations</span>
       </>
     ),
     subtext: "Real-Time Visibility for Equipment, Students, and Safety",
@@ -55,7 +55,7 @@ const SLIDES = [
       <>
         RFID + AI <br />
         PLATFORM FOR <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Healthcare Operations</span>
+        <span className="text-[#0A1A2A] drop-shadow-[0_0_12px_rgba(255,255,255,0.7)]">Healthcare Operations</span>
       </>
     ),
     subtext: "Real-Time Visibility for Equipment and Patient Flow",
@@ -74,7 +74,7 @@ const SLIDES = [
       <>
         RFID + AI <br />
         PLATFORM FOR <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Manufacturing Operations</span>
+        <span className="text-[#0A1A2A] drop-shadow-[0_0_12px_rgba(255,255,255,0.7)]">Manufacturing Operations</span>
       </>
     ),
     subtext: "Track Assets, Production, and Workflow in Real Time",
@@ -93,7 +93,7 @@ const SLIDES = [
       <>
         RFID + AI <br />
         PLATFORM FOR <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Inventory Tracking</span>
+        <span className="text-[#0A1A2A] drop-shadow-[0_0_12px_rgba(255,255,255,0.7)]">Inventory Tracking</span>
       </>
     ),
     subtext: "Track Inventory, Movement, and Fulfillment in Real Time",
@@ -112,7 +112,7 @@ const SLIDES = [
       <>
         RFID + AI <br />
         PLATFORM FOR <br />
-        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">Public Safety Operations</span>
+        <span className="text-[#0A1A2A] drop-shadow-[0_0_12px_rgba(255,255,255,0.7)]">Public Safety Operations</span>
       </>
     ),
     subtext: "Track Assets, Personnel, and Response in Real Time",
@@ -172,15 +172,15 @@ export default function Hero() {
             </video>
           </motion.div>
         </AnimatePresence>
-        
-        {/* Advanced Overlay for premium look */}
+
+        {/* Advanced Overlay for premium look - Subtle dark overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0f]/80 via-[#0a0a0f]/40 to-transparent" />
         <div className="absolute inset-0 bg-[#0a0a0f]/10" />
       </div>
 
       <div className="relative z-10 container mx-auto h-full flex flex-col justify-center px-4 sm:px-10 md:px-16 lg:px-24">
         <AnimatePresence mode="wait">
-          <motion.div 
+          <motion.div
             key={currentSlide}
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -189,15 +189,15 @@ export default function Hero() {
             className="max-w-4xl text-left text-white"
           >
             {/* Top Badge */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] md:text-sm font-bold tracking-[0.2em] text-blue-400 uppercase bg-blue-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] md:text-sm font-bold tracking-[0.2em] text-white uppercase bg-[#0A1A2A]/90 border border-[#162a42] rounded-xl backdrop-blur-md shadow-lg"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
               </span>
               {SLIDES[currentSlide].badge}
             </motion.div>
@@ -205,7 +205,7 @@ export default function Hero() {
             {/* Problem Points */}
             <div className="space-y-2 mb-8">
               {SLIDES[currentSlide].points.map((point, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -216,38 +216,38 @@ export default function Hero() {
                 </motion.div>
               ))}
             </div>
-            
+
             {/* Main Heading */}
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-8 md:mb-10 tracking-tight leading-[1.1] md:leading-[1] wrap-break-word uppercase"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-8 md:mb-10 tracking-tight leading-[1.1] md:leading-[1] wrap-break-word uppercase text-white"
             >
               {SLIDES[currentSlide].title}
             </motion.h1>
 
             {/* Subtext */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="text-[10px] md:text-sm text-white mb-4 leading-relaxed max-w-2xl font-bold uppercase tracking-[0.2em]"
+              className="text-[10px] md:text-sm text-white/90 mb-4 leading-relaxed max-w-2xl font-bold uppercase tracking-[0.2em]"
             >
               {SLIDES[currentSlide].subtext}
             </motion.p>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="text-[10px] md:text-sm text-white mb-10 md:mb-12 font-bold tracking-[0.2em] uppercase"
+              className="text-[10px] md:text-sm text-white/90 mb-10 md:mb-12 font-bold tracking-[0.2em] uppercase"
             >
               {SLIDES[currentSlide].description}
             </motion.p>
 
             {/* Action Buttons */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
@@ -255,19 +255,19 @@ export default function Hero() {
             >
               <Link
                 href={SLIDES[currentSlide].link}
-                className="group relative bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-bold transition-all shadow-[0_0_30px_-5px_rgba(37,99,235,0.5)] hover:shadow-[0_0_40px_-5px_rgba(37,99,235,0.6)] flex items-center justify-center sm:justify-start gap-3 overflow-hidden"
+                className="group relative bg-[#0A1A2A] hover:bg-[#1A365D] text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-bold transition-all duration-300 shadow-[0_4px_15px_-5px_rgba(10,26,42,0.5)] hover:shadow-[0_8px_25px_-5px_rgba(26,54,93,0.6)] flex items-center justify-center sm:justify-start gap-3 overflow-hidden"
               >
-                <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">{SLIDES[currentSlide].cta}</span>
-                <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+                <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
+                <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm transition-colors pointer-events-none">{SLIDES[currentSlide].cta}</span>
+                <ChevronRight className="relative z-10 w-5 h-5 transition-all duration-300 group-hover:translate-x-2 group-hover:text-blue-200 pointer-events-none" />
               </Link>
 
               <Link
                 href="/contact"
-                className="group bg-white/5 hover:bg-white/10 text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-bold transition-all backdrop-blur-xl border border-white/10 flex items-center justify-center sm:justify-start gap-3 hover:border-white/20"
+                className="group bg-white/5 hover:bg-white/15 text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-bold transition-all duration-300 backdrop-blur-xl border border-white/10 flex items-center justify-center sm:justify-start gap-3 hover:border-white/40 hover:shadow-[0_8px_25px_-5px_rgba(255,255,255,0.15)]"
               >
-                <span className="uppercase tracking-wider text-xs md:text-sm">Request Demo</span>
-                <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+                <span className="uppercase tracking-wider text-xs md:text-sm transition-colors pointer-events-none">{SLIDES[currentSlide].cta === "Request Demo" ? "Learn More" : "Request Demo"}</span>
+                <ChevronRight className="w-5 h-5 transition-all duration-300 group-hover:translate-x-2 group-hover:text-blue-200 pointer-events-none" />
               </Link>
             </motion.div>
           </motion.div>
@@ -286,7 +286,7 @@ export default function Hero() {
             >
               <AnimatePresence mode="popLayout">
                 {isActive ? (
-                  <motion.div 
+                  <motion.div
                     layoutId="activeIndicator"
                     key="active"
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -296,9 +296,9 @@ export default function Hero() {
                   >
                     {/* Background Circle */}
                     <div className="absolute inset-0 rounded-full border-2 border-white/30 bg-black/20 backdrop-blur-sm" />
-                    
+
                     {/* Progress Circle (SVG) */}
-                    <svg className="absolute inset-0 w-full h-full -rotate-90 drop-shadow-[0_0_8px_rgba(37,99,235,0.4)]" viewBox="0 0 100 100">
+                    <svg className="absolute inset-0 w-full h-full -rotate-90 drop-shadow-[0_0_8px_rgba(10,26,42,0.6)]" viewBox="0 0 100 100">
                       <circle
                         cx="50"
                         cy="50"
@@ -308,17 +308,17 @@ export default function Hero() {
                         strokeWidth="4"
                         strokeDasharray="301.6"
                         strokeDashoffset={301.6 - (301.6 * progress) / 100}
-                        className="text-blue-500 transition-all duration-100 ease-linear"
+                        className="text-[#162a42] transition-all duration-100 ease-linear"
                       />
                     </svg>
-                    
+
                     {/* Slide Number */}
                     <span className="relative z-10 text-sm md:text-base font-bold text-white drop-shadow-md">
                       {index + 1}
                     </span>
                   </motion.div>
                 ) : (
-                  <motion.div 
+                  <motion.div
                     key="dot"
                     layout
                     className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/60 group-hover:bg-white shadow-[0_0_8px_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_12px_rgba(255,255,255,0.8)] transition-all duration-300"
@@ -331,10 +331,10 @@ export default function Hero() {
       </div>
 
       {/* Decorative side accent */}
-      <div className="absolute left-0 top-0 w-1 h-full bg-linear-to-b from-transparent via-blue-500/50 to-transparent z-10" />
+      <div className="absolute left-0 top-0 w-1 h-full bg-linear-to-b from-transparent via-[#162a42]/50 to-transparent z-10 pointer-events-none" />
 
       {/* Bottom fade for smooth transition to next section */}
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-linear-to-t from-[#0a0a0f] to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 w-full h-48 bg-linear-to-t from-[#0a0a0f] to-transparent z-10 pointer-events-none" />
     </section>
   );
-}
+}
