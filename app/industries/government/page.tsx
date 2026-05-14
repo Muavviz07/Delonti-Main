@@ -7,11 +7,12 @@ import {
   EyeOff, FileText, Network, ShieldCheck, 
   Box, Truck, HardHat, Activity, LayoutDashboard,
   Radio, Database, TrendingUp, Monitor, ShieldAlert, FileCheck,
-  Globe, ArrowRight, Zap, CornerDownRight
+  Globe, ArrowRight, Zap, CornerDownRight, ChevronRight
 } from "lucide-react";
 import PlatformFlowDiagram from "@/components/PlatformFlowDiagram";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function GovernmentIndustryPage() {
   
@@ -32,75 +33,112 @@ export default function GovernmentIndustryPage() {
 
   return (
     <main className="w-full bg-[#FAFAFA] font-sans selection:bg-[#2b2b4f] selection:text-white relative">
+      <Header />
       
-      {/* 1. HERO SECTION - Centered Vertically & Horizontally */}
-      <section className="relative w-full min-h-[90vh] flex flex-col justify-center items-center overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 bg-white pointer-events-none" />
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24 relative z-10 w-full flex flex-col items-center justify-center pt-24 pb-12">
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 mb-8"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#4A7C59]" />
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-500">Government & Public Sector</span>
-          </motion.div>
+      {/* 1. HERO SECTION - Clean Professional Split Layout */}
+      <section className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-white border-b border-slate-100 pt-20 lg:pt-0">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex flex-col items-start"
+            >
+              {/* Top Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-primary bg-primary/5 border border-primary/10 rounded-xl"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                Government & Public Sector
+              </motion.div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-display font-black tracking-tighter leading-[1.1] text-[#111111] mb-6 max-w-5xl text-center"
-          >
-            RFID + AI Platform for Government Infrastructure
-          </motion.h1>
+              {/* Main Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 tracking-tighter leading-[1.1] text-[#111111] uppercase"
+              >
+                RFID + AI Platform for <br />
+                <span className="text-primary">Government Infrastructure</span>
+              </motion.h1>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl sm:text-2xl text-slate-500 font-light max-w-3xl leading-relaxed mb-4 text-center"
-          >
-            Track assets, infrastructure, and operations in real time across agencies, facilities, and field operations.
-          </motion.p>
+              {/* Subtext - Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="text-sm md:text-base text-slate-500 mb-8 leading-relaxed max-w-xl font-medium"
+              >
+                Track assets, infrastructure, and operations in real time across agencies, facilities, and field operations.
+              </motion.p>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="text-sm font-semibold tracking-widest text-[#4A7C59] uppercase mb-12 text-center"
-          >
-            Real-Time Visibility • Operational Intelligence • Secure Public Infrastructure
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row items-center gap-6"
-          >
-            <Link href="/contact" className="inline-flex items-center gap-3 font-bold text-sm uppercase tracking-widest text-white bg-[#111111] hover:bg-[#2b2b4f] px-8 py-4 rounded-full transition-colors">
-              Request Demo <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link href="#solutions" className="inline-flex items-center gap-3 font-bold text-sm uppercase tracking-widest text-[#111111] hover:text-[#4A7C59] px-8 py-4 border border-slate-300 rounded-full transition-colors">
-              Explore Solutions
-            </Link>
-          </motion.div>
-        </div>
+              {/* Points / Meta */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="text-xs md:text-sm text-primary mb-12 font-bold tracking-[0.15em] uppercase border-l-2 border-primary pl-4"
+              >
+                Real-Time Visibility • Operational Intelligence • Secure Public Infrastructure
+              </motion.p>
 
-        {/* Hero Image Container pushed slightly down so text is perfectly centered in viewport */}
-        <div className="w-full px-6 sm:px-12 lg:px-24 pb-12 mt-auto">
-          <HeroImageContainer image={IMAGES.hero} />
+              {/* Action Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+              >
+                <Link
+                  href="/contact"
+                  className="group relative bg-[#111111] hover:bg-slate-900 text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl flex items-center justify-center gap-3 overflow-hidden"
+                >
+                  <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Request Demo</span>
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+                </Link>
+
+                <Link
+                  href="#solutions"
+                  className="group bg-white hover:bg-slate-50 text-[#111111] px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 flex items-center justify-center gap-3 shadow-sm"
+                >
+                  <span className="uppercase tracking-wider text-xs md:text-sm">Explore Solutions</span>
+                  <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Image Container */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, x: 30 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 bg-slate-50"
+            >
+              <img 
+                src={IMAGES.hero} 
+                alt="Government Infrastructure" 
+                className="w-full h-full object-cover"
+              />
+              {/* Subtle accent gradient */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#4A7C59]/10 to-transparent pointer-events-none" />
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
       {/* 2. CHALLENGES SECTION - Permanent Colored Numbers + Minimal Hover */}
       <section className="py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
-            <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter text-[#111111] max-w-2xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#111111] max-w-2xl uppercase">
               Challenges Facing Government Agencies
             </h2>
           </div>
@@ -112,13 +150,13 @@ export default function GovernmentIndustryPage() {
               { num: "03", title: "Cross-Agency Coordination Gaps", desc: "Data silos limit visibility and coordination across departments and agencies." },
               { num: "04", title: "Compliance and Accountability", desc: "Government agencies require accurate tracking, reporting, and audit trails." }
             ].map((item, i) => (
-              <div key={i} className="p-12 lg:p-16 border-b border-r border-slate-200 flex flex-col h-[350px] group transition-colors hover:bg-slate-50">
+              <div key={i} className="p-10 lg:p-12 border-b border-r border-slate-200 flex flex-col h-[300px] group transition-colors hover:bg-slate-50">
                 {/* Number is permanently colored #4A7C59, subtle translation on hover */}
-                <div className="text-6xl font-display font-black text-[#4A7C59] mb-8 tracking-tighter transition-transform duration-500 group-hover:-translate-y-2">
+                <div className="text-5xl font-display font-black text-primary mb-6 tracking-tighter transition-transform duration-500 group-hover:-translate-y-2">
                   {item.num}.
                 </div>
-                <h3 className="text-3xl font-bold tracking-tight text-[#111111] mb-4 mt-auto">{item.title}</h3>
-                <p className="text-lg text-slate-500 font-light">{item.desc}</p>
+                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[#111111] mb-3 mt-auto uppercase">{item.title}</h3>
+                <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -127,10 +165,10 @@ export default function GovernmentIndustryPage() {
 
       {/* 3. THE DELONTI APPROACH */}
       <section className="py-32 bg-[#FAFAFA] border-y border-slate-200">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-20 text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6 text-[#111111]">A Platform Approach to Government Infrastructure</h2>
-            <p className="text-xl text-slate-500 leading-relaxed font-light">Delonti delivers a unified RFID and AI-powered platform that connects physical infrastructure to digital intelligence.</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 text-[#111111] uppercase">A Platform Approach to Government Infrastructure</h2>
+            <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium">Delonti delivers a unified RFID and AI-powered platform that connects physical infrastructure to digital intelligence.</p>
           </div>
           
           <PlatformFlowDiagram />
@@ -148,19 +186,19 @@ export default function GovernmentIndustryPage() {
 
       {/* 5. THE SMART KIOSK - Light Pale Greyish BG + Improved Positioning */}
       <section className="relative py-32 lg:py-48 bg-[#F1F5F9] border-y border-slate-200 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             
             {/* Left Content - Improved Positioning (Vertically centered, constrained width) */}
             <div className="lg:w-1/2 relative z-20 flex flex-col justify-center max-w-2xl mx-auto lg:mx-0">
               <div className="inline-flex items-center gap-2 mb-8">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#4A7C59] animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#4A7C59]">Featured Solution</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary">Featured Solution</span>
               </div>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter mb-8 text-[#111111]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-8 text-[#111111] uppercase">
                 Smart Public Service Access Platform
               </h2>
-              <p className="text-xl text-slate-600 leading-relaxed font-light mb-12">
+              <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium mb-12">
                 Delonti’s Smart Kiosk solution enables governments to connect communities to critical services in real time.
               </p>
               
@@ -172,14 +210,14 @@ export default function GovernmentIndustryPage() {
                   { icon: Database, title: "Data-driven insights for planning" }
                  ].map((item, i) => (
                    <div key={i} className="flex items-center gap-3">
-                     <item.icon className="w-5 h-5 text-[#4A7C59] shrink-0" />
+                     <item.icon className="w-5 h-5 text-primary shrink-0" />
                      <span className="text-[#111111] font-bold tracking-tight">{item.title}</span>
                    </div>
                  ))}
               </div>
 
               <div className="flex justify-start">
-                <Link href="/contact" className="inline-flex px-8 py-4 bg-[#111111] text-white hover:bg-[#2b2b4f] font-bold rounded-full transition-all shadow-xl active:scale-95 items-center gap-3">
+                <Link href="/contact" className="inline-flex px-8 py-4 bg-[#111111] text-white hover:bg-[#2b2b4f] font-bold rounded-xl transition-all shadow-xl active:scale-95 items-center gap-3">
                   Explore Smart Kiosk Solution <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -199,9 +237,9 @@ export default function GovernmentIndustryPage() {
 
       {/* 6. PLATFORM CAPABILITIES */}
       <section className="py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-24">
-            <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter text-[#111111]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#111111] uppercase">
               Platform Capabilities for Government
             </h2>
           </div>
@@ -216,11 +254,11 @@ export default function GovernmentIndustryPage() {
               { icon: FileCheck, title: "Compliance Reporting" }
             ].map((cap, i) => (
               <div key={i} className="group flex items-center gap-6 py-10 border-b border-slate-200 cursor-pointer relative overflow-hidden">
-                <div className="absolute bottom-0 left-0 h-px bg-[#4A7C59] w-0 group-hover:w-full transition-all duration-700 ease-out" />
-                <div className="w-14 h-14 rounded-full border border-slate-200 bg-[#FAFAFA] flex items-center justify-center shrink-0 group-hover:border-[#4A7C59]/50 transition-colors shadow-sm">
-                  <cap.icon strokeWidth={1.5} className="w-6 h-6 text-slate-400 group-hover:text-[#4A7C59] transition-colors" />
+                <div className="absolute bottom-0 left-0 h-px bg-primary w-0 group-hover:w-full transition-all duration-700 ease-out" />
+                <div className="w-14 h-14 rounded-full border border-slate-200 bg-[#FAFAFA] flex items-center justify-center shrink-0 group-hover:border-primary/50 transition-colors shadow-sm">
+                  <cap.icon strokeWidth={1.5} className="w-6 h-6 text-slate-400 group-hover:text-primary transition-colors" />
                 </div>
-                <span className="text-2xl font-medium tracking-tight text-slate-600 group-hover:text-[#111111] transition-colors">{cap.title}</span>
+                <span className="text-lg md:text-xl font-medium tracking-tight text-slate-600 group-hover:text-[#111111] transition-colors">{cap.title}</span>
                 <CornerDownRight className="w-5 h-5 text-slate-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             ))}
@@ -233,10 +271,10 @@ export default function GovernmentIndustryPage() {
 
       {/* 8. CASE STUDIES - Differentiated Background (Slate-50) */}
       <section className="py-32 bg-[#F8FAFC]">
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div>
-              <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter mb-4 text-[#111111]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4 text-[#111111] uppercase">
                 Proven Government Use Cases
               </h2>
             </div>
@@ -248,11 +286,11 @@ export default function GovernmentIndustryPage() {
               { title: "Smart Infrastructure Monitoring", img: IMAGES.case_infra },
               { title: "Public Service Access Platforms", img: IMAGES.case_access }
             ].map((study, i) => (
-              <Link href="#" key={i} className="group cursor-pointer flex flex-col h-full bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow">
+              <Link href="#" key={i} className="group cursor-pointer flex flex-col h-full bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 mb-8 relative">
                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: `url('${study.img}')` }} />
                 </div>
-                <h4 className="text-xl font-bold tracking-tight mb-8 flex-grow group-hover:text-[#4A7C59] transition-colors text-[#111111]">{study.title}</h4>
+                <h4 className="text-xl md:text-2xl font-bold tracking-tight mb-6 flex-grow group-hover:text-primary transition-colors text-[#111111] uppercase">{study.title}</h4>
                 <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#111111]">
                   Read Case Study <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -265,15 +303,15 @@ export default function GovernmentIndustryPage() {
       {/* 9. FINAL CTA - Shorter and Sweeter */}
       <section className="relative py-20 lg:py-24 bg-[#111111] text-white overflow-hidden border-t border-[#2b2b4f]">
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24 text-center flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tighter mb-10 max-w-3xl leading-tight">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-10 max-w-3xl leading-tight uppercase">
             Modernize Government Infrastructure with Delonti
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="/contact" className="px-10 py-4 bg-[#4A7C59] hover:bg-[#3d664a] text-white font-bold text-lg rounded-full transition-all flex items-center gap-3 shadow-lg">
+            <Link href="/contact" className="px-10 py-4 bg-primary hover:bg-[#3d664a] text-white font-bold text-lg rounded-xl transition-all flex items-center gap-3 shadow-lg">
               Request Demo <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/contact" className="px-10 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-lg rounded-full transition-all">
+            <Link href="/contact" className="px-10 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-lg rounded-xl transition-all">
               Contact Sales
             </Link>
           </div>
@@ -287,21 +325,7 @@ export default function GovernmentIndustryPage() {
   );
 }
 
-// --- Sub-component: Hero Parallax Frame ---
-function HeroImageContainer({ image }: { image: string }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [-30, 30]);
 
-  return (
-    <div ref={ref} className="w-full max-w-6xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-slate-100 aspect-[16/9] lg:aspect-[21/9] relative flex items-center justify-center">
-       <motion.div 
-         className="absolute inset-0 -top-[15%] -bottom-[15%] bg-cover bg-center" 
-         style={{ backgroundImage: `url('${image}')`, y }} 
-       />
-    </div>
-  );
-}
 
 
 // --- Sub-component: Fixed UX Interactive Morphing Tabs (Instant Image Load) ---
@@ -316,12 +340,12 @@ function InteractiveTabsSection({ images }: { images: any }) {
 
   return (
     <section id="solutions" className="py-32 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           {/* Left: Fixed List & Decoupled Description */}
           <div className="lg:w-1/2 flex flex-col justify-center">
-            <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter mb-16 text-[#111111]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-16 text-[#111111] uppercase">
               What Government Agencies Can Do with Delonti
             </h2>
             
@@ -335,10 +359,10 @@ function InteractiveTabsSection({ images }: { images: any }) {
                     onClick={() => setActiveTab(tab)}
                     className="cursor-pointer group flex items-center gap-4"
                   >
-                    <span className={`text-xl font-display font-black tracking-tighter transition-colors duration-300 ${isActive ? 'text-[#4A7C59]' : 'text-slate-300'}`}>
+                    <span className={`text-xl font-display font-black tracking-tighter transition-colors duration-300 ${isActive ? 'text-primary' : 'text-slate-300'}`}>
                       {tab.num}.
                     </span>
-                    <h3 className={`text-2xl sm:text-4xl font-bold tracking-tight transition-colors duration-300 ${isActive ? 'text-[#111111]' : 'text-slate-300 group-hover:text-slate-400'}`}>
+                    <h3 className={`text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 uppercase ${isActive ? 'text-[#111111]' : 'text-slate-300 group-hover:text-slate-400'}`}>
                       {tab.title}
                     </h3>
                   </div>
@@ -348,7 +372,7 @@ function InteractiveTabsSection({ images }: { images: any }) {
 
             {/* The Decoupled Description Container (Fixed minimum height, instant text switch) */}
             <div className="min-h-[120px] relative">
-               <p className="text-xl text-slate-500 leading-relaxed font-light transition-opacity duration-200">
+               <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium transition-opacity duration-200">
                   {activeTab.desc}
                </p>
             </div>
@@ -356,7 +380,7 @@ function InteractiveTabsSection({ images }: { images: any }) {
 
           {/* Right: Instant Morphing Image (No crossfade delay) */}
           <div className="lg:w-1/2 aspect-[4/5] lg:aspect-auto lg:h-[700px] relative">
-            <div className="w-full h-full rounded-3xl overflow-hidden border border-slate-200 shadow-xl relative bg-slate-100">
+            <div className="w-full h-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl relative bg-slate-100">
                {/* Use standard img tag with key to force instant render update without framer-motion delay */}
                <img 
                  key={activeTab.id}
@@ -379,15 +403,15 @@ function StickyStackingSection({ images }: { images: any }) {
     { id: 1, title: "Improved Visibility", text: "Gain real-time insight into assets, infrastructure, and operations.", img: images.outcome_visibility, color: "bg-[#FAFAFA]", textCol: "text-[#111111]" },
     { id: 2, title: "Operational Efficiency", text: "Reduce manual processes and improve response times.", img: images.outcome_efficiency, color: "bg-[#111111]", textCol: "text-white" },
     { id: 3, title: "Better Decision-Making", text: "Use data and analytics to optimize operations.", img: images.outcome_decision, color: "bg-[#2b2b4f]", textCol: "text-white" },
-    { id: 4, title: "Enhanced Public Service Delivery", text: "Connect communities to services more effectively.", img: images.outcome_service, color: "bg-[#4A7C59]", textCol: "text-white" },
+    { id: 4, title: "Enhanced Public Service Delivery", text: "Connect communities to services more effectively.", img: images.outcome_service, color: "bg-primary", textCol: "text-white" },
   ];
 
   return (
     <section className="bg-white py-32 border-y border-slate-200">
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-24">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-24">
-          <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter text-[#111111] mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#111111] mb-6 uppercase">
             Outcomes for Government Agencies
           </h2>
         </div>
@@ -398,13 +422,13 @@ function StickyStackingSection({ images }: { images: any }) {
             <div 
               key={card.id} 
               // The sticky offset increases slightly per card so they stack perfectly
-              className={`sticky w-full max-w-5xl h-[400px] md:h-[500px] rounded-3xl overflow-hidden border border-slate-200/20 shadow-2xl flex flex-col md:flex-row ${card.color} ${card.textCol}`}
+              className={`sticky w-full max-w-5xl h-[400px] md:h-[500px] rounded-2xl overflow-hidden border border-slate-200/20 shadow-2xl flex flex-col md:flex-row ${card.color} ${card.textCol}`}
               style={{ top: `calc(15vh + ${i * 40}px)`, marginBottom: '100px' }}
             >
                {/* Left Content */}
                <div className="md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
-                 <h3 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6">{card.title}</h3>
-                 <p className="text-xl opacity-80 leading-relaxed font-light">{card.text}</p>
+                 <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-6 uppercase">{card.title}</h3>
+                 <p className="text-sm md:text-base opacity-80 leading-relaxed font-medium">{card.text}</p>
                </div>
                {/* Right Image */}
                <div className="hidden md:block md:w-1/2 relative">
