@@ -17,10 +17,10 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-            <h2 className="text-[#38bdf8] font-bold uppercase tracking-[0.3em] text-sm mb-4">
+            <h2 className="section-subheading !text-white">
                 Our Identity
               </h2>
-              <h3 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-10">
+              <h3 className="section-heading mb-10 !text-white">
                 Delonti. <br />
                 Intelligent <br />
                 Infrastructure.
@@ -37,14 +37,14 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-8"
             >
-              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-medium">
+              <p className="section-body !text-white">
                 We are a premier technology solutions provider dedicated to bridging the gap between complex infrastructure needs and cutting-edge innovation.
               </p>
               
               <div className="h-px w-24 bg-primary/50" />
               
-              <p className="text-lg text-slate-400 leading-relaxed">
-                With a decade of specialized experience serving both the public and private sectors, Delonti specializes in high-stakes environments where security and reliability are non-negotiable. Our expertise encompasses <span className="text-white">Advanced RFID & IoT ecosystems</span>, <span className="text-white">Cybersecurity Infrastructure</span>, and <span className="text-white">Mission-Critical Public Safety Networks</span>.
+              <p className="section-body !text-white">
+                With a decade of specialized experience serving both the public and private sectors, Delonti specializes in high-stakes environments where security and reliability are non-negotiable. Our expertise encompasses <span className="font-bold">Advanced RFID & IoT ecosystems</span>, <span className="font-bold">Cybersecurity Infrastructure</span>, and <span className="font-bold">Mission-Critical Public Safety Networks</span>.
               </p>
 
               <div className="grid grid-cols-2 gap-12 pt-8 border-t border-white/10">

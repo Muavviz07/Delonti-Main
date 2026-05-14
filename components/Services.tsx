@@ -109,7 +109,7 @@ export default function Services() {
                                 </div>
 
                                 <div className="pt-6">
-                                    <button className="bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-all">
+                                    <button className="bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 py-3 rounded-2xl font-bold hover:opacity-90 transition-all">
                                         {service.cta}
                                     </button>
                                 </div>

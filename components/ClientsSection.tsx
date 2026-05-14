@@ -28,7 +28,7 @@ const HARDCODED_CLIENTS: Client[] = [
 ];
 
 const LogoCard = ({ name, logo }: { name: string; logo: string }) => (
-  <div className="flex-none w-64 h-32 bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-lg flex items-center justify-center px-4 py-3 relative overflow-hidden transition-all duration-500 hover:border-primary/40 dark:hover:border-primary/50 group shadow-sm hover:shadow-xl hover:-translate-y-1">
+  <div className="flex-none w-64 h-32 bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-xl flex items-center justify-center px-4 py-3 relative overflow-hidden transition-all duration-500 hover:border-primary/40 dark:hover:border-primary/50 group shadow-sm hover:shadow-xl hover:-translate-y-1">
     {/* Replaced hardcoded #6366f1 with bg-primary */}
     <div className="absolute top-0 left-0 w-full h-0 bg-primary transition-all duration-500 group-hover:h-1"></div>
     <div className="relative w-full h-full flex items-center justify-center">
@@ -52,8 +52,7 @@ export default function ClientsSection({ title }: { title?: string }) {
   return (
     <section className="bg-slate-100 dark:bg-slate-900 py-16 px-6 border-t border-gray-100 dark:border-white/10 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
-        {/* Replaced hardcoded #1F2A44 with theme-aware text colors */}
-        <h2 className="text-2xl md:text-3xl font-normal text-center text-slate-900 dark:text-white mb-12 tracking-[0.25em] font-display">
+        <h2 className="section-subheading text-center mb-12">
           {title || "SOME OF OUR VALUABLE CLIENTS & PARTNERS"}
         </h2>
 

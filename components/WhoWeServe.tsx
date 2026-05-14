@@ -9,27 +9,27 @@ const SOLUTIONS = [
   {
     title: "Asset Tracking",
     subtitle: "Real-time visibility and management of critical infrastructure assets across multiple locations.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070",
+    image: "/solutions/asset_tracking.png",
   },
   {
     title: "Inventory Intelligence",
     subtitle: "Automated stock monitoring and predictive analytics to optimize supply chain operations.",
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070",
+    image: "/solutions/inventory_intelligence.png",
   },
   {
     title: "Workforce Safety",
     subtitle: "Advanced monitoring and instant alerting systems to ensure personnel safety in hazardous environments.",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070",
+    image: "/solutions/workforce_safety.png",
   },
   {
     title: "Facility Intelligence",
     subtitle: "Smart sensors and automated controls that enhance operational efficiency and security.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070",
+    image: "/solutions/facility_intelligence.png",
   },
   {
     title: "Fleet & Route Optimization",
     subtitle: "AI-driven logistics tracking to reduce downtime, cut costs, and improve delivery reliability.",
-    image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=2070",
+    image: "/solutions/fleet_optimization.png",
   }
 ];
 
@@ -65,10 +65,10 @@ export default function WhoWeServe() {
         
         {/* Headings */}
         <div className="mb-16">
-          <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#38bdf8] mb-4">
+          <h2 className="section-subheading">
             Delonti Core Solutions
           </h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1] max-w-4xl">
+          <h3 className="section-heading">
             Revolutionizing Infrastructure through Intelligent Innovation
           </h3>
         </div>
@@ -99,7 +99,7 @@ export default function WhoWeServe() {
                   }}
                   transition={{ duration: 0.4 }}
                 >
-                  <div className="w-full h-[550px] lg:h-[620px] bg-[#0A1A2A] rounded-[2.5rem] p-12 lg:p-16 flex flex-col relative overflow-hidden border border-slate-800 shadow-2xl group cursor-pointer transition-colors duration-500 hover:bg-[#0E2338]">
+                  <div className="w-full h-[550px] lg:h-[620px] bg-[#0A1A2A] rounded-2xl p-12 lg:p-16 flex flex-col relative overflow-hidden border border-slate-800 shadow-2xl group cursor-pointer transition-colors duration-500 hover:bg-[#0E2338]">
                     <div className="flex gap-8 relative z-10 mb-12 items-start">
                       <div className="flex flex-col items-center gap-3 shrink-0">
                         <span className="text-[#38bdf8] font-black text-2xl tracking-tighter leading-none">0{idx + 1}</span>
@@ -118,7 +118,7 @@ export default function WhoWeServe() {
                     </div>
                     
                     {/* Content Section */}
-                    <div className="relative flex-1 w-full rounded-[2rem] overflow-hidden border border-slate-700/50 bg-slate-900 group-hover:border-[#38bdf8]/30 transition-all duration-700 shadow-inner">
+                    <div className="relative flex-1 w-full rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-900 group-hover:border-[#38bdf8]/30 transition-all duration-700 shadow-inner">
                       <div 
                         className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105" 
                         style={{ backgroundImage: `url(${item.image})` }} 

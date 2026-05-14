@@ -59,7 +59,7 @@ export default function CaseStudySection({
                                         fill
                                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-slate-900 dark:text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">
+                                    <div className="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-slate-900 dark:text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-xl z-10">
                                         {study.client}
                                     </div>
                                 </div>

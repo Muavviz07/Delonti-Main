@@ -57,7 +57,7 @@ export default function CoreOfferings() {
                             className="group flex flex-col items-center text-center p-8 bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full"
                         >
                             {/* Icon Container */}
-                            <div className="flex items-center justify-center w-20 h-20 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-slate-800/50 text-primary dark:text-slate-300 mb-6 group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
+                            <div className="flex items-center justify-center w-20 h-20 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-slate-800/50 text-primary dark:text-slate-300 mb-6 group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
                                 {offering.icon}
                             </div>
 

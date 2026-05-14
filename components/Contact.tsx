@@ -6,13 +6,13 @@ export default function Contact() {
 
                     {/* Left Side: Contact Info */}
                     <div>
-                        <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#38bdf8] mb-4">
+                        <h2 className="section-subheading">
                             Contact Us
                         </h2>
-                        <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-[1.1]">
+                        <h3 className="section-heading mb-6">
                             Ready to Innovate?
                         </h3>
-                        <p className="text-lg text-slate-500 dark:text-slate-400 font-medium mb-10 leading-relaxed max-w-lg">
+                        <p className="section-body mb-10 max-w-lg">
                             Whether you&apos;re a city official, federal agency, or private enterprise, we&apos;re here to help you deploy next-generation RFID, IoT, and Cybersecurity solutions.
                         </p>
 
@@ -41,7 +41,7 @@ export default function Contact() {
                     </div>
 
                     {/* Right Side: Contact Form */}
-                    <div className="bg-white dark:bg-slate-800/50 p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 dark:border-white/5 relative overflow-hidden">
+                    <div className="bg-white dark:bg-slate-800/50 p-8 md:p-10 rounded-xl shadow-xl border border-gray-100 dark:border-white/5 relative overflow-hidden">
                         {/* Changed the hardcoded hex to use your primary color variable for the glow */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 

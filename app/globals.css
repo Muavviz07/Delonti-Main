@@ -8,7 +8,9 @@
   --font-display: var(--font-playfair), serif;
   --font-sans: var(--font-public-sans), sans-serif;
 
-  --color-primary: #2b2b4f;
+  --color-primary: #0A1A2A;
+  --color-primary-light: #162a42;
+  --color-secondary: #0E2338;
   --color-federal-green: #4A7C59;
   --color-enterprise-gray: #7A7A7A;
   --color-background-light: #ffffff;
@@ -74,6 +76,19 @@
   .animate-scroll-left:hover,
   .animate-scroll-right:hover {
     animation-play-state: paused;
+  }
+
+  /* Typography Standardization */
+  .section-subheading {
+    @apply text-sm font-bold uppercase tracking-[0.3em] text-primary dark:text-[#38bdf8] mb-4 block;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-6 block capitalize;
+  }
+
+  .section-body {
+    @apply text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed;
   }
 }
 

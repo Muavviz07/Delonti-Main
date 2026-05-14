@@ -76,10 +76,10 @@ export default function Industries() {
         {/* Header with Navigation */}
         <div className="flex items-end justify-between mb-16">
           <div className="max-w-3xl">
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[#38bdf8] mb-4">
+            <h2 className="section-subheading">
               Who We Serve
             </h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
+            <h3 className="section-heading mb-0">
               Modern protection for any space
             </h3>
           </div>
@@ -88,14 +88,14 @@ export default function Industries() {
             <button 
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className={`w-14 h-14 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center transition-all ${currentIndex === 0 ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
+              className={`w-14 h-14 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-center transition-all ${currentIndex === 0 ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
             >
               <ArrowLeft className="w-6 h-6" />
             </button>
             <button 
               onClick={handleNext}
               disabled={currentIndex >= maxScroll}
-              className={`w-14 h-14 rounded-full border border-slate-900 dark:border-white flex items-center justify-center transition-all ${currentIndex >= maxScroll ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
+              className={`w-14 h-14 rounded-xl border border-slate-900 dark:border-white flex items-center justify-center transition-all ${currentIndex >= maxScroll ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
             >
               <ArrowRight className="w-6 h-6" />
             </button>
@@ -155,7 +155,7 @@ function CardContent({ industry, isHovered }: { industry: Industry, isHovered: b
     <>
         {/* The Image Card - Expands on Hover */}
         <motion.div 
-          className="relative h-[480px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-900 z-10"
+          className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-900 z-10"
           animate={{ height: isHovered ? 564 : 480 }}
           transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
         >
@@ -190,7 +190,7 @@ function CardContent({ industry, isHovered }: { industry: Industry, isHovered: b
             animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 40 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
           >
-             <button className="w-full py-4 px-8 rounded-full bg-black text-white flex items-center justify-between border border-white/10 hover:bg-slate-900 transition-colors">
+             <button className="w-full py-4 px-8 rounded-xl bg-black text-white flex items-center justify-between border border-white/10 hover:bg-slate-900 transition-colors">
                 <span className="text-sm font-bold">Learn more</span>
                 <ArrowRight className="w-5 h-5" />
              </button>
@@ -207,7 +207,7 @@ function CardContent({ industry, isHovered }: { industry: Industry, isHovered: b
           }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <div className="w-full py-4 px-8 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <div className="w-full py-4 px-8 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
             <span className="text-sm font-bold text-slate-900 dark:text-white">Learn more</span>
             <ArrowRight className="w-5 h-5 text-slate-900 dark:text-white" />
           </div>

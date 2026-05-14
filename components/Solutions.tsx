@@ -78,7 +78,7 @@ const IndustryCard = ({ industry, index, progress, range, targetScale }: Industr
                         transition: { duration: 0.3, ease: "easeOut" }
                     }
                 }}
-                className="group relative w-full max-w-5xl h-[400px] md:h-[320px] p-8 md:p-14 rounded-[2.5rem] border border-slate-200 dark:border-white/10 flex flex-col md:flex-row items-center gap-8 md:gap-14 overflow-hidden bg-white dark:bg-slate-900 shadow-xl transition-all duration-300"
+                className="group relative w-full max-w-5xl h-[400px] md:h-[320px] p-8 md:p-14 rounded-2xl border border-slate-200 dark:border-white/10 flex flex-col md:flex-row items-center gap-8 md:gap-14 overflow-hidden bg-white dark:bg-slate-900 shadow-xl transition-all duration-300"
             >
                 {/* Visual Accent - Color Bar */}
                 <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
@@ -87,7 +87,7 @@ const IndustryCard = ({ industry, index, progress, range, targetScale }: Industr
                 <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-primary/[0.03] to-transparent dark:from-primary/[0.08] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Icon Container */}
-                <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-[2rem] bg-primary text-white flex items-center justify-center shadow-lg border border-primary/20 relative z-10 transition-all duration-300 dark:shadow-primary/30">
+                <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-xl bg-primary text-white flex items-center justify-center shadow-lg border border-primary/20 relative z-10 transition-all duration-300 dark:shadow-primary/30">
                     <div className="transform transition-transform duration-500">
                         {industry.icon}
                     </div>
