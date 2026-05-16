@@ -9,7 +9,7 @@ import {
   Radio, Database, TrendingUp, Monitor, ShieldAlert, FileCheck,
   Globe, ArrowRight, Zap, CornerDownRight, ChevronRight
 } from "lucide-react";
-import PlatformFlowDiagram from "@/components/PlatformFlowDiagram";
+import GovKeyFlow from "@/components/GovKeyFlow";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -29,6 +29,7 @@ export default function GovernmentIndustryPage() {
     case_rfid: "/images/government/gov_case_rfid_1778638339756.png",
     case_infra: "/images/government/gov_case_infra_1778638358289.png",
     case_access: "/images/government/gov_case_access_1778638376467.png",
+    service_access: "/images/government/gov_smart_service_access.png",
   };
 
   return (
@@ -173,7 +174,7 @@ export default function GovernmentIndustryPage() {
             <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium">Delonti delivers a unified RFID and AI-powered platform that connects physical infrastructure to digital intelligence.</p>
           </div>
 
-          <PlatformFlowDiagram />
+          <GovKeyFlow />
 
           <div className="mt-16 text-center max-w-3xl mx-auto">
             <p className="text-lg text-slate-500 font-medium leading-relaxed">
@@ -213,7 +214,7 @@ export default function GovernmentIndustryPage() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <item.icon className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-[#111111] font-bold tracking-tight">{item.title}</span>
+                    <span className="text-[#111111] text-base md:text-lg font-bold tracking-tight uppercase">{item.title}</span>
                   </div>
                 ))}
               </div>
@@ -270,7 +271,10 @@ export default function GovernmentIndustryPage() {
         </div>
       </section>
 
-      {/* 7. BENEFITS - Sticky Stacking Cards */}
+      {/* 7. USE CASES IN ACTION - Video Showcase */}
+      <VideoUseCasesSection />
+
+      {/* 8. BENEFITS - Sticky Stacking Cards */}
       <StickyStackingSection images={IMAGES} />
 
       {/* 8. CASE STUDIES - Differentiated Background (Slate-50) */}
@@ -339,10 +343,42 @@ export default function GovernmentIndustryPage() {
 // --- Sub-component: Fixed UX Interactive Morphing Tabs (Instant Image Load) ---
 function InteractiveTabsSection({ images }: { images: any }) {
   const tabs = [
-    { id: 1, num: "01", title: "Asset Tracking", desc: "Track equipment, tools, and high-value assets across facilities and departments in real time.", img: images.asset, icon: Box },
-    { id: 2, num: "02", title: "Fleet & Field Operations", desc: "Monitor vehicles, field equipment, and mobile assets across locations.", img: images.fleet, icon: Truck },
-    { id: 3, num: "03", title: "Workforce Visibility", desc: "Track personnel movement for safety, coordination, and operational efficiency.", img: images.hero, icon: HardHat },
-    { id: 4, num: "04", title: "Infrastructure Monitoring", desc: "Monitor infrastructure usage, movement, and operational conditions.", img: images.infra_monitor, icon: Activity },
+    { 
+      id: 1, num: "01", 
+      title: "Asset Tracking", 
+      desc: "Track equipment, tools, and high-value assets across facilities and departments in real time.", 
+      img: images.asset, icon: Box 
+    },
+    { 
+      id: 2, num: "02", 
+      title: "Fleet & Field Operations", 
+      desc: "Monitor vehicles, field equipment, and mobile assets across locations.", 
+      img: images.fleet, icon: Truck 
+    },
+    { 
+      id: 3, num: "03", 
+      title: "Workforce Visibility", 
+      desc: "Track personnel movement for safety, coordination, and operational efficiency.", 
+      img: images.hero, icon: HardHat 
+    },
+    { 
+      id: 4, num: "04", 
+      title: "Infrastructure Monitoring", 
+      desc: "Monitor infrastructure usage, movement, and operational conditions.", 
+      img: images.infra_monitor, icon: Activity 
+    },
+    { 
+      id: 5, num: "05", 
+      title: "Smart Public Service Access", 
+      desc: "Enable real-time access to public services through connected infrastructure such as smart kiosks.", 
+      bullets: [
+        "Homeless services access",
+        "Healthcare referrals",
+        "Shelter and support services",
+        "Multi-agency service integration"
+      ],
+      img: images.service_access, icon: Globe 
+    },
   ];
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
@@ -351,56 +387,191 @@ function InteractiveTabsSection({ images }: { images: any }) {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
 
-          {/* Left: Fixed List & Decoupled Description */}
+          {/* Left: Dynamic Accordion-style List */}
           <div className="lg:w-1/2 flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-16 text-[#111111] uppercase">
               What Government Agencies Can Do with Delonti
             </h2>
 
-            {/* The Tab Titles with Numbers (Fixed height list, no layout shift) */}
-            <div className="flex flex-col gap-6 mb-12 border-l border-slate-200 pl-6">
+            {/* The Tab Items */}
+            <div className="flex flex-col gap-0 border-l border-slate-200">
               {tabs.map((tab) => {
                 const isActive = activeTab.id === tab.id;
                 return (
                   <div
                     key={tab.id}
-                    onClick={() => setActiveTab(tab)}
-                    className="cursor-pointer group flex items-center gap-4"
+                    onMouseEnter={() => setActiveTab(tab)}
+                    className="cursor-pointer group flex flex-col pl-6 py-6 border-b border-slate-100 last:border-b-0 transition-colors duration-300 hover:bg-slate-50/50"
                   >
-                    <span className={`text-xl font-display font-black tracking-tighter transition-colors duration-300 ${isActive ? 'text-primary' : 'text-slate-300'}`}>
-                      {tab.num}.
-                    </span>
-                    <h3 className={`text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 uppercase ${isActive ? 'text-[#111111]' : 'text-slate-300 group-hover:text-slate-400'}`}>
-                      {tab.title}
-                    </h3>
+                    <div className="flex items-center gap-4">
+                      <span className={`text-xl font-display font-black tracking-tighter transition-colors duration-300 ${isActive ? 'text-primary' : 'text-slate-300'}`}>
+                        {tab.num}.
+                      </span>
+                      <h3 className={`text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 uppercase ${isActive ? 'text-[#111111]' : 'text-slate-300 group-hover:text-slate-400'}`}>
+                        {tab.title}
+                      </h3>
+                    </div>
+
+                    {/* Body text directly below the subtitle with smooth height transition */}
+                    <motion.div
+                      initial={false}
+                      animate={{ 
+                        height: isActive ? "auto" : 0,
+                        opacity: isActive ? 1 : 0,
+                        marginTop: isActive ? 16 : 0
+                      }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium mb-4">
+                        {tab.desc}
+                      </p>
+                      {tab.bullets && (
+                        <ul className="space-y-2">
+                          {tab.bullets.map((bullet, bIdx) => (
+                            <li key={bIdx} className="flex items-center gap-3 text-sm md:text-base text-slate-500 font-medium">
+                              <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                              {bullet}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </motion.div>
                   </div>
                 );
               })}
             </div>
-
-            {/* The Decoupled Description Container (Fixed minimum height, instant text switch) */}
-            <div className="min-h-[120px] relative">
-              <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium transition-opacity duration-200">
-                {activeTab.desc}
-              </p>
-            </div>
           </div>
 
-          {/* Right: Instant Morphing Image (No crossfade delay) */}
+          {/* Right: Instant Morphing Image */}
           <div className="lg:w-1/2 aspect-[4/5] lg:aspect-auto lg:h-[700px] relative">
             <div className="w-full h-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl relative bg-slate-100">
-              {/* Use standard img tag with key to force instant render update without framer-motion delay */}
               <img
                 key={activeTab.id}
                 src={activeTab.img}
                 alt={activeTab.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-opacity duration-300"
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
             </div>
           </div>
 
         </div>
       </div>
+    </section>
+  );
+}
+
+// --- Sub-component: Video Use Cases Section ---
+function VideoUseCasesSection() {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const videos = [
+    {
+      id: "1153765212",
+      title: "Asset Intelligence",
+      desc: "Comprehensive visibility across multi-agency asset ecosystems.",
+      thumbnail: "/images/government/gov_case_rfid_1778638339756.png"
+    },
+    {
+      id: "1153764948",
+      title: "Fleet Operations",
+      desc: "Real-time coordination for mobile government field units.",
+      thumbnail: "/images/government/gov_fleet_tech_1778636024858.png"
+    },
+    {
+      id: "1153764659",
+      title: "Infrastructure Health",
+      desc: "Automated condition monitoring for critical public infrastructure.",
+      thumbnail: "/images/government/gov_case_infra_1778638358289.png"
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-white border-t border-slate-100">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-24 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#111111] uppercase mb-6">
+            Operational Intelligence in Field Applications
+          </h2>
+          <div className="w-24 h-1 bg-primary mx-auto mb-10" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {videos.map((video, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="flex flex-col group cursor-pointer"
+              onClick={() => setActiveVideo(video.id)}
+            >
+              <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900 mb-8 border border-slate-100">
+                {/* Thumbnail Image */}
+                <img 
+                  src={video.thumbnail} 
+                  alt={video.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60"
+                />
+                
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(0,89,171,0.5)]">
+                    <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-1" />
+                  </div>
+                </div>
+
+                {/* Glass Bottom Info */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black/80 to-transparent">
+                  <h3 className="text-xl font-bold text-white uppercase tracking-tight">{video.title}</h3>
+                </div>
+              </div>
+              <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed px-2">
+                {video.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-xl"
+            onClick={() => setActiveVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-5xl aspect-video rounded-3xl overflow-hidden bg-black shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <iframe
+                src={`https://player.vimeo.com/video/${activeVideo}?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479`}
+                allow="autoplay; fullscreen; picture-in-picture"
+                className="absolute inset-0 w-full h-full"
+                title="Video Player"
+              />
+              <button 
+                onClick={() => setActiveVideo(null)}
+                className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors z-10"
+              >
+                <div className="w-6 h-6 relative">
+                   <div className="absolute top-1/2 left-0 w-full h-px bg-white rotate-45" />
+                   <div className="absolute top-1/2 left-0 w-full h-px bg-white -rotate-45" />
+                </div>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
