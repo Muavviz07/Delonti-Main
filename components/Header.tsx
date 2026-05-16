@@ -91,7 +91,7 @@ export default function Header() {
 
                             {/* Dark theme → show light logo */}
                             <Image
-                                src="/logo-light.png"
+                                src="/logo-light-blue.png"
                                 alt="Delonti Logo"
                                 width={160}
                                 height={40}
@@ -155,65 +155,29 @@ export default function Header() {
                             </Link>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                                    <div className="grid grid-cols-4 gap-6">
-                                        <div className="bg-gray-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-white/5">
-                                            <MenuHeader icon={Landmark}>State & Local</MenuHeader>
-                                            <div className="flex flex-col">
-                                                <MenuLink href="/state">State Overview</MenuLink>
-                                                <MenuLink href="/state/programs">Programs & Initiatives</MenuLink>
-                                                <MenuLink href="/state/public-safety">Public Safety Solutions</MenuLink>
-                                                <MenuLink href="/state/transportation">Transportation & Mobility</MenuLink>
-                                                <MenuLink href="/state/hhs">Health & Human Services</MenuLink>
-                                                <MenuLink href="/state/education">Education & Campus Solutions</MenuLink>
-                                                <MenuLink href="/state/smart-city">Smart City & Infrastructure</MenuLink>
-                                                <MenuLink href="/state/social-impact">Homeless & Social Impact</MenuLink>
-                                                <MenuLink href="/state/data">Data, Analytics & Reporting</MenuLink>
-                                                <MenuLink href="/state/cybersecurity">Cybersecurity & Compliance</MenuLink>
-                                                <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
-                                                    <MenuLink href="/state/use-cases">State Use Cases →</MenuLink>
-                                                </div>
-                                            </div>
+                                    <div className="grid grid-cols-12 gap-12">
+                                        <div className="col-span-3">
+                                            <MenuHeader>Sectors</MenuHeader>
+                                            <MenuLink href="/industries/government">Government</MenuLink>
+                                            <MenuLink href="/state/education">Education</MenuLink>
+                                            <MenuLink href="/state/hhs">Healthcare</MenuLink>
+                                            <MenuLink href="/private/enterprise/industrial-iot">Manufacturing</MenuLink>
+                                            <MenuLink href="/state/transportation">Supply Chain (Retail/Logistics)</MenuLink>
+                                            <MenuLink href="/state/public-safety">Public Safety</MenuLink>
                                         </div>
-                                        <div className="bg-gray-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-white/5">
-                                            <MenuHeader icon={Shield}>Federal & Defense</MenuHeader>
-                                            <div className="flex flex-col">
-                                                <MenuLink href="/federal">Federal Overview</MenuLink>
-                                                <MenuLink href="/federal/rfid">Secure RFID & Logistics</MenuLink>
-                                                <MenuLink href="/federal/cybersecurity">Cybersecurity & Zero Trust</MenuLink>
-                                                <MenuLink href="/federal/cloud">Cloud & IT Modernization</MenuLink>
-                                                <MenuLink href="/federal/data">Data, AI & Automation</MenuLink>
-                                                <MenuLink href="/federal/ato">ATO, Risk & Compliance</MenuLink>
-                                                <MenuLink href="/federal/acquisition">Acquisition & Contracting</MenuLink>
-                                                <MenuLink href="/federal/workforce">Workforce & Staffing</MenuLink>
-                                                <div className="mt-2 pt-2 border-t border-gray-200 dark:border-white/10">
-                                                    <MenuLink href="/federal/use-cases">Federal Use Cases →</MenuLink>
-                                                </div>
-                                            </div>
+                                        <div className="col-span-4">
+                                            <MenuHeader>Our Expertise</MenuHeader>
+                                            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
+                                                Delonti provides specialized technology solutions tailored to the unique challenges of mission-critical sectors. From public safety to healthcare, we empower organizations with secure, scalable, and fully integrated infrastructure.
+                                            </p>
                                         </div>
-                                        <div className="bg-gray-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-white/5">
-                                            <MenuHeader icon={Building2}>SMB</MenuHeader>
-                                            <div className="flex flex-col">
-                                                <MenuLink href="/private/smb">SMB Overview</MenuLink>
-                                                <MenuLink href="/private/smb/asset-tracking">Asset Tracking & Inventory</MenuLink>
-                                                <MenuLink href="/private/smb/fleet-tracking">Fleet & Vehicle Tracking</MenuLink>
-                                                <MenuLink href="/private/smb/cybersecurity">Cybersecurity Essentials</MenuLink>
-                                                <MenuLink href="/private/smb/cloud-it">Cloud & IT Services</MenuLink>
-                                                <MenuLink href="/private/smb/data-analytics">Data & Analytics</MenuLink>
-                                                <MenuLink href="/private/smb/technical-staffing">Technical Staffing</MenuLink>
-                                            </div>
-                                        </div>
-                                        <div className="bg-gray-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-gray-100 dark:border-white/5">
-                                            <MenuHeader icon={Briefcase}>Enterprise</MenuHeader>
-                                            <div className="flex flex-col">
-                                                <MenuLink href="/private/enterprise">Enterprise Overview</MenuLink>
-                                                <MenuLink href="/private/enterprise/asset-visibility">Asset Visibility Platforms</MenuLink>
-                                                <MenuLink href="/private/enterprise/industrial-iot">Industrial IoT & Smart Infrastructure</MenuLink>
-                                                <MenuLink href="/private/enterprise/cybersecurity">Enterprise Cybersecurity</MenuLink>
-                                                <MenuLink href="/private/enterprise/data-platforms">Data Platforms & AI</MenuLink>
-                                                <MenuLink href="/private/enterprise/cloud-devops">Cloud & DevOps Transformation</MenuLink>
-                                                <MenuLink href="/private/enterprise/systems-integration">Systems Integration</MenuLink>
-                                                <MenuLink href="/private/enterprise/workforce">Workforce Solutions</MenuLink>
-                                            </div>
+                                        <div className="col-span-5 h-full">
+                                            <FeaturedCard
+                                                title="Mission-Critical Infrastructure"
+                                                description="Discover how we transform complex industrial and public sector challenges into streamlined digital operations."
+                                                image="/industries-menu.png"
+                                                href="/industries"
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -226,61 +190,26 @@ export default function Header() {
                             </Link>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                                    <div className="grid grid-cols-4 gap-8">
-                                        <div className="flex flex-col gap-8">
-                                            <div>
-                                                <MenuHeader>RFID Integration</MenuHeader>
-                                                <MenuLink href="/tech/rfid/asset">Asset Tracking</MenuLink>
-                                                <MenuLink href="/tech/rfid/personnel">Personnel Tracking</MenuLink>
-                                                <MenuLink href="/tech/rfid/fleet">Fleet & Vehicle Tracking</MenuLink>
-                                                <MenuLink href="/tech/rfid/secure">Secure RFID Systems</MenuLink>
-                                            </div>
-                                            <div>
-                                                <MenuHeader>Internet of Things (IoT)</MenuHeader>
-                                                <MenuLink href="/tech/iot/smart-infra">Smart Infrastructure</MenuLink>
-                                                <MenuLink href="/tech/iot/sensors">Sensors & Devices</MenuLink>
-                                                <MenuLink href="/tech/iot/edge">Edge & Cloud Integration</MenuLink>
-                                                <MenuLink href="/tech/iot/real-time">Real-Time Monitoring</MenuLink>
-                                            </div>
+                                    <div className="grid grid-cols-12 gap-12">
+                                        <div className="col-span-3">
+                                            <MenuHeader>Core Capabilities</MenuHeader>
+                                            <MenuLink href="/tech/rfid/asset">Asset Tracking</MenuLink>
+                                            <MenuLink href="/private/smb/asset-tracking">Inventory Intelligence</MenuLink>
+                                            <MenuLink href="/federal/workforce">Workforce Safety</MenuLink>
+                                            <MenuLink href="/private/enterprise/industrial-iot">Facility Intelligence</MenuLink>
                                         </div>
-                                        <div className="flex flex-col gap-8">
-                                            <div>
-                                                <MenuHeader>Cybersecurity</MenuHeader>
-                                                <MenuLink href="/tech/cyber/assessments">Security Assessments</MenuLink>
-                                                <MenuLink href="/tech/cyber/zero-trust">Zero Trust Architecture</MenuLink>
-                                                <MenuLink href="/tech/cyber/compliance">Compliance & Governance</MenuLink>
-                                                <MenuLink href="/tech/cyber/risk">Risk Management</MenuLink>
-                                                <MenuLink href="/tech/cyber/response">Incident Response</MenuLink>
-                                            </div>
-                                            <div>
-                                                <MenuHeader>Data, AI & Analytics</MenuHeader>
-                                                <MenuLink href="/tech/data/integration">Data Integration</MenuLink>
-                                                <MenuLink href="/tech/data/dashboards">Dashboards & Reporting</MenuLink>
-                                                <MenuLink href="/tech/data/ai">AI Automation</MenuLink>
-                                                <MenuLink href="/tech/data/predictive">Predictive Insights</MenuLink>
-                                            </div>
+                                        <div className="col-span-4">
+                                            <MenuHeader>Technical Excellence</MenuHeader>
+                                            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
+                                                Our core technology solutions bridge the gap between complex hardware and intuitive software. We deliver real-time visibility, enhanced safety, and operational intelligence across your entire enterprise.
+                                            </p>
                                         </div>
-                                        <div className="flex flex-col gap-8 pr-8 border-r border-gray-100 dark:border-white/10">
-                                            <div>
-                                                <MenuHeader>Software & IT Services</MenuHeader>
-                                                <MenuLink href="/tech/software/custom">Custom Software Development</MenuLink>
-                                                <MenuLink href="/tech/software/cloud">Cloud & DevOps</MenuLink>
-                                                <MenuLink href="/tech/software/integration">System Integration</MenuLink>
-                                                <MenuLink href="/tech/software/modernization">IT Modernization</MenuLink>
-                                            </div>
-                                            <div>
-                                                <MenuHeader>Workforce & Staffing</MenuHeader>
-                                                <MenuLink href="/tech/workforce/technical">Technical Staffing</MenuLink>
-                                                <MenuLink href="/tech/workforce/projects">Project-Based Teams</MenuLink>
-                                                <MenuLink href="/tech/workforce/managed">Managed Support</MenuLink>
-                                            </div>
-                                        </div>
-                                        <div className="h-full">
+                                        <div className="col-span-5 h-full">
                                             <FeaturedCard
-                                                title="Zero-Trust Architecture"
-                                                description="Explore how edge computing and IoT frameworks unify legacy systems securely."
-                                                image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070"
-                                                href="/tech/cyber/zero-trust"
+                                                title="Intelligent Operations"
+                                                description="Leverage AI-driven insights and IoT connectivity to optimize your workforce and assets in real-time."
+                                                image="/solutions-menu.png"
+                                                href="/technology"
                                             />
                                         </div>
                                     </div>
@@ -305,9 +234,7 @@ export default function Header() {
                                             <div>
                                                 <MenuHeader>News & Updates</MenuHeader>
                                                 <MenuLink href="/resources/blogs">Blogs & Articles</MenuLink>
-                                                <MenuLink href="/resources/insights">Public Sector Insights</MenuLink>
                                                 <MenuLink href="/resources/news">News & Announcements</MenuLink>
-                                                <MenuLink href="/resources/grants">Government Programs & Grants</MenuLink>
                                             </div>
                                         </div>
                                         <div className="col-span-5 h-full">
@@ -356,30 +283,26 @@ export default function Header() {
                         {
                             title: "Industries", url: "/industries",
                             links: [
-                                { name: "— State & Local —", url: "/state", isGroupLabel: true },
-                                { name: "State Overview", url: "/state" }, { name: "Programs & Initiatives", url: "/state/programs" }, { name: "Public Safety Solutions", url: "/state/public-safety" }, { name: "Transportation & Mobility", url: "/state/transportation" }, { name: "Health & Human Services (HHS)", url: "/state/hhs" }, { name: "Education & Campus Solutions", url: "/state/education" }, { name: "Smart City & Infrastructure", url: "/state/smart-city" }, { name: "Homeless & Social Impact Solutions", url: "/state/social-impact" }, { name: "Data, Analytics & Reporting", url: "/state/data" }, { name: "Cybersecurity & Compliance", url: "/state/cybersecurity" }, { name: "State Use Cases", url: "/state/use-cases" },
-                                { name: "— Federal & Defense —", url: "/federal", isGroupLabel: true },
-                                { name: "Federal Overview", url: "/federal" }, { name: "Secure RFID & Logistics", url: "/federal/rfid" }, { name: "Cybersecurity & Zero Trust", url: "/federal/cybersecurity" }, { name: "Cloud & IT Modernization", url: "/federal/cloud" }, { name: "Data, AI & Automation", url: "/federal/data" }, { name: "ATO, Risk & Compliance", url: "/federal/ato" }, { name: "Acquisition & Contracting", url: "/federal/acquisition" }, { name: "Workforce & Staffing Solutions", url: "/federal/workforce" }, { name: "Federal Use Cases", url: "/federal/use-cases" },
-                                { name: "— SMB —", url: "/private/smb", isGroupLabel: true },
-                                { name: "SMB Overview", url: "/private/smb" }, { name: "Asset Tracking & Inventory", url: "/private/smb/asset-tracking" }, { name: "Fleet & Vehicle Tracking", url: "/private/smb/fleet-tracking" }, { name: "Cybersecurity Essentials", url: "/private/smb/cybersecurity" }, { name: "Cloud & IT Services", url: "/private/smb/cloud-it" }, { name: "Data & Analytics", url: "/private/smb/data-analytics" }, { name: "Technical Staffing", url: "/private/smb/technical-staffing" },
-                                { name: "— Enterprise —", url: "/private/enterprise", isGroupLabel: true },
-                                { name: "Enterprise Overview", url: "/private/enterprise" }, { name: "Asset Visibility Platforms", url: "/private/enterprise/asset-visibility" }, { name: "Industrial IoT & Smart Infrastructure", url: "/private/enterprise/industrial-iot" }, { name: "Enterprise Cybersecurity", url: "/private/enterprise/cybersecurity" }, { name: "Data Platforms & AI", url: "/private/enterprise/data-platforms" }, { name: "Cloud & DevOps Transformation", url: "/private/enterprise/cloud-devops" }, { name: "Systems Integration", url: "/private/enterprise/systems-integration" }, { name: "Workforce Solutions", url: "/private/enterprise/workforce" }
+                                { name: "Government", url: "/industries/government" },
+                                { name: "Education", url: "/state/education" },
+                                { name: "Healthcare", url: "/state/hhs" },
+                                { name: "Manufacturing", url: "/private/enterprise/industrial-iot" },
+                                { name: "Supply Chain (Retail/Logistics)", url: "/state/transportation" },
+                                { name: "Public Safety", url: "/state/public-safety" }
                             ]
                         },
                         {
                             title: "Solutions", url: "/technology",
                             links: [
-                                { name: "RFID Integration", url: "/tech/rfid/asset" }, { name: "Asset Tracking", url: "/tech/rfid/asset" }, { name: "Personnel Tracking", url: "/tech/rfid/personnel" }, { name: "Fleet & Vehicle Tracking", url: "/tech/rfid/fleet" }, { name: "Secure RFID Systems", url: "/tech/rfid/secure" },
-                                { name: "Internet of Things (IoT)", url: "/tech/iot/smart-infra" }, { name: "Smart Infrastructure", url: "/tech/iot/smart-infra" }, { name: "Sensors & Devices", url: "/tech/iot/sensors" }, { name: "Edge & Cloud Integration", url: "/tech/iot/edge" }, { name: "Real-Time Monitoring", url: "/tech/iot/real-time" },
-                                { name: "Cybersecurity", url: "/tech/cyber/zero-trust" }, { name: "Security Assessments", url: "/tech/cyber/assessments" }, { name: "Zero Trust Architecture", url: "/tech/cyber/zero-trust" }, { name: "Compliance & Governance", url: "/tech/cyber/compliance" }, { name: "Risk Management", url: "/tech/cyber/risk" }, { name: "Incident Response", url: "/tech/cyber/response" },
-                                { name: "Data, AI & Analytics", url: "/tech/data/integration" }, { name: "Data Integration", url: "/tech/data/integration" }, { name: "Dashboards & Reporting", url: "/tech/data/dashboards" }, { name: "AI Automation", url: "/tech/data/ai" }, { name: "Predictive Insights", url: "/tech/data/predictive" },
-                                { name: "Software & IT Services", url: "/tech/software/custom" }, { name: "Custom Software Development", url: "/tech/software/custom" }, { name: "Cloud & DevOps", url: "/tech/software/cloud" }, { name: "System Integration", url: "/tech/software/integration" }, { name: "IT Modernization", url: "/tech/software/modernization" },
-                                { name: "Workforce & Staffing Solutions", url: "/tech/workforce/technical" }, { name: "Technical Staffing", url: "/tech/workforce/technical" }, { name: "Project-Based Teams", url: "/tech/workforce/projects" }, { name: "Managed Support", url: "/tech/workforce/managed" }
+                                { name: "Asset Tracking", url: "/tech/rfid/asset" },
+                                { name: "Inventory Intelligence", url: "/private/smb/asset-tracking" },
+                                { name: "Workforce Safety", url: "/federal/workforce" },
+                                { name: "Facility Intelligence", url: "/private/enterprise/industrial-iot" }
                             ]
                         },
                         {
                             title: "Resources", url: "/resources",
-                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Government Programs & Grants", url: "/resources/grants" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "Public Sector Insights", url: "/resources/insights" }, { name: "News & Announcements", url: "/resources/news" }]
+                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "News & Announcements", url: "/resources/news" }]
                         },
                     ].map((section) => (
                         <div key={section.title} className="border-b border-gray-100 dark:border-white/10 pb-4">

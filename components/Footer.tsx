@@ -21,7 +21,7 @@ export default function Footer() {
                                     className="h-7 lg:h-8 w-auto object-contain dark:hidden"
                                 />
                                 <Image
-                                    src="/logo-light.png"
+                                    src="/logo-light-blue.png"
                                     alt="Delonti Logo"
                                     width={140}
                                     height={35}
@@ -52,75 +52,35 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h5 className="font-bold mb-6">Sectors</h5>
+                        <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Industries</h5>
                         <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
-                            <li>
-                                <Link href="/state" className="hover:text-white transition-colors">
-                                    State Solutions
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/federal" className="hover:text-white transition-colors">
-                                    Federal Solutions
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/enterprise" className="hover:text-white transition-colors">
-                                    Private Sector
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/#about" className="hover:text-white transition-colors">
-                                    About Us
-                                </Link>
-                            </li>
+                            <li><Link href="/industries/government" className="hover:text-white transition-colors">Government</Link></li>
+                            <li><Link href="/state/education" className="hover:text-white transition-colors">Education</Link></li>
+                            <li><Link href="/state/hhs" className="hover:text-white transition-colors">Healthcare</Link></li>
+                            <li><Link href="/private/enterprise/industrial-iot" className="hover:text-white transition-colors">Manufacturing</Link></li>
+                            <li><Link href="/state/transportation" className="hover:text-white transition-colors">Supply Chain</Link></li>
+                            <li><Link href="/state/public-safety" className="hover:text-white transition-colors">Public Safety</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h5 className="font-bold mb-6">Company</h5>
+                        <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Solutions</h5>
                         <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
-                            <li>
-                                <Link href="/about" className="hover:text-white transition-colors">
-                                    About Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/about/careers" className="hover:text-white transition-colors">
-                                    Careers
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/resources" className="hover:text-white transition-colors">
-                                    Insights & Resources
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/federal/contracting" className="hover:text-white transition-colors">
-                                    Contract Vehicles
-                                </Link>
-                            </li>
+                            <li><Link href="/tech/rfid/asset" className="hover:text-white transition-colors">Asset Tracking</Link></li>
+                            <li><Link href="/private/smb/asset-tracking" className="hover:text-white transition-colors">Inventory Intelligence</Link></li>
+                            <li><Link href="/federal/workforce" className="hover:text-white transition-colors">Workforce Safety</Link></li>
+                            <li><Link href="/private/enterprise/industrial-iot" className="hover:text-white transition-colors">Facility Intelligence</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h5 className="font-bold mb-6">Newsletter</h5>
-                        <p className="text-sm text-slate-300 mb-4 dark:text-slate-200">
-                            Stay updated with our latest federal and commercial tech insights.
-                        </p>
-                        <form className="flex">
-                            <input
-                                type="email"
-                                placeholder="Email address"
-                                className="bg-white/10 border-none rounded-l-xl px-4 py-2 w-full text-sm focus:ring-1 focus:ring-white outline-none text-white placeholder-slate-300 dark:placeholder-slate-400"
-                            />
-                            <button
-                                type="button"
-                                className="bg-white text-primary px-4 py-2 rounded-r-xl font-bold text-sm hover:bg-slate-100 transition-colors"
-                            >
-                                Join
-                            </button>
-                        </form>
+                        <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Company</h5>
+                        <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
+                            <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                            <li><Link href="/about/careers" className="hover:text-white transition-colors">Careers</Link></li>
+                            <li><Link href="/resources" className="hover:text-white transition-colors">Insights & Resources</Link></li>
+                            <li><Link href="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
+                        </ul>
                     </div>
                 </div>
 
