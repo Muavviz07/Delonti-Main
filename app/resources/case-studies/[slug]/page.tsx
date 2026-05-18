@@ -1,149 +1,10 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, CheckCircle2, ArrowRight, ChevronRight, MessageSquare } from "lucide-react"
+import { ArrowLeft, CheckCircle2, ArrowRight, ChevronRight, MessageSquare, Cpu } from "lucide-react"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-
-export const CASE_STUDIES = [
-    {
-        title: "RFID-Based Asset Tracking for Government Infrastructure",
-        client: "State Government Agency",
-        tag: "RFID",
-        shortDescription: "Improved asset visibility and reduced audit time using an RFID-based tracking platform across multiple facilities.",
-        overview: "A state agency managing infrastructure assets across multiple facilities needed improved visibility into equipment, tools, and inventory.",
-        challenges: [
-            "Limited visibility into asset locations",
-            "Manual tracking processes causing inefficiency",
-            "Frequent asset misplacement and loss",
-            "Time-consuming and inaccurate audits"
-        ],
-        solution: "Delonti implemented an RFID-based asset tracking platform with RFID tags for all assets, fixed and handheld RFID readers, a centralized tracking dashboard, and integration with existing agency systems.",
-        solutionItems: [
-            "RFID tags deployed across all asset types",
-            "Fixed portal and handheld reader infrastructure",
-            "Centralized real-time tracking dashboard",
-            "Full integration with existing agency systems"
-        ],
-        results: [
-            { metric: "95%", label: "Improvement in Asset Visibility" },
-            { metric: "60%", label: "Reduction in Audit Time" },
-            { metric: "↓", label: "Significant Reduction in Asset Loss" },
-            { metric: "↑", label: "Improved Operational Efficiency" }
-        ],
-        valueDelivered: "Real-time asset tracking and centralized visibility improved accountability and operational performance across all facilities.",
-        image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2072",
-        href: "/resources/case-studies/rfid-asset-tracking-government"
-    },
-    {
-        title: "IoT-Based Smart Infrastructure Monitoring for Transportation Agency",
-        client: "Transportation Authority",
-        tag: "IoT",
-        shortDescription: "Enabled proactive infrastructure management and reduced unplanned downtime using IoT monitoring and predictive analytics.",
-        overview: "A transportation authority required real-time monitoring of infrastructure systems and environmental conditions across its network.",
-        challenges: [
-            "Lack of real-time monitoring capabilities",
-            "Delayed detection of infrastructure issues",
-            "High reactive maintenance costs"
-        ],
-        solution: "Delonti deployed an IoT-based monitoring platform with sensors across infrastructure systems, real-time dashboards, automated alerts, and predictive maintenance analytics.",
-        solutionItems: [
-            "IoT sensors deployed across all infrastructure systems",
-            "Real-time monitoring and operations dashboards",
-            "Automated alerting for anomaly detection",
-            "Predictive maintenance analytics engine"
-        ],
-        results: [
-            { metric: "40%", label: "Reduction in Unplanned Downtime" },
-            { metric: "↑", label: "Faster Response to Infrastructure Issues" },
-            { metric: "↑", label: "Improved Infrastructure Reliability" }
-        ],
-        valueDelivered: "Enabled proactive infrastructure management and significantly reduced operational risks and maintenance costs.",
-        image: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070",
-        href: "/resources/case-studies/iot-infrastructure-monitoring-transportation"
-    },
-    {
-        title: "Cybersecurity Modernization for Public Sector Organization",
-        client: "Government Organization",
-        tag: "Cybersecurity",
-        shortDescription: "Strengthened infrastructure security and enhanced compliance readiness through a Zero Trust cybersecurity framework.",
-        overview: "A government organization required modernization of its cybersecurity infrastructure to protect critical systems against growing threats and meet compliance requirements.",
-        challenges: [
-            "Legacy security systems with known vulnerabilities",
-            "Increasing volume and sophistication of cyber threats",
-            "Strict regulatory compliance requirements"
-        ],
-        solution: "Delonti implemented a Zero Trust cybersecurity framework with identity-based access controls, network segmentation, continuous monitoring, and regular security assessments.",
-        solutionItems: [
-            "Zero Trust architecture design and implementation",
-            "Identity-based access controls and MFA enforcement",
-            "Network segmentation and micro-perimeter controls",
-            "Continuous monitoring and security assessments"
-        ],
-        results: [
-            { metric: "↑", label: "Improved Security Posture" },
-            { metric: "↓", label: "Reduced Risk of Unauthorized Access" },
-            { metric: "↑", label: "Enhanced Compliance Readiness" }
-        ],
-        valueDelivered: "Strengthened infrastructure security while enabling modern digital operations and maintaining full regulatory compliance.",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070",
-        href: "/resources/case-studies/cybersecurity-modernization-public-sector"
-    },
-    {
-        title: "Data & Analytics Platform for Operational Intelligence",
-        client: "Enterprise Organization",
-        tag: "Data & Analytics",
-        shortDescription: "Enabled data-driven operations and improved strategic planning through a centralized analytics and intelligence platform.",
-        overview: "An enterprise organization required better visibility into operational performance across siloed systems to support faster decision-making.",
-        challenges: [
-            "Data siloed across multiple disconnected systems",
-            "Limited reporting capabilities for leadership",
-            "Slow decision-making due to lack of unified data"
-        ],
-        solution: "Delonti developed a centralized data and analytics platform with data integration across all systems, real-time dashboards, and predictive analytics capabilities.",
-        solutionItems: [
-            "Unified data integration across all enterprise systems",
-            "Real-time operational dashboards for leadership",
-            "Predictive analytics and trend identification",
-            "Automated reporting and alerting workflows"
-        ],
-        results: [
-            { metric: "↑", label: "Faster Decision-Making" },
-            { metric: "↑", label: "Improved Operational Efficiency" },
-            { metric: "↑", label: "Increased Visibility Across Operations" }
-        ],
-        valueDelivered: "Enabled data-driven operations and significantly improved strategic planning and organizational responsiveness.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070",
-        href: "/resources/case-studies/data-analytics-operational-intelligence"
-    },
-    {
-        title: "Smart Homeless Services Kiosk for City Government",
-        client: "City Government",
-        tag: "Smart City",
-        shortDescription: "Enhanced community support and improved social service delivery through an interactive smart kiosk platform.",
-        overview: "A city government sought to improve access to services for individuals experiencing homelessness through a scalable technology solution.",
-        challenges: [
-            "Limited awareness of available services among those in need",
-            "Fragmented and disconnected service delivery systems",
-            "Difficulty connecting individuals to the right resources"
-        ],
-        solution: "Delonti deployed a Smart Homeless Services Kiosk platform with interactive touchscreen kiosks, real-time service information, integration with local service providers, and multi-language support.",
-        solutionItems: [
-            "Interactive touchscreen kiosks deployed citywide",
-            "Real-time integration with local service providers",
-            "Multi-language support for diverse populations",
-            "Analytics dashboard for city planning and reporting"
-        ],
-        results: [
-            { metric: "↑", label: "Increased Access to Services" },
-            { metric: "↑", label: "Improved Service Coordination" },
-            { metric: "↑", label: "Better Data Insights for City Planning" }
-        ],
-        valueDelivered: "Enhanced community support infrastructure and significantly improved social service delivery across the city.",
-        image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2144",
-        href: "/resources/case-studies/smart-homeless-services-kiosk"
-    }
-]
+import { CASE_STUDIES } from "@/lib/data/case-studies"
 
 type PageProps = { params: Promise<{ slug: string }> }
 
@@ -254,7 +115,41 @@ export default async function CaseStudyPage({ params }: PageProps) {
                             </div>
                         </div>
 
-                        <div className="mt-10 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-2xl p-6 md:p-8">
+                        {/* @ts-ignore */}
+                        {study.keyCapabilities && (
+                            <div className="mt-12">
+                                <div className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Key Capabilities</div>
+                                <h2 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6">Platform Features</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {/* @ts-ignore */}
+                                    {study.keyCapabilities.map((cap, i) => (
+                                        <div key={i} className="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-gray-100 dark:border-white/5 shadow-sm">
+                                            <h3 className="font-bold text-slate-900 dark:text-white mb-2">{cap.title}</h3>
+                                            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{cap.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* @ts-ignore */}
+                        {study.technologiesUsed && (
+                            <div className="mt-12">
+                                <div className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Technologies Used</div>
+                                <h2 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-4">Core Infrastructure</h2>
+                                <div className="flex flex-wrap gap-3">
+                                    {/* @ts-ignore */}
+                                    {study.technologiesUsed.map((tech, i) => (
+                                        <div key={i} className="bg-white dark:bg-slate-950 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-2">
+                                            <Cpu className="w-4 h-4 text-primary" />
+                                            {tech}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        <div className="mt-12 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-2xl p-6 md:p-8">
                             <div className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Value Delivered</div>
                             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
                                 {study.valueDelivered}
@@ -328,7 +223,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
                                 </div>
 
                                 <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2">
-                                    Interested in a similar solution?
+                                    {/* @ts-ignore */}
+                                    {study.cta?.text || "Interested in a similar solution?"}
                                 </h3>
 
                                 <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
@@ -337,10 +233,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
                                 </p>
 
                                 <Link
-                                    href="/contact"
+                                    // @ts-ignore
+                                    href={study.cta?.link || "/contact"}
                                     className="flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white font-bold text-sm uppercase tracking-widest py-3 rounded-xl transition-all duration-200 mb-3 group"
                                 >
-                                    Contact Delonti
+                                    {/* @ts-ignore */}
+                                    {study.cta?.buttonText || "Contact Delonti"}
                                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
                                 </Link>
 

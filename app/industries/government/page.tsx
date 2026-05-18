@@ -296,11 +296,11 @@ export default function GovernmentIndustryPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "RFID Asset Tracking for State Agencies", img: IMAGES.case_rfid },
-              { title: "Smart Infrastructure Monitoring", img: IMAGES.case_infra },
-              { title: "Public Service Access Platforms", img: IMAGES.case_access }
+              { title: "RFID Asset Tracking for State Agencies", img: IMAGES.case_rfid, href: "/resources/case-studies/rfid-asset-tracking-government" },
+              { title: "Smart Infrastructure Monitoring", img: IMAGES.case_infra, href: "/resources/case-studies/smart-infrastructure-monitoring" },
+              { title: "Public Service Access Platforms", img: IMAGES.case_access, href: "/resources/case-studies/public-service-access-platform" }
             ].map((study, i) => (
-              <Link href="#" key={i} className="group cursor-pointer flex flex-col h-full bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow">
+              <Link href={study.href} key={i} className="group cursor-pointer flex flex-col h-full bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow">
                 <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 mb-8 relative">
                   <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: `url('${study.img}')` }} />
                 </div>
@@ -520,13 +520,13 @@ function VideoUseCasesSection() {
       id: "1153765212",
       title: "Utilities",
       desc: "Monitor critical infrastructure and ensure continuous operations with smart condition sensors.",
-      thumbnail: "/images/government/gov_case_infra_1778638358289.png"
+      thumbnail: "/images/government/gov_utilities_infrastructure.png"
     },
     {
       id: "1153761078",
       title: "Cities and Counties",
       desc: "Empower local governments to manage municipal assets and coordinate public field services efficiently.",
-      thumbnail: "/images/government/gov_case_rfid_1778638339756.png"
+      thumbnail: "/images/government/gov_smart_service_access.png"
     }
   ];
 
