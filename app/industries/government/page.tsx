@@ -7,7 +7,7 @@ import {
   EyeOff, FileText, Network, ShieldCheck,
   Box, Truck, HardHat, Activity, LayoutDashboard,
   Radio, Database, TrendingUp, Monitor, ShieldAlert, FileCheck,
-  Globe, ArrowRight, Zap, CornerDownRight, ChevronRight
+  Globe, ArrowRight, Zap, CornerDownRight, ChevronRight, Play
 } from "lucide-react";
 import GovKeyFlow from "@/components/GovKeyFlow";
 import CTASection from "@/components/CTASection";
@@ -15,6 +15,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 export default function GovernmentIndustryPage() {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const IMAGES = {
     hero: "/images/government/gov_hero_control_1778635972305.png",
@@ -219,12 +220,17 @@ export default function GovernmentIndustryPage() {
                 ))}
               </div>
 
-              <div className="flex justify-start">
+              <div className="flex justify-start gap-4 flex-wrap">
                 <Link href="/contact" className="group relative bg-logo hover:bg-logo/90 text-white px-8 py-3.5 font-bold rounded-xl transition-all shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden">
                   <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   <span className="relative z-10 uppercase tracking-wider text-xs md:text-base">Explore Smart Kiosk Solution</span>
                   <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
                 </Link>
+                <button onClick={() => setActiveVideo("1153761741")} className="group relative bg-white hover:bg-slate-50 text-[#111111] px-8 py-3.5 font-bold rounded-xl transition-all border border-slate-200 shadow-sm flex items-center justify-center gap-3 overflow-hidden cursor-pointer">
+                  <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <Play className="relative z-10 w-5 h-5 text-primary transition-transform group-hover:scale-110 fill-current" />
+                  <span className="relative z-10 uppercase tracking-wider text-xs md:text-base">Watch Video</span>
+                </button>
               </div>
             </div>
 
@@ -332,6 +338,43 @@ export default function GovernmentIndustryPage() {
 
       {/* Import the Footer */}
       <Footer />
+
+      {/* Hero/Kiosk Video Lightbox Modal */}
+      <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-xl"
+            onClick={() => setActiveVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-5xl aspect-video rounded-3xl overflow-hidden bg-black shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <iframe
+                src={`https://player.vimeo.com/video/${activeVideo}?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479`}
+                allow="autoplay; fullscreen; picture-in-picture"
+                className="absolute inset-0 w-full h-full"
+                title="Video Player"
+              />
+              <button 
+                onClick={() => setActiveVideo(null)}
+                className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors z-10 cursor-pointer"
+              >
+                <div className="w-6 h-6 relative">
+                   <div className="absolute top-1/2 left-0 w-full h-px bg-white rotate-45" />
+                   <div className="absolute top-1/2 left-0 w-full h-px bg-white -rotate-45" />
+                </div>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </main>
   );
@@ -468,22 +511,22 @@ function VideoUseCasesSection() {
 
   const videos = [
     {
-      id: "1153765212",
-      title: "Asset Intelligence",
-      desc: "Comprehensive visibility across multi-agency asset ecosystems.",
-      thumbnail: "/images/government/gov_case_rfid_1778638339756.png"
-    },
-    {
-      id: "1153764948",
-      title: "Fleet Operations",
-      desc: "Real-time coordination for mobile government field units.",
+      id: "1153764659",
+      title: "Transportation",
+      desc: "Optimize transportation networks, fleet routing, and traffic flow with real-time tracking.",
       thumbnail: "/images/government/gov_fleet_tech_1778636024858.png"
     },
     {
-      id: "1153764659",
-      title: "Infrastructure Health",
-      desc: "Automated condition monitoring for critical public infrastructure.",
+      id: "1153765212",
+      title: "Utilities",
+      desc: "Monitor critical infrastructure and ensure continuous operations with smart condition sensors.",
       thumbnail: "/images/government/gov_case_infra_1778638358289.png"
+    },
+    {
+      id: "1153761078",
+      title: "Cities and Counties",
+      desc: "Empower local governments to manage municipal assets and coordinate public field services efficiently.",
+      thumbnail: "/images/government/gov_case_rfid_1778638339756.png"
     }
   ];
 
