@@ -100,7 +100,7 @@ export default function GovernmentIndustryPage() {
               >
                 <Link
                   href="/contact"
-                  className="group relative bg-logo hover:bg-logo/90 text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden"
+                  className="group relative bg-logo hover:bg-logo/90 text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden w-full sm:w-60 whitespace-nowrap"
                 >
                   <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Request Demo</span>
@@ -109,7 +109,7 @@ export default function GovernmentIndustryPage() {
 
                 <Link
                   href="#solutions"
-                  className="group relative bg-white hover:bg-slate-50 text-[#111111] px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 flex items-center justify-center gap-3 shadow-sm overflow-hidden"
+                  className="group relative bg-white hover:bg-slate-50 text-[#111111] px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 flex items-center justify-center gap-3 shadow-sm overflow-hidden w-full sm:w-60 whitespace-nowrap"
                 >
                   <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Explore Solutions</span>
@@ -123,7 +123,7 @@ export default function GovernmentIndustryPage() {
               initial={{ opacity: 0, scale: 0.95, x: 30 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 bg-slate-50"
+              className="relative aspect-square lg:aspect-[1.05/1] lg:max-h-[700px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 bg-slate-50"
             >
               <img
                 src={IMAGES.hero}
@@ -141,8 +141,8 @@ export default function GovernmentIndustryPage() {
       {/* 2. CHALLENGES SECTION */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 lg:mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] max-w-2xl uppercase">
+          <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] uppercase">
               Challenges Facing Government Agencies
             </h2>
           </div>
@@ -273,13 +273,19 @@ export default function GovernmentIndustryPage() {
                 ))}
               </div>
 
-              <div className="flex justify-start gap-4 flex-wrap">
-                <Link href="/contact" className="group relative bg-logo hover:bg-logo/90 text-white px-8 py-3.5 font-bold rounded-xl transition-all shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden">
+              <div className="flex flex-col sm:flex-row justify-start gap-4 w-full sm:w-auto">
+                <Link
+                  href="/contact"
+                  className="group relative bg-logo hover:bg-logo/90 text-white px-8 py-3.5 font-bold rounded-xl transition-all shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden w-full sm:w-52 whitespace-nowrap"
+                >
                   <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                  <span className="relative z-10 uppercase tracking-wider text-xs md:text-base">Explore Kiosk Solution</span>
+                  <span className="relative z-10 uppercase tracking-wider text-xs md:text-base">Explore</span>
                   <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
                 </Link>
-                <button onClick={() => setActiveVideo("1153761741")} className="group relative bg-white hover:bg-slate-50 text-[#111111] px-8 py-3.5 font-bold rounded-xl transition-all border border-slate-200 shadow-sm flex items-center justify-center gap-3 overflow-hidden cursor-pointer">
+                <button
+                  onClick={() => setActiveVideo("1153761741")}
+                  className="group relative bg-white hover:bg-slate-50 text-[#111111] px-8 py-3.5 font-bold rounded-xl transition-all border border-slate-200 shadow-sm flex items-center justify-center gap-3 overflow-hidden cursor-pointer w-full sm:w-52 whitespace-nowrap"
+                >
                   <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   <Play className="relative z-10 w-5 h-5 text-primary transition-transform group-hover:scale-110 fill-current" />
                   <span className="relative z-10 uppercase tracking-wider text-xs md:text-base">Watch Video</span>
@@ -302,7 +308,7 @@ export default function GovernmentIndustryPage() {
       {/* 6. PLATFORM CAPABILITIES */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 lg:mb-16">
+          <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] uppercase">
               Platform Capabilities for Government
             </h2>
@@ -331,7 +337,7 @@ export default function GovernmentIndustryPage() {
       </section>
 
       {/* 7. USE CASES IN ACTION - Video Showcase */}
-      <VideoUseCasesSection />
+      {/* <VideoUseCasesSection /> */}
 
       {/* 8. BENEFITS - Sticky Stacking Cards */}
       <StickyStackingSection images={IMAGES} />
@@ -339,12 +345,10 @@ export default function GovernmentIndustryPage() {
       {/* 9. CASE STUDIES */}
       <section className="py-16 lg:py-20 bg-[#F8FAFC]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 lg:mb-16 gap-8">
-            <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 text-[#111111] uppercase">
-                Proven Government Use Cases
-              </h2>
-            </div>
+          <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 text-[#111111] uppercase">
+              Proven Government Use Cases
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
