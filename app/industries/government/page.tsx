@@ -7,7 +7,7 @@ import {
   Eye, EyeOff, FileText, Network, ShieldCheck,
   Box, Truck, HardHat, Activity, LayoutDashboard,
   Radio, Database, TrendingUp, Monitor, ShieldAlert, FileCheck,
-  Globe, ArrowRight, Zap, CornerDownRight, ChevronRight, Play
+  Globe, ArrowRight, Zap, ChevronRight, Play
 } from "lucide-react";
 import GovKeyFlow from "@/components/GovKeyFlow";
 import CTASection from "@/components/CTASection";
@@ -204,15 +204,9 @@ export default function GovernmentIndustryPage() {
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-4 min-h-[5rem] text-sm lg:text-base font-medium leading-relaxed text-slate-600">
+                  <p className="mt-4 text-sm lg:text-base font-medium leading-relaxed text-slate-600">
                     {item.desc}
                   </p>
-
-                  {/* Learn More */}
-                  <div className="mt-auto pt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-primary">
-                    Learn More
-                    <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
                 </div>
               );
             })}
@@ -309,29 +303,39 @@ export default function GovernmentIndustryPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] uppercase mb-4">
               Platform Capabilities for Government
             </h2>
+            <div className="w-24 h-1 bg-primary mx-auto" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
+          <div className="flex flex-row md:grid md:grid-cols-6 gap-4 md:gap-6 overflow-x-auto no-scrollbar pb-4 md:pb-0 snap-x snap-mandatory">
             {[
-              { icon: Radio, title: "Real-Time Asset Tracking" },
-              { icon: Database, title: "Automated Inventory Management" },
-              { icon: TrendingUp, title: "Predictive Analytics" },
-              { icon: Monitor, title: "Operational Dashboards" },
-              { icon: ShieldAlert, title: "Security Monitoring" },
-              { icon: FileCheck, title: "Compliance Reporting" }
-            ].map((cap, i) => (
-              <div key={i} className="group flex items-center gap-6 py-6 md:py-8 border-b border-slate-200 cursor-pointer relative overflow-hidden">
-                <div className="absolute bottom-0 left-0 h-px bg-primary w-0 group-hover:w-full transition-all duration-700 ease-out" />
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-slate-200 bg-[#FAFAFA] flex items-center justify-center shrink-0 group-hover:border-primary/50 transition-colors shadow-sm">
-                  <cap.icon strokeWidth={1.5} className="w-5 h-5 md:w-6 md:h-6 text-slate-400 group-hover:text-primary transition-colors" />
+              { icon: Radio, title: "Real-Time Asset Tracking", desc: "Instantly locate and track high-value agency hardware and equipment." },
+              { icon: Database, title: "Automated Inventory Management", desc: "Maintain real-time registers without manual audits or paperwork." },
+              { icon: TrendingUp, title: "Predictive Analytics", desc: "Forecast operational bottlenecks and asset lifecycles." },
+              { icon: Monitor, title: "Operational Dashboards", desc: "Unified dashboards providing command-level visibility." },
+              { icon: ShieldAlert, title: "Security Monitoring", desc: "Automated alerts and access tracking across public facilities." },
+              { icon: FileCheck, title: "Compliance Reporting", desc: "Secure audit trails customized for state & federal standards." }
+            ].map((cap, i) => {
+              const Icon = cap.icon;
+              return (
+                <div 
+                  key={i} 
+                  className="group flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 ease-out cursor-pointer w-[75vw] sm:w-[45vw] md:w-auto shrink-0 snap-start"
+                >
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center shrink-0 mb-5 group-hover:border-primary/60 group-hover:bg-primary/10 transition-all duration-300">
+                    <Icon strokeWidth={1.5} className="w-6 h-6 md:w-7 md:h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
+                  </div>
+                  <h3 className="text-sm md:text-base font-bold tracking-tight text-[#111111] group-hover:text-primary transition-colors duration-300 uppercase mb-2">
+                    {cap.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                    {cap.desc}
+                  </p>
                 </div>
-                <span className="text-base md:text-xl font-medium tracking-tight text-slate-600 group-hover:text-[#111111] transition-colors">{cap.title}</span>
-                <CornerDownRight className="w-5 h-5 text-slate-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
