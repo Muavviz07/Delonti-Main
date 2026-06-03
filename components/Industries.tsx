@@ -16,11 +16,13 @@ const INDUSTRIES = [
     title: "Education",
     description: "Unified Campus Security & Asset Management",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070",
+    href: "/industries/education",
   },
   {
     title: "Healthcare",
     description: "Patient Safety & Critical Asset Tracking",
     image: "https://plus.unsplash.com/premium_photo-1698421947098-d68176a8f5b2?q=80&w=752&auto=format&fit=crop",
+    href: "/industries/healthcare",
   },
   {
     title: "Manufacturing",

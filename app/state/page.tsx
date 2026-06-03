@@ -83,14 +83,14 @@ export default function StateSolutions() {
             title: "Citizen Health Portals",
             description: "Secure, scalable web applications streamlining access to Medicare, Medicaid, and family services.",
             videoId: "1153763709",
-            linkUrl: "/state/hhs",
+            linkUrl: "/industries/healthcare",
             linkText: "View HHS Solutions"
         },
         {
             title: "Smart Campus Environments",
             description: "Integrated access control, Wi-Fi analytics, and digital asset tracking for state universities and school districts.",
             videoId: "1153763472",
-            linkUrl: "/state/education",
+            linkUrl: "/industries/education",
             linkText: "Discover Campus Tech"
         },
         {

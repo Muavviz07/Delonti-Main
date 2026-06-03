@@ -55,8 +55,8 @@ export default function Footer() {
                         <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Industries</h5>
                         <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
                             <li><Link href="/industries/government" className="hover:text-white transition-colors">Government</Link></li>
-                            <li><Link href="/state/education" className="hover:text-white transition-colors">Education</Link></li>
-                            <li><Link href="/state/hhs" className="hover:text-white transition-colors">Healthcare</Link></li>
+                            <li><Link href="/industries/education" className="hover:text-white transition-colors">Education</Link></li>
+                            <li><Link href="/industries/healthcare" className="hover:text-white transition-colors">Healthcare</Link></li>
                             <li><Link href="/private/enterprise/industrial-iot" className="hover:text-white transition-colors">Manufacturing</Link></li>
                             <li><Link href="/state/transportation" className="hover:text-white transition-colors">Supply Chain</Link></li>
                             <li><Link href="/state/public-safety" className="hover:text-white transition-colors">Public Safety</Link></li>

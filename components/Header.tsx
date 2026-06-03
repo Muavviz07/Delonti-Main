@@ -159,8 +159,8 @@ export default function Header() {
                                         <div className="col-span-3">
                                             <MenuHeader>Sectors</MenuHeader>
                                             <MenuLink href="/industries/government">Government</MenuLink>
-                                            <MenuLink href="/state/education">Education</MenuLink>
-                                            <MenuLink href="/state/hhs">Healthcare</MenuLink>
+                                            <MenuLink href="/industries/education">Education</MenuLink>
+                                            <MenuLink href="/industries/healthcare">Healthcare</MenuLink>
                                             <MenuLink href="/private/enterprise/industrial-iot">Manufacturing</MenuLink>
                                             <MenuLink href="/state/transportation">Supply Chain (Retail/Logistics)</MenuLink>
                                             <MenuLink href="/state/public-safety">Public Safety</MenuLink>
@@ -284,8 +284,8 @@ export default function Header() {
                             title: "Industries", url: "/industries",
                             links: [
                                 { name: "Government", url: "/industries/government" },
-                                { name: "Education", url: "/state/education" },
-                                { name: "Healthcare", url: "/state/hhs" },
+                                { name: "Education", url: "/industries/education" },
+                                { name: "Healthcare", url: "/industries/healthcare" },
                                 { name: "Manufacturing", url: "/private/enterprise/industrial-iot" },
                                 { name: "Supply Chain (Retail/Logistics)", url: "/state/transportation" },
                                 { name: "Public Safety", url: "/state/public-safety" }
