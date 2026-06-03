@@ -48,7 +48,7 @@ export default function StateSolutions() {
             title: "Smart Traffic & Mobility",
             description: "AI-driven IoT sensors optimizing city-wide traffic flow, managing public transit routing, and reducing congestion in real-time.",
             videoId: "1153765212",
-            linkUrl: "/state/transportation",
+            linkUrl: "/industries/supply-chain",
             linkText: "Explore Mobility Solutions"
         },
         {
@@ -69,7 +69,7 @@ export default function StateSolutions() {
             title: "Public Safety Command",
             description: "Unified communication portals and emergency response dashboards for police, fire, and medical teams.",
             videoId: "1153764350",
-            linkUrl: "/state/public-safety",
+            linkUrl: "/industries/public-safety",
             linkText: "See Public Safety"
         },
         {

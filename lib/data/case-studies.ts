@@ -561,5 +561,477 @@ export const CASE_STUDIES = [
         },
         image: "/images/education/education_case_facility.png",
         href: "/resources/case-studies/facility-usage-optimization"
+    },
+    // Supply Chain Use Cases
+    {
+        title: "Warehouse Inventory Tracking",
+        client: "Logistics & Supply Chain Hub",
+        tag: "Supply Chain",
+        shortDescription: "Track inventory across warehouses and distribution centers in real time using RFID and AI orchestration.",
+        overview: "Warehouses manage thousands of inventory items moving through receiving, storage, picking, packing, and shipping operations. Without real-time visibility, inventory inaccuracies and operational delays can significantly impact performance. Delonti's RFID + AI platform provides real-time inventory tracking and warehouse visibility, enabling organizations to automate inventory processes and improve operational efficiency.",
+        challenges: [
+            "Inventory inaccuracies",
+            "Manual inventory counts",
+            "Lost or misplaced inventory",
+            "Limited visibility across warehouse locations"
+        ],
+        solution: "Delonti deployed an RFID-enabled inventory tracking and automated cycle counting solution with real-time analytics dashboards.",
+        solutionItems: [
+            "RFID-enabled inventory tracking",
+            "Real-time inventory dashboards",
+            "Automated cycle counting",
+            "Inventory movement monitoring",
+            "Raw materials, finished goods, pallets, and containers tracking",
+            "High-value inventory and warehouse assets monitoring"
+        ],
+        keyCapabilities: [
+            { title: "RFID Inventory Tracking", desc: "Automate stock counting and locations mapping." },
+            { title: "Real-Time Dashboards", desc: "View current inventory status across facilities." },
+            { title: "Cycle Count Automation", desc: "Audit inventory levels continuously without operational stops." }
+        ],
+        results: [
+            { metric: "✔", label: "Improved inventory accuracy" },
+            { metric: "✔", label: "Reduced manual labor" },
+            { metric: "✔", label: "Faster inventory audits" },
+            { metric: "✔", label: "Better warehouse productivity" }
+        ],
+        technologiesUsed: [
+            "RFID Tags",
+            "Fixed and Handheld Scanners",
+            "Cloud Platform",
+            "Inventory Orchestrator"
+        ],
+        valueDelivered: "Real-time inventory visibility, automated cycle counting, and streamlined warehouse management.",
+        cta: {
+            text: "Optimize Warehouse Inventory Tracking",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070",
+        href: "/resources/case-studies/warehouse-inventory-tracking"
+    },
+    {
+        title: "Distribution Monitoring",
+        client: "Global Distribution Network",
+        tag: "Supply Chain",
+        shortDescription: "Monitor inventory and shipments across the distribution network in real time to optimize flow and dispatch.",
+        overview: "Distribution centers require visibility into inventory movement, order fulfillment, shipment status, and operational performance to maintain service levels and customer satisfaction. Delonti enables organizations to monitor inventory and shipments across the distribution network in real time.",
+        challenges: [
+            "Delayed shipment visibility",
+            "Inventory movement bottlenecks",
+            "Order fulfillment inefficiencies",
+            "Limited operational intelligence"
+        ],
+        solution: "Delonti deployed a real-time distribution monitoring and shipment tracking solution powered by RFID gateways and performance analytics.",
+        solutionItems: [
+            "Distribution center monitoring",
+            "Shipment tracking dashboards",
+            "RFID-enabled movement visibility",
+            "Operational performance analytics",
+            "Distribution centers and fulfillment centers tracking",
+            "Cross-dock facilities and regional warehouses monitoring"
+        ],
+        keyCapabilities: [
+            { title: "Shipment Tracking", desc: "Monitor dispatched orders and inbound freight in real time." },
+            { title: "Movement Visibility", desc: "Map inventory flow across loading docks and storage zones." },
+            { title: "Fulfillment Analytics", desc: "Analyze processing speed and identify supply bottlenecks." }
+        ],
+        results: [
+            { metric: "✔", label: "Improved shipment visibility" },
+            { metric: "✔", label: "Faster order fulfillment" },
+            { metric: "✔", label: "Better distribution planning" },
+            { metric: "✔", label: "Enhanced operational efficiency" }
+        ],
+        technologiesUsed: [
+            "Dock Door RFID Gateways",
+            "Performance Analytics Engine",
+            "Shipment Tracking Dashboard",
+            "IoT Locating Nodes"
+        ],
+        valueDelivered: "Distribution performance monitoring, shipment tracking dashboards, and end-to-end network visibility.",
+        cta: {
+            text: "Streamline Distribution Center Monitoring",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1521791136368-1a8b25757d5f?q=80&w=2070",
+        href: "/resources/case-studies/distribution-monitoring"
+    },
+    {
+        title: "Retail Inventory Management",
+        client: "Omnichannel Retail Brand",
+        tag: "Supply Chain",
+        shortDescription: "Track retail inventory in real time across stores, stockrooms, and online order fulfillment systems.",
+        overview: "Retailers need accurate inventory visibility across stores, stockrooms, distribution centers, and online fulfillment operations to support modern omnichannel experiences. Delonti provides real-time inventory intelligence that helps retailers improve stock accuracy and customer satisfaction.",
+        challenges: [
+            "Inventory inaccuracies",
+            "Frequent stockouts on hot items",
+            "Overstock situations and markdown losses",
+            "Omnichannel fulfillment complexity"
+        ],
+        solution: "Delonti deployed an RFID retail inventory platform enabling automated replenishment alerts and store-level stock visibility.",
+        solutionItems: [
+            "RFID-enabled retail inventory tracking",
+            "Store inventory visibility",
+            "Automated replenishment monitoring",
+            "Omnichannel inventory intelligence",
+            "Apparel and consumer goods tracking",
+            "Electronics and specialty retail inventory monitoring"
+        ],
+        keyCapabilities: [
+            { title: "Retail Inventory Tracking", desc: "Real-time stock level updates across physical store floors." },
+            { title: "Omnichannel Intelligence", desc: "Sync physical store inventory with e-commerce systems." },
+            { title: "Replenishment Monitoring", desc: "Alert store clerks when shelf items need restocking." }
+        ],
+        results: [
+            { metric: "✔", label: "Improved inventory accuracy" },
+            { metric: "✔", label: "Reduced stockouts on floor items" },
+            { metric: "✔", label: "Better customer shopping experience" },
+            { metric: "✔", label: "Increased sales opportunities" }
+        ],
+        technologiesUsed: [
+            "Retail RFID Tags",
+            "Handheld Stock Readers",
+            "Omnichannel Integration Hub",
+            "Replenishment Alerting Engine"
+        ],
+        valueDelivered: "Store-floor inventory visibility, omnichannel inventory synchronization, and automated stock replenishment alerts.",
+        cta: {
+            text: "Optimize Retail Stock & Omnichannel Tracking",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070",
+        href: "/resources/case-studies/retail-inventory-management"
+    },
+    {
+        title: "Logistics Optimization",
+        client: "National Logistics Provider",
+        tag: "Supply Chain",
+        shortDescription: "Optimize transportation, tracking, and delivery timelines with RFID-enabled fleet visibility.",
+        overview: "Logistics organizations must manage complex transportation networks, shipment tracking, delivery performance, and operational efficiency while controlling costs. Delonti's RFID + AI platform provides end-to-end visibility across logistics operations.",
+        challenges: [
+            "Shipment and transit delays",
+            "Lack of real-time transit visibility",
+            "Transportation inefficiencies and idle time",
+            "Rising fuel and logistics operations costs"
+        ],
+        solution: "Delonti deployed an RFID-enabled shipment tracking and logistics management platform featuring fleet routing analytics.",
+        solutionItems: [
+            "RFID-enabled shipment tracking",
+            "Transportation visibility dashboards",
+            "Delivery performance analytics",
+            "Logistics optimization intelligence",
+            "Transportation fleets and freight tracking",
+            "Third-party logistics (3PL) operations monitoring"
+        ],
+        keyCapabilities: [
+            { title: "Shipment Transit Tracking", desc: "Monitor containers and cargo trailers throughout transit routes." },
+            { title: "Routing Optimization", desc: "Optimize vehicle routing and delivery schedules." },
+            { title: "Delivery Performance", desc: "Analyze driver efficiency and shipping timelines." }
+        ],
+        results: [
+            { metric: "✔", label: "Improved delivery performance" },
+            { metric: "✔", label: "Reduced transportation costs" },
+            { metric: "✔", label: "Enhanced shipment visibility" },
+            { metric: "✔", label: "Better operational planning" }
+        ],
+        technologiesUsed: [
+            "Transit RFID Tracking Tags",
+            "GPS-IoT Gateways",
+            "Logistics Optimization Core",
+            "Route Dispatch Dashboards"
+        ],
+        valueDelivered: "End-to-end shipment transit tracking, routing optimization analytics, and fleet delivery performance dashboards.",
+        cta: {
+            text: "Enhance Logistics & Transportation Visibility",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=2070",
+        href: "/resources/case-studies/logistics-optimization"
+    },
+    {
+        title: "Reverse Logistics & Returns Management",
+        client: "E-commerce & Returns Processing Center",
+        tag: "Supply Chain",
+        shortDescription: "Accelerate returned inventory processing and condition assessment using RFID tracking.",
+        overview: "Returns and reverse logistics are often costly and difficult to manage. Organizations require visibility into returned inventory, product condition, and processing workflows. Delonti enables organizations to streamline returns operations and improve visibility across reverse logistics workflows.",
+        challenges: [
+            "Slow returns sorting and processing times",
+            "High reverse logistics carrying costs",
+            "Lack of visibility into returned product conditions",
+            "Inefficient returns inventory reconciliation"
+        ],
+        solution: "Delonti deployed an RFID-enabled returns tracking system integrated with returns workflow mapping dashboards.",
+        solutionItems: [
+            "RFID-enabled returns tracking",
+            "Inventory disposition monitoring",
+            "Reverse logistics dashboards",
+            "Real-time workflow visibility",
+            "Returned apparel and electronic items tracking",
+            "Supply chain returns auditing and restoration"
+        ],
+        keyCapabilities: [
+            { title: "Returns Scanning", desc: "Instantly scan returned items upon arrival for fast check-in." },
+            { title: "Condition Monitoring", desc: "Track returns lifecycle status from intake to restock or scrap." },
+            { title: "Reverse Dashboards", desc: "Monitor return processing times and costs in real time." }
+        ],
+        results: [
+            { metric: "✔", label: "Faster returns processing times" },
+            { metric: "✔", label: "Improved inventory recovery rates" },
+            { metric: "✔", label: "Reduced returns operational costs" },
+            { metric: "✔", label: "Better customer returns experience" }
+        ],
+        technologiesUsed: [
+            "Intake RFID Portals",
+            "Returns Processing Software",
+            "Reverse Flow Analytics",
+            "Inventory Reconciliation APIs"
+        ],
+        valueDelivered: "Intake returns scanning portals, processing status dashboard, and automated inventory restocking updates.",
+        cta: {
+            text: "Optimize Reverse Logistics & Returns Processing",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070",
+        href: "/resources/case-studies/reverse-logistics-returns-management"
+    },
+    // Public Safety Use Cases
+    {
+        title: "Law Enforcement Asset Tracking",
+        client: "State & City Police Departments",
+        tag: "Public Safety",
+        shortDescription: "Track critical law enforcement assets, weapons, and radios in real time to ensure team readiness.",
+        overview: "Law enforcement agencies manage thousands of critical assets across vehicles, evidence rooms, stations, and field operations. Maintaining real-time visibility is essential for accountability and operational readiness. Delonti's RFID + AI platform enables agencies to track assets in real time while reducing loss, improving audits, and ensuring operational availability.",
+        challenges: [
+            "Missing or misplaced tactical equipment",
+            "Manual asset inventory and audit processes",
+            "Limited equipment visibility across stations",
+            "Strict compliance and accountability standards"
+        ],
+        solution: "Delonti deployed an RFID asset tracking solution with handheld scanners, fixed readers, and automated audit reporting.",
+        solutionItems: [
+            "RFID-enabled asset tracking",
+            "Handheld and fixed RFID readers",
+            "Real-time location monitoring",
+            "Automated audit reporting",
+            "Patrol equipment and tactical gear tracking",
+            "Radios, body cameras, and training equipment monitoring"
+        ],
+        keyCapabilities: [
+            { title: "Tactical Asset Tracking", desc: "Locate mission-critical equipment and tools instantly." },
+            { title: "Audit Automation", desc: "Generate electronic inventory logs for compliance checks." },
+            { title: "Availability Alerts", desc: "Notify command staff if emergency gear is absent from vehicles." }
+        ],
+        results: [
+            { metric: "✔", label: "Improved asset accountability" },
+            { metric: "✔", label: "Reduced equipment loss rates" },
+            { metric: "✔", label: "Faster inventory audits and checks" },
+            { metric: "✔", label: "Enhanced operational deployment readiness" }
+        ],
+        technologiesUsed: [
+            "Public Safety RFID Tags",
+            "Tactical Gear Scanners",
+            "Asset Audit Platform",
+            "Command Center Integration"
+        ],
+        valueDelivered: "Law enforcement asset location mapping, automated inventory auditing, and cruiser equipment validation alerts.",
+        cta: {
+            text: "Modernize Law Enforcement Equipment Auditing",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070",
+        href: "/resources/case-studies/law-enforcement-asset-tracking"
+    },
+    {
+        title: "Emergency Response Coordination",
+        client: "Regional Emergency Services",
+        tag: "Public Safety",
+        shortDescription: "Coordinate responders, trucks, and equipment during critical incidents with real-time dashboards.",
+        overview: "Emergency response organizations require real-time visibility into personnel, equipment, and operational resources to respond effectively during critical incidents. Delonti provides centralized operational intelligence that helps agencies coordinate resources and improve response effectiveness.",
+        challenges: [
+            "Delayed situational awareness during incidents",
+            "Limited equipment and vehicle visibility in the field",
+            "Communication and agency coordination gaps",
+            "Complex multi-agency response operations"
+        ],
+        solution: "Delonti deployed a real-time personnel tracking and resource monitoring system featuring centralized command dashboards.",
+        solutionItems: [
+            "Real-time personnel tracking",
+            "Resource monitoring dashboards",
+            "Incident management visibility",
+            "Operational command dashboards",
+            "Emergency operations centers and dispatch systems",
+            "Fire department and EMS coordination platforms"
+        ],
+        keyCapabilities: [
+            { title: "Personnel Safety Tracking", desc: "Monitor first responder location and status in active zones." },
+            { title: "Central Command Dashboard", desc: "View multi-agency resource positions on active maps." },
+            { title: "Evacuation Support", desc: "Verify building and district clearance stages during incidents." }
+        ],
+        results: [
+            { metric: "✔", label: "Faster incident response times" },
+            { metric: "✔", label: "Improved resource allocation efficiency" },
+            { metric: "✔", label: "Better multi-agency field coordination" },
+            { metric: "✔", label: "Enhanced situational awareness for leaders" }
+        ],
+        technologiesUsed: [
+            "Responders Locator Badges",
+            "Incident Command Software",
+            "Central Maps Dashboard",
+            "Emergency Alerting APIs"
+        ],
+        valueDelivered: "Real-time responder locating badges, incident dispatch visual maps, and consolidated resource dashboards.",
+        cta: {
+            text: "Strengthen Emergency Response & Incident Control",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1610366374828-d3c267232230?q=80&w=2070",
+        href: "/resources/case-studies/emergency-response-coordination"
+    },
+    {
+        title: "Equipment Management",
+        client: "County Safety Department",
+        tag: "Public Safety",
+        shortDescription: "Track specialized emergency equipment availability, maintenance logs, and readiness status.",
+        overview: "Public safety agencies depend on specialized equipment that must be available, maintained, and ready for deployment at all times. Delonti enables agencies to monitor equipment status, location, and utilization in real time.",
+        challenges: [
+            "Critical equipment downtime and failure",
+            "Missing or incomplete emergency response kits",
+            "Labor-intensive manual tracking processes",
+            "Limited visibility into equipment maintenance cycles"
+        ],
+        solution: "Delonti deployed an RFID equipment tracking and maintenance analytics platform with automated checkups.",
+        solutionItems: [
+            "RFID-enabled equipment tracking",
+            "Maintenance monitoring system",
+            "Utilization analytics dashboards",
+            "Automated readiness reporting",
+            "Emergency response kits and medical tools monitoring",
+            "Communication devices and mobile command assets tracking"
+        ],
+        keyCapabilities: [
+            { title: "Readiness Checks", desc: "Scan and confirm kit completeness in seconds before shifts." },
+            { title: "Maintenance Schedules", desc: "Track and alert technicians when devices need calibration." },
+            { title: "Utilization Logs", desc: "Log active runtime metrics for high-value safety hardware." }
+        ],
+        results: [
+            { metric: "✔", label: "Increased equipment availability rates" },
+            { metric: "✔", label: "Reduced equipment downtime" },
+            { metric: "✔", label: "Improved maintenance compliance" },
+            { metric: "✔", label: "Better operational support and efficiency" }
+        ],
+        technologiesUsed: [
+            "Kit-Level RFID Tags",
+            "Maintenance Registry Engine",
+            "Mobile Checkup Scanners",
+            "Readiness Analytics Hub"
+        ],
+        valueDelivered: "RFID checkup scanning, automated device maintenance notifications, and equipment readiness reports.",
+        cta: {
+            text: "Automate Emergency Equipment Readiness Logs",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=2070",
+        href: "/resources/case-studies/equipment-management-public-safety"
+    },
+    {
+        title: "Facility Monitoring",
+        client: "City Dispatch & Operations Centers",
+        tag: "Public Safety",
+        shortDescription: "Monitor public safety facilities, control rooms, and secure evidence storage zones in real time.",
+        overview: "Public safety facilities must maintain visibility into operations, infrastructure, and secure areas while supporting mission-critical activities. Delonti's Facility Intelligence platform provides real-time monitoring across stations, operations centers, and public safety facilities.",
+        challenges: [
+            "Limited security and access visibility across facilities",
+            "Inefficient layout and space utilization in control rooms",
+            "Lack of automated security logging in evidence rooms",
+            "Fragmented facility intelligence data"
+        ],
+        solution: "Delonti deployed facility monitoring sensors and security dashboards integrated with RFID logging.",
+        solutionItems: [
+            "Facility monitoring sensors",
+            "RFID-enabled access logging",
+            "Infrastructure tracking dashboards",
+            "AI-powered operational insights",
+            "Police and fire stations mapping",
+            "Evidence rooms and dispatch centers monitoring"
+        ],
+        keyCapabilities: [
+            { title: "Evidence Room Security", desc: "Track chain of custody and room entries in real time." },
+            { title: "Control Room Metrics", desc: "Monitor occupancy, layout flow, and room conditions." },
+            { title: "Automated Facility Logs", desc: "Log entries and environmental data for audit trails." }
+        ],
+        results: [
+            { metric: "✔", label: "Enhanced facility security monitoring" },
+            { metric: "✔", label: "Improved dispatch operational efficiency" },
+            { metric: "✔", label: "Better evidence custody reporting" },
+            { metric: "✔", label: "Data-driven facility planning and upgrades" }
+        ],
+        technologiesUsed: [
+            "Access Point Sensors",
+            "Evidence Tracking Tags",
+            "Facility Dashboards Suite",
+            "Secure Logging Database"
+        ],
+        valueDelivered: "Evidence custody logging gateways, secure control room entry dashboards, and environmental monitoring alerts.",
+        cta: {
+            text: "Strengthen Public Safety Facility Security",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070",
+        href: "/resources/case-studies/facility-monitoring-public-safety"
+    },
+    {
+        title: "Officer & First Responder Safety Monitoring",
+        client: "Regional First Responders",
+        tag: "Public Safety",
+        shortDescription: "Track officer and first responder location, vitals, and safety status in active environments.",
+        overview: "Track personnel location and status in real time to improve responder safety, accountability, and emergency response effectiveness. Delonti provides first responders with intelligent safety tracking tools.",
+        challenges: [
+            "Officer and responder safety during remote field patrols",
+            "Limited real-time location coordinates of active personnel",
+            "Slow emergency alert dispatches to down responders",
+            "Fragmented personnel coordination"
+        ],
+        solution: "Delonti deployed wearable safety badges and biometric locator systems integrated with emergency command alerts.",
+        solutionItems: [
+            "RFID locator safety badges",
+            "Emergency distress alerts",
+            "Biometric sensor integrations",
+            "Command location mapping",
+            "Officers and first responders safety tracking",
+            "Search and rescue deployment monitoring"
+        ],
+        keyCapabilities: [
+            { title: "Distress Alerts", desc: "Instant distress triggers sent to dispatch if an officer goes down." },
+            { title: "Precision Locator", desc: "Pinpoint responder coordinates inside structure rooms." },
+            { title: "Safety Analytics", desc: "Analyze responder environmental exposure and vitals in real time." }
+        ],
+        results: [
+            { metric: "✔", label: "Real-time responder safety checks" },
+            { metric: "✔", label: "Instant distress dispatch triggers" },
+            { metric: "✔", label: "Improved team accountability in hazardous zones" },
+            { metric: "✔", label: "Enhanced command dispatch coordination" }
+        ],
+        technologiesUsed: [
+            "Biometric Sensor Badges",
+            "Precision RTLS Sensors",
+            "Distress Signal Broadcasters",
+            "Safety Command UI"
+        ],
+        valueDelivered: "Distress alert wearable badges, dispatcher location maps, and biometric telemetry feeds.",
+        cta: {
+            text: "Enhance Officer & Responder Field Safety",
+            buttonText: "Request Demo",
+            link: "/contact"
+        },
+        image: "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?q=80&w=2070",
+        href: "/resources/case-studies/officer-first-responder-safety-monitoring"
     }
 ];

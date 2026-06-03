@@ -162,8 +162,8 @@ export default function Header() {
                                             <MenuLink href="/industries/education">Education</MenuLink>
                                             <MenuLink href="/industries/healthcare">Healthcare</MenuLink>
                                             <MenuLink href="/private/enterprise/industrial-iot">Manufacturing</MenuLink>
-                                            <MenuLink href="/state/transportation">Supply Chain (Retail/Logistics)</MenuLink>
-                                            <MenuLink href="/state/public-safety">Public Safety</MenuLink>
+                                            <MenuLink href="/industries/supply-chain">Supply Chain (Retail/Logistics)</MenuLink>
+                                            <MenuLink href="/industries/public-safety">Public Safety</MenuLink>
                                         </div>
                                         <div className="col-span-4">
                                             <MenuHeader>Our Expertise</MenuHeader>
@@ -287,8 +287,8 @@ export default function Header() {
                                 { name: "Education", url: "/industries/education" },
                                 { name: "Healthcare", url: "/industries/healthcare" },
                                 { name: "Manufacturing", url: "/private/enterprise/industrial-iot" },
-                                { name: "Supply Chain (Retail/Logistics)", url: "/state/transportation" },
-                                { name: "Public Safety", url: "/state/public-safety" }
+                                { name: "Supply Chain (Retail/Logistics)", url: "/industries/supply-chain" },
+                                { name: "Public Safety", url: "/industries/public-safety" }
                             ]
                         },
                         {

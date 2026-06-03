@@ -33,11 +33,13 @@ const INDUSTRIES = [
     title: "Supply Chain (Retail/Logistics)",
     description: "End-to-End Visibility & Inventory Control",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070",
+    href: "/industries/supply-chain",
   },
   {
     title: "Public Safety",
     description: "Real-time Visibility for Emergency Response",
     image: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070",
+    href: "/industries/public-safety",
   }
 ];
 
