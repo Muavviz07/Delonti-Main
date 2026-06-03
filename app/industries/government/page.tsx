@@ -34,11 +34,11 @@ export default function GovernmentIndustryPage() {
   };
 
   return (
-    <main className="w-full bg-[#FAFAFA] font-sans selection:bg-[#2b2b4f] selection:text-white relative">
+    <main className="w-full bg-[#FAFAFA] dark:bg-background-dark font-sans selection:bg-[#2b2b4f] selection:text-white relative">
       <Header />
 
       {/* 1. HERO SECTION - Clean Professional Split Layout */}
-      <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden bg-white border-b border-slate-100 pt-5 lg:pt-0">
+      <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden bg-white dark:bg-background-dark border-b border-slate-100 dark:border-slate-800/80 pt-5 lg:pt-0">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
@@ -54,9 +54,9 @@ export default function GovernmentIndustryPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-primary bg-primary/5 border border-primary/10 rounded-xl"
+                className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-primary dark:text-blue-400 bg-primary/5 dark:bg-blue-500/5 border border-primary/10 dark:border-blue-500/10 rounded-xl"
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <div className="w-1.5 h-1.5 rounded-full bg-primary dark:bg-blue-400" />
                 Government
               </motion.div>
 
@@ -65,10 +65,10 @@ export default function GovernmentIndustryPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] text-[#111111] uppercase"
+                className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] text-[#111111] dark:text-white uppercase"
               >
                 RFID + AI Platform for <br />
-                <span className="text-primary">Government Infrastructure</span>
+                <span className="text-primary dark:text-blue-400">Government Infrastructure</span>
               </motion.h1>
 
               {/* Subtext - Description */}
@@ -76,7 +76,7 @@ export default function GovernmentIndustryPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
-                className="text-sm md:text-base text-slate-500 mb-6 leading-relaxed max-w-xl font-medium"
+                className="text-sm md:text-base text-slate-500 dark:text-slate-400 mb-6 leading-relaxed max-w-xl font-medium"
               >
                 Track assets, infrastructure, and operations in real time across agencies, facilities, and field operations.
               </motion.p>
@@ -86,7 +86,7 @@ export default function GovernmentIndustryPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="text-xs md:text-sm text-primary mb-10 font-bold tracking-[0.15em] uppercase border-l-2 border-primary pl-4"
+                className="text-xs md:text-sm text-primary dark:text-blue-400 mb-10 font-bold tracking-[0.15em] uppercase border-l-2 border-primary dark:border-blue-500 pl-4"
               >
                 Real-Time Visibility • Operational Intelligence • Secure Public Infrastructure
               </motion.p>
@@ -109,7 +109,7 @@ export default function GovernmentIndustryPage() {
 
                 <Link
                   href="#solutions"
-                  className="group relative bg-white hover:bg-slate-50 text-[#111111] px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 flex items-center justify-center gap-3 shadow-sm overflow-hidden w-full sm:w-60 whitespace-nowrap"
+                  className="group relative bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-[#111111] dark:text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 dark:border-slate-800 flex items-center justify-center gap-3 shadow-sm overflow-hidden w-full sm:w-60 whitespace-nowrap"
                 >
                   <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Explore Solutions</span>
@@ -123,7 +123,7 @@ export default function GovernmentIndustryPage() {
               initial={{ opacity: 0, scale: 0.95, x: 30 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-square lg:aspect-[1.05/1] lg:max-h-[700px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 bg-slate-50"
+              className="relative aspect-square lg:aspect-[1.05/1] lg:max-h-[700px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900"
             >
               <img
                 src={IMAGES.hero}
@@ -139,10 +139,10 @@ export default function GovernmentIndustryPage() {
       </section>
 
       {/* 2. CHALLENGES SECTION */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20 bg-white dark:bg-background-dark">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] dark:text-white uppercase">
               Challenges Facing Government Agencies
             </h2>
           </div>
@@ -183,7 +183,7 @@ export default function GovernmentIndustryPage() {
               return (
                 <div
                   key={i}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 lg:p-10 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark-alt p-8 lg:p-10 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-black/30"
                 >
                   {/* subtle top glow */}
                   <div className="absolute inset-x-0 top-0 h-1 bg-primary scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
@@ -194,17 +194,17 @@ export default function GovernmentIndustryPage() {
                   </div>
 
                   {/* Number */}
-                  <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-primary">
+                  <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-primary dark:text-blue-400">
                     {item.num}
                   </div>
 
                   {/* Title */}
-                  <h3 className="min-h-[3.5rem] text-base font-bold leading-relaxed text-slate-900 transition-colors duration-300">
+                  <h3 className="min-h-[3.5rem] text-base font-bold leading-relaxed text-slate-900 dark:text-white transition-colors duration-300">
                     {item.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-4 text-sm lg:text-base font-medium leading-relaxed text-slate-600">
+                  <p className="mt-4 text-sm lg:text-base font-medium leading-relaxed text-slate-600 dark:text-slate-400">
                     {item.desc}
                   </p>
                 </div>
@@ -215,17 +215,17 @@ export default function GovernmentIndustryPage() {
       </section>
 
       {/* 3. THE DELONTI APPROACH */}
-      <section className="py-16 lg:py-20 bg-[#FAFAFA] border-y border-slate-200">
+      <section className="py-16 lg:py-20 bg-[#FAFAFA] dark:bg-background-dark-alt border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 text-[#111111] uppercase">A Platform Approach to Government Infrastructure</h2>
-            <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium">Delonti delivers a unified RFID and AI-powered platform that connects physical infrastructure to digital intelligence.</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 text-[#111111] dark:text-white uppercase">A Platform Approach to Government Infrastructure</h2>
+            <p className="text-sm md:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-medium">Delonti delivers a unified RFID and AI-powered platform that connects physical infrastructure to digital intelligence.</p>
           </div>
 
           <GovKeyFlow />
 
           <div className="mt-12 text-center max-w-3xl mx-auto">
-            <p className="text-base lg:text-lg text-slate-500 font-medium leading-relaxed">
+            <p className="text-base lg:text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
               From tracking equipment and vehicles to enabling public service access, Delonti provides a scalable platform that supports modern government operations.
             </p>
           </div>
@@ -236,24 +236,24 @@ export default function GovernmentIndustryPage() {
       <InteractiveTabsSection images={IMAGES} />
 
       {/* 5. THE SMART KIOSK */}
-      <section className="relative py-16 lg:py-20 bg-[#F1F5F9] border-y border-slate-200 overflow-hidden">
+      <section className="relative py-16 lg:py-20 bg-[#F1F5F9] dark:bg-background-dark border-y border-slate-200 dark:border-slate-800 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 
             {/* Left Content */}
             <div className="lg:w-1/2 relative z-20 flex flex-col justify-center max-w-2xl mx-auto lg:mx-0">
               <div className="inline-flex items-center gap-2 mb-6">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary">Featured Solution</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-primary dark:bg-blue-400 animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary dark:text-blue-400">Featured Solution</span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-6 text-[#111111] uppercase">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-6 text-[#111111] dark:text-white uppercase">
                 Smart Public Service Access Platform
               </h2>
-              <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium mb-10">
+              <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-medium mb-10">
                 Delonti’s Smart Kiosk solution enables governments to connect communities to critical services in real time.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-6 border-t border-slate-300 pt-8 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-6 border-t border-slate-300 dark:border-slate-800 pt-8 mb-10">
                 {[
                   { icon: Globe, title: "Real-time service availability" },
                   { icon: Network, title: "Multi-agency integration" },
@@ -261,8 +261,8 @@ export default function GovernmentIndustryPage() {
                   { icon: Database, title: "Data-driven insights for planning" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <item.icon className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-[#111111] text-sm md:text-base font-bold tracking-tight uppercase">{item.title}</span>
+                    <item.icon className="w-5 h-5 text-primary dark:text-blue-400 shrink-0" />
+                    <span className="text-[#111111] dark:text-slate-200 text-sm md:text-base font-bold tracking-tight uppercase">{item.title}</span>
                   </div>
                 ))}
               </div>
@@ -278,7 +278,7 @@ export default function GovernmentIndustryPage() {
                 </Link>
                 <button
                   onClick={() => setActiveVideo("1153761741")}
-                  className="group relative bg-white hover:bg-slate-50 text-[#111111] px-8 py-3.5 font-bold rounded-xl transition-all border border-slate-200 shadow-sm flex items-center justify-center gap-3 overflow-hidden cursor-pointer w-full sm:w-52 whitespace-nowrap"
+                  className="group relative bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-[#111111] dark:text-white px-8 py-3.5 font-bold rounded-xl transition-all border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center gap-3 overflow-hidden cursor-pointer w-full sm:w-52 whitespace-nowrap"
                 >
                   <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   <Play className="relative z-10 w-5 h-5 text-primary transition-transform group-hover:scale-110 fill-current" />
@@ -289,8 +289,8 @@ export default function GovernmentIndustryPage() {
 
             {/* Right: Kiosk Image */}
             <div className="lg:w-1/2 w-full flex justify-center lg:justify-end relative mt-8 lg:mt-0">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-white blur-[80px] rounded-full pointer-events-none" />
-              <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden border border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] z-20 bg-white">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-white dark:bg-blue-950/20 blur-[80px] dark:blur-[120px] rounded-full pointer-events-none" />
+              <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] z-20 bg-white dark:bg-slate-900">
                 <img src={IMAGES.kiosk} alt="Smart Kiosk" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -300,10 +300,10 @@ export default function GovernmentIndustryPage() {
       </section>
 
       {/* 6. PLATFORM CAPABILITIES */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20 bg-white dark:bg-background-dark">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] uppercase mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] dark:text-white uppercase mb-4">
               Platform Capabilities for Government
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto" />
@@ -322,15 +322,15 @@ export default function GovernmentIndustryPage() {
               return (
                 <div 
                   key={i} 
-                  className="group flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 ease-out cursor-pointer w-[75vw] sm:w-[45vw] md:w-auto shrink-0 snap-start"
+                  className="group flex flex-col items-center text-center p-6 rounded-2xl bg-white dark:bg-background-dark-alt border border-slate-200 dark:border-slate-800 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 ease-out cursor-pointer w-[75vw] sm:w-[45vw] md:w-auto shrink-0 snap-start"
                 >
-                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center shrink-0 mb-5 group-hover:border-primary/60 group-hover:bg-primary/10 transition-all duration-300">
-                    <Icon strokeWidth={1.5} className="w-6 h-6 md:w-7 md:h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-primary/30 dark:border-blue-500/20 bg-primary/5 dark:bg-blue-500/5 flex items-center justify-center shrink-0 mb-5 group-hover:border-primary/60 dark:group-hover:border-blue-500/40 group-hover:bg-primary/10 dark:group-hover:bg-blue-500/10 transition-all duration-300">
+                    <Icon strokeWidth={1.5} className="w-6 h-6 md:w-7 md:h-7 text-primary dark:text-blue-400 transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <h3 className="text-sm md:text-base font-bold tracking-tight text-[#111111] group-hover:text-primary transition-colors duration-300 uppercase mb-2">
+                  <h3 className="text-sm md:text-base font-bold tracking-tight text-[#111111] dark:text-white group-hover:text-primary dark:group-hover:text-blue-400 transition-colors duration-300 uppercase mb-2">
                     {cap.title}
                   </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
                     {cap.desc}
                   </p>
                 </div>
@@ -347,10 +347,10 @@ export default function GovernmentIndustryPage() {
       <StickyStackingSection images={IMAGES} />
 
       {/* 9. CASE STUDIES */}
-      <section className="py-16 lg:py-20 bg-[#F8FAFC]">
+      <section className="py-16 lg:py-20 bg-[#F8FAFC] dark:bg-background-dark-alt">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 text-[#111111] uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 text-[#111111] dark:text-white uppercase">
               Proven Government Use Cases
             </h2>
           </div>
@@ -361,12 +361,12 @@ export default function GovernmentIndustryPage() {
               { title: "Smart Infrastructure Monitoring", img: IMAGES.case_infra, href: "/resources/case-studies/smart-infrastructure-monitoring" },
               { title: "Public Service Access Platforms", img: IMAGES.case_access, href: "/resources/case-studies/public-service-access-platform" }
             ].map((study, i) => (
-              <Link href={study.href} key={i} className="group cursor-pointer flex flex-col h-full bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow">
-                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 mb-6 relative">
+              <Link href={study.href} key={i} className="group cursor-pointer flex flex-col h-full bg-white dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-shadow">
+                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 mb-6 relative">
                   <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: `url('${study.img}')` }} />
                 </div>
-                <h4 className="text-lg md:text-xl font-bold tracking-tight mb-6 flex-grow group-hover:text-primary transition-colors text-[#111111] uppercase">{study.title}</h4>
-                <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#111111]">
+                <h4 className="text-lg md:text-xl font-bold tracking-tight mb-6 flex-grow group-hover:text-primary dark:group-hover:text-blue-400 transition-colors text-[#111111] dark:text-white uppercase">{study.title}</h4>
+                <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#111111] dark:text-white">
                   Read Case Study <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
@@ -484,31 +484,31 @@ function InteractiveTabsSection({ images }: { images: any }) {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <section id="solutions" className="py-16 lg:py-20 bg-white">
+    <section id="solutions" className="py-16 lg:py-20 bg-white dark:bg-background-dark">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
 
           {/* Left: Dynamic Accordion-style List */}
           <div className="lg:w-1/2 flex flex-col justify-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-10 lg:mb-12 text-[#111111] uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-10 lg:mb-12 text-[#111111] dark:text-white uppercase">
               What Government Agencies Can Do with Delonti
             </h2>
 
             {/* The Tab Items */}
-            <div className="flex flex-col gap-0 border-l border-slate-200">
+            <div className="flex flex-col gap-0 border-l border-slate-200 dark:border-slate-800">
               {tabs.map((tab) => {
                 const isActive = activeTab.id === tab.id;
                 return (
                   <div
                     key={tab.id}
                     onMouseEnter={() => setActiveTab(tab)}
-                    className="cursor-pointer group flex flex-col pl-6 py-5 border-b border-slate-100 last:border-b-0 transition-colors duration-300 hover:bg-slate-50/50"
+                    className="cursor-pointer group flex flex-col pl-6 py-5 border-b border-slate-100 dark:border-slate-800/60 last:border-b-0 transition-colors duration-300 hover:bg-slate-50/50 dark:hover:bg-slate-800/30"
                   >
                     <div className="flex items-center gap-4">
-                      <span className={`text-xl font-display font-black tracking-tighter transition-colors duration-300 ${isActive ? 'text-primary' : 'text-slate-300'}`}>
+                      <span className={`text-xl font-display font-black tracking-tighter transition-colors duration-300 ${isActive ? 'text-primary dark:text-blue-400' : 'text-slate-300 dark:text-slate-700'}`}>
                         {tab.num}.
                       </span>
-                      <h3 className={`text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 uppercase ${isActive ? 'text-[#111111]' : 'text-slate-300 group-hover:text-slate-400'}`}>
+                      <h3 className={`text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 uppercase ${isActive ? 'text-[#111111]' : 'text-slate-300 dark:text-slate-700 group-hover:text-slate-400 dark:group-hover:text-slate-500'}`}>
                         {tab.title}
                       </h3>
                     </div>
@@ -524,14 +524,14 @@ function InteractiveTabsSection({ images }: { images: any }) {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium mb-3">
+                      <p className="text-sm md:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-medium mb-3">
                         {tab.desc}
                       </p>
                       {tab.bullets && (
                         <ul className="space-y-2">
                           {tab.bullets.map((bullet, bIdx) => (
-                            <li key={bIdx} className="flex items-center gap-3 text-sm md:text-base text-slate-500 font-medium">
-                              <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                            <li key={bIdx} className="flex items-center gap-3 text-sm md:text-base text-slate-500 dark:text-slate-400 font-medium">
+                              <div className="w-1.5 h-1.5 rounded-full bg-primary dark:bg-blue-400 shrink-0" />
                               {bullet}
                             </li>
                           ))}
@@ -546,7 +546,7 @@ function InteractiveTabsSection({ images }: { images: any }) {
 
           {/* Right: Instant Morphing Image */}
           <div className="lg:w-1/2 aspect-[4/5] lg:aspect-auto lg:h-[600px] xl:h-[700px] relative mt-8 lg:mt-0">
-            <div className="w-full h-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl relative bg-slate-100">
+            <div className="w-full h-full rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl relative bg-slate-100 dark:bg-slate-900">
               <img
                 key={activeTab.id}
                 src={activeTab.img}
@@ -687,7 +687,7 @@ function StickyStackingSection({ images }: { images: any }) {
   ];
 
   return (
-    <section className="bg-slate-50/50 py-16 lg:py-20 border-y border-slate-200 relative overflow-hidden">
+    <section className="bg-slate-50/50 dark:bg-background-dark-alt py-16 lg:py-20 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
       {/* Background Accent Gradients */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-logo/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
@@ -711,7 +711,7 @@ function StickyStackingSection({ images }: { images: any }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-[#111111] mb-5 uppercase"
+            className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-[#111111] dark:text-white mb-5 uppercase"
           >
             Outcomes for Government Agencies
           </motion.h2>
@@ -720,7 +720,7 @@ function StickyStackingSection({ images }: { images: any }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-xl"
+            className="text-sm md:text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-xl"
           >
             Delivering measurable public value, operational resilience, and streamlined citizen experiences through a unified RFID & AI platform.
           </motion.p>
@@ -737,10 +737,10 @@ function StickyStackingSection({ images }: { images: any }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: card.id * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-6 md:p-10 shadow-[0_15px_30px_-15px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_60px_-15px_rgba(0,89,171,0.08)] hover:border-logo/30 transition-all duration-500 ease-out flex flex-col justify-between"
+                className="group relative overflow-hidden rounded-[2rem] border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-background-dark p-6 md:p-10 shadow-[0_15px_30px_-15px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_60px_-15px_rgba(0,89,171,0.08)] hover:border-logo/30 dark:hover:border-blue-500/30 transition-all duration-500 ease-out flex flex-col justify-between"
               >
                 {/* Subtle top-right outcome number */}
-                <div className="absolute top-6 right-8 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-300 group-hover:text-logo/30 transition-colors duration-500">
+                <div className="absolute top-6 right-8 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-300 dark:text-slate-700 group-hover:text-logo/30 dark:group-hover:text-blue-500/20 transition-colors duration-500">
                   Outcome 0{card.id}
                 </div>
 
@@ -752,10 +752,10 @@ function StickyStackingSection({ images }: { images: any }) {
 
                   {/* Text Content */}
                   <div className="space-y-3">
-                    <h3 className="text-lg md:text-xl font-bold text-slate-900 uppercase tracking-tight group-hover:text-logo transition-colors duration-300 leading-snug pr-12 sm:pr-0">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white uppercase tracking-tight group-hover:text-logo transition-colors duration-300 leading-snug pr-12 sm:pr-0">
                       {card.title}
                     </h3>
-                    <p className="text-sm md:text-base text-slate-500 leading-relaxed font-medium">
+                    <p className="text-sm md:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
                       {card.text}
                     </p>
                   </div>
