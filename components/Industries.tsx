@@ -9,36 +9,36 @@ const INDUSTRIES = [
   {
     title: "Government",
     description: "Secure, Compliant Infrastructure & Accountability",
-    image: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?q=80&w=2070",
+    image: "/images/government_industry_card.png",
     href: "/industries/government",
   },
   {
     title: "Education",
     description: "Unified Campus Security & Asset Management",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070",
+    image: "/images/education_industry_card.png",
     href: "/industries/education",
   },
   {
     title: "Healthcare",
     description: "Patient Safety & Critical Asset Tracking",
-    image: "https://plus.unsplash.com/premium_photo-1698421947098-d68176a8f5b2?q=80&w=752&auto=format&fit=crop",
+    image: "/images/healthcare_industry_card.png",
     href: "/industries/healthcare",
   },
   {
     title: "Manufacturing",
     description: "Process Optimization & Operational Safety",
-    image: "https://images.unsplash.com/photo-1717386255773-1e3037c81788?q=80&w=1170&auto=format&fit=crop",
+    image: "/images/manufacturing_industry_card.png",
   },
   {
     title: "Supply Chain (Retail/Logistics)",
     description: "End-to-End Visibility & Inventory Control",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070",
+    image: "/images/supply_chain_industry_card.png",
     href: "/industries/supply-chain",
   },
   {
     title: "Public Safety",
     description: "Real-time Visibility for Emergency Response",
-    image: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=2070",
+    image: "/images/public_safety_industry_card.png",
     href: "/industries/public-safety",
   }
 ];
