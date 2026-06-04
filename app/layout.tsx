@@ -17,9 +17,6 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Delonti | Innovating RFID, IoT & Cybersecurity",
   description: "Innovating with RFID, IoT & Cybersecurity Across Government & Industry",
-  icons: {
-    icon: "/fav-test.png",
-  },
 };
 
 export default function RootLayout({
