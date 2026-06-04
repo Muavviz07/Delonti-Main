@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import OverviewSection from "@/components/OverviewSection";
-import SplitContentSection from "@/components/SplitContentSection";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { Handshake, PhoneCall, Globe2 } from "lucide-react";
@@ -39,22 +38,6 @@ export default function ContactPage() {
                     ]}
                     columns={3}
                     background="slate"
-                />
-
-                <SplitContentSection
-                    title="Headquarters"
-                    heading="Get In Touch"
-                    description="Connect with our specialists to discuss your enterprise infrastructure needs. Fill out the form below or reach us directly at our international routing numbers."
-                    listItems={[
-                        "Delonti Inc.",
-                        "10 Dorrance Street, Providence, RI 02903",
-                        "Phone: 860-460-8428",
-                        "Email: info@delonti.com"
-                    ]}
-                    imageSrc="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2064&auto=format&fit=crop"
-                    imageAlt="High-end office"
-                    imagePosition="left"
-                    background="white"
                 />
 
                 {/* Existing Contact Form Block */}
