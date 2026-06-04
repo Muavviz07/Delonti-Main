@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const TECH_AREAS = [
-    { title: "RFID & Logistics", desc: "Precision asset tracking and sub-second inventory visibility across global supply chains.", icon: RadioTower, href: "/tech/rfid/asset" },
+    { title: "RFID & Logistics", desc: "Precision asset tracking and sub-second inventory visibility across global supply chains.", icon: RadioTower, href: "/solutions/asset-tracking" },
     { title: "IoT Systems", desc: "Smart sensors, edge computing, and facility automation for real-time operational telemetry.", icon: Cpu, href: "/tech/iot/smart-infra" },
     { title: "Cybersecurity", desc: "Zero Trust networking, endpoint isolation, and automated threat neutralization capabilities.", icon: ShieldCheck, href: "/tech/cyber/zero-trust" },
     { title: "Data & Analytics", desc: "AI pipelines, BI dashboards, and enterprise data models turning raw data into strategy.", icon: Database, href: "/tech/data/integration" },

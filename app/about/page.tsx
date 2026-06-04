@@ -34,7 +34,7 @@ export default function AboutPage() {
     {
       title: "Asset Tracking",
       description: "Track critical assets and equipment in real time.",
-      href: "/tech/rfid/asset",
+      href: "/solutions/asset-tracking",
       icon: Radio,
       themeColor: "text-blue-600 dark:text-blue-400",
       bgColor: "bg-blue-500/5 dark:bg-blue-500/10",
@@ -44,7 +44,7 @@ export default function AboutPage() {
     {
       title: "Inventory Intelligence",
       description: "Automate inventory visibility and management.",
-      href: "/private/smb/asset-tracking",
+      href: "/solutions/inventory-intelligence",
       icon: Database,
       themeColor: "text-purple-600 dark:text-purple-400",
       bgColor: "bg-purple-500/5 dark:bg-purple-500/10",
@@ -54,7 +54,7 @@ export default function AboutPage() {
     {
       title: "Workforce Safety",
       description: "Improve workforce visibility and operational safety.",
-      href: "/federal/workforce",
+      href: "/solutions/workforce-safety",
       icon: HardHat,
       themeColor: "text-orange-600 dark:text-orange-400",
       bgColor: "bg-orange-500/5 dark:bg-orange-500/10",
@@ -64,7 +64,7 @@ export default function AboutPage() {
     {
       title: "Facility Intelligence",
       description: "Monitor buildings, infrastructure, and operations.",
-      href: "/private/enterprise/industrial-iot",
+      href: "/solutions/facility-intelligence",
       icon: Building,
       themeColor: "text-emerald-600 dark:text-emerald-400",
       bgColor: "bg-emerald-500/5 dark:bg-emerald-500/10",

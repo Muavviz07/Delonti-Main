@@ -9,7 +9,7 @@ export default function CoreOfferings() {
             title: "RFID Integration",
             description: "Asset tracking and inventory lifecycle management with sub-second accuracy.",
             icon: <Nfc className="w-8 h-8" />,
-            href: "/tech/rfid/asset",
+            href: "/solutions/asset-tracking",
             buttonText: "Explore RFID"
         },
         {

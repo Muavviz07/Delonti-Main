@@ -21,7 +21,7 @@ export default function StateSolutions() {
             title: "RFID Solutions",
             description: "Asset tracking (vehicles, inventory, personnel) and warehouse/logistics integration.",
             icon: <Nfc className="w-8 h-8" />,
-            href: "/tech/rfid/asset"
+            href: "/solutions/asset-tracking"
         },
         {
             title: "IoT Solutions",

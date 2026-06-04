@@ -193,10 +193,10 @@ export default function Header() {
                                     <div className="grid grid-cols-12 gap-12">
                                         <div className="col-span-3">
                                             <MenuHeader>Core Capabilities</MenuHeader>
-                                            <MenuLink href="/tech/rfid/asset">Asset Tracking</MenuLink>
-                                            <MenuLink href="/private/smb/asset-tracking">Inventory Intelligence</MenuLink>
-                                            <MenuLink href="/federal/workforce">Workforce Safety</MenuLink>
-                                            <MenuLink href="/private/enterprise/industrial-iot">Facility Intelligence</MenuLink>
+                                            <MenuLink href="/solutions/asset-tracking">Asset Tracking</MenuLink>
+                                            <MenuLink href="/solutions/inventory-intelligence">Inventory Intelligence</MenuLink>
+                                            <MenuLink href="/solutions/workforce-safety">Workforce Safety</MenuLink>
+                                            <MenuLink href="/solutions/facility-intelligence">Facility Intelligence</MenuLink>
                                         </div>
                                         <div className="col-span-4">
                                             <MenuHeader>Technical Excellence</MenuHeader>
@@ -294,10 +294,10 @@ export default function Header() {
                         {
                             title: "Solutions", url: "/technology",
                             links: [
-                                { name: "Asset Tracking", url: "/tech/rfid/asset" },
-                                { name: "Inventory Intelligence", url: "/private/smb/asset-tracking" },
-                                { name: "Workforce Safety", url: "/federal/workforce" },
-                                { name: "Facility Intelligence", url: "/private/enterprise/industrial-iot" }
+                                { name: "Asset Tracking", url: "/solutions/asset-tracking" },
+                                { name: "Inventory Intelligence", url: "/solutions/inventory-intelligence" },
+                                { name: "Workforce Safety", url: "/solutions/workforce-safety" },
+                                { name: "Facility Intelligence", url: "/solutions/facility-intelligence" }
                             ]
                         },
                         {

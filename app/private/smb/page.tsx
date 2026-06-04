@@ -254,7 +254,7 @@ export default function SmbPage() {
                             description:
                                 "Inventory accuracy, loss prevention, and stock monitoring across single or multi-location retail operations.",
                             image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070",
-                            href: "/private/smb/asset-tracking"
+                            href: "/solutions/inventory-intelligence"
                         },
                         {
                             title: "Logistics & Field Services",

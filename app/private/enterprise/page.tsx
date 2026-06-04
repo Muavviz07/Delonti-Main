@@ -283,7 +283,7 @@ export default function EnterprisePage() {
                             description:
                                 "End-to-end supply chain traceability, fleet intelligence, and warehouse automation for logistics enterprises.",
                             image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070",
-                            href: "/private/enterprise/industrial-iot"
+                            href: "/solutions/facility-intelligence"
                         },
                         {
                             title: "Financial Services",

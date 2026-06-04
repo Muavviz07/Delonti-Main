@@ -66,10 +66,10 @@ export default function Footer() {
                     <div>
                         <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Solutions</h5>
                         <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
-                            <li><Link href="/tech/rfid/asset" className="hover:text-white transition-colors">Asset Tracking</Link></li>
-                            <li><Link href="/private/smb/asset-tracking" className="hover:text-white transition-colors">Inventory Intelligence</Link></li>
-                            <li><Link href="/federal/workforce" className="hover:text-white transition-colors">Workforce Safety</Link></li>
-                            <li><Link href="/private/enterprise/industrial-iot" className="hover:text-white transition-colors">Facility Intelligence</Link></li>
+                            <li><Link href="/solutions/asset-tracking" className="hover:text-white transition-colors">Asset Tracking</Link></li>
+                            <li><Link href="/solutions/inventory-intelligence" className="hover:text-white transition-colors">Inventory Intelligence</Link></li>
+                            <li><Link href="/solutions/workforce-safety" className="hover:text-white transition-colors">Workforce Safety</Link></li>
+                            <li><Link href="/solutions/facility-intelligence" className="hover:text-white transition-colors">Facility Intelligence</Link></li>
                         </ul>
                     </div>
 
