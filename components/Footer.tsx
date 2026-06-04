@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -29,13 +29,13 @@ export default function Footer() {
 
                         {/* Social Media Icons */}
                         <div className="flex items-center gap-5 mt-8">
-                            <Link href="https://facebook.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                            <Link href="https://www.facebook.com/people/Delonti-INC/100063832244261/#" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
                                 <Facebook size={20} />
                             </Link>
-                            <Link href="https://instagram.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
-                                <Instagram size={20} />
+                            <Link href="https://x.com/Delontiinc" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Twitter size={20} />
                             </Link>
-                            <Link href="https://linkedin.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                            <Link href="https://www.linkedin.com/company/delonti/about/" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
                                 <Linkedin size={20} />
                             </Link>
                             <Link href="https://youtube.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
