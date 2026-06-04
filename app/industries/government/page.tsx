@@ -354,13 +354,59 @@ export default function GovernmentIndustryPage() {
               { icon: FileCheck, title: "Compliance Reporting", desc: "Secure audit trails customized for state & federal standards." }
             ].map((cap, i) => {
               const Icon = cap.icon;
+              const subtleThemes = [
+                {
+                  iconColor: "text-blue-650 dark:text-blue-400",
+                  bgColor: "bg-blue-500/5 dark:bg-blue-500/10",
+                  borderColor: "border-blue-500/10 dark:border-blue-500/20",
+                  hoverBorderColor: "group-hover:border-blue-500/40 dark:group-hover:border-blue-500/30",
+                  hoverBgColor: "group-hover:bg-blue-500/10 dark:group-hover:bg-blue-500/20"
+                },
+                {
+                  iconColor: "text-purple-650 dark:text-purple-400",
+                  bgColor: "bg-purple-500/5 dark:bg-purple-500/10",
+                  borderColor: "border-purple-500/10 dark:border-purple-500/20",
+                  hoverBorderColor: "group-hover:border-purple-500/40 dark:group-hover:border-purple-500/30",
+                  hoverBgColor: "group-hover:bg-purple-500/10 dark:group-hover:bg-purple-500/20"
+                },
+                {
+                  iconColor: "text-amber-600 dark:text-amber-400",
+                  bgColor: "bg-amber-500/5 dark:bg-amber-500/10",
+                  borderColor: "border-amber-500/10 dark:border-amber-500/20",
+                  hoverBorderColor: "group-hover:border-amber-500/40 dark:group-hover:border-amber-500/30",
+                  hoverBgColor: "group-hover:bg-amber-500/10 dark:group-hover:bg-amber-500/20"
+                },
+                {
+                  iconColor: "text-emerald-600 dark:text-emerald-400",
+                  bgColor: "bg-emerald-500/5 dark:bg-emerald-500/10",
+                  borderColor: "border-emerald-500/10 dark:border-emerald-500/20",
+                  hoverBorderColor: "group-hover:border-emerald-500/40 dark:group-hover:border-emerald-500/30",
+                  hoverBgColor: "group-hover:bg-emerald-500/10 dark:group-hover:bg-emerald-500/20"
+                },
+                {
+                  iconColor: "text-rose-600 dark:text-rose-450",
+                  bgColor: "bg-rose-500/5 dark:bg-rose-500/10",
+                  borderColor: "border-rose-500/10 dark:border-rose-500/20",
+                  hoverBorderColor: "group-hover:border-rose-500/40 dark:group-hover:border-rose-500/30",
+                  hoverBgColor: "group-hover:bg-rose-500/10 dark:group-hover:bg-rose-500/20"
+                },
+                {
+                  iconColor: "text-cyan-600 dark:text-cyan-400",
+                  bgColor: "bg-cyan-500/5 dark:bg-cyan-500/10",
+                  borderColor: "border-cyan-500/10 dark:border-cyan-500/20",
+                  hoverBorderColor: "group-hover:border-cyan-500/40 dark:group-hover:border-cyan-500/30",
+                  hoverBgColor: "group-hover:bg-cyan-500/10 dark:group-hover:bg-cyan-500/20"
+                }
+              ];
+              const theme = subtleThemes[i % subtleThemes.length];
+
               return (
                 <div 
                   key={i} 
                   className="group flex flex-col items-center text-center p-6 rounded-2xl bg-white dark:bg-background-dark-alt border border-slate-200 dark:border-slate-800 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 ease-out cursor-pointer w-[75vw] sm:w-[45vw] md:w-auto shrink-0 snap-start"
                 >
-                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-primary/30 dark:border-blue-500/20 bg-primary/5 dark:bg-blue-500/5 flex items-center justify-center shrink-0 mb-5 group-hover:border-primary/60 dark:group-hover:border-blue-500/40 group-hover:bg-primary/10 dark:group-hover:bg-blue-500/10 transition-all duration-300">
-                    <Icon strokeWidth={1.5} className="w-6 h-6 md:w-7 md:h-7 text-primary dark:text-blue-400 transition-transform duration-300 group-hover:scale-110" />
+                  <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full border ${theme.borderColor} ${theme.bgColor} flex items-center justify-center shrink-0 mb-5 ${theme.hoverBorderColor} ${theme.hoverBgColor} transition-all duration-300`}>
+                    <Icon strokeWidth={1.5} className={`w-6 h-6 md:w-7 md:h-7 ${theme.iconColor} transition-transform duration-300 group-hover:scale-110`} />
                   </div>
                   <h3 className="text-sm md:text-base font-bold tracking-tight text-[#111111] dark:text-white group-hover:text-primary dark:group-hover:text-blue-400 transition-colors duration-300 uppercase mb-2">
                     {cap.title}
