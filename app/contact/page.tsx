@@ -46,9 +46,10 @@ export default function ContactPage() {
                     heading="Get In Touch"
                     description="Connect with our specialists to discuss your enterprise infrastructure needs. Fill out the form below or reach us directly at our international routing numbers."
                     listItems={[
-                        "Address Line 1",
-                        "Address Line 2",
-                        "Phone / Contact Info 1"
+                        "Delonti Inc.",
+                        "10 Dorrance Street, Providence, RI 02903",
+                        "Phone: 860-460-8428",
+                        "Email: info@delonti.com"
                     ]}
                     imageSrc="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2064&auto=format&fit=crop"
                     imageAlt="High-end office"

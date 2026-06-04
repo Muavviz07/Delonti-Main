@@ -24,7 +24,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Phone</p>
-                                    <p className="font-medium text-slate-900 dark:text-white tracking-wide">Contact Data 1</p>
+                                    <a href="tel:860-460-8428" className="font-medium text-slate-900 dark:text-white tracking-wide hover:text-logo dark:hover:text-blue-400 transition-colors">860-460-8428</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-5 group">
@@ -34,7 +34,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Email</p>
-                                    <p className="font-medium text-slate-900 dark:text-white tracking-wide">Contact Data 2</p>
+                                    <a href="mailto:info@delonti.com" className="font-medium text-slate-900 dark:text-white tracking-wide hover:text-logo dark:hover:text-blue-400 transition-colors">info@delonti.com</a>
                                 </div>
                             </div>
                         </div>
