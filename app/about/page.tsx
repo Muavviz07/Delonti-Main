@@ -142,58 +142,95 @@ export default function AboutPage() {
     <main className="w-full bg-[#FAFAFA] dark:bg-background-dark font-sans selection:bg-[#0059ab] selection:text-white relative">
       <Header />
 
-      {/* SECTION 1 – HERO (Centered Minimalist Design) */}
-      <section className="relative w-full min-h-[60vh] flex items-center overflow-hidden bg-white dark:bg-background-dark border-b border-slate-150/40 dark:border-slate-800/80 pt-28 pb-16">
-        {/* Subtle grid pattern background */}
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#0059ab_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-logo/10 dark:bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* SECTION 1 – HERO (Split Layout like Industry Pages) */}
+      <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden bg-white dark:bg-background-dark border-b border-slate-100 dark:border-slate-800/80 pt-5 lg:pt-0">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
-        <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 w-full text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center"
-          >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-logo dark:text-blue-400 bg-logo/5 dark:bg-blue-500/5 border border-logo/10 dark:border-blue-500/10 rounded-xl">
-              <div className="w-1.5 h-1.5 rounded-full bg-logo dark:bg-blue-400" />
-              About Delonti
-            </div>
-
-            {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] text-slate-900 dark:text-white uppercase max-w-4xl">
-              Transforming Physical Infrastructure <br className="hidden sm:inline" />
-              into <span className="text-logo dark:text-blue-400">Operational Intelligence</span>
-            </h1>
-
-            {/* Subheading */}
-            <p className="text-sm md:text-base text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl font-medium">
-              Delonti helps public and private sector organizations gain real-time visibility across assets, infrastructure, inventory, workforce, and operations through an RFID + AI-powered platform.
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-              {/* Request Demo */}
-              <Link
-                href="/contact"
-                className="group relative bg-logo hover:bg-logo/90 text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden w-full sm:w-56 whitespace-nowrap"
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex flex-col items-start"
+            >
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-logo dark:text-blue-400 bg-logo/5 dark:bg-blue-500/5 border border-logo/10 dark:border-blue-500/10 rounded-xl"
               >
-                <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Request Demo</span>
-                <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
-              </Link>
+                <div className="w-1.5 h-1.5 rounded-full bg-logo dark:bg-blue-400" />
+                About Delonti
+              </motion.div>
 
-              {/* Explore Solutions */}
-              <Link
-                href="#deliver"
-                className="group relative bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-800 dark:text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 dark:border-slate-855 flex items-center justify-center gap-3 shadow-xs overflow-hidden w-full sm:w-56 whitespace-nowrap"
+              {/* Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] text-slate-900 dark:text-white uppercase"
               >
-                <div className="w-2.5 h-2.5 rounded-full bg-slate-350 dark:bg-slate-650 group-hover:bg-slate-500 transition-colors" />
-                <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Explore Solutions</span>
-                <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
-              </Link>
-            </div>
-          </motion.div>
+                Transforming Physical Infrastructure <br />
+                into <span className="text-logo dark:text-blue-400">Operational Intelligence</span>
+              </motion.h1>
+
+              {/* Subheading */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="text-sm md:text-base text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-xl font-medium"
+              >
+                Delonti helps public and private sector organizations gain real-time visibility across assets, infrastructure, inventory, workforce, and operations through an RFID + AI-powered platform.
+              </motion.p>
+
+              {/* Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+              >
+                {/* Request Demo */}
+                <Link
+                  href="/contact"
+                  className="group relative bg-logo hover:bg-logo/90 text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-[0_0_30px_-5px_var(--color-logo)] hover:shadow-[0_0_40px_-5px_var(--color-logo)] flex items-center justify-center gap-3 overflow-hidden w-full sm:w-60 whitespace-nowrap"
+                >
+                  <div className="absolute inset-0 w-full h-full bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Request Demo</span>
+                  <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+                </Link>
+
+                {/* Explore Solutions */}
+                <Link
+                  href="#deliver"
+                  className="group relative bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-800 dark:text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all duration-300 border border-slate-200 dark:border-slate-800 flex items-center justify-center gap-3 shadow-xs overflow-hidden w-full sm:w-60 whitespace-nowrap"
+                >
+                  <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <span className="relative z-10 uppercase tracking-wider text-xs md:text-sm">Explore Solutions</span>
+                  <ChevronRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Image Container */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, x: 30 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative aspect-square lg:aspect-[1.05/1] lg:max-h-[700px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900"
+            >
+              <img
+                src="/images/about_hero.png"
+                alt="About Delonti Operational Intelligence"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-logo/10 to-transparent pointer-events-none" />
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
@@ -429,28 +466,28 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-col md:flex-row items-stretch border border-slate-200/80 dark:border-slate-800/85 rounded-2xl bg-white dark:bg-background-dark overflow-hidden divide-y md:divide-y-0 md:divide-x divide-slate-200/80 dark:divide-slate-800/85 shadow-[0_4px_25px_rgba(0,0,0,0.02)]">
             {industries.map((ind, idx) => {
               const IconComponent = ind.icon;
               return (
-                <Link key={idx} href={ind.href} className="group block">
+                <Link key={idx} href={ind.href} className="group block flex-1">
                   <motion.div
-                    whileHover={{ y: -6, scale: 1.01 }}
-                    className="p-8 bg-white dark:bg-background-dark rounded-2xl border border-slate-200/60 dark:border-slate-800/80 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-logo/30 dark:hover:border-blue-500/30 flex items-center gap-6 transition-all duration-300 h-full"
+                    whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.01)" }}
+                    className="p-6 md:p-8 flex flex-row md:flex-col items-center md:items-center text-left md:text-center gap-4 md:gap-6 transition-all duration-300 h-full justify-start md:justify-center"
                   >
-                    {/* Left icon wrapper */}
-                    <div className={`w-16 h-16 flex items-center justify-center ${ind.bgColor} ${ind.color} rounded-2xl shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                      <IconComponent className="w-8 h-8" />
+                    {/* Icon wrapper */}
+                    <div className={`w-12 h-12 md:w-16 md:h-16 flex items-center justify-center ${ind.bgColor} ${ind.color} rounded-xl md:rounded-2xl shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComponent className="w-6 h-6 md:w-8 md:h-8" />
                     </div>
 
-                    {/* Right text layout */}
-                    <div className="flex-1 flex flex-col items-start justify-center">
-                      <span className="font-bold text-slate-900 dark:text-white group-hover:text-logo dark:group-hover:text-blue-455 transition-colors text-base md:text-lg uppercase tracking-wide">
+                    {/* Text layout */}
+                    <div className="flex-1 md:flex-none flex flex-col items-start md:items-center justify-center">
+                      <span className="font-bold text-slate-900 dark:text-white group-hover:text-logo dark:group-hover:text-blue-455 transition-colors text-sm md:text-base uppercase tracking-wide">
                         {ind.name}
                       </span>
                       
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-logo dark:group-hover:text-blue-400 transition-colors mt-2 flex items-center gap-1">
-                        View Solutions <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-logo dark:group-hover:text-blue-400 transition-colors mt-2 flex items-center gap-1">
+                        Solutions <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                       </div>
                     </div>
                   </motion.div>
