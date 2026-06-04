@@ -1,13 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {
   Eye, EyeOff, FileText, Network, ShieldCheck,
   Box, Truck, HardHat, Activity, LayoutDashboard,
   Radio, Database, TrendingUp, Monitor, ShieldAlert, FileCheck,
-  Globe, ArrowRight, Zap, ChevronRight, Play
+  Globe, ArrowRight, Zap, ChevronRight, ChevronLeft, Play
 } from "lucide-react";
 import GovKeyFlow from "@/components/GovKeyFlow";
 import CTASection from "@/components/CTASection";
@@ -31,6 +31,41 @@ export default function GovernmentIndustryPage() {
     case_infra: "/images/government/gov_case_infra_1778638358289.png",
     case_access: "/images/government/gov_case_access_1778638376467.png",
     service_access: "/images/government/gov_smart_service_access.png",
+  };
+
+  // Carousel states for Use Cases scroll section
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [maxScroll, setMaxScroll] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardWidth = 380;
+  const gap = 24;
+
+  const useCases = [
+    { title: "RFID Asset Tracking for State Agencies", img: IMAGES.case_rfid, href: "/resources/case-studies/rfid-asset-tracking-government" },
+    { title: "Smart Infrastructure Monitoring", img: IMAGES.case_infra, href: "/resources/case-studies/smart-infrastructure-monitoring" },
+    { title: "Public Service Access Platforms", img: IMAGES.case_access, href: "/resources/case-studies/public-service-access-platform" }
+  ];
+
+  useEffect(() => {
+    const calculateMaxScroll = () => {
+      if (containerRef.current) {
+        const visibleWidth = containerRef.current.offsetWidth;
+        const possibleScrolls = Math.max(0, useCases.length - Math.floor(visibleWidth / (cardWidth + gap)));
+        setMaxScroll(possibleScrolls);
+      }
+    };
+
+    calculateMaxScroll();
+    window.addEventListener("resize", calculateMaxScroll);
+    return () => window.removeEventListener("resize", calculateMaxScroll);
+  }, [useCases.length]);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev < maxScroll ? prev + 1 : prev));
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
   };
 
   return (
@@ -347,30 +382,57 @@ export default function GovernmentIndustryPage() {
       <StickyStackingSection images={IMAGES} />
 
       {/* 9. CASE STUDIES */}
-      <section className="py-16 lg:py-20 bg-[#F8FAFC] dark:bg-background-dark-alt">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 lg:mb-16 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-4 text-[#111111] dark:text-white uppercase">
-              Proven Government Use Cases
-            </h2>
+      <section className="py-16 lg:py-20 bg-[#F8FAFC] dark:bg-background-dark-alt overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8" ref={containerRef}>
+          {/* Header with Navigation */}
+          <div className="flex items-end justify-between mb-12 lg:mb-16">
+            <div className="max-w-4xl">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#111111] dark:text-white uppercase">
+                Proven Government Use Cases
+              </h2>
+            </div>
+            
+            <div className="flex gap-4">
+              <button 
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className={`w-12 h-12 rounded-full border border-slate-900 dark:border-white flex items-center justify-center transition-all cursor-pointer ${currentIndex === 0 ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={handleNext}
+                disabled={currentIndex >= maxScroll}
+                className={`w-12 h-12 rounded-full border border-slate-900 dark:border-white flex items-center justify-center transition-all cursor-pointer ${currentIndex >= maxScroll ? 'opacity-20 cursor-not-allowed' : 'hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black active:scale-95'}`}
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "RFID Asset Tracking for State Agencies", img: IMAGES.case_rfid, href: "/resources/case-studies/rfid-asset-tracking-government" },
-              { title: "Smart Infrastructure Monitoring", img: IMAGES.case_infra, href: "/resources/case-studies/smart-infrastructure-monitoring" },
-              { title: "Public Service Access Platforms", img: IMAGES.case_access, href: "/resources/case-studies/public-service-access-platform" }
-            ].map((study, i) => (
-              <Link href={study.href} key={i} className="group cursor-pointer flex flex-col h-full bg-white dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-shadow">
-                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 mb-6 relative">
-                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: `url('${study.img}')` }} />
+          {/* Slider Row */}
+          <div className="relative overflow-visible">
+            <motion.div 
+              className="flex gap-6 items-start"
+              animate={{ x: -(currentIndex * (cardWidth + gap)) }}
+              transition={{ type: "spring", stiffness: 80, damping: 20, mass: 1 }}
+            >
+              {useCases.map((study, idx) => (
+                <div key={idx} className="shrink-0" style={{ width: `${cardWidth}px` }}>
+                  <Link href={study.href} className="group cursor-pointer flex flex-col h-full bg-white dark:bg-background-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-shadow">
+                    <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 mb-6 relative">
+                      <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{ backgroundImage: `url('${study.img}')` }} />
+                    </div>
+                    <h4 className="text-lg md:text-xl font-bold tracking-tight mb-6 h-[3.5rem] overflow-hidden line-clamp-2 group-hover:text-primary dark:group-hover:text-blue-400 transition-colors text-[#111111] dark:text-white uppercase">
+                      {study.title}
+                    </h4>
+                    <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#111111] dark:text-white">
+                      Read Case Study <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
                 </div>
-                <h4 className="text-lg md:text-xl font-bold tracking-tight mb-6 flex-grow group-hover:text-primary dark:group-hover:text-blue-400 transition-colors text-[#111111] dark:text-white uppercase">{study.title}</h4>
-                <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#111111] dark:text-white">
-                  Read Case Study <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            ))}
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
