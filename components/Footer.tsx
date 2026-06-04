@@ -14,18 +14,11 @@ export default function Footer() {
                         <div className="flex items-center gap-2 mb-6">
                             <Link href="/" className="hover:opacity-80 transition-opacity">
                                 <Image
-                                    src="/logo-dark(blue-text).png"
-                                    alt="Delonti Logo"
-                                    width={150}
-                                    height={38}
-                                    className="h-7 lg:h-8 w-auto object-contain dark:hidden"
-                                />
-                                <Image
                                     src="/logo-light-blue.png"
                                     alt="Delonti Logo"
                                     width={140}
                                     height={35}
-                                    className="hidden dark:block h-7 lg:h-9 w-auto object-contain"
+                                    className="h-7 lg:h-9 w-auto object-contain"
                                 />
                             </Link>
                         </div>
