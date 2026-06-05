@@ -28,6 +28,7 @@ const INDUSTRIES = [
     title: "Manufacturing",
     description: "Process Optimization & Operational Safety",
     image: "/images/manufacturing_industry_card.png",
+    href: "/industries/manufacturing",
   },
   {
     title: "Supply Chain (Retail/Logistics)",

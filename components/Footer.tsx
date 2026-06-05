@@ -50,7 +50,7 @@ export default function Footer() {
                             <li><Link href="/industries/government" className="hover:text-white transition-colors">Government</Link></li>
                             <li><Link href="/industries/education" className="hover:text-white transition-colors">Education</Link></li>
                             <li><Link href="/industries/healthcare" className="hover:text-white transition-colors">Healthcare</Link></li>
-                            <li><Link href="/private/enterprise/industrial-iot" className="hover:text-white transition-colors">Manufacturing</Link></li>
+                            <li><Link href="/industries/manufacturing" className="hover:text-white transition-colors">Manufacturing</Link></li>
                             <li><Link href="/industries/supply-chain" className="hover:text-white transition-colors">Supply Chain</Link></li>
                             <li><Link href="/industries/public-safety" className="hover:text-white transition-colors">Public Safety</Link></li>
                         </ul>
