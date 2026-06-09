@@ -235,6 +235,7 @@ export default function Header() {
                                                 <MenuHeader>News & Updates</MenuHeader>
                                                 <MenuLink href="/resources/blogs">Blogs & Articles</MenuLink>
                                                 <MenuLink href="/resources/news">News & Announcements</MenuLink>
+                                                <MenuLink href="/resources/solution-videos">Solution Videos</MenuLink>
                                             </div>
                                         </div>
                                         <div className="col-span-5 h-full">
@@ -302,7 +303,7 @@ export default function Header() {
                         },
                         {
                             title: "Resources", url: "#",
-                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "News & Announcements", url: "/resources/news" }]
+                            links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "News & Announcements", url: "/resources/news" }, { name: "Solution Videos", url: "/resources/solution-videos" }]
                         },
                     ].map((section) => (
                         <div key={section.title} className="border-b border-gray-100 dark:border-white/10 pb-4">
