@@ -312,6 +312,38 @@ export default function AssetTrackingSolutionPage() {
               );
             })}
           </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-16 lg:mt-20">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900"
+            >
+              <img
+                src="/solutions/Delonti Platform Architecture 1.png"
+                alt="Delonti Platform Architecture 1"
+                className="w-full h-auto block"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-logo/10 to-transparent pointer-events-none" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="relative w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900"
+            >
+              <img
+                src="/solutions/Delonti Platform Architecture.png"
+                alt="Delonti Platform Architecture"
+                className="w-full h-auto block"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-logo/10 to-transparent pointer-events-none" />
+            </motion.div>
+          </div>
         </div>
       </section>
 
