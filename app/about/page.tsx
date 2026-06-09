@@ -536,21 +536,8 @@ export default function AboutPage() {
                 Why Organizations Choose Delonti
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 w-full">
                 {/* Feature 1 */}
-                <div className="p-6 bg-slate-50/50 dark:bg-background-dark-alt/50 border border-slate-150/60 dark:border-slate-800/80 rounded-2xl flex flex-col items-start hover:border-logo/30 dark:hover:border-blue-500/30 hover:shadow-xs transition-all duration-300">
-                  <div className="p-3 bg-logo/10 text-logo dark:bg-blue-500/10 dark:text-blue-450 rounded-xl mb-4">
-                    <Cpu className="w-5 h-5" />
-                  </div>
-                  <h4 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-2">
-                    RFID + AI Platform
-                  </h4>
-                  <p className="text-slate-550 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed">
-                    One platform. Multiple use cases.
-                  </p>
-                </div>
-
-                {/* Feature 2 */}
                 <div className="p-6 bg-slate-50/50 dark:bg-background-dark-alt/50 border border-slate-150/60 dark:border-slate-800/80 rounded-2xl flex flex-col items-start hover:border-logo/30 dark:hover:border-blue-500/30 hover:shadow-xs transition-all duration-300">
                   <div className="p-3 bg-indigo-500/10 text-indigo-650 dark:bg-indigo-500/10 dark:text-indigo-400 rounded-xl mb-4">
                     <Eye className="w-5 h-5" />
@@ -563,29 +550,68 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                {/* Feature 3 */}
+                {/* Feature 2 */}
                 <div className="p-6 bg-slate-50/50 dark:bg-background-dark-alt/50 border border-slate-150/60 dark:border-slate-800/80 rounded-2xl flex flex-col items-start hover:border-logo/30 dark:hover:border-blue-500/30 hover:shadow-xs transition-all duration-300">
-                  <div className="p-3 bg-purple-500/10 text-purple-650 dark:bg-purple-500/10 dark:text-purple-400 rounded-xl mb-4">
-                    <Brain className="w-5 h-5" />
+                  <div className="p-3 bg-logo/10 text-logo dark:bg-blue-500/10 dark:text-blue-450 rounded-xl mb-4">
+                    <Cpu className="w-5 h-5" />
                   </div>
                   <h4 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-2">
-                    Operational Intelligence
+                    RFID + AI Platform
                   </h4>
                   <p className="text-slate-550 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed">
-                    Transform data into actionable insights.
+                    One platform. Multiple use cases.
+                  </p>
+                </div>
+
+                {/* Feature 3 */}
+                <div className="p-6 bg-slate-50/50 dark:bg-background-dark-alt/50 border border-slate-150/60 dark:border-slate-800/80 rounded-2xl flex flex-col items-start hover:border-logo/30 dark:hover:border-blue-500/30 hover:shadow-xs transition-all duration-300">
+                  <div className="p-3 bg-emerald-500/10 text-emerald-650 dark:bg-emerald-500/10 dark:text-emerald-400 rounded-xl mb-4">
+                    <Landmark className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-2">
+                    Public Sector Expertise
+                  </h4>
+                  <p className="text-slate-550 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed">
+                    Deep understanding of government and public safety needs.
                   </p>
                 </div>
 
                 {/* Feature 4 */}
                 <div className="p-6 bg-slate-50/50 dark:bg-background-dark-alt/50 border border-slate-150/60 dark:border-slate-800/80 rounded-2xl flex flex-col items-start hover:border-logo/30 dark:hover:border-blue-500/30 hover:shadow-xs transition-all duration-300">
                   <div className="p-3 bg-amber-500/10 text-amber-650 dark:bg-amber-500/10 dark:text-amber-400 rounded-xl mb-4">
-                    <Network className="w-5 h-5" />
+                    <Building className="w-5 h-5" />
                   </div>
                   <h4 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-2">
-                    Scalable Architecture
+                    Industry-Specific Solutions
                   </h4>
                   <p className="text-slate-550 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed">
-                    Deploy across a single site or enterprise-wide.
+                    Tailored approaches for specialized operational challenges.
+                  </p>
+                </div>
+
+                {/* Feature 5 */}
+                <div className="p-6 bg-slate-50/50 dark:bg-background-dark-alt/50 border border-slate-150/60 dark:border-slate-800/80 rounded-2xl flex flex-col items-start hover:border-logo/30 dark:hover:border-blue-500/30 hover:shadow-xs transition-all duration-300">
+                  <div className="p-3 bg-purple-500/10 text-purple-650 dark:bg-purple-500/10 dark:text-purple-400 rounded-xl mb-4">
+                    <Lock className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-2">
+                    Secure & Scalable Architecture
+                  </h4>
+                  <p className="text-slate-550 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed">
+                    Deploy securely across a single site or enterprise-wide.
+                  </p>
+                </div>
+
+                {/* Feature 6 */}
+                <div className="p-6 bg-slate-50/50 dark:bg-background-dark-alt/50 border border-slate-150/60 dark:border-slate-800/80 rounded-2xl flex flex-col items-start hover:border-logo/30 dark:hover:border-blue-500/30 hover:shadow-xs transition-all duration-300">
+                  <div className="p-3 bg-rose-500/10 text-rose-650 dark:bg-rose-500/10 dark:text-rose-400 rounded-xl mb-4">
+                    <Target className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-base md:text-lg font-bold text-slate-900 dark:text-white mb-2">
+                    Outcome-Focused Delivery
+                  </h4>
+                  <p className="text-slate-550 dark:text-slate-400 text-xs md:text-sm font-medium leading-relaxed">
+                    Delivering measurable results and operational excellence.
                   </p>
                 </div>
               </div>
