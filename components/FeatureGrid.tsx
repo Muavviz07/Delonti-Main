@@ -10,7 +10,7 @@ interface FeatureGridProps {
     title?: string;
     heading?: string;
     features: Feature[];
-    columns?: 3 | 4;
+    columns?: 3 | 4 | 5;
     background?: 'white' | 'slate';
 }
 
@@ -25,9 +25,13 @@ export default function FeatureGrid({
         ? "bg-white dark:bg-slate-950"
         : "bg-slate-100 dark:bg-slate-900";
 
-    const gridClass = columns === 3
-        ? "md:grid-cols-2 lg:grid-cols-3"
-        : "md:grid-cols-2 lg:grid-cols-4";
+    let gridClass = "md:grid-cols-2 lg:grid-cols-4";
+    if (columns === 3) gridClass = "md:grid-cols-2 lg:grid-cols-3";
+    if (columns === 5) gridClass = "md:grid-cols-3 lg:grid-cols-5";
+
+    const cardPadding = columns === 5 ? "p-5 lg:p-4 xl:p-6" : "p-8";
+    const titleSize = columns === 5 ? "text-lg lg:text-base xl:text-lg" : "text-xl";
+    const descSize = columns === 5 ? "text-xs" : "text-sm";
 
     return (
         <section className={`py-24 border-b border-gray-100 dark:border-white/5 ${bgClass}`}>
@@ -46,16 +50,16 @@ export default function FeatureGrid({
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="group bg-white dark:bg-slate-950 p-8 rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/30"
+                            className={`group bg-white dark:bg-slate-950 ${cardPadding} rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/30`}
                         >
                             <div className="w-14 h-14 rounded-xl bg-slate-50 dark:bg-slate-900 border border-gray-100 dark:border-white/10 flex items-center justify-center text-primary dark:text-slate-300 mb-6 transition-transform duration-500 group-hover:scale-110">
                                 {feature.icon}
                             </div>
 
-                            <h4 className="font-semibold text-xl mb-3 text-slate-900 dark:text-white tracking-wide">
+                            <h4 className={`font-semibold ${titleSize} mb-3 text-slate-900 dark:text-white tracking-wide`}>
                                 {feature.title}
                             </h4>
-                            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-light">
+                            <p className={`${descSize} text-slate-500 dark:text-slate-400 leading-relaxed font-light`}>
                                 {feature.description}
                             </p>
                         </div>

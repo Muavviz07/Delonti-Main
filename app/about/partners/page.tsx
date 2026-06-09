@@ -8,11 +8,11 @@ import IndustryUseCases from "@/components/IndustryUseCases";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
 import ClientsSection from "@/components/ClientsSection";
-import { Server, ShieldCheck, Database, Zap } from "lucide-react";
+import { Server, ShieldCheck, Database, Zap, Radio, Cpu, Cloud, Brain, Network } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Technology Partners | Delonti Enterprise",
+    title: "Partner Ecosystem | Delonti Enterprise",
 };
 
 export default function PartnersPage() {
@@ -21,9 +21,9 @@ export default function PartnersPage() {
             <Header />
             <main>
                 <PageHero
-                    title="Technology Partners"
+                    title="Partner Ecosystem"
                     subtitle="An ecosystem of industry-leading innovators powering Delonti's enterprise solutions."
-                    breadcrumbs={[{ label: "About", href: "/about" }, { label: "Partners" }]}
+                    breadcrumbs={[{ label: "About", href: "/about" }, { label: "Partner Ecosystem" }]}
                     backgroundImage="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
                 />
 
@@ -36,14 +36,15 @@ export default function PartnersPage() {
 
                 <FeatureGrid
                     title="Ecosystem"
-                    heading="Partner Network Capabilities"
+                    heading="Technology Partners"
                     features={[
-                        { title: "Network Providers", description: "Global 5G and LTE infrastructure integration, powered by Verizon.", icon: <Zap className="w-6 h-6" /> },
-                        { title: "Hardware Solutions", description: "Military-grade RFID arrays and edge IoT sensors.", icon: <Server className="w-6 h-6" /> },
-                        { title: "Cloud Platforms", description: "Scalable data lakes hosted on AWS and Azure.", icon: <Database className="w-6 h-6" /> },
-                        { title: "Security Vendors", description: "Zero-trust endpoints integrated seamlessly with our architecture.", icon: <ShieldCheck className="w-6 h-6" /> }
+                        { title: "RFID Partners", description: "World-class RFID hardware and infrastructure providers.", icon: <Radio className="w-6 h-6" /> },
+                        { title: "Hardware Partners", description: "Military-grade edge IoT sensors and devices.", icon: <Cpu className="w-6 h-6" /> },
+                        { title: "Cloud Partners", description: "Scalable data lakes hosted on AWS and Azure.", icon: <Cloud className="w-6 h-6" /> },
+                        { title: "AI Partners", description: "Advanced machine learning and predictive analytics platforms.", icon: <Brain className="w-6 h-6" /> },
+                        { title: "Systems Integration Partners", description: "Unified deployment and end-to-end integration networks.", icon: <Network className="w-6 h-6" /> }
                     ]}
-                    columns={4}
+                    columns={5}
                     background="slate"
                 />
 

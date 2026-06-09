@@ -124,7 +124,7 @@ export default function Header() {
                                         <div className="col-span-3">
                                             <MenuHeader>Corporate</MenuHeader>
                                             <MenuLink href="/about">Company Overview</MenuLink>
-                                            <MenuLink href="/about/partners">Partners & Alliances</MenuLink>
+                                            <MenuLink href="/about/partners">Partner Ecosystem</MenuLink>
                                             <MenuLink href="/about/careers">Careers</MenuLink>
                                             <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
                                                 <MenuLink href="/contact">Talk to an Expert →</MenuLink>
@@ -278,7 +278,7 @@ export default function Header() {
                     {[
                         {
                             title: "About", url: "#",
-                            links: [{ name: "Company Overview", url: "/about" }, { name: "Partners & Alliances", url: "/about/partners" }, { name: "Careers", url: "/about/careers" }, { name: "Talk to an Expert", url: "/contact" }]
+                            links: [{ name: "Company Overview", url: "/about" }, { name: "Partner Ecosystem", url: "/about/partners" }, { name: "Careers", url: "/about/careers" }, { name: "Talk to an Expert", url: "/contact" }]
                         },
                         {
                             title: "Industries", url: "#",
