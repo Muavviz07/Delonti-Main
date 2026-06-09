@@ -115,15 +115,15 @@ export default function Header() {
                         </div>
 
                         <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
-                            <Link href="/about" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
+                            <span className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6 cursor-pointer">
                                 About <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
-                            </Link>
+                            </span>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-12">
                                         <div className="col-span-3">
                                             <MenuHeader>Corporate</MenuHeader>
-                                            <MenuLink href="/about/overview">Company Overview</MenuLink>
+                                            <MenuLink href="/about">Company Overview</MenuLink>
                                             <MenuLink href="/about/partners">Partners & Alliances</MenuLink>
                                             <MenuLink href="/about/careers">Careers</MenuLink>
                                             <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/10">
@@ -150,9 +150,9 @@ export default function Header() {
                         </div>
 
                         <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
-                            <Link href="/industries" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
+                            <span className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6 cursor-pointer">
                                 Industries <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
-                            </Link>
+                            </span>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-12">
@@ -185,9 +185,9 @@ export default function Header() {
                         </div>
 
                         <div className={`relative h-full flex items-center px-2 ${forceClose ? '' : 'group'}`}>
-                            <Link href="/technology" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
+                            <span className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6 cursor-pointer">
                                 Solutions <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
-                            </Link>
+                            </span>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-12">
@@ -218,9 +218,9 @@ export default function Header() {
                         </div>
 
                         <div className="relative group h-full flex items-center px-2">
-                            <Link href="/resources" className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6">
+                            <span className="flex items-center gap-1 text-[13px] xl:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-white transition-colors h-full py-6 cursor-pointer">
                                 Resources <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-transform group-hover:-rotate-180" />
-                            </Link>
+                            </span>
                             <div className="fixed top-[60px] lg:top-[72px] left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 origin-top transform scale-y-95 group-hover:scale-y-100 z-40">
                                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                     <div className="grid grid-cols-12 gap-12">
@@ -277,11 +277,11 @@ export default function Header() {
 
                     {[
                         {
-                            title: "About", url: "/about",
-                            links: [{ name: "Company Overview", url: "/about/overview" }, { name: "Partners & Alliances", url: "/about/partners" }, { name: "Careers", url: "/about/careers" }, { name: "Talk to an Expert", url: "/contact" }]
+                            title: "About", url: "#",
+                            links: [{ name: "Company Overview", url: "/about" }, { name: "Partners & Alliances", url: "/about/partners" }, { name: "Careers", url: "/about/careers" }, { name: "Talk to an Expert", url: "/contact" }]
                         },
                         {
-                            title: "Industries", url: "/industries",
+                            title: "Industries", url: "#",
                             links: [
                                 { name: "Government", url: "/industries/government" },
                                 { name: "Education", url: "/industries/education" },
@@ -292,7 +292,7 @@ export default function Header() {
                             ]
                         },
                         {
-                            title: "Solutions", url: "/technology",
+                            title: "Solutions", url: "#",
                             links: [
                                 { name: "Asset Tracking", url: "/solutions/asset-tracking" },
                                 { name: "Inventory Intelligence", url: "/solutions/inventory-intelligence" },
@@ -301,15 +301,15 @@ export default function Header() {
                             ]
                         },
                         {
-                            title: "Resources", url: "/resources",
+                            title: "Resources", url: "#",
                             links: [{ name: "Case Studies", url: "/resources/case-studies" }, { name: "Whitepapers", url: "/resources/whitepapers" }, { name: "Business Cases", url: "/resources/business-cases" }, { name: "Blogs & Articles", url: "/resources/blogs" }, { name: "News & Announcements", url: "/resources/news" }]
                         },
                     ].map((section) => (
                         <div key={section.title} className="border-b border-gray-100 dark:border-white/10 pb-4">
-                            <div className="flex items-center justify-between w-full">
-                                <Link href={section.url} onClick={() => setIsMobileMenuOpen(false)} className="font-semibold text-lg text-slate-900 dark:text-white flex-1">
+                            <div className="flex items-center justify-between w-full cursor-pointer" onClick={() => toggleMobileMenu(section.title)}>
+                                <span className="font-semibold text-lg text-slate-900 dark:text-white flex-1">
                                     {section.title}
-                                </Link>
+                                </span>
                                 <button onClick={() => toggleMobileMenu(section.title)} className="p-2 -mr-2 text-slate-500">
                                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${activeMobileMenu === section.title ? '-rotate-180 text-primary dark:text-white' : ''}`} />
                                 </button>
