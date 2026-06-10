@@ -65,7 +65,7 @@ export default function PartnersPage() {
                 />
 
                 {/* Existing FAQ component works well here as requested */}
-                <FAQ />
+                {/* <FAQ /> */}
 
                 <ClientsSection />
 
