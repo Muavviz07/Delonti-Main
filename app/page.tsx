@@ -7,7 +7,7 @@ import CoreOfferings from "@/components/CoreOfferings";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import ClientsSection from "@/components/ClientsSection";
-import Contact from "@/components/Contact";
+import HomeContact from "@/components/HomeContact";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 import CTASection from "@/components/CTASection";
@@ -28,7 +28,7 @@ export default function Home() {
         <Industries />
         {/* <FAQ /> */}
         <ClientsSection />
-        <Contact />
+        <HomeContact />
       </main>
       <Footer />
       {/* <Chatbot /> */}

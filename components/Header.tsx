@@ -131,7 +131,7 @@ export default function Header() {
                                             </div>
                                         </div>
                                         <div className="col-span-4">
-                                            <MenuHeader>Our Mission</MenuHeader>
+                                            <MenuHeader>About Delonti</MenuHeader>
                                             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
                                                 Delonti pioneers intelligent infrastructure, empowering public and private sectors globally with secure, scalable, and fully integrated technology solutions. We bridge the gap between complex hardware and intuitive software.
                                             </p>

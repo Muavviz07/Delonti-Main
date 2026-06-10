@@ -10,21 +10,25 @@ const SOLUTIONS = [
     title: "Asset Tracking",
     subtitle: "Real-time visibility and management of critical infrastructure assets across multiple locations.",
     image: "/solutions/asset_tracking.png",
+    href: "/solutions/asset-tracking",
   },
   {
     title: "Inventory Intelligence",
     subtitle: "Automated stock monitoring and predictive analytics to optimize supply chain operations.",
     image: "/solutions/inventory_intelligence.png",
+    href: "/solutions/inventory-intelligence",
   },
   {
     title: "Workforce Safety",
     subtitle: "Advanced monitoring and instant alerting systems to ensure personnel safety in hazardous environments.",
     image: "/solutions/workforce_safety.png",
+    href: "/solutions/workforce-safety",
   },
   {
     title: "Facility Intelligence",
     subtitle: "Smart sensors and automated controls that enhance operational efficiency and security.",
     image: "/solutions/facility_intelligence.png",
+    href: "/solutions/facility-intelligence",
   },
   {
     title: "Fleet & Route Optimization",
@@ -88,53 +92,63 @@ export default function WhoWeServe() {
               transition={{ type: "spring", stiffness: 150, damping: 20 }}
               style={{ gap: `${gap}px` }}
             >
-              {SOLUTIONS.map((item, idx) => (
-                <motion.div 
-                  key={idx} 
-                  className="shrink-0"
-                  style={{ width: `${cardWidth}px` }}
-                  animate={{
-                    opacity: currentIndex === idx ? 1 : 0.3,
-                    scale: currentIndex === idx ? 1 : 0.98,
-                  }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <div className="w-full h-[550px] lg:h-[620px] bg-[#0A1A2A] rounded-2xl p-12 lg:p-16 flex flex-col relative overflow-hidden border border-slate-800 shadow-2xl group cursor-pointer transition-colors duration-500 hover:bg-[#0E2338]">
-                    <div className="flex gap-8 relative z-10 mb-12 items-start">
-                      <div className="flex flex-col items-center gap-3 shrink-0">
-                        <span className="text-logo font-black text-2xl tracking-tighter leading-none">0{idx + 1}</span>
-                        <div className="w-px h-16 bg-gradient-to-b from-logo to-transparent" />
-                      </div>
-                      <div className="flex flex-col gap-4">
-                        <h4 className="text-2xl lg:text-4xl font-bold text-white leading-[1.15] max-w-3xl">
-                          {item.title}
-                        </h4>
-                        {item.subtitle && (
-                          <p className="text-base lg:text-lg text-logo max-w-2xl leading-relaxed font-medium">
-                            {item.subtitle}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    
-                    {/* Content Section */}
-                    <div className="relative flex-1 w-full rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-900 group-hover:border-logo/30 transition-all duration-700 shadow-inner">
-                      <div 
-                        className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105" 
-                        style={{ backgroundImage: `url(${item.image})` }} 
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                      
-                      {/* Interactive Corner Accent */}
-                      <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 duration-500">
-                        <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-xl">
-                          <ArrowUpRight className="w-7 h-7 text-white" />
+              {SOLUTIONS.map((item, idx) => {
+                const isLink = !!item.href;
+                const CardWrapper = isLink ? Link : "div";
+                
+                return (
+                  <motion.div 
+                    key={idx} 
+                    className="shrink-0"
+                    style={{ width: `${cardWidth}px` }}
+                    animate={{
+                      opacity: currentIndex === idx ? 1 : 0.3,
+                      scale: currentIndex === idx ? 1 : 0.98,
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <CardWrapper 
+                      {...(isLink ? { href: item.href } : {})}
+                      className={`block w-full h-[550px] lg:h-[620px] bg-[#0A1A2A] rounded-2xl p-12 lg:p-16 flex flex-col relative overflow-hidden border border-slate-800 shadow-2xl group transition-colors duration-500 hover:bg-[#0E2338] ${isLink ? "cursor-pointer" : ""}`}
+                    >
+                      <div className="flex gap-8 relative z-10 mb-12 items-start">
+                        <div className="flex flex-col items-center gap-3 shrink-0">
+                          <span className="text-logo font-black text-2xl tracking-tighter leading-none">0{idx + 1}</span>
+                          <div className="w-px h-16 bg-gradient-to-b from-logo to-transparent" />
+                        </div>
+                        <div className="flex flex-col gap-4">
+                          <h4 className="text-2xl lg:text-4xl font-bold text-white leading-[1.15] max-w-3xl">
+                            {item.title}
+                          </h4>
+                          {item.subtitle && (
+                            <p className="text-base lg:text-lg text-logo max-w-2xl leading-relaxed font-medium">
+                              {item.subtitle}
+                            </p>
+                          )}
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                      
+                      {/* Content Section */}
+                      <div className="relative flex-1 w-full rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-900 group-hover:border-logo/30 transition-all duration-700 shadow-inner">
+                        <div 
+                          className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105" 
+                          style={{ backgroundImage: `url(${item.image})` }} 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                        
+                        {/* Interactive Corner Accent */}
+                        {isLink && (
+                          <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 duration-500">
+                            <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-xl">
+                              <ArrowUpRight className="w-7 h-7 text-white" />
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </CardWrapper>
+                  </motion.div>
+                );
+              })}
             </motion.div>
             
             {/* Navigation Arrows - Precisely at the edge of the active card */}

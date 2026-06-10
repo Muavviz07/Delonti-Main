@@ -46,11 +46,11 @@ export default function CTASection({
             </Link>
             
             <Link 
-              href="/portfolio"
+              href="/solutions"
               className="group relative px-8 py-3.5 bg-white/5 hover:bg-white/10 text-slate-500 hover:text-primary transition-all backdrop-blur-xl border border-slate-200 dark:border-white/10 flex items-center justify-center gap-3 rounded-xl overflow-hidden text-base"
             >
               <div className="absolute inset-0 w-full h-full bg-linear-to-r from-black/0 via-black/5 to-black/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              <span className="relative z-10 uppercase tracking-wider font-bold">View Our Work</span>
+              <span className="relative z-10 uppercase tracking-wider font-bold">Explore Solutions</span>
               <ChevronRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1.5" />
             </Link>
           </div>
