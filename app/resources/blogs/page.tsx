@@ -181,8 +181,7 @@ export default function BlogsPage() {
             <CTASection
                 heading="Subscribe to our Engineering Newsletter"
                 description="Receive monthly architectural deep-dives directly in your inbox."
-                buttonText="Join the Mailing List"
-                buttonHref="#subscribe"
+                isNewsletter={true}
             />
 
             <Footer />
