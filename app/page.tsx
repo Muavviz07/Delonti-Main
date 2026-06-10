@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
+
+export const metadata: Metadata = {
+  title: "Enterprise RFID, IoT & Cybersecurity Solutions | Delonti",
+  description: "Delonti delivers advanced RFID tracking, IoT sensor networks, and enterprise-grade cybersecurity solutions to power intelligent operations and visibility.",
+};
+
 import Hero from "@/components/Hero";
 import WhoWeServe from "@/components/WhoWeServe";
 import Services from "@/components/Services";

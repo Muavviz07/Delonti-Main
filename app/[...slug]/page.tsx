@@ -10,6 +10,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     const resolvedParams = await params;
     const slugArray = resolvedParams.slug || [];
     const currentPage = slugArray[slugArray.length - 1] || "";
+    
+    if (currentPage.toLowerCase() === "kiosk") {
+        return {
+            title: "Smart Kiosk Solutions | Delonti",
+            description: "RFID and AI-powered smart kiosk systems providing real-time access to public services, shelters, healthcare, and community resources.",
+        };
+    }
+
     const title = currentPage.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 
     return {
