@@ -2,14 +2,17 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Client {
   id: number;
   name: string;
   logo: string;
+  link?: string;
 }
 
 const HARDCODED_CLIENTS: Client[] = [
+  { id: 16, name: "Delq Solutions", logo: "/clients/DELQ-Logo.webp", link: "https://delqsolutions.com" },
   { id: 1, name: "Nationwide", logo: "/clients/1.jpg" },
   { id: 2, name: "Ohio Dept", logo: "/clients/2.jpg" },
   { id: 3, name: "Queralt", logo: "/clients/3.jpg" },
@@ -27,22 +30,41 @@ const HARDCODED_CLIENTS: Client[] = [
   { id: 15, name: "Zerochaos", logo: "/clients/zerochaos.jpg" },
 ];
 
-const LogoCard = ({ name, logo }: { name: string; logo: string }) => (
-  <div className="flex-none w-64 h-32 bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-xl flex items-center justify-center px-4 py-3 relative overflow-hidden transition-all duration-500 hover:border-primary/40 dark:hover:border-primary/50 group shadow-sm hover:shadow-xl hover:-translate-y-1">
-    {/* Replaced hardcoded #6366f1 with bg-primary */}
-    <div className="absolute top-0 left-0 w-full h-0 bg-primary transition-all duration-500 group-hover:h-1"></div>
-    <div className="relative w-full h-full flex items-center justify-center">
-      <Image
-        src={logo}
-        alt={name}
-        fill
-        sizes="256px"
-        className="object-contain transition-all duration-500 group-hover:scale-105"
-        priority
-      />
+const LogoCard = ({ name, logo, link }: { name: string; logo: string; link?: string }) => {
+  const isDelq = name === "Delq Solutions";
+  const content = (
+    <div className="w-full h-full bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/10 rounded-xl flex items-center justify-center px-4 py-3 relative overflow-hidden transition-all duration-500 hover:border-primary/40 dark:hover:border-primary/50 group shadow-sm hover:shadow-xl hover:-translate-y-1">
+      {/* Replaced hardcoded #6366f1 with bg-primary */}
+      <div className="absolute top-0 left-0 w-full h-0 bg-primary transition-all duration-500 group-hover:h-1"></div>
+      <div className="relative w-full h-full flex items-center justify-center">
+        <div className={`relative w-full h-full flex items-center justify-center ${isDelq ? 'scale-75' : ''}`}>
+          <Image
+            src={logo}
+            alt={name}
+            fill
+            sizes="256px"
+            className="object-contain transition-all duration-500 group-hover:scale-105"
+            priority
+          />
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+
+  if (link) {
+    return (
+      <Link href={link} target="_blank" rel="noopener noreferrer" className="flex-none w-64 h-32 block">
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="flex-none w-64 h-32">
+      {content}
+    </div>
+  );
+};
 
 export default function ClientsSection({ title }: { title?: string }) {
   const midpoint = Math.ceil(HARDCODED_CLIENTS.length / 2);
@@ -62,7 +84,7 @@ export default function ClientsSection({ title }: { title?: string }) {
           <div className="flex w-full py-2">
             <div className="animate-scroll-right flex items-center gap-8 whitespace-nowrap">
               {[...topRow, ...topRow, ...topRow].map((item, idx) => (
-                <LogoCard key={`top-${item.id}-${idx}`} name={item.name} logo={item.logo} />
+                <LogoCard key={`top-${item.id}-${idx}`} name={item.name} logo={item.logo} link={item.link} />
               ))}
             </div>
           </div>
@@ -70,7 +92,7 @@ export default function ClientsSection({ title }: { title?: string }) {
           <div className="flex w-full py-2">
             <div className="animate-scroll-left flex items-center gap-8 whitespace-nowrap">
               {[...bottomRow, ...bottomRow, ...bottomRow].map((item, idx) => (
-                <LogoCard key={`bottom-${item.id}-${idx}`} name={item.name} logo={item.logo} />
+                <LogoCard key={`bottom-${item.id}-${idx}`} name={item.name} logo={item.logo} link={item.link} />
               ))}
             </div>
           </div>

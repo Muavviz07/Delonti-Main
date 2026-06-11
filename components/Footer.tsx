@@ -78,7 +78,15 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 dark:text-slate-300">
-                    <p>© {new Date().getFullYear()} Delonti Technology Solutions. All rights reserved.</p>
+                    <div className="flex flex-col gap-1 text-center md:text-left">
+                        <p>© {new Date().getFullYear()} Delonti Technology Solutions. All rights reserved.</p>
+                        <p>
+                            Powered By{" "}
+                            <Link href="https://delqsolutions.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                                Delq Solutions
+                            </Link>
+                        </p>
+                    </div>
                     <div className="flex gap-6">
                         <Link href="/privacy" className="hover:text-white transition-colors">
                             Privacy Policy
