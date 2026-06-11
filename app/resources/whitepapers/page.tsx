@@ -25,6 +25,54 @@ const WHITEPAPERS = [
         tag: "Cybersecurity",
         description: "How organizations can adopt modern cybersecurity frameworks to protect increasingly connected infrastructure systems and maintain operational resilience in the face of growing cyber threats.",
         topics: "Cybersecurity threat landscape, Zero Trust architecture, securing infrastructure technology, integrating security into infrastructure platforms",
+    },
+    {
+        title: "Smart Campus Operations: Leveraging RFID and AI for Modern Educational Institutions",
+        tag: "Education",
+        description: "Educational institutions are under pressure to improve safety, optimize resources, and deliver better student experiences while managing growing operational complexity. This whitepaper explores how RFID, IoT, and AI technologies enable educational organizations to transform campuses into connected, intelligent environments.",
+        topics: "Campus asset tracking, Classroom resource management, Student and staff safety, Space utilization analytics, Smart campus infrastructure, Operational dashboards",
+    },
+    {
+        title: "Enhancing Public Safety Through Real-Time Operational Intelligence",
+        tag: "Public Safety",
+        description: "Public safety organizations must make rapid decisions in dynamic environments. This whitepaper examines how RFID, IoT, and AI technologies improve situational awareness, personnel accountability, equipment readiness, and emergency response effectiveness.",
+        topics: "Law enforcement asset tracking, First responder visibility, Emergency response coordination, Facility monitoring, Incident command dashboards, Workforce safety monitoring",
+    },
+    {
+        title: "Transforming Healthcare Operations with RFID and AI",
+        tag: "Healthcare",
+        description: "Healthcare organizations face increasing pressure to improve patient outcomes while controlling operational costs. This whitepaper explores how RFID and AI enable real-time visibility across equipment, supplies, facilities, and healthcare operations.",
+        topics: "Medical equipment tracking, Healthcare inventory management, Facility intelligence, Operational analytics, Patient service access platforms, Compliance monitoring",
+    },
+    {
+        title: "Smart Manufacturing: Improving Productivity Through Connected Operations",
+        tag: "Manufacturing",
+        description: "Manufacturers need real-time operational visibility to improve productivity, reduce downtime, and optimize resources. This whitepaper demonstrates how RFID, IoT, and AI enable intelligent manufacturing environments.",
+        topics: "Tool and equipment tracking, Inventory intelligence, Production monitoring, Workforce safety, Predictive maintenance, Facility intelligence",
+    },
+    {
+        title: "Supply Chain Visibility: Building Intelligent Logistics Networks",
+        tag: "Supply Chain",
+        description: "Modern supply chains require real-time visibility to improve efficiency, reduce costs, and meet customer expectations. This whitepaper explores how RFID and AI technologies transform inventory management, logistics, and distribution operations.",
+        topics: "Warehouse inventory management, Distribution monitoring, Retail inventory tracking, Logistics optimization, Shipment visibility, Supply chain analytics",
+    },
+    {
+        title: "Workforce Safety in the Connected Enterprise",
+        tag: "Workforce Safety",
+        description: "Organizations are increasingly focused on improving worker safety while maintaining operational performance. This whitepaper examines how RFID, IoT, and AI technologies provide real-time workforce visibility and proactive safety management.",
+        topics: "Workforce tracking, PPE compliance, SOS and emergency alerts, Environmental monitoring, Restricted area management, Safety analytics",
+    },
+    {
+        title: "Smart Public Service Access Platforms: Bridging Communities to Critical Services",
+        tag: "Public Service",
+        description: "Communities face growing challenges connecting vulnerable populations to essential services. This whitepaper explores how smart kiosk platforms improve access to healthcare, housing, government services, and community resources.",
+        topics: "Smart public service kiosks, Homeless services access, Shelter availability, Healthcare referrals, Government service delivery, Community engagement analytics",
+    },
+    {
+        title: "The RFID + AI Playbook: A Practical Guide to Operational Intelligence",
+        tag: "Playbook",
+        description: "Delonti's flagship guide to operational intelligence. This whitepaper explores how RFID and AI technologies transform environments across Government, Education, Healthcare, Manufacturing, Supply Chain, and Public Safety.",
+        topics: "What is operational intelligence?, RFID fundamentals, AI-powered analytics, Industry use cases, Platform architecture, Implementation roadmap, ROI framework, Future trends",
     }
 ];
 
