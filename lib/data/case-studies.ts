@@ -607,7 +607,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070",
+        image: "/images/supply-chain/warehouse_inventory.png",
         href: "/resources/case-studies/warehouse-inventory-tracking"
     },
     {
@@ -654,7 +654,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1521791136368-1a8b25757d5f?q=80&w=2070",
+        image: "/images/supply-chain/distribution_monitoring.png",
         href: "/resources/case-studies/distribution-monitoring"
     },
     {
@@ -701,7 +701,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070",
+        image: "/images/supply-chain/retail_inventory.png",
         href: "/resources/case-studies/retail-inventory-management"
     },
     {
@@ -748,7 +748,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=2070",
+        image: "/images/supply-chain/logistics_optimization.png",
         href: "/resources/case-studies/logistics-optimization"
     },
     {
@@ -795,7 +795,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070",
+        image: "/images/supply-chain/reverse_logistics.png",
         href: "/resources/case-studies/reverse-logistics-returns-management"
     },
     // Public Safety Use Cases
@@ -843,7 +843,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070",
+        image: "/images/public-safety/police_asset_tracking.png",
         href: "/resources/case-studies/law-enforcement-asset-tracking"
     },
     {
@@ -890,7 +890,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1610366374828-d3c267232230?q=80&w=2070",
+        image: "/images/public-safety/emergency_coordination.png",
         href: "/resources/case-studies/emergency-response-coordination"
     },
     {
@@ -937,7 +937,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=2070",
+        image: "/images/public-safety/equipment_management.png",
         href: "/resources/case-studies/equipment-management-public-safety"
     },
     {
@@ -984,7 +984,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070",
+        image: "/images/public-safety/facility_monitoring.png",
         href: "/resources/case-studies/facility-monitoring-public-safety"
     },
     {
@@ -1031,7 +1031,7 @@ export const CASE_STUDIES = [
             buttonText: "Request Demo",
             link: "/contact"
         },
-        image: "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?q=80&w=2070",
+        image: "/images/public-safety/responder_safety.png",
         href: "/resources/case-studies/officer-first-responder-safety-monitoring"
     }
 ];
