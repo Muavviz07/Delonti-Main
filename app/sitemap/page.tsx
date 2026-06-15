@@ -17,17 +17,9 @@ export default function SitemapPage() {
             links: [
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
-                { label: "Leadership", href: "/about#leadership" },
-                { label: "Partners", href: "/about/partners" },
+                { label: "Partner Ecosystem", href: "/about/partners" },
+                { label: "Careers", href: "/about/careers" },
                 { label: "Contact Us", href: "/contact" }
-            ]
-        },
-        {
-            category: "Platform",
-            icon: Cpu,
-            links: [
-                { label: "Platform Overview", href: "/technology" },
-                { label: "Platform Architecture", href: "/technology#architecture" }
             ]
         },
         {
@@ -37,8 +29,7 @@ export default function SitemapPage() {
                 { label: "Asset Tracking", href: "/solutions/asset-tracking" },
                 { label: "Inventory Intelligence", href: "/solutions/inventory-intelligence" },
                 { label: "Workforce Safety", href: "/solutions/workforce-safety" },
-                { label: "Facility Intelligence", href: "/solutions/facility-intelligence" },
-                { label: "Smart Public Service Access Platform", href: "/kiosk" }
+                { label: "Facility Intelligence", href: "/solutions/facility-intelligence" }
             ]
         },
         {
@@ -57,11 +48,12 @@ export default function SitemapPage() {
             category: "Resources",
             icon: FileText,
             links: [
-                { label: "Technology Insights", href: "/resources" },
-                { label: "Whitepapers", href: "/resources/whitepapers" },
+                { label: "Resources Hub", href: "/resources" },
                 { label: "Case Studies", href: "/resources/case-studies" },
-                { label: "Blogs", href: "/resources/blogs" },
-                { label: "Videos", href: "/resources/solution-videos" }
+                { label: "Whitepapers", href: "/resources/whitepapers" },
+                { label: "Business Cases", href: "/resources/business-cases" },
+                { label: "Blogs & Articles", href: "/resources/blogs" },
+                { label: "Solution Videos", href: "/resources/solution-videos" }
             ]
         },
         {
