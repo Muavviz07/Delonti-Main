@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-primary text-white py-16 dark:bg-black dark:border-t dark:border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 xl:gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 mb-16">
                     <div>
                         {/* WRAPPED LOGO IN LINK TO HOME & REDUCED SIZE */}
                         <div className="flex items-center gap-2 mb-6">
@@ -84,24 +84,10 @@ export default function Footer() {
                             <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                         </ul>
                     </div>
-
-                    <div>
-                        <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Legal & Trust</h5>
-                        <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
-                            <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                            <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                            <li><Link href="/compliance" className="hover:text-white transition-colors">Security & Compliance</Link></li>
-                            <li><Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link></li>
-                            <li><Link href="/cookie-preferences" className="hover:text-white transition-colors">Cookie Preferences</Link></li>
-                            <li><Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link></li>
-                            <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
-                            <li><Link href="/sitemap" className="hover:text-white transition-colors">Site Map</Link></li>
-                        </ul>
-                    </div>
                 </div>
 
-                <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 dark:text-slate-300">
-                    <div className="flex flex-col gap-1 text-center md:text-left">
+                <div className="pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-6 text-xs text-slate-400 dark:text-slate-300">
+                    <div className="flex flex-col gap-1 text-center lg:text-left">
                         <p>© {new Date().getFullYear()} Delonti Technology Solutions. All rights reserved.</p>
                         <p>
                             Powered By{" "}
@@ -109,6 +95,16 @@ export default function Footer() {
                                 Delq Solutions
                             </Link>
                         </p>
+                    </div>
+                    <div className="flex flex-wrap justify-center lg:justify-end gap-x-4 xl:gap-x-6 gap-y-2 text-center lg:text-right">
+                        <Link href="/privacy" className="hover:text-white transition-colors whitespace-nowrap">Privacy Policy</Link>
+                        <Link href="/terms" className="hover:text-white transition-colors whitespace-nowrap">Terms of Service</Link>
+                        <Link href="/compliance" className="hover:text-white transition-colors whitespace-nowrap">Security & Compliance</Link>
+                        <Link href="/cookie-policy" className="hover:text-white transition-colors whitespace-nowrap">Cookie Policy</Link>
+                        <Link href="/cookie-preferences" className="hover:text-white transition-colors whitespace-nowrap">Cookie Preferences</Link>
+                        <Link href="/accessibility" className="hover:text-white transition-colors whitespace-nowrap">Accessibility</Link>
+                        <Link href="/responsible-ai" className="hover:text-white transition-colors whitespace-nowrap">Responsible AI</Link>
+                        <Link href="/sitemap" className="hover:text-white transition-colors whitespace-nowrap">Site Map</Link>
                     </div>
                 </div>
             </div>
