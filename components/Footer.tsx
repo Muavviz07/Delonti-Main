@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-primary text-white py-16 dark:bg-black dark:border-t dark:border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 xl:gap-12 mb-16">
                     <div>
                         {/* WRAPPED LOGO IN LINK TO HOME & REDUCED SIZE */}
                         <div className="flex items-center gap-2 mb-6">
@@ -80,8 +80,22 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
                             <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
                             <li><Link href="/about/careers" className="hover:text-white transition-colors">Careers</Link></li>
-                            <li><Link href="/resources" className="hover:text-white transition-colors">Insights & Resources</Link></li>
-                            <li><Link href="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
+                            <li><Link href="/resources" className="hover:text-white transition-colors">Resources</Link></li>
+                            <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Legal & Trust</h5>
+                        <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
+                            <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                            <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                            <li><Link href="/compliance" className="hover:text-white transition-colors">Security & Compliance</Link></li>
+                            <li><Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link></li>
+                            <li><Link href="/cookie-preferences" className="hover:text-white transition-colors">Cookie Preferences</Link></li>
+                            <li><Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link></li>
+                            <li><Link href="/responsible-ai" className="hover:text-white transition-colors">Responsible AI</Link></li>
+                            <li><Link href="/sitemap" className="hover:text-white transition-colors">Site Map</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -95,17 +109,6 @@ export default function Footer() {
                                 Delq Solutions
                             </Link>
                         </p>
-                    </div>
-                    <div className="flex gap-6">
-                        <Link href="/privacy" className="hover:text-white transition-colors">
-                            Privacy Policy
-                        </Link>
-                        <Link href="/terms" className="hover:text-white transition-colors">
-                            Terms of Service
-                        </Link>
-                        <Link href="/compliance" className="hover:text-white transition-colors">
-                            Security Compliance
-                        </Link>
                     </div>
                 </div>
             </div>
