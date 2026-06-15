@@ -81,7 +81,7 @@ export default function Header() {
 
                             {/* Light theme → show dark logo */}
                             <Image
-                                src="/logo-dark(blue-text).png"
+                                src="/Final delonti-logo-transparent.png"
                                 alt="Delonti Logo"
                                 width={150}
                                 height={38}
