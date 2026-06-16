@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Video } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -47,8 +47,8 @@ export default function Footer() {
                             <Link href="https://www.linkedin.com/company/delonti/about/" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
                                 <Linkedin size={20} />
                             </Link>
-                            <Link href="https://youtube.com" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
-                                <Youtube size={20} />
+                            <Link href="https://vimeo.com/user229813684" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Video size={20} />
                             </Link>
                         </div>
                     </div>
