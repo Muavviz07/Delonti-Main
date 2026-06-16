@@ -9,41 +9,75 @@ const GROQ_BASE_URL = process.env.GROQ_BASE_URL || "https://api.groq.com/openai/
 const DEFAULT_API_KEY = process.env.GROQ_API_KEY || "";
 const DEFAULT_MODEL = process.env.OPENAI_MODEL || "llama-3.1-8b-instant";
 
-const COMPANY_INFO = `Delonti Technology Solutions is a premier technology solutions provider.
+const COMPANY_INFO = `Delonti Technology Solutions is a premier technology solutions provider specializing in RFID, IoT, and Cybersecurity.
 
 ABOUT DELONTI:
 - Delonti pioneers intelligent infrastructure, empowering public and private sectors globally with secure, scalable, and fully integrated technology solutions.
 - With a decade of experience serving both public and private sectors, Delonti specializes in high-stakes environments where security and reliability are non-negotiable.
 - Through strategic partnerships with industry leaders like Verizon, Delonti delivers government-grade excellence and scalable technology across the globe.
 
-SERVICES:
-1. RFID & IoT Solutions: Asset tracking, inventory management, supply chain visibility
-2. Cybersecurity: Zero Trust security frameworks, identity-based access controls, continuous monitoring
-3. Data & Analytics: Business intelligence, predictive analytics, real-time dashboards
-4. Cloud & IT: Cloud migration, managed IT services, infrastructure modernization
-5. Technical Staffing: Pre-vetted software developers, DevOps engineers, IT administrators
+LATEST SOLUTIONS (ACTIVE PAGES & DETAILS):
+1. Asset Tracking (/solutions/asset-tracking):
+   - Real-time tracking and monitoring of equipment, tools, and high-value physical assets using RFID tags, IoT sensors, cloud telemetry, and AI utilization insights.
+   - Applications: Government departments, Healthcare equipment, Manufacturing tools, and Warehouse asset/equipment tracking.
+   - Assets Tracked: IT assets (computers, laptops), manufacturing equipment, medical devices, vehicles & fleets, inventory containers, tools & instruments, furniture & fixtures, and critical infrastructure.
+   - Key Benefits: Reduce asset loss, improve utilization rates, fast audit cycles, increase warehouse and office efficiency.
+2. Inventory Intelligence (/solutions/inventory-intelligence):
+   - Automated inventory stock tracking, real-time quantity monitoring, and supply chain visibility.
+   - Leverages RFID sensors and automated count cycles to prevent shrinkage, automate restocking alerts, and eliminate manual audits.
+3. Workforce Safety (/solutions/workforce-safety):
+   - Advanced personnel monitoring and instant alert systems for hazardous environments.
+   - Features: Real-time zone tracking, fall detection, wearable sensor integration, environmental safety alerts, and automated evacuation telemetry.
+4. Facility Intelligence (/solutions/facility-intelligence):
+   - Smart building automation and facility telemetry using connected IoT sensors.
+   - Integrates building management systems (BMS), optimizes HVAC/lighting energy usage, tracks real-time room occupancy, and manages physical access controls.
 
-SECTORS SERVED:
-- Government: Public infrastructure, intelligence community, public safety, and state & local agencies
-- Education & Healthcare: Smart school grids, digital health systems, and patient kiosks
-- Manufacturing & Supply Chain: Global asset tracking, inventory optimization, and logistics
+LATEST INDUSTRIES SERVED (ACTIVE PAGES & DETAILS):
+1. Government (/industries/government):
+   - Connects civilian, public safety, and administrative divisions with secure digital infrastructure.
+   - Deploys Smart Kiosk platforms providing real-time local community resources (shelter availability, healthcare referrals, public service directories).
+   - Strategic partnership with Verizon to deliver secure regional data routing and public service access grids.
+2. Healthcare (/industries/healthcare):
+   - Clinical equipment localization, medical device inventory management, and patient registration integrations.
+   - Deploys Smart Patient Service Access Kiosks for check-in registration, wayfinding maps, and patient flow analytics.
+3. Education (/industries/education):
+   - Smart school grids, building access controls, and campus security systems.
+   - Asset tracking for school lab equipment, books, IT hardware, and student safety monitoring.
+4. Manufacturing (/industries/manufacturing):
+   - Production line telemetry, tooling/mold tracking, predictive machine maintenance alerts, and raw material routing.
+5. Supply Chain (/industries/supply-chain):
+   - Retail store visibility, multi-warehouse automation, container and logistics route optimization, and AI-driven predictive replenishment.
+6. Public Safety (/industries/public-safety):
+   - Cleared communication grids, emergency responder real-time zone tracking, and automated dispatch management.
 
-KEY PAGES ON WEBSITE:
-- /industries/government - Government sector solutions
-- /industries/education - Education sector solutions
-- /industries/healthcare - Healthcare sector solutions
-- /industries/manufacturing - Manufacturing sector solutions
-- /industries/supply-chain - Supply Chain & Logistics solutions
-- /industries/public-safety - Public Safety solutions
-- /solutions/asset-tracking - Asset Tracking capabilities
-- /solutions/inventory-intelligence - Inventory Intelligence systems
-- /solutions/workforce-safety - Workforce Safety solutions
-- /solutions/facility-intelligence - Facility Intelligence configurations
-- /technology - Technology & architecture methodologies
-- /resources - Case studies, whitepapers, blogs
-- /contact - Contact information
+CORPORATE & RESOURCE PAGES:
+- Company Overview (/about): Delonti's mission, executive profile, and corporate history of bridging complex hardware with intuitive software.
+- Partner Ecosystem (/about/partners): Our ecosystem of network operators, hardware manufacturers, and cloud platforms (led by Verizon).
+- Careers (/about/careers): Global job opportunities for pre-vetted engineers, software developers, DevOps personnel, and administrators.
+- Resources Hub (/resources): The central knowledge base linking to whitepapers, case studies, blogs, and videos.
+- Case Studies (/resources/case-studies): Detailed analysis of real-world deployments (e.g. RFID tracking, smart kiosk platforms).
+- Engineering Blog (/resources/blogs): Architectural insights, release updates, and technical articles written by our engineering team.
+- Public Sector Insights (/resources/insights): Specialized articles and research on government modernization, smart city grids, and compliance.
+- Solution Videos (/resources/solution-videos): Video gallery demonstrating live product features and hardware demos.
+- Business Cases (/resources/business-cases): Financial ROI models, procurement toolkits, and investment decision support guides.
+- Whitepapers (/resources/whitepapers): In-depth research papers on security, compliance standards (OMB M-22-09, DISA IL5, ITAR), and RFID/IoT architectures.
+- Contact Us (/contact): Inquiry forms for expert consultation, custom quotes, and product demos.
 
-IMPORTANT: You must ONLY answer questions related to Delonti company, its services, sectors, or related technology topics. If asked about unrelated topics, politely redirect to Delonti's offerings.`;
+LEGAL & COMPLIANCE PAGES:
+- /privacy (Privacy Policy)
+- /terms (Terms of Service)
+- /compliance (Security & Compliance)
+- /cookie-policy (Cookie Policy)
+- /cookie-preferences (Cookie Preferences)
+- /accessibility (Accessibility Statement)
+- /responsible-ai (Responsible AI Statement)
+- /sitemap (Visual Page Map)
+
+CRITICAL RULES FOR RESPONDING:
+1. ONLY answer queries using the facts and paths explicitly defined in the context above.
+2. Do NOT invent services, features, pages, case studies, or partners that are not mentioned in this document.
+3. If asked about a topic or service not in this directory (e.g. non-existent pages like /federal, /state, or /private), politely explain that the page/service is not part of Delonti's current offerings, and guide the user to the active solutions, industries, or contact pages.
+4. Ensure all URLs mentioned to the user match the exact path list above.`;
 
 const contactLeadTool = tool(
   async (args: ContactInfo) => {
