@@ -24,15 +24,22 @@ SERVICES:
 5. Technical Staffing: Pre-vetted software developers, DevOps engineers, IT administrators
 
 SECTORS SERVED:
-- Federal Government: Department of Defense, Intelligence Community, civilian federal agencies
-- State & Local Government: Smart cities, transportation, public safety, education
-- Enterprise: Large organizations requiring integrated technology platforms
-- SMB: Small and mid-sized businesses needing cost-effective technology solutions
+- Government: Public infrastructure, intelligence community, public safety, and state & local agencies
+- Education & Healthcare: Smart school grids, digital health systems, and patient kiosks
+- Manufacturing & Supply Chain: Global asset tracking, inventory optimization, and logistics
 
 KEY PAGES ON WEBSITE:
-- /federal - Federal government solutions
-- /state - State and local government solutions  
-- /private - Private sector solutions (Enterprise & SMB)
+- /industries/government - Government sector solutions
+- /industries/education - Education sector solutions
+- /industries/healthcare - Healthcare sector solutions
+- /industries/manufacturing - Manufacturing sector solutions
+- /industries/supply-chain - Supply Chain & Logistics solutions
+- /industries/public-safety - Public Safety solutions
+- /solutions/asset-tracking - Asset Tracking capabilities
+- /solutions/inventory-intelligence - Inventory Intelligence systems
+- /solutions/workforce-safety - Workforce Safety solutions
+- /solutions/facility-intelligence - Facility Intelligence configurations
+- /technology - Technology & architecture methodologies
 - /resources - Case studies, whitepapers, blogs
 - /contact - Contact information
 
