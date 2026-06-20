@@ -118,8 +118,8 @@ export default function NotFound() {
                             The requested infrastructure route could not be resolved. Trigger a network ping scan to search for alternate active gateways.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
-                            <button 
+                        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                            {/* <button 
                                 onClick={triggerPing}
                                 disabled={scanState === "scanning"}
                                 className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 border rounded-xl text-sm font-bold tracking-wider uppercase transition-all shadow-md active:scale-98 ${
@@ -130,10 +130,10 @@ export default function NotFound() {
                             >
                                 <RefreshCw className={`w-4 h-4 ${scanState === "scanning" ? "animate-spin" : ""}`} />
                                 Send Network Ping
-                            </button>
+                            </button> */}
                             <Link
                                 href="/"
-                                className="inline-flex items-center justify-center px-8 py-3.5 border border-slate-200 dark:border-white/10 text-sm font-bold rounded-xl text-slate-700 dark:text-white bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all shadow-sm hover:-translate-y-0.5 uppercase tracking-wider"
+                                className="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-sm font-bold rounded-xl text-white bg-logo hover:bg-logo/90 transition-all shadow-md hover:-translate-y-0.5 uppercase tracking-wider cursor-pointer"
                             >
                                 Go Back Home
                             </Link>
