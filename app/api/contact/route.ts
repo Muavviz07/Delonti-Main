@@ -24,36 +24,16 @@ export async function POST(request: NextRequest) {
         }
 
         // Configure transporter based on environment variables
-        let transporter;
-        let fromEmail = "Delonti Website <info@delonti.com>";
-
-        if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
-            // Use Gmail SMTP if user configured it
-            transporter = nodemailer.createTransport({
-                service: "gmail",
-                auth: {
-                    user: process.env.GMAIL_USER,
-                    pass: process.env.GMAIL_APP_PASSWORD,
-                },
-            });
-            fromEmail = `"Delonti Website" <${process.env.GMAIL_USER}>`;
-        } else {
-            // Fallback to standard SMTP settings (or defaults from lib/email.ts)
-            transporter = nodemailer.createTransport({
-                host: process.env.EMAIL_HOST || "mail.suhaiblabs.info",
-                port: parseInt(process.env.EMAIL_PORT || "587"),
-                secure: false,
-                tls: {
-                    rejectUnauthorized: false,
-                },
-                auth: {
-                    user: process.env.EMAIL_USER || "me@suhaiblabs.info",
-                    pass: process.env.EMAIL_PASS || "suhaib123",
-                },
-            });
-            fromEmail = process.env.EMAIL_FROM || "Delonti Contact <me@suhaiblabs.info>";
-        }
-
+        const transporter = nodemailer.createTransport({
+            host: process.env.EMAIL_HOST || "smtp.gmail.com",
+            port: parseInt(process.env.EMAIL_PORT || "465"),
+            secure: (process.env.EMAIL_PORT || "465") === "465",
+            auth: {
+                user: process.env.EMAIL_USER || process.env.GMAIL_USER || "",
+                pass: process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD || "",
+            },
+        });
+        const fromEmail = process.env.EMAIL_FROM || process.env.GMAIL_USER || "muhammedmuavviz@gmail.com";
         const recipientEmail = process.env.RECIPIENT_EMAIL || process.env.EMAIL_TO || "muhammedmuavviz@gmail.com";
 
         // Build HTML table rows for custom fields

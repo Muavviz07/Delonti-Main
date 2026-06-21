@@ -1,15 +1,12 @@
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST || "mail.suhaiblabs.info",
-  port: parseInt(process.env.EMAIL_PORT || "587"),
-  secure: false,
-  tls: {
-    rejectUnauthorized: false,
-  },
+  host: process.env.EMAIL_HOST || "smtp.gmail.com",
+  port: parseInt(process.env.EMAIL_PORT || "465"),
+  secure: (process.env.EMAIL_PORT || "465") === "465",
   auth: {
-    user: process.env.EMAIL_USER || "me@suhaiblabs.info",
-    pass: process.env.EMAIL_PASS || "suhaib123",
+    user: process.env.EMAIL_USER || process.env.GMAIL_USER || "",
+    pass: process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD || "",
   },
 });
 
@@ -23,8 +20,8 @@ export interface ContactInfo {
 }
 
 export async function sendContactEmail(contact: ContactInfo): Promise<string> {
-  const to = process.env.EMAIL_TO || "suhaib.palli@gmail.com";
-  const from = process.env.EMAIL_FROM || "Delonti AI <me@suhaiblabs.info>";
+  const to = process.env.EMAIL_TO || "muhammedmuavviz@gmail.com";
+  const from = process.env.EMAIL_FROM || "Delonti AI <muhammedmuavviz@gmail.com>";
 
   const subject = `New Inquiry from ${contact.name || "Website Visitor"} - ${
     contact.interest || "General"

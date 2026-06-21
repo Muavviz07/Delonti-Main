@@ -34,14 +34,17 @@ export async function POST(request: NextRequest) {
 
         // Configure transporter
         const transporter = nodemailer.createTransport({
-            service: "gmail",
+            host: process.env.EMAIL_HOST || "smtp.gmail.com",
+            port: parseInt(process.env.EMAIL_PORT || "465"),
+            secure: (process.env.EMAIL_PORT || "465") === "465",
             auth: {
-                user: process.env.GMAIL_USER,
-                pass: process.env.GMAIL_APP_PASSWORD,
+                user: process.env.EMAIL_USER || process.env.GMAIL_USER || "",
+                pass: process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD || "",
             },
         });
 
-        const recipientEmail = process.env.RECIPIENT_EMAIL || "muhammedmuavviz@gmail.com";
+        const recipientEmail = process.env.RECIPIENT_EMAIL || process.env.EMAIL_TO || "muhammedmuavviz@gmail.com";
+        const fromEmail = process.env.EMAIL_FROM || process.env.GMAIL_USER || "muhammedmuavviz@gmail.com";
 
         const htmlBody = `
       <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto; padding: 24px; background: #f8fafc; border-radius: 12px;">
@@ -81,7 +84,7 @@ export async function POST(request: NextRequest) {
     `;
 
         await transporter.sendMail({
-            from: `"Delonti Careers" <${process.env.GMAIL_USER}>`,
+            from: `"Delonti Careers" <${fromEmail}>`,
             to: recipientEmail,
             subject: `New Application: ${jobTitle} (${jobCode}) — ${fullName}`,
             html: htmlBody,

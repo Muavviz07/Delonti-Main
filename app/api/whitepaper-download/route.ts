@@ -14,17 +14,15 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Whitepaper/Business Case title is required' }, { status: 400 });
         }
 
-        const recipientEmail = process.env.RECIPIENT_EMAIL;
-        const gmailUser = process.env.GMAIL_USER;
-        const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
-
-        if (!recipientEmail || !gmailUser || !gmailAppPassword) {
-            console.error('Missing required email environment variables (RECIPIENT_EMAIL, GMAIL_USER, GMAIL_APP_PASSWORD)');
-            return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
-        }
+        const recipientEmail = process.env.RECIPIENT_EMAIL || process.env.EMAIL_TO || "muhammedmuavviz@gmail.com";
+        const fromEmail = process.env.EMAIL_FROM || process.env.EMAIL_USER || process.env.GMAIL_USER || "muhammedmuavviz@gmail.com";
+        const gmailUser = process.env.EMAIL_USER || process.env.GMAIL_USER || "";
+        const gmailAppPassword = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD || "";
 
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: process.env.EMAIL_HOST || "smtp.gmail.com",
+            port: parseInt(process.env.EMAIL_PORT || "465"),
+            secure: (process.env.EMAIL_PORT || "465") === "465",
             auth: {
                 user: gmailUser,
                 pass: gmailAppPassword,
@@ -32,7 +30,7 @@ export async function POST(request: NextRequest) {
         });
 
         const mailOptions = {
-            from: gmailUser,
+            from: fromEmail,
             to: recipientEmail,
             subject: `Whitepaper Download Request — ${whitepaperTitle}`,
             html: `
