@@ -23,11 +23,11 @@ export default function Footer() {
                                 />
                                 {/* Dark theme or footer bg context → show light logo */}
                                 <Image
-                                    src="/logo-light-blue.png"
+                                    src="/Delonti Logo Final V1.0 transparent Dark.png"
                                     alt="Delonti Logo"
-                                    width={140}
-                                    height={35}
-                                    className="hidden dark:block h-7 lg:h-9 w-auto object-contain"
+                                    width={160}
+                                    height={40}
+                                    className="hidden dark:block h-[32px] lg:h-[40px] w-auto object-contain"
                                 />
                             </Link>
                         </div>
