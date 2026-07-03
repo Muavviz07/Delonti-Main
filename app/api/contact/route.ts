@@ -34,7 +34,19 @@ export async function POST(request: NextRequest) {
             },
         });
         const fromEmail = process.env.EMAIL_FROM || process.env.GMAIL_USER || "muhammedmuavviz@gmail.com";
-        const recipientEmail = process.env.RECIPIENT_EMAIL || process.env.EMAIL_TO || "muhammedmuavviz@gmail.com";
+        
+        // Map tab IDs to the respective department emails
+        const emailMap: Record<string, string> = {
+            hq: "info@delonti.com",
+            sales: "Sales@delonti.com",
+            partnerships: "Partnerships@delonti.com",
+            government: "GovInquiries@delonti.com",
+            support: "support@delonti.com",
+            demo: "ReqDemo@delonti.com",
+        };
+
+        const targetDeptEmail = emailMap[tabId] || "info@delonti.com";
+        const recipientEmail = process.env.RECIPIENT_EMAIL || process.env.EMAIL_TO || targetDeptEmail;
 
         // Build HTML table rows for custom fields
         let customRows = "";

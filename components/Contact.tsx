@@ -11,6 +11,7 @@ interface Tab {
     badge: string;
     heading: string;
     subtext: string;
+    email: string;
 }
 
 export default function Contact() {
@@ -22,6 +23,7 @@ export default function Contact() {
             badge: "Contact Us",
             heading: "Ready to Innovate?",
             subtext: "Whether you represent a federal agency, city office, or private enterprise, select the channel below to connect with our dedicated teams.",
+            email: "info@delonti.com",
         },
         {
             id: "sales",
@@ -30,6 +32,7 @@ export default function Contact() {
             badge: "Enterprise Sales",
             heading: "Drive Operational Growth",
             subtext: "Discuss pricing plans, enterprise licensing, custom IoT integrations, and system architecture deployments with our sales engineers.",
+            email: "Sales@delonti.com",
         },
         {
             id: "partnerships",
@@ -38,6 +41,7 @@ export default function Contact() {
             badge: "Global Ecosystem",
             heading: "Partner With Delonti",
             subtext: "Integrate your hardware solutions, cloud infrastructure, or specialized developer services to expand the capabilities of the Delonti platform.",
+            email: "Partnerships@delonti.com",
         },
         {
             id: "government",
@@ -46,6 +50,7 @@ export default function Contact() {
             badge: "Gov & Compliance",
             heading: "Secure Public Systems",
             subtext: "Discuss state-specific procurement contracts, federal Zero-Trust directives, RFP submission materials, and municipal infrastructure compliance.",
+            email: "GovInquiries@delonti.com",
         },
         {
             id: "support",
@@ -54,6 +59,7 @@ export default function Contact() {
             badge: "Technical Support",
             heading: "Here to Assist You",
             subtext: "Submit technical support tickets, request hardware diagnostic reports, or check SLA status updates for active RFID and IoT networks.",
+            email: "support@delonti.com",
         },
         {
             id: "demo",
@@ -62,6 +68,7 @@ export default function Contact() {
             badge: "Product Demo",
             heading: "See Delonti in Action",
             subtext: "Schedule a live, personalized platform walkthrough with an engineer to evaluate real-time tracking dashboards, sensors, and API integrations.",
+            email: "ReqDemo@delonti.com",
         },
     ];
 
@@ -144,6 +151,33 @@ export default function Contact() {
         }
     };
 
+    const renderDepartmentInfo = (email: string) => {
+        return (
+            <div className="p-5 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-white/5 space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex items-center gap-4">
+                        <Phone className="w-5 h-5 text-primary dark:text-blue-400 shrink-0" />
+                        <div>
+                            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-0.5">Corporate Phone</p>
+                            <a href="tel:860-460-8428" className="text-sm font-bold text-slate-900 dark:text-white hover:text-logo dark:hover:text-blue-400 transition-colors">
+                                860-460-8428
+                            </a>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <Mail className="w-5 h-5 text-primary dark:text-blue-400 shrink-0" />
+                        <div>
+                            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-0.5">Department Email</p>
+                            <a href={`mailto:${email}`} className="text-sm font-bold text-slate-900 dark:text-white hover:text-logo dark:hover:text-blue-400 transition-colors">
+                                {email}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
     // Render corresponding form fields based on active tab
     const renderFormFields = () => {
         switch (activeTab.id) {
@@ -215,6 +249,7 @@ export default function Contact() {
             case "sales":
                 return (
                     <div className="space-y-5">
+                        {renderDepartmentInfo(activeTab.email)}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
                                 <label className="block text-xs font-bold text-slate-550 dark:text-slate-400 uppercase tracking-widest mb-2">Full Name *</label>
@@ -273,6 +308,7 @@ export default function Contact() {
             case "partnerships":
                 return (
                     <div className="space-y-5">
+                        {renderDepartmentInfo(activeTab.email)}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
                                 <label className="block text-xs font-bold text-slate-550 dark:text-slate-400 uppercase tracking-widest mb-2">Contact Name *</label>
@@ -312,6 +348,7 @@ export default function Contact() {
             case "government":
                 return (
                     <div className="space-y-5">
+                        {renderDepartmentInfo(activeTab.email)}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
                                 <label className="block text-xs font-bold text-slate-550 dark:text-slate-400 uppercase tracking-widest mb-2">Contact Name *</label>
@@ -351,6 +388,7 @@ export default function Contact() {
             case "support":
                 return (
                     <div className="space-y-5">
+                        {renderDepartmentInfo(activeTab.email)}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
                                 <label className="block text-xs font-bold text-slate-550 dark:text-slate-400 uppercase tracking-widest mb-2">Full Name *</label>
@@ -388,6 +426,7 @@ export default function Contact() {
             case "demo":
                 return (
                     <div className="space-y-5">
+                        {renderDepartmentInfo(activeTab.email)}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
                                 <label className="block text-xs font-bold text-slate-550 dark:text-slate-400 uppercase tracking-widest mb-2">Full Name *</label>
