@@ -26,7 +26,7 @@ export default function AdminLoginPage() {
             })
 
             if (res.ok) {
-                router.push('/admin/careers')
+                router.push('/admin')
             } else if (res.status === 401) {
                 setError("Invalid username or password")
             } else {

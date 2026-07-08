@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
     }
 
     if (isLoginPage && session) {
-        return NextResponse.redirect(new URL('/admin/careers', request.url))
+        return NextResponse.redirect(new URL('/admin', request.url))
     }
 
     if (!isLoginPage && !session) {
