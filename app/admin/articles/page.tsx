@@ -183,8 +183,22 @@ export default function ArticleAdminPage() {
             <div className="bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 sticky top-0 z-40">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <Image src="/logo-dark(blue-text).png" alt="Delonti" width={150} height={38} className="h-8 w-auto object-contain" />
-                        <Image src="/logo-light.png" alt="Delonti" width={120} height={30} className="h-7 w-auto object-contain hidden dark:block" />
+                        <Image
+                            src="/Final delonti-logo-transparent.png"
+                            alt="Delonti Logo"
+                            width={150}
+                            height={38}
+                            className="h-8 w-auto object-contain dark:hidden"
+                            priority
+                        />
+                        <Image
+                            src="/Delonti Logo Final V1.0 transparent Dark.png"
+                            alt="Delonti Logo"
+                            width={170}
+                            height={43}
+                            className="hidden dark:block h-[36px] w-auto object-contain"
+                            priority
+                        />
                         <div>
                             <h1 className="text-base font-bold text-slate-900 dark:text-white">Delonti Admin</h1>
                             <p className="text-xs text-slate-400">Article Management</p>

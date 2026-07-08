@@ -92,7 +92,7 @@ export default function Footer() {
                         <p>
                             Powered By{" "}
                             <Link href="https://delqsolutions.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                                Delq Solutions
+                                DELQ Solutions
                             </Link>
                         </p>
                     </div>

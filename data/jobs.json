@@ -90,7 +90,7 @@
   },
   {
     "id": "d4e5f6a7-b8c9-0123-def0-234567890123",
-    "title": "Enterprise Account Executive",
+    "title": "Enterprise Account Executives",
     "category": "Sales",
     "jobType": "Full Time",
     "location": "Remote - Global",
@@ -116,6 +116,6 @@
       "Represent Delonti at industry conferences, trade shows, and executive briefings"
     ],
     "isActive": true,
-    "slug": "enterprise-account-executive"
+    "slug": "enterprise-account-executives"
   }
 ]

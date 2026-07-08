@@ -2,9 +2,24 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const JOBS_FILE = path.join(DATA_DIR, "jobs.json");
-const CATEGORIES_FILE = path.join(DATA_DIR, "categories.json");
+const IS_VERCEL = !!process.env.VERCEL;
+
+export function getFilePath(filename: string): string {
+    if (IS_VERCEL) {
+        const tmpPath = path.join("/tmp", filename);
+        if (!fs.existsSync(tmpPath)) {
+            const defaultPath = path.join(process.cwd(), "data", filename);
+            if (fs.existsSync(defaultPath)) {
+                fs.copyFileSync(defaultPath, tmpPath);
+            }
+        }
+        return tmpPath;
+    }
+    return path.join(process.cwd(), "data", filename);
+}
+
+const JOBS_FILE = getFilePath("jobs.json");
+const CATEGORIES_FILE = getFilePath("categories.json");
 
 export interface Job {
     id: string;
@@ -38,8 +53,9 @@ export function readJobs(): Job[] {
 }
 
 export function writeJobs(jobs: Job[]): void {
-    if (!fs.existsSync(DATA_DIR)) {
-        fs.mkdirSync(DATA_DIR, { recursive: true });
+    const dir = path.dirname(JOBS_FILE);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
     }
     fs.writeFileSync(JOBS_FILE, JSON.stringify(jobs, null, 2), "utf-8");
 }
@@ -54,8 +70,9 @@ export function readCategories(): CategoriesData {
 }
 
 export function writeCategories(data: CategoriesData): void {
-    if (!fs.existsSync(DATA_DIR)) {
-        fs.mkdirSync(DATA_DIR, { recursive: true });
+    const dir = path.dirname(CATEGORIES_FILE);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
     }
     fs.writeFileSync(CATEGORIES_FILE, JSON.stringify(data, null, 2), "utf-8");
 }
@@ -98,7 +115,7 @@ export interface BlogPost {
     createdAt: string
 }
 
-const blogsPath = path.join(process.cwd(), 'data', 'blogs.json')
+const blogsPath = getFilePath("blogs.json")
 
 export function readBlogs(): BlogPost[] {
     try {
@@ -129,7 +146,7 @@ export interface Article {
     createdAt: string
 }
 
-const articlesPath = path.join(process.cwd(), 'data', 'articles.json')
+const articlesPath = getFilePath("articles.json")
 
 export function readArticles(): Article[] {
     try {
@@ -154,5 +171,33 @@ export function generateContentSlug(title: string): string {
         .replace(/[^a-z0-9\s-]/g, '')
         .replace(/\s+/g, '-')
         .replace(/-+/g, '-')
+}
+
+// ─── ADMIN CONFIG HELPERS ────────────────────────────────────
+
+export interface AdminConfig {
+    password?: string;
+}
+
+export function readAdminConfig(): AdminConfig {
+    try {
+        const configPath = getFilePath("admin-config.json");
+        if (!fs.existsSync(configPath)) {
+            return {};
+        }
+        const raw = fs.readFileSync(configPath, "utf-8");
+        return JSON.parse(raw) as AdminConfig;
+    } catch {
+        return {};
+    }
+}
+
+export function writeAdminConfig(config: AdminConfig): void {
+    const configPath = getFilePath("admin-config.json");
+    const dir = path.dirname(configPath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
 }
 

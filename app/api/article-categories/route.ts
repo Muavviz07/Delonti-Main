@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { getFilePath } from "@/lib/jobs";
 
-const filePath = path.join(process.cwd(), "data", "article-categories.json");
+export const dynamic = "force-dynamic";
+
+const filePath = getFilePath("article-categories.json");
 
 const defaultCategories = [
     "Government Infrastructure",

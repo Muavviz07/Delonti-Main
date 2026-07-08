@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { getFilePath } from "@/lib/jobs";
 
-const filePath = path.join(process.cwd(), "data", "blog-categories.json");
+export const dynamic = "force-dynamic";
+
+const filePath = getFilePath("blog-categories.json");
 
 const defaultCategories = [
     "RFID & Asset Tracking",

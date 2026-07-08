@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Briefcase, PenLine, Newspaper, ArrowRight } from "lucide-react"
+import { Briefcase, PenLine, Newspaper, ArrowRight, Shield } from "lucide-react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -35,8 +35,22 @@ export default function AdminDashboardPage() {
             <div className="bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-white/10 sticky top-0 z-40">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <Image src="/logo-dark(blue-text).png" alt="Delonti" width={150} height={38} className="h-8 w-auto object-contain" />
-                        <Image src="/logo-light.png" alt="Delonti" width={120} height={30} className="h-7 w-auto object-contain hidden dark:block" />
+                        <Image
+                            src="/Final delonti-logo-transparent.png"
+                            alt="Delonti Logo"
+                            width={150}
+                            height={38}
+                            className="h-8 w-auto object-contain dark:hidden"
+                            priority
+                        />
+                        <Image
+                            src="/Delonti Logo Final V1.0 transparent Dark.png"
+                            alt="Delonti Logo"
+                            width={170}
+                            height={43}
+                            className="hidden dark:block h-[36px] w-auto object-contain"
+                            priority
+                        />
                         <div>
                             <h1 className="text-base font-bold text-slate-900 dark:text-white">Delonti Admin</h1>
                             <p className="text-xs text-slate-400">Dashboard</p>
@@ -54,7 +68,7 @@ export default function AdminDashboardPage() {
                 <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-white">Admin Dashboard</h2>
                 <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 mb-12">Select a section to manage.</p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {/* Careers Card */}
                     <Link href="/admin/careers" className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer block">
                         <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
@@ -103,6 +117,23 @@ export default function AdminDashboardPage() {
 
                         <div className="flex items-center gap-2 mt-4 text-primary font-bold text-sm tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-all">
                             Manage Articles <ArrowRight className="w-4 h-4 text-primary" />
+                        </div>
+                    </Link>
+
+                    {/* Settings Card */}
+                    <Link href="/admin/settings" className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer block">
+                        <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <Shield className="w-10 h-10 text-primary" />
+                        </div>
+                        <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white">Security</h3>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm mt-2">Update admin password and configure security.</p>
+
+                        <div className="mt-6 inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-400 text-xs font-bold px-3 py-1 rounded-full">
+                            Settings
+                        </div>
+
+                        <div className="flex items-center gap-2 mt-4 text-primary font-bold text-sm tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-all">
+                            Manage Settings <ArrowRight className="w-4 h-4 text-primary" />
                         </div>
                     </Link>
                 </div>

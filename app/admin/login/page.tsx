@@ -42,19 +42,23 @@ export default function AdminLoginPage() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-[#0f0f14]">
             <div className="w-full max-w-sm bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-8">
+                {/* Light theme → show dark logo */}
                 <Image
-                    src="/logo-dark(blue-text).png"
-                    alt="Delonti"
+                    src="/Final delonti-logo-transparent.png"
+                    alt="Delonti Logo"
                     width={150}
                     height={38}
-                    className="h-8 w-auto object-contain"
+                    className="h-8 w-auto object-contain dark:hidden mx-auto mb-8"
+                    priority
                 />
+                {/* Dark theme → show light logo */}
                 <Image
-                    src="/logo-light.png"
-                    alt="Delonti"
-                    width={140}
-                    height={35}
-                    className="hidden dark:block h-7 w-auto object-contain mx-auto mb-8"
+                    src="/Delonti Logo Final V1.0 transparent Dark.png"
+                    alt="Delonti Logo"
+                    width={170}
+                    height={43}
+                    className="hidden dark:block h-[36px] w-auto object-contain mx-auto mb-8"
+                    priority
                 />
 
                 <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white text-center mb-1">

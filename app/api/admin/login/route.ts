@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { readAdminConfig } from '@/lib/jobs'
 
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json()
         const { username, password } = body
 
+        const adminConfig = readAdminConfig()
         const validUsername = process.env.ADMIN_USERNAME ?? 'admin'
-        const validPassword = process.env.ADMIN_PASSWORD ?? 'admin'
+        const validPassword = adminConfig.password || process.env.ADMIN_PASSWORD || 'admin'
 
         if (
             typeof username === 'string' &&

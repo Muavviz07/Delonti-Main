@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, Fragment } from "react";
 import { Plus, Edit2, Trash2, X, Check, Loader2, ChevronDown, ChevronUp } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -296,7 +296,7 @@ function ManageJobsTab() {
                         </thead>
                         <tbody className="divide-y divide-gray-50 dark:divide-white/5">
                             {jobs.map((job, idx) => (
-                                <>
+                                <Fragment key={job.id}>
                                     <tr
                                         key={job.id}
                                         className={`${idx % 2 === 1 ? "bg-slate-50/50 dark:bg-slate-800/20" : ""} hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors`}
@@ -360,7 +360,7 @@ function ManageJobsTab() {
                                             </td>
                                         </tr>
                                     )}
-                                </>
+                                </Fragment>
                             ))}
                         </tbody>
                     </table>
@@ -521,19 +521,21 @@ export default function AdminCareersPage() {
                         <>
                             {/* Light mode logo */}
                             <Image
-                                src="/logo-dark(blue-text).png"
-                                alt="Delonti"
+                                src="/Final delonti-logo-transparent.png"
+                                alt="Delonti Logo"
                                 width={150}
                                 height={38}
-                                className="h-8 w-auto object-contain"
+                                className="h-8 w-auto object-contain dark:hidden"
+                                priority
                             />
                             {/* Dark mode logo */}
                             <Image
-                                src="/logo-light.png"
-                                alt="Delonti"
-                                width={120}
-                                height={30}
-                                className="h-7 w-auto object-contain hidden dark:block"
+                                src="/Delonti Logo Final V1.0 transparent Dark.png"
+                                alt="Delonti Logo"
+                                width={170}
+                                height={43}
+                                className="hidden dark:block h-[36px] w-auto object-contain"
+                                priority
                             />
                         </>
                         <div>
