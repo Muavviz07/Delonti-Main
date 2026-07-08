@@ -16,6 +16,13 @@ export async function POST() {
         maxAge: 0,
         path: '/',
     })
+    response.cookies.set('admin_role', '', {
+        httpOnly: false,
+        secure: false,
+        sameSite: 'lax',
+        maxAge: 0,
+        path: '/',
+    })
     return response
 }
 
@@ -31,6 +38,13 @@ export async function GET() {
         path: '/',
     })
     response.cookies.set('admin_user', '', {
+        httpOnly: false,
+        secure: false,
+        sameSite: 'lax',
+        maxAge: 0,
+        path: '/',
+    })
+    response.cookies.set('admin_role', '', {
         httpOnly: false,
         secure: false,
         sameSite: 'lax',

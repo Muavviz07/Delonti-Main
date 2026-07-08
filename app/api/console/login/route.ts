@@ -8,14 +8,15 @@ export async function POST(request: NextRequest) {
 
         const adminConfig = readAdminConfig()
         const users = adminConfig.users || {}
+        const userConfig = users[username]
 
         if (
             typeof username === 'string' &&
             typeof password === 'string' &&
-            users[username] &&
-            users[username] === password
+            userConfig &&
+            userConfig.password === password
         ) {
-            const response = NextResponse.json({ success: true, role: username })
+            const response = NextResponse.json({ success: true, role: userConfig.role, username })
             response.cookies.set('admin_session', username, {
                 httpOnly: true,
                 secure: false,
@@ -24,6 +25,13 @@ export async function POST(request: NextRequest) {
                 path: '/',
             })
             response.cookies.set('admin_user', username, {
+                httpOnly: false,
+                secure: false,
+                sameSite: 'lax',
+                maxAge: 60 * 60 * 24,
+                path: '/',
+            })
+            response.cookies.set('admin_role', userConfig.role || 'restricted-admin', {
                 httpOnly: false,
                 secure: false,
                 sameSite: 'lax',

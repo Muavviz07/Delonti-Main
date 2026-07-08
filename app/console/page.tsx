@@ -19,7 +19,8 @@ export default function AdminDashboardPage() {
             if (parts.length === 2) return parts.pop()?.split(';').shift() || '';
             return '';
         };
-        setRole(getCookie("admin_user"));
+        const currentRole = getCookie("admin_role") || (getCookie("admin_user") === "delq-admin" ? "super-admin" : "restricted-admin");
+        setRole(currentRole);
 
         const fetchCounts = async () => {
             try {
@@ -39,7 +40,7 @@ export default function AdminDashboardPage() {
         fetchCounts()
     }, [])
 
-    const showAll = role !== "delonti-admin";
+    const showAll = role === "super-admin";
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-[#0f172a]">

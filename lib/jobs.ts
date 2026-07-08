@@ -175,9 +175,14 @@ export function generateContentSlug(title: string): string {
 
 // ─── ADMIN CONFIG HELPERS ────────────────────────────────────
 
+export interface UserConfig {
+    password?: string;
+    role?: "super-admin" | "restricted-admin";
+}
+
 export interface AdminConfig {
     users?: {
-        [username: string]: string;
+        [username: string]: UserConfig;
     };
 }
 
@@ -190,22 +195,46 @@ export function readAdminConfig(): AdminConfig {
             config = JSON.parse(raw) as AdminConfig;
         }
         
-        // Ensure users dictionary and defaults exist
+        // Ensure users dictionary exists
         if (!config.users) {
             config.users = {};
         }
-        if (!config.users["delonti-admin"]) {
-            config.users["delonti-admin"] = process.env.ADMIN_PASSWORD || "admin";
+
+        // Migrate string values to object values if present
+        for (const [uname, uval] of Object.entries(config.users)) {
+            if (typeof uval === "string") {
+                config.users[uname] = {
+                    password: uval,
+                    role: uname === "delq-admin" ? "super-admin" : "restricted-admin"
+                };
+            }
         }
-        if (!config.users["delq-admin"]) {
-            config.users["delq-admin"] = "delq-admin";
+        
+        // Ensure defaults exist if no user of that role is present
+        if (!Object.values(config.users).some(u => u?.role === "restricted-admin")) {
+            config.users["delonti-admin"] = {
+                password: process.env.ADMIN_PASSWORD || "admin",
+                role: "restricted-admin"
+            };
+        }
+        if (!Object.values(config.users).some(u => u?.role === "super-admin")) {
+            config.users["delq-admin"] = {
+                password: "delq-admin",
+                role: "super-admin"
+            };
         }
         return config;
     } catch {
         return {
             users: {
-                "delonti-admin": process.env.ADMIN_PASSWORD || "admin",
-                "delq-admin": "delq-admin"
+                "delonti-admin": {
+                    password: process.env.ADMIN_PASSWORD || "admin",
+                    role: "restricted-admin"
+                },
+                "delq-admin": {
+                    password: "delq-admin",
+                    role: "super-admin"
+                }
             }
         };
     }

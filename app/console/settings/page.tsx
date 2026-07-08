@@ -12,6 +12,8 @@ const labelClass = "block text-xs font-bold uppercase tracking-wider text-slate-
 
 export default function ConsoleSettingsPage() {
     const router = useRouter();
+    const [currentUsername, setCurrentUsername] = useState("");
+    const [newUsername, setNewUsername] = useState("");
     const [currentPassword, setCurrentPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -24,12 +26,21 @@ export default function ConsoleSettingsPage() {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
-    const [role, setRole] = useState("");
-    const [credentials, setCredentials] = useState<{ [key: string]: string }>({});
+    const [role, setRole] = useState(""); // super-admin or restricted-admin
+    const [credentials, setCredentials] = useState<{ [key: string]: { password?: string; role?: string } }>({});
+    const [tempUsernames, setTempUsernames] = useState<{ [key: string]: string }>({});
     const [revealPasswords, setRevealPasswords] = useState<{ [key: string]: boolean }>({});
     const [credLoading, setCredLoading] = useState(false);
     const [credError, setCredError] = useState("");
     const [credSuccess, setCredSuccess] = useState("");
+
+    const getCookie = (name: string): string => {
+        if (typeof document === 'undefined') return '';
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop()?.split(';').shift() || '';
+        return '';
+    };
 
     const fetchCredentials = async () => {
         try {
@@ -44,37 +55,33 @@ export default function ConsoleSettingsPage() {
     };
 
     useEffect(() => {
-        const getCookie = (name: string): string => {
-            if (typeof document === 'undefined') return '';
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop()?.split(';').shift() || '';
-            return '';
-        };
-        const currentRole = getCookie("admin_user");
-        setRole(currentRole);
+        const activeUser = getCookie("admin_user");
+        const activeRole = getCookie("admin_role") || (activeUser === "delq-admin" ? "super-admin" : "restricted-admin");
+        setCurrentUsername(activeUser);
+        setNewUsername(activeUser);
+        setRole(activeRole);
 
-        if (currentRole === "delq-admin") {
+        if (activeRole === "super-admin") {
             fetchCredentials();
         }
     }, []);
 
-    const handleUpdatePassword = async (e: React.FormEvent) => {
+    const handleUpdateSelfCredentials = async (e: React.FormEvent) => {
         e.preventDefault();
         setError("");
         setSuccess("");
 
-        if (!currentPassword || !newPassword || !confirmPassword) {
-            setError("All fields are required.");
+        if (!currentPassword) {
+            setError("Current password is required to verify your identity.");
             return;
         }
 
-        if (newPassword !== confirmPassword) {
+        if (newPassword && newPassword !== confirmPassword) {
             setError("New passwords do not match.");
             return;
         }
 
-        if (newPassword.length < 4) {
+        if (newPassword && newPassword.length < 4) {
             setError("New password must be at least 4 characters long.");
             return;
         }
@@ -84,31 +91,45 @@ export default function ConsoleSettingsPage() {
             const res = await fetch("/api/console/change-password", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ currentPassword, newPassword }),
+                body: JSON.stringify({ 
+                    newUsername: newUsername.trim(), 
+                    currentPassword, 
+                    newPassword: newPassword ? newPassword : undefined 
+                }),
             });
             const data = await res.json();
             if (!res.ok) {
-                throw new Error(data.error || "Failed to update password");
+                throw new Error(data.error || "Failed to update profile settings");
             }
-            setSuccess("Password updated successfully!");
+            setSuccess("Credentials updated successfully!");
             setCurrentPassword("");
             setNewPassword("");
             setConfirmPassword("");
-            if (role === "delq-admin") {
-                fetchCredentials();
+            if (data.newUsername) {
+                setCurrentUsername(data.newUsername);
+                setNewUsername(data.newUsername);
             }
         } catch (err: any) {
-            setError(err.message || "Failed to update password. Please try again.");
+            setError(err.message || "Failed to update credentials. Please try again.");
         } finally {
             setLoading(false);
         }
     };
 
-    const handleUpdateUserPassword = async (targetUser: string, newPass: string) => {
-        if (!newPass || newPass.length < 4) {
-            setCredError(`Password for ${targetUser} must be at least 4 characters long.`);
+    const handleUpdateUserCredentials = async (oldUser: string) => {
+        const editedUser = tempUsernames[oldUser]?.trim() || oldUser;
+        const editedPass = credentials[oldUser]?.password?.trim() || "";
+
+        if (!editedUser) {
+            setCredError("Username cannot be empty.");
             return;
         }
+
+        if (!editedPass || editedPass.length < 4) {
+            setCredError(`Password for ${editedUser} must be at least 4 characters long.`);
+            return;
+        }
+
         setCredLoading(true);
         setCredError("");
         setCredSuccess("");
@@ -116,16 +137,35 @@ export default function ConsoleSettingsPage() {
             const res = await fetch("/api/console/credentials", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username: targetUser, password: newPass }),
+                body: JSON.stringify({ 
+                    oldUsername: oldUser, 
+                    newUsername: editedUser, 
+                    password: editedPass 
+                }),
             });
             const data = await res.json();
             if (!res.ok) {
-                throw new Error(data.error || "Failed to update user password");
+                throw new Error(data.error || "Failed to update user account");
             }
             setCredentials(data.users || {});
-            setCredSuccess(`Successfully updated password for ${targetUser}!`);
+            
+            // Clear editing state for the old username
+            if (tempUsernames[oldUser]) {
+                const nextTemps = { ...tempUsernames };
+                delete nextTemps[oldUser];
+                setTempUsernames(nextTemps);
+            }
+
+            setCredSuccess(`Successfully saved settings for ${editedUser}!`);
+
+            // If the super-admin renamed their own username, update display
+            const currentActive = getCookie("admin_user");
+            if (currentActive) {
+                setCurrentUsername(currentActive);
+                setNewUsername(currentActive);
+            }
         } catch (err: any) {
-            setCredError(err.message || "Failed to update password.");
+            setCredError(err.message || "Failed to save settings.");
         } finally {
             setCredLoading(false);
         }
@@ -180,17 +220,17 @@ export default function ConsoleSettingsPage() {
             <div className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
                 <div className="mb-8">
                     <h2 className="text-3xl font-normal text-slate-900 dark:text-white font-display mb-1">Security Settings</h2>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">Update console password and configure security.</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Configure administrative credentials and console security.</p>
                 </div>
 
-                {role === "delonti-admin" && (
+                {role === "restricted-admin" && (
                     <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 p-8 shadow-sm">
                         <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100 dark:border-white/10">
                             <Shield className="w-5 h-5 text-indigo-500" />
-                            <h3 className="text-base font-bold text-slate-900 dark:text-white font-display">Change Password</h3>
+                            <h3 className="text-base font-bold text-slate-900 dark:text-white font-display">Update Credentials</h3>
                         </div>
 
-                        <form onSubmit={handleUpdatePassword} className="space-y-6">
+                        <form onSubmit={handleUpdateSelfCredentials} className="space-y-6">
                             {error && (
                                 <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-500/20 rounded-xl p-4 text-sm text-red-700 dark:text-red-400 flex items-center gap-2">
                                     <X className="w-4 h-4 shrink-0 text-red-500" />
@@ -206,7 +246,19 @@ export default function ConsoleSettingsPage() {
                             )}
 
                             <div className="relative">
-                                <label className={labelClass}>Current Password</label>
+                                <label className={labelClass}>Username</label>
+                                <input
+                                    type="text"
+                                    value={newUsername}
+                                    onChange={(e) => setNewUsername(e.target.value)}
+                                    placeholder="Enter username"
+                                    className={inputClass}
+                                    required
+                                />
+                            </div>
+
+                            <div className="relative">
+                                <label className={labelClass}>Current Password (Required)</label>
                                 <div className="relative">
                                     <input
                                         type={showCurrent ? "text" : "password"}
@@ -227,15 +279,14 @@ export default function ConsoleSettingsPage() {
                             </div>
 
                             <div className="relative">
-                                <label className={labelClass}>New Password</label>
+                                <label className={labelClass}>New Password (Optional)</label>
                                 <div className="relative">
                                     <input
                                         type={showNew ? "text" : "password"}
                                         value={newPassword}
                                         onChange={(e) => setNewPassword(e.target.value)}
-                                        placeholder="Minimum 4 characters"
+                                        placeholder="Leave blank to keep current password"
                                         className={inputClass}
-                                        required
                                     />
                                     <button
                                         type="button"
@@ -256,7 +307,6 @@ export default function ConsoleSettingsPage() {
                                         onChange={(e) => setConfirmPassword(e.target.value)}
                                         placeholder="Confirm new password"
                                         className={inputClass}
-                                        required
                                     />
                                     <button
                                         type="button"
@@ -280,7 +330,7 @@ export default function ConsoleSettingsPage() {
                                         </>
                                     ) : (
                                         <>
-                                            <Check className="w-4 h-4" /> Update Password
+                                            <Check className="w-4 h-4" /> Save Credentials
                                         </>
                                     )}
                                 </button>
@@ -289,8 +339,8 @@ export default function ConsoleSettingsPage() {
                     </div>
                 )}
 
-                {role === "delq-admin" && (
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 p-8 shadow-sm mt-8">
+                {role === "super-admin" && (
+                    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-white/10 p-8 shadow-sm">
                         <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100 dark:border-white/10">
                             <Shield className="w-5 h-5 text-purple-500" />
                             <h3 className="text-base font-bold text-slate-900 dark:text-white font-display">Console Credentials Manager</h3>
@@ -310,52 +360,86 @@ export default function ConsoleSettingsPage() {
                             </div>
                         )}
 
-                        <div className="space-y-6">
-                            {Object.entries(credentials).map(([username, password]) => (
-                                <div key={username} className="p-4 rounded-xl border border-gray-100 dark:border-white/5 bg-slate-50/50 dark:bg-slate-900/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                    <div>
-                                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Account Username</span>
-                                        <p className="text-sm font-semibold text-slate-900 dark:text-white mt-0.5">{username}</p>
-                                    </div>
-                                    
-                                    <div className="flex items-center gap-2 grow max-w-md">
-                                        <div className="relative w-full">
-                                            <input
-                                                type={revealPasswords[username] ? "text" : "password"}
-                                                value={password}
-                                                onChange={(e) => {
-                                                    setCredentials({
-                                                        ...credentials,
-                                                        [username]: e.target.value
-                                                    });
-                                                }}
-                                                className={inputClass}
-                                                placeholder="Enter password"
-                                            />
+                        <div className="space-y-8">
+                            {Object.entries(credentials).map(([username, info]) => {
+                                const currentEditedUser = tempUsernames[username] !== undefined ? tempUsernames[username] : username;
+                                return (
+                                    <div key={username} className="p-6 rounded-xl border border-gray-100 dark:border-white/5 bg-slate-50/50 dark:bg-slate-900/50 space-y-4">
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
+                                                {info?.role === "super-admin" ? "Super Admin Account" : "Restricted Admin Account"}
+                                            </span>
+                                            {username === currentUsername && (
+                                                <span className="text-[10px] font-bold uppercase tracking-widest bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-0.5 rounded-full">
+                                                    Current Profile
+                                                </span>
+                                            )}
+                                        </div>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className={labelClass}>Username</label>
+                                                <input
+                                                    type="text"
+                                                    value={currentEditedUser}
+                                                    onChange={(e) => {
+                                                        setTempUsernames({
+                                                            ...tempUsernames,
+                                                            [username]: e.target.value
+                                                        });
+                                                    }}
+                                                    className={inputClass}
+                                                    placeholder="Enter username"
+                                                />
+                                            </div>
+
+                                            <div>
+                                                <label className={labelClass}>Password</label>
+                                                <div className="relative">
+                                                    <input
+                                                        type={revealPasswords[username] ? "text" : "password"}
+                                                        value={info?.password || ""}
+                                                        onChange={(e) => {
+                                                            setCredentials({
+                                                                ...credentials,
+                                                                [username]: {
+                                                                    ...credentials[username],
+                                                                    password: e.target.value
+                                                                }
+                                                            });
+                                                        }}
+                                                        className={inputClass}
+                                                        placeholder="Enter password"
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => {
+                                                            setRevealPasswords({
+                                                                ...revealPasswords,
+                                                                [username]: !revealPasswords[username]
+                                                            });
+                                                        }}
+                                                        className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                                                    >
+                                                        {revealPasswords[username] ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex justify-end pt-2 border-t border-gray-200/50 dark:border-white/5">
                                             <button
                                                 type="button"
-                                                onClick={() => {
-                                                    setRevealPasswords({
-                                                        ...revealPasswords,
-                                                        [username]: !revealPasswords[username]
-                                                    });
-                                                }}
-                                                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                                                disabled={credLoading}
+                                                onClick={() => handleUpdateUserCredentials(username)}
+                                                className="px-6 py-2.5 bg-[#2b2b4f] hover:bg-[#2b2b4f]/90 disabled:opacity-60 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all"
                                             >
-                                                {revealPasswords[username] ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                                                Save Account Settings
                                             </button>
                                         </div>
-                                        <button
-                                            type="button"
-                                            disabled={credLoading}
-                                            onClick={() => handleUpdateUserPassword(username, password)}
-                                            className="px-4 py-3 bg-[#2b2b4f] hover:bg-[#2b2b4f]/90 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all whitespace-nowrap"
-                                        >
-                                            Save
-                                        </button>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 )}
