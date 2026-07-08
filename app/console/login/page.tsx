@@ -19,14 +19,14 @@ export default function AdminLoginPage() {
         setError('')
 
         try {
-            const res = await fetch('/api/admin/login', {
+            const res = await fetch('/api/console/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
             })
 
             if (res.ok) {
-                router.push('/admin')
+                router.push('/console')
             } else if (res.status === 401) {
                 setError("Invalid username or password")
             } else {

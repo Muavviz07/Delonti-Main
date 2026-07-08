@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export async function POST(request: NextRequest) {
     try {
         const session = request.cookies.get("admin_session")?.value;
-        if (session !== "authenticated") {
+        if (!session || (session !== "delq-admin" && session !== "delonti-admin")) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
@@ -18,13 +18,17 @@ export async function POST(request: NextRequest) {
         }
 
         const config = readAdminConfig();
-        const activePassword = config.password || process.env.ADMIN_PASSWORD || "admin";
+        const users = config.users || {};
+        const activePassword = users[session];
 
         if (currentPassword !== activePassword) {
             return NextResponse.json({ error: "Incorrect current password" }, { status: 400 });
         }
 
-        config.password = newPassword;
+        if (!config.users) {
+            config.users = {};
+        }
+        config.users[session] = newPassword;
         writeAdminConfig(config);
 
         return NextResponse.json({ success: true });

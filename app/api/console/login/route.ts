@@ -7,18 +7,24 @@ export async function POST(request: NextRequest) {
         const { username, password } = body
 
         const adminConfig = readAdminConfig()
-        const validUsername = process.env.ADMIN_USERNAME ?? 'admin'
-        const validPassword = adminConfig.password || process.env.ADMIN_PASSWORD || 'admin'
+        const users = adminConfig.users || {}
 
         if (
             typeof username === 'string' &&
             typeof password === 'string' &&
-            username.trim() === validUsername.trim() &&
-            password.trim() === validPassword.trim()
+            users[username] &&
+            users[username] === password
         ) {
-            const response = NextResponse.json({ success: true })
-            response.cookies.set('admin_session', 'authenticated', {
+            const response = NextResponse.json({ success: true, role: username })
+            response.cookies.set('admin_session', username, {
                 httpOnly: true,
+                secure: false,
+                sameSite: 'lax',
+                maxAge: 60 * 60 * 24,
+                path: '/',
+            })
+            response.cookies.set('admin_user', username, {
+                httpOnly: false,
                 secure: false,
                 sameSite: 'lax',
                 maxAge: 60 * 60 * 24,

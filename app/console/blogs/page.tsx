@@ -208,7 +208,7 @@ export default function BlogAdminPage() {
                         <a href="/resources/blogs" target="_blank" className="text-sm font-semibold text-[#2b2b4f] dark:text-indigo-400 hover:underline flex items-center gap-1">
                             View Blog <LinkIcon className="w-3 h-3" />
                         </a>
-                        <button onClick={async () => { await fetch('/api/admin/logout', { method: 'POST' }); router.push('/admin/login') }} className="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-red-500 transition-colors">
+                        <button onClick={async () => { await fetch('/api/console/logout', { method: 'POST' }); router.push('/console/login') }} className="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-red-500 transition-colors">
                             Sign Out
                         </button>
                     </div>

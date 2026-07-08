@@ -9,15 +9,29 @@ export async function POST() {
         maxAge: 0,
         path: '/',
     })
+    response.cookies.set('admin_user', '', {
+        httpOnly: false,
+        secure: false,
+        sameSite: 'lax',
+        maxAge: 0,
+        path: '/',
+    })
     return response
 }
 
 export async function GET() {
     const response = NextResponse.redirect(
-        new URL('/admin/login', process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000')
+        new URL('/console/login', process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000')
     )
     response.cookies.set('admin_session', '', {
         httpOnly: true,
+        secure: false,
+        sameSite: 'lax',
+        maxAge: 0,
+        path: '/',
+    })
+    response.cookies.set('admin_user', '', {
+        httpOnly: false,
         secure: false,
         sameSite: 'lax',
         maxAge: 0,

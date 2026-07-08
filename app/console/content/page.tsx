@@ -574,8 +574,8 @@ export default function AdminContentPage() {
                         </a>
                         <button
                             onClick={async () => {
-                                await fetch('/api/admin/logout', { method: 'POST' })
-                                router.push('/admin/login')
+                                await fetch('/api/console/logout', { method: 'POST' })
+                                router.push('/console/login')
                             }}
                             className="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-red-500 transition-colors"
                         >

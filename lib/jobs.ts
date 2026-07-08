@@ -176,19 +176,38 @@ export function generateContentSlug(title: string): string {
 // ─── ADMIN CONFIG HELPERS ────────────────────────────────────
 
 export interface AdminConfig {
-    password?: string;
+    users?: {
+        [username: string]: string;
+    };
 }
 
 export function readAdminConfig(): AdminConfig {
     try {
         const configPath = getFilePath("admin-config.json");
-        if (!fs.existsSync(configPath)) {
-            return {};
+        let config: AdminConfig = {};
+        if (fs.existsSync(configPath)) {
+            const raw = fs.readFileSync(configPath, "utf-8");
+            config = JSON.parse(raw) as AdminConfig;
         }
-        const raw = fs.readFileSync(configPath, "utf-8");
-        return JSON.parse(raw) as AdminConfig;
+        
+        // Ensure users dictionary and defaults exist
+        if (!config.users) {
+            config.users = {};
+        }
+        if (!config.users["delonti-admin"]) {
+            config.users["delonti-admin"] = process.env.ADMIN_PASSWORD || "admin";
+        }
+        if (!config.users["delq-admin"]) {
+            config.users["delq-admin"] = "delq-admin";
+        }
+        return config;
     } catch {
-        return {};
+        return {
+            users: {
+                "delonti-admin": process.env.ADMIN_PASSWORD || "admin",
+                "delq-admin": "delq-admin"
+            }
+        };
     }
 }
 

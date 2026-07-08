@@ -1,3 +1,7 @@
 {
-  "password": "admin"
+  "password": "admin",
+  "users": {
+    "delonti-admin": "admin",
+    "delq-admin": "delq-admin"
+  }
 }
