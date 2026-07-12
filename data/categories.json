@@ -1,0 +1,21 @@
+{
+  "categories": [
+    "Software Development",
+    "Security",
+    "Sales",
+    "Hardware",
+    "Marketing"
+  ],
+  "jobTypes": [
+    "Full Time",
+    "Part Time",
+    "Contract",
+    "Remote"
+  ],
+  "locations": [
+    "Bengaluru",
+    "Washington D.C.",
+    "Remote - US",
+    "Remote - Global"
+  ]
+}

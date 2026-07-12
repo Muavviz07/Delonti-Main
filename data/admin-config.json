@@ -1,0 +1,13 @@
+{
+  "password": "admin",
+  "users": {
+    "delq-admin": {
+      "password": "delq-admin",
+      "role": "super-admin"
+    },
+    "Delonti-admin": {
+      "password": "admin",
+      "role": "restricted-admin"
+    }
+  }
+}

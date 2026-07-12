@@ -1,0 +1,113 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { Facebook, Twitter, Linkedin, Video } from "lucide-react";
+
+export default function Footer() {
+    return (
+        <footer className="bg-primary text-white py-16 dark:bg-black dark:border-t dark:border-white/5">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 mb-16">
+                    <div>
+                        {/* WRAPPED LOGO IN LINK TO HOME & REDUCED SIZE */}
+                        <div className="flex items-center gap-2 mb-6">
+                            <Link href="/" className="hover:opacity-80 transition-opacity">
+                                {/* Light theme → show new dark transparent logo */}
+                                <Image
+                                    src="/Final delonti-logo-transparent.png"
+                                    alt="Delonti Logo"
+                                    width={140}
+                                    height={35}
+                                    className="h-7 lg:h-9 w-auto object-contain dark:hidden"
+                                />
+                                {/* Dark theme or footer bg context → show light logo */}
+                                <Image
+                                    src="/Delonti Logo Final V1.0 transparent Dark.png"
+                                    alt="Delonti Logo"
+                                    width={160}
+                                    height={40}
+                                    className="hidden dark:block h-[32px] lg:h-[40px] w-auto object-contain"
+                                />
+                            </Link>
+                        </div>
+                        <p className="text-slate-300 text-sm leading-relaxed max-w-xs dark:text-slate-200">
+                            Delivering innovative RFID, IoT, and Cybersecurity solutions for
+                            critical infrastructure and enterprise growth.
+                        </p>
+
+                        {/* Social Media Icons */}
+                        <div className="flex items-center gap-5 mt-8">
+                            <Link href="https://www.facebook.com/people/Delonti-INC/100063832244261/#" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Facebook size={20} />
+                            </Link>
+                            <Link href="https://x.com/Delontiinc" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Twitter size={20} />
+                            </Link>
+                            <Link href="https://www.linkedin.com/company/delonti/about/" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Linkedin size={20} />
+                            </Link>
+                            <Link href="https://vimeo.com/user229813684" target="_blank" className="text-slate-300 hover:text-white transition-all transform hover:scale-110">
+                                <Video size={20} />
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Industries</h5>
+                        <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
+                            <li><Link href="/industries/government" className="hover:text-white transition-colors">Government</Link></li>
+                            <li><Link href="/industries/education" className="hover:text-white transition-colors">Education</Link></li>
+                            <li><Link href="/industries/healthcare" className="hover:text-white transition-colors">Healthcare</Link></li>
+                            <li><Link href="/industries/manufacturing" className="hover:text-white transition-colors">Manufacturing</Link></li>
+                            <li><Link href="/industries/supply-chain" className="hover:text-white transition-colors">Supply Chain</Link></li>
+                            <li><Link href="/industries/public-safety" className="hover:text-white transition-colors">Public Safety</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Solutions</h5>
+                        <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
+                            <li><Link href="/solutions/asset-tracking" className="hover:text-white transition-colors">Asset Tracking</Link></li>
+                            <li><Link href="/solutions/inventory-intelligence" className="hover:text-white transition-colors">Inventory Intelligence</Link></li>
+                            <li><Link href="/solutions/workforce-safety" className="hover:text-white transition-colors">Workforce Safety</Link></li>
+                            <li><Link href="/solutions/facility-intelligence" className="hover:text-white transition-colors">Facility Intelligence</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 className="font-bold mb-6 uppercase tracking-wider text-xs opacity-70">Company</h5>
+                        <ul className="space-y-4 text-sm text-slate-300 dark:text-slate-200">
+                            <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                            <li><Link href="/about/careers" className="hover:text-white transition-colors">Careers</Link></li>
+                            <li><Link href="/resources" className="hover:text-white transition-colors">Resources</Link></li>
+                            <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-6 text-xs text-slate-400 dark:text-slate-300">
+                    <div className="flex flex-col gap-1 text-center lg:text-left">
+                        <p>© {new Date().getFullYear()} Delonti Technology Solutions. All rights reserved.</p>
+                        <p>
+                            Powered By{" "}
+                            <Link href="https://delqsolutions.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                                DELQ Solutions
+                            </Link>
+                        </p>
+                    </div>
+                    <div className="flex flex-wrap justify-center lg:justify-end gap-x-4 xl:gap-x-6 gap-y-2 text-center lg:text-right">
+                        <Link href="/privacy" className="hover:text-white transition-colors whitespace-nowrap">Privacy Policy</Link>
+                        <Link href="/terms" className="hover:text-white transition-colors whitespace-nowrap">Terms of Service</Link>
+                        <Link href="/compliance" className="hover:text-white transition-colors whitespace-nowrap">Security & Compliance</Link>
+                        <Link href="/cookie-policy" className="hover:text-white transition-colors whitespace-nowrap">Cookie Policy</Link>
+                        <Link href="/cookie-preferences" className="hover:text-white transition-colors whitespace-nowrap">Cookie Preferences</Link>
+                        <Link href="/accessibility" className="hover:text-white transition-colors whitespace-nowrap">Accessibility</Link>
+                        <Link href="/responsible-ai" className="hover:text-white transition-colors whitespace-nowrap">Responsible AI</Link>
+                        <Link href="/sitemap" className="hover:text-white transition-colors whitespace-nowrap">Site Map</Link>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+}
