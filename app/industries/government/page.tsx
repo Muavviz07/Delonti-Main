@@ -459,6 +459,136 @@ export default function GovernmentIndustryPage() {
         </div>
       </section>
 
+      {/* 9.5 GOVERNMENT CAPABILITIES */}
+      <section className="relative py-16 lg:py-20 bg-[#FAFAFA] dark:bg-background-dark-alt text-slate-900 dark:text-white overflow-hidden border-t border-slate-200 dark:border-slate-800">
+        
+        {/* Background Decorative Light Glows (Dark Mode Only) */}
+        <div className="absolute top-12 left-10 w-72 h-72 bg-blue-500/5 dark:bg-blue-500/5 rounded-full blur-[120px] pointer-events-none opacity-0 dark:opacity-100" />
+        <div className="absolute bottom-12 right-10 w-72 h-72 bg-primary/5 dark:bg-primary/5 rounded-full blur-[120px] pointer-events-none opacity-0 dark:opacity-100" />
+
+        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-primary dark:text-blue-400 bg-primary/5 dark:bg-blue-500/5 border border-primary/10 dark:border-blue-500/10 rounded-full">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary dark:bg-blue-400 animate-pulse" />
+              Official Credentials
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-slate-900 dark:text-white mb-5 uppercase">
+              Government Capabilities
+            </h2>
+            <div className="w-24 h-1 bg-primary mx-auto" />
+          </div>
+
+          {/* Columns Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            
+            {/* Left Column: Company Information */}
+            <div className="flex flex-col bg-white dark:bg-background-dark border border-slate-200/80 dark:border-slate-800/80 rounded-3xl p-8 lg:p-10 shadow-sm hover:border-primary/30 transition-all duration-300">
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-slate-900 dark:text-white mb-8 pb-4 border-b border-slate-150 dark:border-slate-800/85 flex items-center gap-3">
+                <FileText className="w-6 h-6 text-primary" />
+                Company Information
+              </h3>
+
+              {/* Core Information Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {[
+                  { label: "DUNS Number", val: "039556178" },
+                  { label: "CAGE Code", val: "57G90" },
+                  { label: "EIN", val: "31-1730960" },
+                  { label: "SAM Registration", val: "Active", isBadge: true },
+                  { label: "Accepting Credit Cards", val: "YES", isBadge: true },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex flex-col gap-1.5">
+                    <span className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">{item.label}</span>
+                    {item.isBadge ? (
+                      <span className={`inline-flex w-fit items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
+                        item.val === "Active" || item.val === "YES" 
+                          ? "bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 dark:border-emerald-500/30"
+                          : "bg-primary/10 dark:bg-blue-500/10 text-primary dark:text-blue-400 border border-primary/20 dark:border-blue-500/20"
+                      }`}>
+                        {item.val}
+                      </span>
+                    ) : (
+                      <span className="text-base font-bold text-slate-900 dark:text-white font-mono">{item.val}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Socio-Economic Designations & Certifications */}
+              <div className="space-y-8">
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-primary mb-4">Socio-Economic Designations</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0 animate-pulse" />
+                      <span className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">Minority-Owned Business</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0 animate-pulse" />
+                      <span className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">Subcontinent Asian (Asian-Indian) American Owned</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-primary mb-4">Certifications</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0 animate-pulse" />
+                      <span className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">
+                        MBE certified by the Greater New England Minority Diversity Supplier Council (GNEMSDC)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0 animate-pulse" />
+                      <span className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">Small Disadvantaged Business</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: NAICS Codes */}
+            <div className="flex flex-col bg-white dark:bg-background-dark border border-slate-200/80 dark:border-slate-800/80 rounded-3xl p-8 lg:p-10 shadow-sm hover:border-primary/30 transition-all duration-300">
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-slate-900 dark:text-white mb-8 pb-4 border-b border-slate-150 dark:border-slate-800/85 flex items-center gap-3">
+                <Network className="w-6 h-6 text-primary" />
+                NAICS Codes
+              </h3>
+
+              {/* NAICS List */}
+              <div className="flex flex-col gap-4">
+                {[
+                  { code: "334419", desc: "Other Electronic Component Manufacturing" },
+                  { code: "541430", desc: "Graphic Design Services" },
+                  { code: "541511", desc: "Custom Computer Programming Services" },
+                  { code: "541512", desc: "Computer Systems Design Services" },
+                  { code: "541513", desc: "Computer Facilities Management Services" },
+                  { code: "541519", desc: "Other Computer Related Services" },
+                  { code: "541654", desc: "Process, Physical Distribution, and Logistics Consulting Services" },
+                  { code: "611420", desc: "Computer Training" },
+                ].map((item, idx) => (
+                  <div 
+                    key={idx} 
+                    className="flex items-start gap-4 p-3.5 rounded-xl bg-slate-50/50 dark:bg-white/[0.01] border border-slate-200/50 dark:border-white/[0.03] hover:bg-slate-100/80 dark:hover:bg-white/[0.05] hover:border-slate-300 dark:hover:border-white/10 transition-all duration-200"
+                  >
+                    <span className="inline-flex shrink-0 items-center justify-center px-3 py-1 rounded bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-primary/20 text-xs font-bold font-mono text-primary dark:text-blue-400 uppercase tracking-wider">
+                      {item.code}
+                    </span>
+                    <span className="text-sm md:text-base text-slate-700 dark:text-slate-200 font-semibold leading-snug">
+                      {item.desc}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* 10. FINAL CTA */}
       <section className="relative py-16 lg:py-20 bg-[#111111] text-white overflow-hidden border-t border-[#2b2b4f]">
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
