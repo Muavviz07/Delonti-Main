@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readAdminConfig, writeAdminConfig } from "@/lib/jobs";
+import { readAdminConfig } from "@/lib/jobs";
+import { query } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +11,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
-        const config = readAdminConfig();
+        const config = await readAdminConfig();
         const users = config.users || {};
         const userConfig = users[session];
 
@@ -36,17 +37,11 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: "Username already taken" }, { status: 400 });
         }
 
-        if (finalUsername !== session) {
-            delete config.users![session];
-            config.users![finalUsername] = {
-                password: finalPassword,
-                role: userConfig.role
-            };
-        } else {
-            config.users![session].password = finalPassword;
-        }
-
-        writeAdminConfig(config);
+        const now = new Date().toISOString();
+        await query(
+            `UPDATE admin_users SET username = $1, password = $2, updated_at = $3 WHERE username = $4`,
+            [finalUsername, finalPassword, now, session]
+        );
 
         const response = NextResponse.json({ success: true, newUsername: finalUsername });
         if (finalUsername !== session) {

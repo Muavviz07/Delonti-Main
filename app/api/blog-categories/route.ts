@@ -1,42 +1,21 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import { getFilePath } from "@/lib/jobs";
+import { query } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-const filePath = getFilePath("blog-categories.json");
-
-const defaultCategories = [
-    "RFID & Asset Tracking",
-    "IoT & Smart Infrastructure",
-    "Cybersecurity & Risk Management",
-    "Data & Analytics"
-];
-
-function readCategories(): string[] {
-    try {
-        if (!fs.existsSync(filePath)) {
-            const dir = path.dirname(filePath);
-            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-            fs.writeFileSync(filePath, JSON.stringify(defaultCategories, null, 2));
-            return defaultCategories;
-        }
-        const data = fs.readFileSync(filePath, "utf-8");
-        return JSON.parse(data);
-    } catch {
-        return defaultCategories;
-    }
-}
-
-function writeCategories(categories: string[]) {
-    const dir = path.dirname(filePath);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(filePath, JSON.stringify(categories, null, 2));
+function slugify(text: string): string {
+    return text.toString().toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
 }
 
 export async function GET() {
-    return NextResponse.json({ categories: readCategories() });
+    try {
+        const result = await query("SELECT name FROM blog_categories ORDER BY name ASC");
+        const categories = result.rows.map((row) => row.name);
+        return NextResponse.json({ categories });
+    } catch (error) {
+        console.error("GET /api/blog-categories error:", error);
+        return NextResponse.json({ error: "Failed to fetch blog categories" }, { status: 500 });
+    }
 }
 
 export async function POST(request: Request) {
@@ -44,13 +23,17 @@ export async function POST(request: Request) {
         const { value } = await request.json();
         if (!value) return NextResponse.json({ error: "Value required" }, { status: 400 });
 
-        const categories = readCategories();
-        if (!categories.includes(value)) {
-            categories.push(value);
-            writeCategories(categories);
-        }
+        const id = slugify(value);
+        await query(
+            "INSERT INTO blog_categories (id, name) VALUES ($1, $2) ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name",
+            [id, value]
+        );
+
+        const result = await query("SELECT name FROM blog_categories ORDER BY name ASC");
+        const categories = result.rows.map((row) => row.name);
         return NextResponse.json({ categories });
-    } catch {
+    } catch (error) {
+        console.error("POST /api/blog-categories error:", error);
         return NextResponse.json({ error: "Failed to add category" }, { status: 500 });
     }
 }
@@ -60,12 +43,13 @@ export async function DELETE(request: Request) {
         const { value } = await request.json();
         if (!value) return NextResponse.json({ error: "Value required" }, { status: 400 });
 
-        let categories = readCategories();
-        categories = categories.filter(c => c !== value);
-        writeCategories(categories);
+        await query("DELETE FROM blog_categories WHERE name = $1", [value]);
 
+        const result = await query("SELECT name FROM blog_categories ORDER BY name ASC");
+        const categories = result.rows.map((row) => row.name);
         return NextResponse.json({ categories });
-    } catch {
+    } catch (error) {
+        console.error("DELETE /api/blog-categories error:", error);
         return NextResponse.json({ error: "Failed to delete category" }, { status: 500 });
     }
 }

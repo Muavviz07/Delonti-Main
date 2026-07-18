@@ -8,7 +8,8 @@ import CTASection from "@/components/CTASection"
 import { readBlogs } from "@/lib/jobs"
 
 export async function generateStaticParams() {
-    return readBlogs()
+    const blogs = await readBlogs()
+    return blogs
         .filter(b => b.isPublished)
         .map(b => ({ slug: b.slug }))
 }
@@ -17,13 +18,15 @@ type PageProps = { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params
-    const post = readBlogs().find(b => b.slug === slug)
+    const blogs = await readBlogs()
+    const post = blogs.find(b => b.slug === slug)
     return { title: post ? `${post.title} | Delonti Blog` : 'Blog | Delonti' }
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
     const { slug } = await params
-    const blogs = readBlogs().filter(b => b.isPublished)
+    const allBlogs = await readBlogs()
+    const blogs = allBlogs.filter(b => b.isPublished)
     const post = blogs.find(b => b.slug === slug)
 
     if (!post) {

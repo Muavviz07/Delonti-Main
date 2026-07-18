@@ -1,55 +1,96 @@
-import { NextResponse } from 'next/server'
-import { readArticles, writeArticles, generateContentSlug, Article } from '@/lib/jobs'
+import { NextRequest, NextResponse } from "next/server";
+import { query } from "@/lib/db";
+import { generateId, generateContentSlug } from "@/lib/jobs";
 
-export async function GET(request: Request) {
-    const { searchParams } = new URL(request.url)
-    const published = searchParams.get('published')
-    const category = searchParams.get('category')
+export async function GET(request: NextRequest) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const category = searchParams.get("category");
+    const published = searchParams.get("published");
 
-    let articles = readArticles()
+    let queryStr = "SELECT * FROM articles";
+    const params: any[] = [];
+    let paramIndex = 1;
+    const conditions: string[] = [];
 
-    if (published === 'true') {
-        articles = articles.filter(a => a.isPublished)
+    if (published === "true") {
+      conditions.push("is_published = true");
     }
 
     if (category) {
-        articles = articles.filter(a => a.category === category)
+      conditions.push(`category = $${paramIndex}`);
+      params.push(category);
+      paramIndex++;
     }
 
-    articles.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    if (conditions.length > 0) {
+      queryStr += " WHERE " + conditions.join(" AND ");
+    }
 
-    return NextResponse.json(articles)
+    queryStr += " ORDER BY created_at DESC";
+
+    const result = await query(queryStr, params);
+
+    const articles = result.rows.map(row => ({
+      id: row.id,
+      slug: row.slug,
+      title: row.title,
+      category: row.category,
+      date: row.date,
+      description: row.description,
+      image: row.image || '',
+      content: row.content || [],
+      isPublished: row.is_published,
+      createdAt: row.created_at,
+    }));
+
+    return NextResponse.json(articles);
+  } catch (error) {
+    console.error("GET /api/articles error:", error);
+    return NextResponse.json({ error: "Failed to fetch articles" }, { status: 500 });
+  }
 }
 
-export async function POST(request: Request) {
-    try {
-        const body = await request.json()
-        const { title, category, date, description, image, content, isPublished } = body
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { title, category, date, description, image, content = [], isPublished = false } = body;
 
-        if (!title || !category || !content) {
-            return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
-        }
-
-        const articles = readArticles()
-
-        const newArticle: Article = {
-            id: `article-${Date.now()}`,
-            slug: generateContentSlug(title),
-            title,
-            category,
-            date,
-            description: description || '',
-            image: image || '',
-            content: Array.isArray(content) ? content : [],
-            isPublished: isPublished ?? false,
-            createdAt: new Date().toISOString()
-        }
-
-        articles.push(newArticle)
-        writeArticles(articles)
-
-        return NextResponse.json(newArticle, { status: 201 })
-    } catch (error) {
-        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+    if (!title || !category || !description) {
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 }
+      );
     }
+
+    const id = generateId();
+    const slug = generateContentSlug(title);
+    const now = new Date().toISOString();
+
+    const result = await query(
+      `INSERT INTO articles (id, slug, title, category, date, description, image, content, is_published, created_at, updated_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+       RETURNING *`,
+      [id, slug, title, category, date || now, description, image || '', content, isPublished, now, now]
+    );
+
+    const row = result.rows[0];
+    const newArticle = {
+      id: row.id,
+      slug: row.slug,
+      title: row.title,
+      category: row.category,
+      date: row.date,
+      description: row.description,
+      image: row.image || '',
+      content: row.content || [],
+      isPublished: row.is_published,
+      createdAt: row.created_at,
+    };
+
+    return NextResponse.json(newArticle, { status: 201 });
+  } catch (error) {
+    console.error("POST /api/articles error:", error);
+    return NextResponse.json({ error: "Failed to create article" }, { status: 500 });
+  }
 }
