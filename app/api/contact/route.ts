@@ -25,15 +25,15 @@ export async function POST(request: NextRequest) {
 
         // Configure transporter based on environment variables
         const transporter = nodemailer.createTransport({
-            host: process.env.EMAIL_HOST || "smtp.gmail.com",
-            port: parseInt(process.env.EMAIL_PORT || "465"),
-            secure: (process.env.EMAIL_PORT || "465") === "465",
+            host: process.env.EMAIL_HOST || "smtp.ionos.com",
+            port: parseInt(process.env.EMAIL_PORT || "587"),
+            secure: (process.env.EMAIL_PORT || "587") === "465",
             auth: {
-                user: process.env.EMAIL_USER || process.env.GMAIL_USER || "",
+                user: process.env.EMAIL_USER || process.env.GMAIL_USER || "Delonti.Port@delonti.com",
                 pass: process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD || "",
             },
         });
-        const fromEmail = process.env.EMAIL_FROM || process.env.GMAIL_USER || "muhammedmuavviz@gmail.com";
+        const fromEmail = process.env.EMAIL_FROM || process.env.EMAIL_USER || "Delonti.Port@delonti.com";
         
         // Map tab IDs to the respective department emails
         const emailMap: Record<string, string> = {

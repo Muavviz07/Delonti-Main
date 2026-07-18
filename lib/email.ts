@@ -1,11 +1,11 @@
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST || "smtp.gmail.com",
-  port: parseInt(process.env.EMAIL_PORT || "465"),
-  secure: (process.env.EMAIL_PORT || "465") === "465",
+  host: process.env.EMAIL_HOST || "smtp.ionos.com",
+  port: parseInt(process.env.EMAIL_PORT || "587"),
+  secure: (process.env.EMAIL_PORT || "587") === "465",
   auth: {
-    user: process.env.EMAIL_USER || process.env.GMAIL_USER || "",
+    user: process.env.EMAIL_USER || process.env.GMAIL_USER || "Delonti.Port@delonti.com",
     pass: process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD || "",
   },
 });
@@ -20,8 +20,8 @@ export interface ContactInfo {
 }
 
 export async function sendContactEmail(contact: ContactInfo): Promise<string> {
-  const to = process.env.EMAIL_TO || "muhammedmuavviz@gmail.com";
-  const from = process.env.EMAIL_FROM || "Delonti AI <muhammedmuavviz@gmail.com>";
+  const to = process.env.EMAIL_TO || process.env.RECIPIENT_EMAIL || "Delonti.Port@delonti.com";
+  const from = process.env.EMAIL_FROM || "Delonti Technology Solutions <Delonti.Port@delonti.com>";
 
   const subject = `New Inquiry from ${contact.name || "Website Visitor"} - ${
     contact.interest || "General"
@@ -56,7 +56,7 @@ export async function sendContactEmail(contact: ContactInfo): Promise<string> {
       </tr>
     </table>
     <p style="margin-top: 20px; color: #666; font-size: 12px;">
-      This email was sent from the Delonti Technology Solutions website chatbot.
+      This email was sent from the Delonti Technology Solutions website.
     </p>
   `;
 
@@ -71,7 +71,7 @@ Interest: ${contact.interest || "Not provided"}
 Message: ${contact.message || "Not provided"}
 
 ---
-This email was sent from the Delonti Technology Solutions website chatbot.
+This email was sent from the Delonti Technology Solutions website.
   `.trim();
 
   try {

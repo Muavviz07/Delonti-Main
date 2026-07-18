@@ -14,18 +14,18 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Whitepaper/Business Case title is required' }, { status: 400 });
         }
 
-        const recipientEmail = process.env.RECIPIENT_EMAIL || process.env.EMAIL_TO || "muhammedmuavviz@gmail.com";
-        const fromEmail = process.env.EMAIL_FROM || process.env.EMAIL_USER || process.env.GMAIL_USER || "muhammedmuavviz@gmail.com";
-        const gmailUser = process.env.EMAIL_USER || process.env.GMAIL_USER || "";
-        const gmailAppPassword = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD || "";
+        const recipientEmail = process.env.RECIPIENT_EMAIL || process.env.EMAIL_TO || "Delonti.Port@delonti.com";
+        const fromEmail = process.env.EMAIL_FROM || process.env.EMAIL_USER || "Delonti.Port@delonti.com";
+        const emailUser = process.env.EMAIL_USER || process.env.GMAIL_USER || "Delonti.Port@delonti.com";
+        const emailPass = process.env.EMAIL_PASS || process.env.GMAIL_APP_PASSWORD || "";
 
         const transporter = nodemailer.createTransport({
-            host: process.env.EMAIL_HOST || "smtp.gmail.com",
-            port: parseInt(process.env.EMAIL_PORT || "465"),
-            secure: (process.env.EMAIL_PORT || "465") === "465",
+            host: process.env.EMAIL_HOST || "smtp.ionos.com",
+            port: parseInt(process.env.EMAIL_PORT || "587"),
+            secure: (process.env.EMAIL_PORT || "587") === "465",
             auth: {
-                user: gmailUser,
-                pass: gmailAppPassword,
+                user: emailUser,
+                pass: emailPass,
             },
         });
 
