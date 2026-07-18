@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
         const body = await request.json()
         const { username, password } = body
 
-        const adminConfig = readAdminConfig()
+        const adminConfig = await readAdminConfig()
         const users = adminConfig.users || {}
         const userConfig = users[username]
 

@@ -8,7 +8,8 @@ import CTASection from "@/components/CTASection"
 import { readArticles } from "@/lib/jobs"
 
 export async function generateStaticParams() {
-    return readArticles()
+    const articles = await readArticles()
+    return articles
         .filter(a => a.isPublished)
         .map(a => ({ slug: a.slug }))
 }
@@ -17,13 +18,15 @@ type PageProps = { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params
-    const post = readArticles().find(a => a.slug === slug)
+    const articles = await readArticles()
+    const post = articles.find(a => a.slug === slug)
     return { title: post ? `${post.title} | Delonti Insights` : 'Insights | Delonti' }
 }
 
 export default async function InsightPostPage({ params }: PageProps) {
     const { slug } = await params
-    const articles = readArticles().filter(a => a.isPublished)
+    const allArticles = await readArticles()
+    const articles = allArticles.filter(a => a.isPublished)
     const post = articles.find(a => a.slug === slug)
 
     if (!post) {

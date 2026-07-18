@@ -9,7 +9,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { id } = await params;
-    const jobs = readJobs();
+    const jobs = await readJobs();
     const job = jobs.find((j) => j.slug === id || j.id === id);
     return {
         title: job ? `${job.title} | Careers — Delonti` : "Job Not Found | Delonti",
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function JobDetailPage({ params }: PageProps) {
     const { id } = await params;
-    const jobs = readJobs();
+    const jobs = await readJobs();
     const job = jobs.find((j) => j.slug === id || j.id === id);
 
     if (!job || !job.isActive) {
