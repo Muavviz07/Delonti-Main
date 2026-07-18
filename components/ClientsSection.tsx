@@ -12,7 +12,7 @@ interface Client {
 }
 
 const HARDCODED_CLIENTS: Client[] = [
-  { id: 16, name: "Delq Solutions", logo: "/clients/DELQ-Logo.webp", link: "https://delqsolutions.com" },
+  { id: 16, name: "Delq Solutions", logo: "/clients/DELQ-Logo.webp" },
   { id: 1, name: "Nationwide", logo: "/clients/1.jpg" },
   { id: 2, name: "Ohio Dept", logo: "/clients/2.jpg" },
   { id: 3, name: "Queralt", logo: "/clients/3.jpg" },
@@ -37,7 +37,7 @@ const LogoCard = ({ name, logo, link }: { name: string; logo: string; link?: str
       {/* Replaced hardcoded #6366f1 with bg-primary */}
       <div className="absolute top-0 left-0 w-full h-0 bg-primary transition-all duration-500 group-hover:h-1"></div>
       <div className="relative w-full h-full flex items-center justify-center">
-        <div className={`relative w-full h-full flex items-center justify-center ${isDelq ? 'scale-75' : ''}`}>
+        <div className={`relative w-full h-full flex items-center justify-center ${isDelq ? 'scale-50' : ''}`}>
           <Image
             src={logo}
             alt={name}
