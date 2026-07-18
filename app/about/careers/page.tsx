@@ -76,9 +76,9 @@ function JobCard({ job }: { job: Job }) {
                             {job.location}
                         </span>
                     </div>
-                    <p className="text-xs text-slate-400 dark:text-slate-500">
+                    {/* <p className="text-xs text-slate-400 dark:text-slate-500">
                         Posted {timeAgo(job.postedAt)}
-                    </p>
+                    </p> */}
                 </div>
 
                 <div className="flex-shrink-0">
